@@ -1,0 +1,534 @@
+
+/* bestsellers content */
+#bestsellers {
+    position: relative;
+}
+
+
+#bestsellers .header-bestsellers {
+    position: relative;
+}
+
+
+#bestsellers .header-bestsellers h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 36px;
+}
+
+
+#bestsellers .header-bestsellers hr {
+    width: 60%;
+    left: 38%;
+    top: 15%;
+    border: 3px solid #DCDCDC;
+    border-radius: 20px;
+    position: absolute;
+}
+
+
+#bestsellers .slider-container-bestsellers {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#bestsellers .slider-container-bestsellers .slides-items-bestsellers {
+    width: 2240px;
+    transition: all 1s ease-in-out;
+}
+
+
+#bestsellers .slider-container-bestsellers .slides-items-bestsellers img {
+    width: 155px;
+    height: 240px;
+}
+
+
+.prod-hover {
+    transition: .1s;
+}
+
+
+.prod-hover:hover {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+#bestsellers .slider-container-bestsellers .kanan,
+#bestsellers .slider-container-bestsellers .kiri {
+    position: absolute;
+    width: 4%;
+    height: 10%;
+    text-align: center;
+    font-size: 18px;
+    top: 38%;
+    cursor: pointer;
+    color: white;
+}
+
+
+#bestsellers .slider-container-bestsellers .kanan:hover,
+#bestsellers .slider-container-bestsellers .kiri:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+#bestsellers .slider-container-bestsellers .kanan {
+    right: 0px;
+}
+
+
+#bestsellers .slider-container-bestsellers .kiri {
+    left: 0;
+}
+/* bestsellers content */
+
+
+
+
+/* coming soon release content */
+#coming-soon-release h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 36px;
+}
+
+
+#coming-soon-release .coming-soon {
+    position: relative;
+}
+
+
+#coming-soon-release .coming-soon hr {
+    border: 3px solid #DCDCDC;
+    top: 2%;
+    right: 3%;
+    width: 48%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+
+#coming-soon-release .coming-soon img {
+    width: 100%;
+    height: 100%;
+}
+
+
+#coming-soon-release .new-releases {
+    position: relative;
+    margin-top: 45px;
+}
+
+
+#coming-soon-release .new-releases hr {
+    border: 3px solid #DCDCDC;
+    top: 2%;
+    right: 3%;
+    width: 48%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+
+#coming-soon-release .new-releases img {
+    width: 100%;
+    height: 100%;
+}
+/* coming soon release content */
+
+
+
+
+/* indonesian book content */
+#indonesian-book {
+    margin-top: 45px;
+}
+
+
+#indonesian-book .header-indobook {
+    position: relative;
+}
+
+
+#indonesian-book .header-indobook h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 36px;
+}
+
+
+#indonesian-book .header-indobook hr {
+    border: 3px solid #DCDCDC;
+    top: 11%;
+    right: 17px;
+    width: 38%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+
+#indonesian-book .slider-container-indobook {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#indonesian-book .slider-container-indobook .slides-items-indobook {
+    width: 2240px;
+    transition: all 1s ease-in-out;
+}
+
+
+#indonesian-book .slider-container-indobook .slides-items-indobook img {
+    width: 155px;
+    height: 240px;
+}
+
+
+#indonesian-book .slider-container-indobook .kanan,
+#indonesian-book .slider-container-indobook .kiri {
+    position: absolute;
+    width: 4%;
+    height: 10%;
+    text-align: center;
+    font-size: 18px;
+    top: 38%;
+    cursor: pointer;
+    color: white;
+}
+
+
+#indonesian-book .slider-container-indobook .kanan:hover,
+#indonesian-book .slider-container-indobook .kiri:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+#indonesian-book .slider-container-indobook .kanan {
+    right: 0px;
+}
+
+
+#indonesian-book .slider-container-indobook .kiri {
+    left: 0;
+}
+/* indonesian book content */
+
+
+
+
+
+/* promo murah */
+#promo-murah {
+    margin-top: 15px;
+    margin-bottom: 120px;
+}
+
+
+#promo-murah .judul-promo-murah {
+    position: relative;
+}
+
+
+#promo-murah .judul-promo-murah h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 36px;
+}
+
+
+#promo-murah .judul-promo-murah hr {
+    border: 3px solid #DCDCDC;
+    top: 11%;
+    right: 17px;
+    width: 20%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+
+#promo-murah .items-buku-promo .col-margin-top {
+    margin-top: 50px;
+}
+
+
+#promo-murah .items-buku-promo a {
+    text-decoration: none;
+}
+
+
+#promo-murah .items-buku-promo .card-buku {
+    max-width: 213px;
+    max-height: 475px;
+    border: 1px solid #6346D6;
+    overflow: hidden;
+}
+
+
+#promo-murah .items-buku-promo .card-buku:hover {
+    border: 1px solid #3DB433;
+}
+
+
+#promo-murah .items-buku-promo .card-buku img {
+    width: 211px;
+    height: 300px;
+}
+
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku {
+    position: relative;
+}
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
+    font-family: arial;
+    color: #334241;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
+    color: #D64646;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
+    color: #626B61;
+    font-size: 11px;
+    margin-top: -18px;
+}
+
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-persen {
+    color: #822323;
+    border: 1px solid #822323;
+    padding: 1px 1.5px;
+    font-size: 12px;
+    position: absolute;
+    top: 25%;
+    right: 31%;
+    font-weight: 700;
+}
+
+
+#promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
+    font-size: 12px;
+}
+/* promo murah */
+
+
+
+
+
+
+
+
+/* khusus desktop window >= 992px */
+
+@media (min-width: 992px) {
+
+    /* bestsellers content */
+    #bestsellers .header-bestsellers hr {
+        width: 81%;
+        left: 18%;
+    }
+
+
+    #bestsellers .slider-container-bestsellers {
+        width: 100%;
+        height: 280px;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    #bestsellers .slider-container-bestsellers .slides-items-bestsellers img {
+        width: 180px;
+        height: 280px;
+        margin-right: 2px;
+    }
+
+
+    #bestsellers .slider-container-bestsellers .kanan,
+    #bestsellers .slider-container-bestsellers .kiri {
+        top: 45%;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+    }
+
+
+    #bestsellers .slider-container-bestsellers .kanan:hover,
+    #bestsellers .slider-container-bestsellers .kiri:hover {
+        background-color: rgba(52, 95, 204, 0.8);
+        color: white;
+    }
+
+
+    #bestsellers .slider-container-bestsellers .kanan {
+        border-radius: 0 10px 10px 0;
+    }
+
+
+    #bestsellers .slider-container-bestsellers .kiri {
+        border-radius: 10px 0 0 10px;
+    }
+    /* bestsellers content */
+
+
+
+
+    /* coming soon releasecontent */
+    #coming-soon-release {
+        margin-top: 55px;    
+    }
+
+
+    #coming-soon-release .coming-soon hr {
+        width: 52%;
+    }
+
+
+    #coming-soon-release .new-releases {
+        margin-top: 0;
+    }
+
+
+    #coming-soon-release .new-releases hr {
+        width: 52%;
+    }
+    /* coming soon release content */
+
+
+
+
+    /* indonesian book content */
+    #indonesian-book {
+        margin-top: 55px;
+    }
+
+
+    #indonesian-book .header-indobook hr {
+        width: 72%;
+    }
+
+    
+    #indonesian-book .slider-container-indobook {
+        width: 100%;
+        height: 280px;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    #indonesian-book .slider-container-indobook .slides-items-indobook img {
+        width: 180px;
+        height: 280px;
+        margin-right: 2px;
+    }
+
+
+    #indonesian-book .slider-container-indobook .kanan,
+    #indonesian-book .slider-container-indobook .kiri {
+        top: 45%;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+    }
+
+
+    #indonesian-book .slider-container-indobook .kanan:hover,
+    #indonesian-book .slider-container-indobook .kiri:hover {
+        background-color: rgba(52, 95, 204, 0.8);
+        color: white;
+    }
+
+
+    #indonesian-book .slider-container-indobook .kanan {
+        border-radius: 0 10px 10px 0;
+    }
+
+
+    #indonesian-book .slider-container-indobook .kiri {
+        border-radius: 10px 0 0 10px;
+    }
+    /* indonesian book content */
+
+
+
+
+    /* promo murah */
+    #promo-murah {
+        margin-top: 55px;
+    }
+
+
+    #promo-murah .judul-promo-murah hr {
+        width: 64%;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku {
+        max-width: 255px;
+        max-height: 540px;
+    }
+
+
+    #promo-murah .items-buku-promo .col-margin-top {
+        margin-top: 0;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku img {
+        width: 253px;
+        height: 350px;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
+        font-size: 18px;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
+        font-size: 18px;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
+        font-size: 12px;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-persen {
+        font-size: 13px;
+        top: 25.5%;
+        right: 35%;
+    }
+
+
+    #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
+        font-size: 13px;
+    }
+    /* promo murah */
+}
+
+
+
+
+
+
+
+
+
+
+
+

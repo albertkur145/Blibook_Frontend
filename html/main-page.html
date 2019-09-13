@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6d26e42cc.js"></script>
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main-page.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Main Page</title>
+</head>
+
+<body>
+    <!-- background body -->
+    <div class="backgroundAll"></div>
+    <!-- background body -->
+
+    
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
+        <div class="container">
+
+            <!-- judul nav -->
+            <a class="navbar-brand blibuku-brand" href="#"><i class="fas fa-book-open"></i> blibuku.com</a>
+            <!-- judul nav -->
+
+            <!-- button burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- button burger -->
+
+            <!-- nav -->
+            <div class="collapse navbar-collapse" id="nav-header">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link bag" href="#"><i class="fas fa-shopping-bag"></i> Bag</a>
+                    <a class="nav-item nav-link masuk" href="#">Masuk</a>
+                    <a class="nav-item nav-link daftar" href="#">Daftar</a>
+                </div>
+            </div>
+            <!-- nav -->
+
+            <form action="" method="post">
+                <input type="text" name="keyword" class="search" autocomplete="off" placeholder="&#x1F50D; Cari buku disini...">
+                <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
+            </form>
+            
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+
+
+    <!-- sub navbar -->
+    <div class="sub-navbar">
+        <div class="container"> 
+
+            <!-- text sub navbar -->
+            <a href="" class="kategori dropdown">
+                <span><i class="fas fa-bars"></i> Kategori</span>
+            </a>
+            
+            <span>&nbsp; &nbsp; |</span>
+            
+            <a href="" class="kategori ml-5">
+                <span> Bestsellers</span>
+            </a>
+            
+            <a href="" class="kategori ml-3">
+                <span>Coming Soon</span>
+            </a>
+            
+            <a href="" class="kategori ml-3">
+                <span>New Releases</span>
+            </a>
+            <!-- text sub navbar -->
+
+
+            <!-- dropdown ketika kategori di hover -->
+            <div class="sub-kategori"> 
+                <a href="" class="sub-kategori-menu">
+                    <p>Horror</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Romance</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Anime</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Technology</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Health</p>
+                </a>
+            </div>
+            <!-- dropdown ketika kategori di hover -->
+
+
+        </div>
+    </div>
+    <!-- akhir sub navbar -->
+
+
+
+    <!-- bestsellers -->
+    <div id="bestsellers" class="mt-5">
+        <div class="container">
+
+            <!-- judul bestsellers -->
+            <div class="header-bestsellers">
+                <h2>Bestsellers</h2>
+                <hr>
+            </div>
+            <!-- judul bestsellers -->
+
+            
+            <!-- slider  -->
+            <div class="slider-container-bestsellers">
+
+                <!-- gambar yang akan di slides -->
+                <div class="slides-items-bestsellers">
+                    <a href=""><img src="../pictures/Perahu Kertas Cover Buku.jpg" class="prod-hover" onclick="getImage(e);"></a>
+                    <a href=""><img src="../pictures/Baker Cover Book.jpg" class="prod-hover" onclick="getImage(e);"></a>
+                    <a href=""><img src="../pictures/Art Cover Book.png" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/PHP Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/A Boy Cover Book.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Breadcrumbs Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Hantu Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Baker Cover Book.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Perbankan Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/The Night Gardener Cover Book.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Tugg And Teeny Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Indonesia Inc Cover Buku.jpg" class="prod-hover"></a>
+                </div>
+                <!-- gambar yang akan di slides -->
+
+                <!-- slider control -->
+                <div class="kanan"><i class="fas fa-chevron-right"></i></div>
+                <div class="kiri"><i class="fas fa-chevron-left"></i></div>
+                <!-- slider control -->
+
+            </div>
+            <!-- slider -->
+            
+        </div>
+    </div>
+    <!-- akhir bestsellers -->
+
+
+
+    <!-- coming soon dan new releases-->
+    <div id="coming-soon-release">
+        <div class="container">
+
+            <div class="row">
+
+                <!-- coming soon -->
+                <div class="col-lg-6 coming-soon">
+
+                    <!-- judul coming soon -->
+                    <h2 class="mb-3">Coming Soon</h2>
+                    <hr>
+                    <!-- judul coming soon -->
+
+                    <!-- image -->
+                    <div class="row">
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/Dark Cover Buku.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+                        
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/Tugg And Teeny Cover Buku.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/Descended Cover Book.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+                    </div>
+                    <!-- image -->
+
+                </div>
+                <!-- coming soon -->
+
+
+                <!-- new releases -->
+                <div class="col-lg-6 new-releases">
+
+                    <!-- judul new releases -->
+                    <h2 class="mb-3">New Releases</h2>
+                    <hr>
+                    <!-- judul new releases -->
+
+                    <!-- image -->
+                    <div class="row">
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/Si Juki Cover Buku.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/The Night Gardener Cover Book.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <a href=""><img src="../pictures/Pulang Cover Buku.jpg" class="img-fluid prod-hover"></a>
+                        </div>
+                    </div>
+                    <!-- image -->
+
+
+                </div>
+                <!-- new release -->
+
+            </div>
+
+        </div>
+    </div>
+    <!-- akhir coming soon dan new releases-->
+
+
+
+    <!-- indonesian book -->
+    <div id="indonesian-book">
+        <div class="container">
+
+            <div class="row">
+                <div class="col header-indobook">
+                    <h2>Indonesian Book</h2>
+                    <hr>
+                </div>
+            </div>
+
+            <!-- slider -->
+            <div class="slider-container-indobook">
+
+                <!-- image yang akan di slide -->
+                <div class="slides-items-indobook">
+                    <a href=""><img src="../pictures/Agama Cinta Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Hantu Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Hukum Tata Negara Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/SBMPTN Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Indonesia Inc Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Kebudayaan Indonesia Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/PHP Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Si Juki Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Teknologi Cover buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Pulang Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Perahu Kertas Cover Buku.jpg" class="prod-hover"></a>
+                    <a href=""><img src="../pictures/Perbankan Cover Buku.jpg" class="prod-hover"></a>
+                </div>
+                <!-- image yang akan di slide -->
+
+                <!-- slider control -->
+                <div class="kanan"><i class="fas fa-chevron-right"></i></div>
+                <div class="kiri"><i class="fas fa-chevron-left"></i></div>
+                <!-- slider control -->
+                
+            </div>
+            <!-- slider -->
+
+
+        </div>
+    </div>
+    <!-- akhir indonesian book -->
+
+
+
+    <!-- promo murah -->
+    <div id="promo-murah">
+        <div class="container">
+
+            <!-- judul -->
+            <div class="row mb-1">
+                <div class="col judul-promo-murah">
+                    <h2>Promo Dijamin Murah</h2>
+                    <hr>
+                </div>
+            </div>
+            <!-- judul -->
+
+            <!-- items -->
+            <div class="items-buku-promo">
+
+                <!-- baris 1, image -->
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/A Boy Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">A Boy in Winter</h5>
+                                            <p class="harga-buku">Rp50.950</p>
+                                            <p class="diskon-buku"><strike>Rp.95.200</strike></p>
+                                            <p class="diskon-persen">50% OFF</p>
+                                            <p class="text-muted desk-buku">Seorang anak kecil yang taat kepada ibunya. Pada akhirnya ia meninggalkan...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Hantu Cover Buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Hantu di Rumah Kos</h5>
+                                            <p class="harga-buku">Rp86.999</p>
+                                            <p class="diskon-buku"><strike>Rp.108.750</strike></p>
+                                            <p class="diskon-persen">35% OFF</p>
+                                            <p class="text-muted desk-buku">Kisah rumah tua yang dijadikan sebagai tempat kos, membuat penghuni dirumah itu...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-margin-top">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/PHP Cover Buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">PHP Uncover Pemula</h5>
+                                            <p class="harga-buku">Rp35.240</p>
+                                            <p class="diskon-buku"><strike>Rp.78.125</strike></p>
+                                            <p class="diskon-persen">65% OFF</p>
+                                            <p class="text-muted desk-buku">Panduan lengkap belajar pemrograman PHP dasar untuk pemula dari 0 hingga...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Si Juki Cover Buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Si Juki</h5>
+                                            <p class="harga-buku">Rp32.800</p>
+                                            <p class="diskon-buku"><strike>Rp.44.999</strike></p>
+                                            <p class="diskon-persen">27% OFF</p>
+                                            <p class="text-muted desk-buku">Cerita lucu Si Juki menghadapi tanggal tua di masa akhir hidupnya yang kian...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- baris 1, image -->
+
+
+                <!-- baris 2, image -->
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Art Cover Book.png" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Art of The World</h5>
+                                            <p class="harga-buku">Rp97.620</p>
+                                            <p class="diskon-buku"><strike>Rp.395.500</strike></p>
+                                            <p class="diskon-persen">88% OFF</p>
+                                            <p class="text-muted desk-buku">Seniman yang meninggalkan karya istimewa kepada cucunya hingga memperoleh...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/SBMPTN Cover Buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">SBMPTN 2019</h5>
+                                            <p class="harga-buku">Rp79.500</p>
+                                            <p class="diskon-buku"><strike>Rp.120.930</strike></p>
+                                            <p class="diskon-persen">42% OFF</p>
+                                            <p class="text-muted desk-buku">Super cerdas buku SBMPTN tahun 2019, tips dan trik rahasia dijamin lolos...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                    <div class="col-lg-6 col-margin-top">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Teknologi Cover buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Media & Teknologi</h5>
+                                            <p class="harga-buku">Rp47.950</p>
+                                            <p class="diskon-buku"><strike>Rp.99.750</strike></p>
+                                            <p class="diskon-persen">52% OFF</p>
+                                            <p class="text-muted desk-buku">Perkembangan teknologi yang semakin pesat membuat peluang dalam dunia IT menjadi...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Descended Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">As I Descended</h5>
+                                            <p class="harga-buku">Rp19.200</p>
+                                            <p class="diskon-buku"><strike>Rp.475.590</strike></p>
+                                            <p class="diskon-persen">95% OFF</p>
+                                            <p class="text-muted desk-buku">Perbicaraan yang memukau memerlukan sebuah ilusi yang dijadikan sebagai...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                <!-- baris 2, image -->
+
+
+                <!-- baris 3, image -->
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Creative Cooking Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Creative Cooking</h5>
+                                            <p class="harga-buku">Rp64.999</p>
+                                            <p class="diskon-buku"><strike>Rp.130.200</strike></p>
+                                            <p class="diskon-persen">51% OFF</p>
+                                            <p class="text-muted desk-buku">Tingkatkan skill masakmu dengan mengkreasikan makanan-makanan yang tidak...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/School Horror Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">School Horror</h5>
+                                            <p class="harga-buku">Rp62.800</p>
+                                            <p class="diskon-buku"><strike>Rp86.750</strike></p>
+                                            <p class="diskon-persen">29% OFF</p>
+                                            <p class="text-muted desk-buku">Sebuah sekolah yang sering dihantui oleh arwah gentayangan, murid-murid pun...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                    <div class="col-lg-6 col-margin-top">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Beginer Guitar Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Guided Guitar</h5>
+                                            <p class="harga-buku">Rp28.722</p>
+                                            <p class="diskon-buku"><strike>Rp.79.500</strike></p>
+                                            <p class="diskon-persen">67% OFF</p>
+                                            <p class="text-muted desk-buku">Panduan belajar gitar untuk pemula mudah dan cepat dalam waktu 2 jam mahir...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Naruto Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Naruto Vol 72</h5>
+                                            <p class="harga-buku">Rp15.000</p>
+                                            <p class="diskon-buku"><strike>Rp.19.800</strike></p>
+                                            <p class="diskon-persen">18% OFF</p>
+                                            <p class="text-muted desk-buku">Desa Konoha siap berperang melawan Clan Akatsuki yang telah membunuh...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                <!-- baris 3, image -->
+
+
+                <!-- baris 4, image -->
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Play Piano Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Easy Play Piano</h5>
+                                            <p class="harga-buku">Rp99.750</p>
+                                            <p class="diskon-buku"><strike>Rp.395.512</strike></p>
+                                            <p class="diskon-persen">75% OFF</p>
+                                            <p class="text-muted desk-buku">Belajar bermain piano mudah dan cepat, dibimbing langsung oleh tenaga proffesional...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/One Piece Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">One Piece Vol 12</h5>
+                                            <p class="harga-buku">Rp9.500</p>
+                                            <p class="diskon-buku"><strike>Rp18.225</strike></p>
+                                            <p class="diskon-persen">49% OFF</p>
+                                            <p class="text-muted desk-buku">Perjuangan kru mugiwara melawan buggy yang telah memperdayakan nami sebagai...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                    <div class="col-lg-6 col-margin-top">
+                
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Hunger Games Cover Book.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Hunger Games</h5>
+                                            <p class="harga-buku">Rp47.360</p>
+                                            <p class="diskon-buku"><strike>Rp.63.500</strike></p>
+                                            <p class="diskon-persen">23% OFF</p>
+                                            <p class="text-muted desk-buku">Hunger games sangat menyenangkan bagi anak-anak karena ramah terhadap...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="">
+                                    <div class="card card-buku">
+                                        <img src="../pictures/Pahlawan Cover Buku.jpg" class="card-img-top">
+                                        <div class="card-body card-body-buku">
+                                            <h5 class="judul-buku">Pahlawan Indonesia</h5>
+                                            <p class="harga-buku">Rp22.320</p>
+                                            <p class="diskon-buku"><strike>Rp.29.577</strike></p>
+                                            <p class="diskon-persen">16% OFF</p>
+                                            <p class="text-muted desk-buku">Biografi lengkap pahlawan Indonesia yang telah gugur demi bangsa Indonesia merdeka...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                <!-- baris 4, image -->
+
+            </div>
+            <!-- items -->
+
+        </div>
+    </div>
+    <!-- akhir promo murah -->
+
+
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU.COM</h2>
+                    <p><a href="">Tentang blibuku.com</a></p>
+                    <p><a href="">Kebijakan privasi</a></p>
+                    <p><a href="">Aturan penggunaan</a></p>
+                    <p><a href="">Hubungi kami</a></p>
+                </div>
+
+                <div class="col-lg-3 col-footer">
+                    <h2 class="mb-3">CUSTOMER CARE</h2>
+                    <p>Buka 24 jam setiap hari</p>
+                    <p><i class="fas fa-tty"></i> 0804 1 871 871</p>
+                    <p><i class="fas fa-envelope"></i> customer.care@blibli.com</p>
+                </div>
+
+                <div class="col-lg-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU FAMILY</h2>
+                    <img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"><br>
+                    <img src="../icons/tiketcom.png" width="150px" height="40px">
+                </div>
+
+                <div class="col-lg-3 col-footer">
+                    <h2 class="mb-3">PENGHARGAAN</h2>
+                    <p><i class="fas fa-check"></i> Kualitas buku sangat baik.</p>
+                    <p><i class="fas fa-check"></i> Respon cepat.</p>
+                    <p><i class="fas fa-check"></i> Customer care 24 jam.</p>                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer -->
+
+
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/main-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* footer */
+#footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 20px 20px 20px;
+    background-color: #472999;
+    font-family: 'Arial';
+    color: #DDD;
+    text-align: center;
+}
+
+
+#footer .col-footer {
+    margin-bottom: 70px;
+}
+
+
+#footer h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+#footer p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+#footer p a {
+    color: #DDD;
+}
+
+/* footer */
+
+
+
+
+
+/* khusus desktop window >= 992px */
+
+@media (min-width: 992px) {
+
+    /* footer */
+    #footer {
+        text-align: left;
+    }
+
+
+    #footer .col-footer {
+        margin-bottom: 0px;
+    }
+
+
+    #footer h2 {
+        font-size: 24px;
+    }
+
+
+    #footer p {
+        font-size: 14px;
+    }
+    /* footer */
+
+}
