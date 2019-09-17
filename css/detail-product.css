@@ -1,7 +1,7 @@
 /* product detail */
 
 #product-detail {
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 
@@ -120,8 +120,33 @@
 }
 
 
+#product-detail hr {
+    margin-top: 50px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+
 #product-detail .deskripsi-buku {
-    margin-top: 80px;
+    margin-top: 40px;
+}
+
+
+#product-detail .deskripsi-buku h2 {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: 400;
+    color: #5F5959;
+    text-transform: uppercase;
+}
+
+
+#product-detail .deskripsi-buku p {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+    text-align: justify;
 }
 
 /* product detail */
