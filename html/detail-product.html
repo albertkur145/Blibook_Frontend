@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6d26e42cc.js"></script>
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/detail-product.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Detail Product</title>
+</head>
+
+<body>
+    <!-- background body -->
+    <div class="backgroundAll"></div>
+    <!-- background body -->
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
+        <div class="container">
+
+            <!-- judul nav -->
+            <a class="navbar-brand blibuku-brand" href="#"><i class="fas fa-book-open"></i> blibuku.com</a>
+            <!-- judul nav -->
+
+            <!-- button burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- button burger -->
+
+            <!-- nav -->
+            <div class="collapse navbar-collapse" id="nav-header">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link bag" href="#"><i class="fas fa-shopping-bag"></i> Bag</a>
+                    <a class="nav-item nav-link masuk" href="#">Masuk</a>
+                    <a class="nav-item nav-link daftar" href="#">Daftar</a>
+                </div>
+            </div>
+            <!-- nav -->
+
+            <form action="" method="post">
+                <input type="text" name="keyword" class="search" autocomplete="off"
+                    placeholder="&#x1F50D; Cari buku disini...">
+                <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
+            </form>
+
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+
+    <!-- sub navbar -->
+    <div class="sub-navbar">
+        <div class="container">
+
+            <!-- text sub navbar -->
+            <a href="" class="kategori dropdown">
+                <span><i class="fas fa-bars"></i> Kategori</span>
+            </a>
+
+            <span>&nbsp; &nbsp; |</span>
+
+            <a href="" class="kategori ml-5">
+                <span> Bestsellers</span>
+            </a>
+
+            <a href="" class="kategori ml-3">
+                <span>Coming Soon</span>
+            </a>
+
+            <a href="" class="kategori ml-3">
+                <span>New Releases</span>
+            </a>
+            <!-- text sub navbar -->
+
+
+            <!-- dropdown ketika kategori di hover -->
+            <div class="sub-kategori">
+                <a href="" class="sub-kategori-menu">
+                    <p>Horror</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Romance</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Anime</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Technology</p>
+                </a>
+                <a href="" class="sub-kategori-menu">
+                    <p>Health</p>
+                </a>
+            </div>
+            <!-- dropdown ketika kategori di hover -->
+
+
+        </div>
+    </div>
+    <!-- akhir sub navbar -->
+
+
+
+    <!-- product detail -->
+    <div id="product-detail">
+        <div class="container">
+            <div class="bg-white">
+
+                <!-- top -->
+                <div class="row">
+
+                    <!-- image buku -->
+                    <div class="col-lg-5 image-buku">
+                        <img src="../pictures/Perahu Kertas Cover Buku.jpg" class="img-thumbnail">
+                    </div>
+                    <!-- image buku -->
+
+                    <!-- keterangan buku -->
+                    <div class="col-lg-6 keterangan-buku">
+
+                        <!-- judul buku -->
+                        <h2 class="judul-buku font-keterangan">Perahu Kertas</h2>
+                        <!-- judul buku -->
+
+                        <!-- author -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="keterangan-bukuH2-kiri font-keterangan">Author</h2>
+                            </div>
+
+                            <div class="col-8">
+                                <h2 class="keterangan-bukuH2-kanan font-keterangan">Rizky Febrian</h2>
+                            </div>
+                        </div>
+                        <!-- author -->
+
+                        <!-- jumlah page -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="keterangan-bukuH2-kiri font-keterangan">Page</h2>
+                            </div>
+
+                            <div class="col-8">
+                                <h2 class="keterangan-bukuH2-kanan font-keterangan">140 pages</h2>
+                            </div>
+                        </div>
+                        <!-- jumlah page -->
+
+                        <!-- tahun release -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="keterangan-bukuH2-kiri font-keterangan">Tahun</h2>
+                            </div>
+
+                            <div class="col-8">
+                                <h2 class="keterangan-bukuH2-kanan font-keterangan">2017</h2>
+                            </div>
+                        </div>
+                        <!-- tahun release -->
+
+                        <!-- -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="keterangan-bukuH2-kiri font-keterangan">Negara</h2>
+                            </div>
+
+                            <div class="col-8">
+                                <h2 class="keterangan-bukuH2-kanan font-keterangan">Indonesia</h2>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="keterangan-bukuH2-kiri font-keterangan">Bahasa</h2>
+                            </div>
+
+                            <div class="col-8">
+                                <h2 class="keterangan-bukuH2-kanan font-keterangan">Bahasa Indonesia</h2>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- harga buku -->
+                        <div class="row">
+                            <div class="col-4">
+                                <h2 class="harga-buku">Rp105.250</h2>
+                            </div>
+                            <div class="col-4">
+                                <h2 class="diskon-buku">Rp295.999</h2>
+                            </div>
+                        </div>
+                        <!-- harga buku -->
+
+                        <!-- button / click -->
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="" class="btn btn-beli-sekarang css-btn">beli sekarang</a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="" class="btn btn-tambah-bag css-btn">tambah ke bag</a>
+                            </div>
+                        </div>
+                        <!-- button / click -->
+
+                        <!-- add to wishlist -->
+                        <a href="" class="add-wishlist"><i class="far fa-heart icon-wish"></i> Tambah ke wishlist</a>
+                        <!-- add to wishlist -->
+
+
+                    </div>
+                    <!-- keterangan buku -->
+
+                </div>
+                <!-- top -->
+
+                <!-- down -->
+                <div class="deskripsi-buku">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2>Hello World</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- down -->
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir product detail -->
+
+
+</body>
+</html>
+
+
+

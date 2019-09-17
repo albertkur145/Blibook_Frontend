@@ -1,0 +1,176 @@
+/* product detail */
+
+#product-detail {
+    margin-top: 40px;
+}
+
+
+#product-detail .bg-white {
+    padding: 30px;
+}
+
+
+#product-detail .image-buku img {
+    width: 100%;
+}
+
+
+#product-detail .keterangan-buku {
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+
+.font-keterangan {
+    font-family: 'Montserrat';
+    color: #5F5959;
+    font-weight: 300;
+}
+
+
+#product-detail .keterangan-buku h2.judul-buku {
+    font-size: 36px;
+    margin-top: 15px;
+}
+
+
+.keterangan-bukuH2-kiri {
+    margin-top: 10px;
+    font-size: 18px;
+    padding-top: 3px;
+}
+
+
+.keterangan-bukuH2-kanan {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+
+#product-detail .keterangan-buku h2.harga-buku {
+    margin-top: 40px;
+    font-family: 'Montserrat';
+    color: #1A9980;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+
+#product-detail .keterangan-buku h2.diskon-buku {
+    margin-top: 50px;
+    margin-left: 45px;
+    font-family: 'Montserrat';
+    color: #5F5959;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+
+.css-btn {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #FFF;
+    width: 100%;
+    border-radius: 100px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+
+#product-detail .keterangan-buku .btn-beli-sekarang {
+    background-color: #FFBB5D;
+    transition: .3s;
+}
+
+
+#product-detail .keterangan-buku .btn-tambah-bag {
+    background-color: #FB8D8D;  
+    transition: .3s;
+}
+
+
+#product-detail .keterangan-buku .btn-beli-sekarang:hover {
+    color: #FFF;
+    background-color: #FFAD3C;
+}
+
+
+#product-detail .keterangan-buku .btn-tambah-bag:hover {
+    color: #FFF;
+    background-color: #FA7373;
+}
+
+
+#product-detail .keterangan-buku a.add-wishlist {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    padding-left: 3px;
+    color: #000;
+    display: block;
+    margin-top: 30px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+#product-detail .keterangan-buku a.add-wishlist:hover {
+    color: #FC6666;
+}
+
+
+#product-detail .deskripsi-buku {
+    margin-top: 80px;
+}
+
+/* product detail */
+
+
+
+
+
+
+/* khusus desktop window >= 992px */
+
+@media (min-width: 992px) {
+
+    /* product detail */
+
+    #product-detail .keterangan-buku h2.judul-buku {
+        font-size: 58px;
+        margin-top: 0px;
+    }
+
+
+    #product-detail .keterangan-buku h2.harga-buku {
+        margin-top: 50px;
+        font-size: 36px;
+    }
+
+
+    #product-detail .keterangan-buku h2.diskon-buku {
+        margin-top: 60px;
+        margin-left: 30px;
+        font-family: 'Montserrat';
+        color: #5F5959;
+        font-weight: 300;
+        font-size: 24px;
+        text-decoration: line-through;
+    }
+
+
+    .css-btn {
+        width: 80%;
+        padding: 10px 0;
+        margin-top: 40px;
+    }
+
+
+    #product-detail .keterangan-buku .btn-tambah-bag {
+        margin-left: -55px;
+    }
+
+    /* product detail */
+
+}
