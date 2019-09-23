@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b6d26e42cc.js"></script>
 
     <link rel="stylesheet" href="../css/daftar-page.css">
     <link rel="stylesheet" href="../css/footer.css">
 
-    <title>Main Page</title>
+    <title>Daftar Page</title>
 </head>
 
 <body>
@@ -23,18 +23,32 @@
     <!-- header -->
     <div id="header">
         <a href="main-page.html">
-            <h1 class="text-center"><i class="fas fa-book-open"></i> Blibuku.com</h1>
+            <i class="fas fa-book-open"></i> Blibuku.com
         </a>
     </div>
     <!-- akhir header -->
-
-    <h3 class="text-center daftar">Daftar Akun Baru</h3>
 
     <!-- content -->
     <div id="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 offset-lg-4">
+
+                <!-- left -->
+                <div class="col-lg-6 left">
+                    <h2>Selamat Datang</h2>
+                    <hr>
+                    <p class="txt">Daftar akun blibuku mudah dan cepat</p>
+                    
+                    <div class="quotes">
+                        <p><em>" Today a <span>reader</span>,<br>&nbsp;&nbsp;tomorrow a <span>leader</span> "</em></p>
+                        <p class="motivator">- Margret Fuller -</p>
+                    </div>
+                </div>
+                <!-- left -->
+
+                <!-- right -->
+                <div class="col-lg-5 right">
+                    <h2 class="text-center">Daftar akun baru</h2>
 
                     <form action="main-page.html" method="post">
                         <div class="form-group">
@@ -59,9 +73,11 @@
                                 required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Daftar</button>
+                        <button type="submit" class="btn btn-right mt-3">Daftar</button>
                     </form>
                 </div>
+                <!-- right -->
+
             </div>
         </div>
     </div>

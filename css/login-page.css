@@ -1,36 +1,7 @@
 
-/* header */
-#header {
-    margin-top: 30px;
+@media (min-width: 992px) {
+
+    #content .left hr {
+        top: 13% !important;
+    }
 }
-
-
-#header h1 {
-    font-family: 'Viga';
-    font-size: 36px;
-    color: #754AEB;
-}
-
-
-#header a {
-    text-decoration: none;
-}
-/* header */
-
-
-h3.masuk {
-    margin-top: 80px;
-    color: #444;
-    font-family: 'Arial';
-}
-
-
-/* content */
-#content {
-    margin-top: 40px;
-    margin-bottom: 80px;
-    font-family: 'Montserrat';
-}
-/* content */
-
-

@@ -1,36 +1,163 @@
 
 /* header */
 #header {
-    margin-top: 30px;
-}
-
-
-#header h1 {
-    font-family: 'Viga';
-    font-size: 36px;
-    color: #754AEB;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: 'Roboto';
+    text-align: center;
 }
 
 
 #header a {
+    font-family: 'Viga';
+    font-size: 36px;
+    color: #754AEB;
     text-decoration: none;
 }
-
 /* header */
 
 
-h3.daftar {
-    margin-top: 80px;
-    color: #444;
-    font-family: 'Arial';
-}
 
 
 /* content */
 #content {
-    margin-top: 40px;
+    margin-top: 80px;
     margin-bottom: 80px;
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
+}
+
+
+#content .left {
+    text-align: center;
+    position: relative; 
+}
+
+
+#content .left h2 {
+    color: #8D66F6;
+    font-weight: 400;
+    font-size: 46px;
+}
+
+
+#content .left hr {
+    border: 1px solid #9B79F5;
+    position: absolute;
+    width: 66%;
+    top: 13%;
+    left: 17%;
+}
+
+
+#content .left .txt {
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+#content .left p {
+    font-size: 26px;
+    color: #9573F4;
+}
+
+
+#content .left .quotes {
+    font-weight: 500;
+    margin-top: 8%;
+    text-align: center;
+}
+
+
+#content .left .quotes p {
+    font-size: 36px;
+    color: #E7E2F4;
+}
+
+
+#content .left .quotes p span {
+    color: #CFC1F8;
+}
+
+
+#content .left .quotes p.motivator {
+    font-size: 18px;
+}
+
+
+#content .right h2 {
+    margin-top: 20%;
+    margin-bottom: 7%;
+    font-weight: 400;
+    color: #555;
+}
+
+
+#content .right form {
+    color: #333;
+    font-weight: 300;
+}
+
+
+#content .right form .btn-right {
+    background-color: #8A61F7;
+    width: 100%;
+    color: #FFF;
+    font-size: 18px;
+}
+
+
+#content .right form .btn-right:hover {
+    background-color: #7B4DF6;
 }
 
 /* content */
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+
+    /* header */
+    #header {
+        text-align: left;
+    }
+    /* header */
+
+
+
+
+    /* content */
+    #content .left {
+        /* margin-top: 9%; */
+        text-align: left;
+    }
+
+
+    #content .left hr {
+        width: 56%;
+        top: 9.5%;
+        left: 3%;
+    }
+
+
+    #content .left .txt {
+        text-align: left;
+    }
+
+
+    #content .left .quotes {
+        margin-top: 10%;
+        margin-right: 22%;
+    }
+
+
+    #content .right h2 {
+        margin-top: 0;
+        margin-bottom: 6%;
+    }
+    /* content */
+
+}
