@@ -1,23 +1,23 @@
 
-/* bestsellers content */
-#bestsellers {
+/* education content */
+#education {
     position: relative;
 }
 
 
-#bestsellers .header-bestsellers {
+#education .header-education {
     position: relative;
 }
 
 
-#bestsellers .header-bestsellers h2 {
+#education .header-education h2 {
     font-family: 'Times New Roman', Times, serif;
     color: #333;
     font-size: 36px;
 }
 
 
-#bestsellers .header-bestsellers hr {
+#education .header-education hr {
     width: 60%;
     left: 38%;
     top: 15%;
@@ -27,7 +27,7 @@
 }
 
 
-#bestsellers .slider-container-bestsellers {
+#education .slider-container-education {
     width: 100%;
     height: 280px;
     position: relative;
@@ -35,13 +35,13 @@
 }
 
 
-#bestsellers .slider-container-bestsellers .slides-items-bestsellers {
+#education .slider-container-education .slides-items-education {
     width: 2240px;
     transition: all 1s ease-in-out;
 }
 
 
-#bestsellers .slider-container-bestsellers .slides-items-bestsellers img {
+#education .slider-container-education .slides-items-education img {
     width: 155px;
     height: 240px;
 }
@@ -58,8 +58,8 @@
 }
 
 
-#bestsellers .slider-container-bestsellers .kanan,
-#bestsellers .slider-container-bestsellers .kiri {
+#education .slider-container-education .kanan,
+#education .slider-container-education .kiri {
     position: absolute;
     width: 4%;
     height: 10%;
@@ -71,71 +71,71 @@
 }
 
 
-#bestsellers .slider-container-bestsellers .kanan:hover,
-#bestsellers .slider-container-bestsellers .kiri:hover {
+#education .slider-container-education .kanan:hover,
+#education .slider-container-education .kiri:hover {
     color: rgba(0, 0, 0, 0.7);
 }
 
 
-#bestsellers .slider-container-bestsellers .kanan {
+#education .slider-container-education .kanan {
     right: 0px;
 }
 
 
-#bestsellers .slider-container-bestsellers .kiri {
+#education .slider-container-education .kiri {
     left: 0;
 }
-/* bestsellers content */
+/* education content */
 
 
 
 
 /* coming soon release content */
-#coming-soon-release h2 {
+#cartoon-horror h2 {
     font-family: 'Times New Roman', Times, serif;
     color: #333;
     font-size: 36px;
 }
 
 
-#coming-soon-release .coming-soon {
+#cartoon-horror .cartoon {
     position: relative;
 }
 
 
-#coming-soon-release .coming-soon hr {
+#cartoon-horror .cartoon hr {
     border: 3px solid #DCDCDC;
     top: 2%;
     right: 3%;
-    width: 48%;
+    width: 63%;
     border-radius: 50px;
     position: absolute;
 }
 
 
-#coming-soon-release .coming-soon img {
+#cartoon-horror .cartoon img {
     width: 100%;
     height: 100%;
 }
 
 
-#coming-soon-release .new-releases {
+#cartoon-horror .horror {
     position: relative;
     margin-top: 45px;
 }
 
 
-#coming-soon-release .new-releases hr {
+#cartoon-horror .horror hr {
     border: 3px solid #DCDCDC;
     top: 2%;
     right: 3%;
-    width: 48%;
+    width: 65%;
     border-radius: 50px;
     position: absolute;
 }
 
 
-#coming-soon-release .new-releases img {
+#cartoon-horror .horror img {
     width: 100%;
     height: 100%;
 }
@@ -337,14 +337,14 @@
 
 @media (min-width: 992px) {
 
-    /* bestsellers content */
-    #bestsellers .header-bestsellers hr {
-        width: 81%;
-        left: 18%;
+    /* education content */
+    #education .header-education hr {
+        width: 82.4%;
+        left: 17%;
     }
 
 
-    #bestsellers .slider-container-bestsellers {
+    #education .slider-container-education {
         width: 100%;
         height: 280px;
         position: relative;
@@ -352,59 +352,59 @@
     }
 
 
-    #bestsellers .slider-container-bestsellers .slides-items-bestsellers img {
+    #education .slider-container-education .slides-items-education img {
         width: 180px;
         height: 280px;
         margin-right: 2px;
     }
 
 
-    #bestsellers .slider-container-bestsellers .kanan,
-    #bestsellers .slider-container-bestsellers .kiri {
+    #education .slider-container-education .kanan,
+    #education .slider-container-education .kiri {
         top: 45%;
         background-color: rgba(255, 255, 255, 0.8);
         color: black;
     }
 
 
-    #bestsellers .slider-container-bestsellers .kanan:hover,
-    #bestsellers .slider-container-bestsellers .kiri:hover {
+    #education .slider-container-education .kanan:hover,
+    #education .slider-container-education .kiri:hover {
         background-color: rgba(52, 95, 204, 0.8);
         color: white;
     }
 
 
-    #bestsellers .slider-container-bestsellers .kanan {
+    #education .slider-container-education .kanan {
         border-radius: 0 10px 10px 0;
     }
 
 
-    #bestsellers .slider-container-bestsellers .kiri {
+    #education .slider-container-education .kiri {
         border-radius: 10px 0 0 10px;
     }
-    /* bestsellers content */
+    /* education content */
 
 
 
 
     /* coming soon releasecontent */
-    #coming-soon-release {
+    #cartoon-horror {
         margin-top: 55px;    
     }
 
 
-    #coming-soon-release .coming-soon hr {
-        width: 52%;
+    #cartoon-horror .cartoon hr {
+        width: 67%;
     }
 
 
-    #coming-soon-release .new-releases {
+    #cartoon-horror .horror {
         margin-top: 0;
     }
 
 
-    #coming-soon-release .new-releases hr {
-        width: 52%;
+    #cartoon-horror .horror hr {
+        width: 69%;
     }
     /* coming soon release content */
 
@@ -418,7 +418,7 @@
 
 
     #indonesian-book .header-indobook hr {
-        width: 72%;
+        width: 73%;
     }
 
     

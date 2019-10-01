@@ -1,62 +1,62 @@
 
 // bestsellers slider
 
-let xOffsetBestsellers = 0;
-let statsBestsellers = 0;
+let xOffsetEducation = 0;
+let statsEducation = 0;
 
-$('#bestsellers .slider-container-bestsellers .kanan').on('click', () => {
-    if ((window.innerWidth >= 992 && xOffsetBestsellers >= 1113) || (window.innerWidth <= 576 && xOffsetBestsellers >= 1446)) {
-        statsBestsellers = 1;
+$('#education .slider-container-education .kanan').on('click', () => {
+    if ((window.innerWidth >= 992 && xOffsetEducation >= 1113) || (window.innerWidth <= 576 && xOffsetEducation >= 1446)) {
+        statsEducation = 1;
     }
 
 
     if (window.innerWidth >= 992) {
-        if (statsBestsellers == 0) 
-            xOffsetBestsellers += 371;
+        if (statsEducation == 0) 
+            xOffsetEducation += 371;
         else {
-            xOffsetBestsellers = 0;
-            statsBestsellers = 0;
+            xOffsetEducation = 0;
+            statsEducation = 0;
         }
     }
     else if (window.innerWidth <= 576) {
-        if (statsBestsellers == 0) 
-            xOffsetBestsellers+=482;
+        if (statsEducation == 0) 
+            xOffsetEducation+=482;
         else {
-            xOffsetBestsellers = 0;
-            statsBestsellers = 0;
+            xOffsetEducation = 0;
+            statsEducation = 0;
         }
     }
 
-    console.log(xOffsetBestsellers);
-    $('.slider-container-bestsellers .slides-items-bestsellers').css('marginLeft', '-' + xOffsetBestsellers + 'px');
+    console.log(xOffsetEducation);
+    $('.slider-container-education .slides-items-education').css('marginLeft', '-' + xOffsetEducation + 'px');
 })
 
 
-$('#bestsellers .slider-container-bestsellers .kiri').on('click', () => {
-    if (xOffsetBestsellers == 0) {
-        statsBestsellers = 1;
+$('#education .slider-container-education .kiri').on('click', () => {
+    if (xOffsetEducation == 0) {
+        statsEducation = 1;
     }
 
 
     if (window.innerWidth >= 992) {
-        if (statsBestsellers == 0)
-            xOffsetBestsellers -= 371;
+        if (statsEducation == 0)
+            xOffsetEducation -= 371;
         else {
-            xOffsetBestsellers = 1113;
-            statsBestsellers = 0;
+            xOffsetEducation = 1113;
+            statsEducation = 0;
         }
     }
     else if (window.innerWidth <= 576) {
-        if (statsBestsellers == 0)
-            xOffsetBestsellers -= 477;
+        if (statsEducation == 0)
+            xOffsetEducation -= 477;
         else {
-            xOffsetBestsellers = 1446;
-            statsBestsellers = 0;
+            xOffsetEducation = 1446;
+            statsEducation = 0;
         }
     }
 
-    console.log(xOffsetBestsellers);
-    $('.slider-container-bestsellers .slides-items-bestsellers').css('marginLeft', '-' + xOffsetBestsellers + 'px');
+    console.log(xOffsetEducation);
+    $('.slider-container-education .slides-items-education').css('marginLeft', '-' + xOffsetEducation + 'px');
 });
 
 
