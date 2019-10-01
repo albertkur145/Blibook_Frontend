@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../icons/blibuku.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/bag-page.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Bag Page</title>
+</head>
+
+<body>
+    <!-- background body -->
+    <div class="backgroundAll"></div>
+    <!-- background body -->
+
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
+        <div class="container">
+
+            <!-- judul nav -->
+            <a class="navbar-brand blibuku-brand" href="#"><i class="fas fa-book-open"></i> blibuku.com</a>
+            <!-- judul nav -->
+
+            <!-- button burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- button burger -->
+
+            <!-- nav -->
+            <div class="collapse navbar-collapse" id="nav-header">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link bag" href="#"><i class="fas fa-shopping-bag"></i> Bag</a>
+                    <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
+                    <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
+                </div>
+            </div>
+            <!-- nav -->
+
+            <form action="" method="post">
+                <input type="text" name="keyword" class="search" autocomplete="off"
+                    placeholder="&#x1F50D; Cari buku disini...">
+                <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
+            </form>
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+
+
+    <!-- sub navbar -->
+    <div class="sub-navbar">
+        <div class="container">
+
+            <!-- kategori buku -->
+            <ul class="kategori">
+                <li>Romance</li>
+                <li>Health</li>
+                <li>Technology</li>
+                <li>Anime</li>
+                <li>Sports</li>
+            </ul>
+
+            <ul class="kategori">
+                <li>Religion</li>
+                <li>Children</li>
+                <li>Cartoon</li>
+                <li>Kitchen</li>
+                <li>Education</li>
+            </ul>
+            <!-- kategori buku -->
+
+        </div>
+    </div>
+    <!-- akhir sub navbar -->
+
+
+
+    <!-- top -->
+    <div id="top" class="bg-white">
+        <div class="container">
+            <div class="row">
+
+                <!-- checkbox pilih semua buku -->
+                <div class="col-lg-6 checkbox-semua">
+                    <input type="checkbox" value="pilihSemua" id="pilih-semua">
+                    <span class="checkbox-pilih"></span>
+                    <label for="pilih-semua">Pilih Semua Buku</label>
+                </div>
+                <!-- checkbox pilih semua buku -->
+
+                <!-- text harga -->
+                <div class="col-lg-2 text-label">
+                    <p>Harga</p>
+                </div>
+                <!-- text harga -->
+
+                <!-- text jumlah -->
+                <div class="col-lg-2 text-label">
+                    <p>Jumlah</p>
+                </div>
+                <!-- text jumlah -->    
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir top -->
+
+
+
+    <!-- middle -->
+    <div id="middle" class="bg-white">
+        <div class="container">
+            <div class="row">
+
+                <!-- checkbox buku -->
+                <div class="col-lg-6 checkbox-buku">
+                    <input type="checkbox" value="" id="pilih-buku">
+                    <span class="checkbox-pilih"></span>
+                    <img src="../pictures/Perahu Kertas Cover Buku.jpg" class="img-thumbnail">
+
+                    <p class="judul-buku fix-layout">Perahu Kertas</p>
+                    <p class="author-buku fix-layout">Author : Rizky Febrian</p>
+                </div>
+                <!-- checkbox buku -->
+
+                <!-- harga buku --> 
+                <div class="col-lg-2">
+                    <p class="harga-buku">Rp105.250</p>
+                    <p class="diskon-buku"><strike>Rp295.970 </strike><span>65% OFF</span></span>
+                </div>
+                <!-- harga buku -->
+
+                <!-- jumlah buku -->
+                <div class="col-lg-2">
+
+                </div>
+                <!-- jumlah buku -->
+
+                <!-- options -->
+                <div class="col-lg-3">
+
+                </div>
+                <!-- options -->
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir middle -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+</html>

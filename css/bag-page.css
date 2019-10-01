@@ -1,0 +1,227 @@
+/* top */
+
+#top {
+    margin-top: 70px;
+    padding-top: 13px;
+}
+
+
+#top .checkbox-semua {
+    position: relative;
+}
+
+
+#top .checkbox-semua input {
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 14%;
+    left: 5%;
+    z-index: 1;
+}
+
+
+#top .checkbox-semua span.checkbox-pilih {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid #666;
+    top: 14%;
+    left: 5%;
+}
+
+
+#top .checkbox-semua label {
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 50px;
+    color: #444;
+}
+
+
+#top .checkbox-semua input:hover + span.checkbox-pilih {
+    border: 1px solid #A17BF1 !important;
+}
+
+
+#top .checkbox-semua span.checkbox-pilih:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+#top .checkbox-semua input:checked + span.checkbox-pilih {
+    background-color: #834DF6;
+    border: 1px solid #834DF6;
+}
+
+
+#top .checkbox-semua input:checked + span.checkbox-pilih:after {
+    display: block;
+}
+
+
+#top .checkbox-semua span.checkbox-pilih:after {
+    left: 32%;
+    top: 5.5%;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(40deg);
+}
+
+
+#top .text-label p {
+    padding-top: 2px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* top */
+
+
+
+
+
+/* middle */
+
+#middle {
+    margin-top: 30px;
+    padding: 13px 0;
+}
+
+
+#middle .checkbox-buku {
+    position: relative;
+}
+
+
+#middle .checkbox-buku input {
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40%;
+    left: 5%;
+    z-index: 1;
+}
+
+
+#middle .checkbox-buku span.checkbox-pilih {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid #666;
+    top: 40%;
+    left: 5%;
+}
+
+
+#middle .checkbox-buku input:hover + span.checkbox-pilih {
+    border: 1px solid #A17BF1 !important;
+}
+
+
+#middle .checkbox-buku span.checkbox-pilih:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+#middle .checkbox-buku input:checked + span.checkbox-pilih {
+    background-color: #834DF6;
+    border: 1px solid #834DF6;
+}
+
+
+#middle .checkbox-buku input:checked + span.checkbox-pilih:after {
+    display: block;
+}
+
+
+#middle .checkbox-buku span.checkbox-pilih:after {
+    left: 32%;
+    top: 5.5%;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(40deg);
+}
+
+
+#middle .checkbox-buku img {
+    width: 15%;
+    margin-left: 50px;
+}
+
+
+#middle .fix-layout {
+    position: absolute;
+    left: 28%;
+    color: #444;
+}
+
+
+#middle .checkbox-buku p.judul-buku {
+    top: 15%;
+    font-size: 22px;
+}
+
+
+#middle .checkbox-buku p.author-buku {
+    top: 50%;
+}
+
+
+#middle p.harga-buku {
+    font-size: 20px;
+    margin-top: 16px;
+    color: #1A9980;
+    font-weight: 500;
+}
+
+
+#middle p.diskon-buku {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+
+#middle p.diskon-buku span {
+    color: #CB1212;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+
+/* middle */
+
+
+
+
+
+
+/* khusus desktop window >= 992px */
+
+@media (min-width: 992px) { 
+
+    /* top */
+    #top .checkbox-semua span.checkbox-pilih:after {
+        left: 35%;
+    }
+    /* top */
+
+
+
+    /* middle */
+    #middle .checkbox-buku span.checkbox-pilih:after {
+        left: 35%;
+    }
+    /* middle */
+
+}
