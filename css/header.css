@@ -42,7 +42,39 @@ body {
 
 
 .nav-blibuku form {
-    display: none;
+    width: 100%;
+}
+
+
+.nav-blibuku .search {
+    width: 60%;
+    height: 100%;
+    border: 2px solid #6506DE;
+    padding-left: 12px;
+    border-radius: 25px;
+    outline: none;
+    color: #666;
+    padding-bottom: 2px;
+}
+
+
+.nav-blibuku .cari-btn {
+    font-size: 16px;
+    padding: 0 10px;
+    padding-right: 15px;
+    border: 2px solid #6506DE;
+    background-color: #6506DE;
+    border-radius: 0 25px 25px 0;
+    color: white;
+    font-weight: 500;
+    outline: none;
+    margin-left: -5%;
+}
+
+
+.nav-blibuku .cari-btn:hover {
+    background-color: #5F04D5;
+    cursor: pointer;
 }
 
 /* navbar */
@@ -59,39 +91,32 @@ body {
 }
 
 
-.sub-navbar .kategori {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
+.sub-navbar ul.kategori {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
 }
 
 
-.sub-navbar .kategori:hover {
-    text-decoration: underline;
+.sub-navbar ul.kategori:nth-child(2) {
+    margin-left: 0;
 }
 
 
-.sub-navbar .sub-kategori {
-    margin-top: -2px;
-    position: absolute;
-    background-color: white;
-    width: 20%;
-    padding-left: 10px;
-    padding-top: 20px;
-    display: none;
-    z-index: 1;
+.sub-navbar .kategori li {
+    display: inline-block;
+    padding: 2px 15px;
 }
 
 
-.sub-navbar .sub-kategori a {
-    text-decoration: none;
-    color: #666;
+.sub-navbar .kategori li:first-child {
+    padding-left: 0;
 }
 
 
-.sub-navbar .sub-kategori a:hover {
-    color: rgb(238, 48, 0);
-    text-decoration: underline;
+.sub-navbar .kategori li:hover {
+    color: #000;
+    cursor: pointer;
 }
 
 /* sub navbar */
@@ -154,47 +179,27 @@ body {
 
 
     .nav-blibuku form {
-        display: block;
+        width: 0;
     }
 
 
     .nav-blibuku .search {
         position: absolute;
         top: 30%;
-        left: 31%;
+        left: 32%;
         width: 30%;
         height: 45%;
-        border: 2px solid #6506DE;
-        padding-left: 12px;
-        border-radius: 25px;
-        outline: none;
-        color: #666;
         font-size: 15px;
-        padding-bottom: 2px;
     }
 
 
     .nav-blibuku .cari-btn {
-        left: 60%;
+        left: 63%;
         height: 45%;
         top: 30%;
         width: 6.5%;
         position: absolute;
         font-size: 18px;
-        padding-right: 10px;
-        border: 2px solid #6506DE;
-        background-color: #6506DE;
-        border-radius: 0 25px 25px 0;
-        color: white;
-        font-weight: 500;
-        outline: none;
-    }
-
-
-    .nav-blibuku .cari-btn:hover {
-        border: 2px solid #5F04D5;
-        background-color: #5F04D5;
-        cursor: pointer;
     }
 
     /* nav item */
@@ -203,15 +208,9 @@ body {
 
 
     /* sub navbar */
-    .sub-navbar .kategori {
-        font-size: 16px;
+    .sub-navbar ul.kategori:nth-child(2) {
+        margin-left: 15px;
     }
-
-
-    .sub-navbar .sub-kategori {
-        width: 10%;
-    }
-
     /* sub navbar */
 
 }
