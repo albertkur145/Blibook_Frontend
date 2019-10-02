@@ -1,9 +1,9 @@
 
 let inputJumlahBuku = $("#middle .input-jumlah-buku input[type='number']");
-let jumlah = parseInt(inputJumlahBuku.val());
 
 // tombol plus di klik, increment input number
 $("#middle .input-jumlah-buku div.plus").on('click', () => {
+    let jumlah = parseInt(inputJumlahBuku.val());
     jumlah = jumlah + 1;
 
     inputJumlahBuku.val(jumlah);
@@ -13,6 +13,8 @@ $("#middle .input-jumlah-buku div.plus").on('click', () => {
 
 // tombol minus di klik, decrement input number
 $("#middle .input-jumlah-buku div.minus").on('click', () => {
+    let jumlah = parseInt(inputJumlahBuku.val());
+    
     if(jumlah > 0)
         jumlah = jumlah - 1;
 

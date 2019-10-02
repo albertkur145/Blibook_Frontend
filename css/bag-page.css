@@ -18,6 +18,7 @@ p.icon-bag {
 #top {
     margin-top: 40px;
     padding-top: 13px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -107,6 +108,12 @@ p.icon-bag {
 #middle {
     margin-top: 30px;
     padding: 13px 0;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+#middle .mid {
+    padding: 25px 0;
 }
 
 
@@ -263,8 +270,85 @@ p.icon-bag {
     right: 30%;
 }
 
+
+#middle .options {
+    padding-top: 2%;
+}
+
+
+#middle .options a {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+#middle .options a.opt-wishlist:hover {
+    color: #F85E5E;
+}
+
+
+#middle .options a.opt-hapus:hover {
+    color: #922626;
+}
 /* middle */
 
+
+
+
+/* bottom */
+
+#bottom {
+    margin-top: 30px;
+    padding-top: 12px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+#bottom .jumlah-beli {
+    font-weight: 500;
+}
+
+
+#bottom .total-harga {
+    font-weight: 700;
+    font-size: 20px;
+    color: #388753;
+    margin-top: -10px;
+}
+
+/* bottom */
+
+
+
+
+
+/* checkout */
+
+#checkout {
+    margin-bottom: 70px;
+    margin-top: 30px;
+}
+
+
+#checkout .btn-checkout {
+    font-family: 'Arial';
+    border-radius: 7px;
+    border: 0;
+    padding: 7px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #FF9922;
+    transition: all 0.3s;
+}
+
+
+#checkout .btn-checkout:hover {
+    background-color: #FF8A00;
+}
+
+/* checkout */
 
 
 
