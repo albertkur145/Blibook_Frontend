@@ -1,7 +1,22 @@
+/* icon bag */
+
+p.icon-bag {
+    font-size: 32px;
+    margin-top: 50px;
+    text-align: center;
+    color: #444;
+    font-weight: 500;
+}
+
+/* icon bag */
+
+
+
+
 /* top */
 
 #top {
-    margin-top: 70px;
+    margin-top: 40px;
     padding-top: 13px;
 }
 
@@ -29,6 +44,7 @@
     border: 1px solid #666;
     top: 14%;
     left: 5%;
+    transition: all 0.4s;
 }
 
 
@@ -117,6 +133,7 @@
     border: 1px solid #666;
     top: 40%;
     left: 5%;
+    transition: all 0.4s;
 }
 
 
@@ -178,7 +195,7 @@
 }
 
 
-#middle p.harga-buku {
+#middle .desk-harga p.harga-buku {
     font-size: 20px;
     margin-top: 16px;
     color: #1A9980;
@@ -186,18 +203,65 @@
 }
 
 
-#middle p.diskon-buku {
+#middle .desk-harga p.diskon-buku {
     font-size: 14px;
     margin-top: -5px;
 }
 
 
-#middle p.diskon-buku span {
+#middle .desk-harga p.diskon-buku span {
     color: #CB1212;
     margin-left: 10px;
     font-weight: 600;
 }
 
+
+#middle .input-jumlah-buku {
+    position: relative;
+}
+
+
+#middle .input-jumlah-buku input {
+    opacity: 1;
+    position: absolute;
+    width: 45%;
+    height: 40%;
+    border: 1px solid #AAA;
+    text-align: center;
+    outline: none;
+    top: 25%;
+    left: 20%;
+    color: #666;
+    font-weight: 500;
+}
+
+
+#middle .input-jumlah-buku div {
+    display: inline-block;
+    position: absolute;
+    background-color: #FFF;
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #AAA;
+    width: 13%;
+    height: 40%;
+    top: 25%;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+
+#middle .input-jumlah-buku div.minus {
+    border-radius: 10px 0 0 10px;
+    left: 10%;
+}
+
+
+#middle .input-jumlah-buku div.plus {
+    border-radius: 0 10px 10px 0;
+    right: 30%;
+}
 
 /* middle */
 
