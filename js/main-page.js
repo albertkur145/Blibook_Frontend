@@ -1,4 +1,18 @@
 
+function hitungWidth() {
+    let width = $(window).width();
+    $('.angka').html(width);
+}
+
+
+$(window).ready(hitungWidth);
+$(window).resize(hitungWidth);
+
+
+
+
+
+
 // bestsellers slider
 
 let xOffsetEducation = 0;
