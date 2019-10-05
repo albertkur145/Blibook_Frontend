@@ -61,11 +61,9 @@
     #education .slider-container-education .kanan,
     #education .slider-container-education .kiri {
         position: absolute;
-        width: 4%;
-        height: 10%;
         text-align: center;
-        font-size: 18px;
-        top: 38%;
+        font-size: 2.25rem;   /*  36px */
+        top: 9.0625rem;       /* 145px */
         cursor: pointer;
         color: white;
     }
@@ -78,12 +76,12 @@
 
 
     #education .slider-container-education .kanan {
-        right: 0px;
+        right: 0.625rem;    /* 10px */
     }
 
 
     #education .slider-container-education .kiri {
-        left: 0;
+        left: 0.3125rem;    /* 5px */
     }
     /* education content */
 
@@ -212,7 +210,7 @@
 
 
     #indonesian-book .slider-container-indobook .kanan {
-        right: 0px;
+        right: 0;
     }
 
 
@@ -366,7 +364,6 @@
 
     #education .slider-container-education .slides-items-education {
         width: 164.375rem;    /* 2630px */
-        transition: all 1s ease-in-out;
     }
 
 
@@ -374,6 +371,12 @@
         width: 13.3125rem;        /* 213px */
         height: 20.3125rem;       /* 325px */
         margin-right: 0.125rem;   /*   2px */
+    }
+
+
+    #education .slider-container-education .kanan,
+    #education .slider-container-education .kiri {
+        top: 7.8125rem;        /* 125px */
     }
     /* education content */
 
@@ -423,14 +426,51 @@
 
     #education .slider-container-education .slides-items-education {
         width: 195.3125rem;    /* 3125px */
-        transition: all 1s ease-in-out;
     }
 
 
     #education .slider-container-education .slides-items-education img {
         width: 15.625rem;         /* 250px */
-        height: 22.8125rem;       /* 365px */
+        height: 24.0625rem;       /* 385px */
         margin-right: 0.375rem;   /*   6px */
+    }
+
+
+    #education .slider-container-education .kanan,
+    #education .slider-container-education .kiri {
+        width: 4.0625rem;     /*  65px */
+        height: 3.125rem;     /*  50px */
+        font-size: 2rem;      /*  32px */
+        top: 10.3125rem;      /* 165px */
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+    }
+
+
+    #education .slider-container-education .kanan:hover,
+    #education .slider-container-education .kiri:hover {
+        background-color: rgba(52, 95, 204, 0.8);
+        color: white;
+    }
+
+
+    #education .slider-container-education .kanan {
+        border-radius: 0 10px 10px 0;
+    }
+
+
+    #education .slider-container-education .kiri {
+        border-radius: 10px 0 0 10px;
+    }
+
+
+    #education .slider-container-education .kanan {
+        right: 0;
+    }
+
+
+    #education .slider-container-education .kiri {
+        left: 0;
     }
     /* education content */
 
@@ -481,7 +521,6 @@
 
     #education .slider-container-education .slides-items-education {
         width: 175rem;       /* 2800px */
-        transition: all 1s ease-in-out;
     }
 
 
@@ -491,6 +530,16 @@
         margin-right: 0.25rem;   /* 4px */
     }
     
+
+    #education .slider-container-education .kanan,
+    #education .slider-container-education .kiri {
+        width: 3.75rem;         /* 60px */
+        height: 2.8125rem;      /* 45px */
+        font-size: 1.8125rem;   /* 29px */
+        top: 9.6875rem;         /* 155px */
+    }
+    /* education content */
+
 
 }
 
@@ -542,7 +591,6 @@
 
     #education .slider-container-education .slides-items-education {
         width: 140.625rem;    /* 2250px */
-        transition: all 1s ease-in-out;
     }
 
 
@@ -555,36 +603,17 @@
 
     #education .slider-container-education .kanan,
     #education .slider-container-education .kiri {
-        width: 4%;
-        height: 10%;
-        font-size: 18px;
-        top: 40%;
-        background-color: rgba(255, 255, 255, 0.8);
-        color: black;
-    }
-
-
-    #education .slider-container-education .kanan:hover,
-    #education .slider-container-education .kiri:hover {
-        background-color: rgba(52, 95, 204, 0.8);
-        color: white;
-    }
-
-
-    #education .slider-container-education .kanan {
-        border-radius: 0 10px 10px 0;
-    }
-
-
-    #education .slider-container-education .kiri {
-        border-radius: 10px 0 0 10px;
+        width: 3.1254rem;       /* 50px */
+        height: 2.1875rem;      /* 35px */
+        font-size: 1.375rem;    /* 20px */
+        top: 7.5rem;            /* 120px */
     }
     /* education content */
 
 
 
 
-    /* coming soon releasecontent */
+    /* cartoon - horror */
     #cartoon-horror {
         margin-top: 55px;    
     }
@@ -603,7 +632,7 @@
     #cartoon-horror .horror hr {
         width: 69%;
     }
-    /* coming soon release content */
+    /* cartoon - horror */
 
 
 
