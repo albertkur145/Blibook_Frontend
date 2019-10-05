@@ -88,11 +88,16 @@
 
 
 
-    /* coming soon release content */
+    /* cartoon - horror */
+    #cartoon-horror {
+        margin-top: 15%;
+    }
+
+
     #cartoon-horror h2 {
         font-family: 'Times New Roman', Times, serif;
         color: #333;
-        font-size: 36px;
+        font-size: 2rem;
     }
 
 
@@ -102,10 +107,8 @@
 
 
     #cartoon-horror .cartoon hr {
+        display: none;
         border: 3px solid #DCDCDC;
-        top: 2%;
-        right: 3%;
-        width: 63%;
         border-radius: 50px;
         position: absolute;
     }
@@ -119,15 +122,13 @@
 
     #cartoon-horror .horror {
         position: relative;
-        margin-top: 45px;
+        margin-top: 40px;
     }
 
 
     #cartoon-horror .horror hr {
+        display: none;
         border: 3px solid #DCDCDC;
-        top: 2%;
-        right: 3%;
-        width: 65%;
         border-radius: 50px;
         position: absolute;
     }
@@ -137,8 +138,8 @@
         width: 100%;
         height: 100%;
     }
-    /* coming soon release content */
-
+    /* cartoon - horror */
+    
 
 
 
@@ -357,11 +358,6 @@
     }
 
 
-    #education .header-education hr {
-        display: none;
-    }
-
-
     #education .slider-container-education .slides-items-education {
         width: 164.375rem;    /* 2630px */
     }
@@ -379,6 +375,20 @@
         top: 7.8125rem;        /* 125px */
     }
     /* education content */
+
+
+
+
+    /* cartoon - horror */
+    #cartoon-horror {
+        margin-top: 10%;
+    }
+
+
+    #cartoon-horror h2 {
+        font-size: 2.5rem;   /* 48px */
+    }
+    /* cartoon - horror */
 
 
 }
@@ -475,6 +485,36 @@
     /* education content */
 
 
+
+
+    /* cartoon - horror */
+    #cartoon-horror {
+        margin-top: 8%;
+    }
+
+
+    #cartoon-horror h2 {
+        font-size: 2.75rem;   /* 44px */
+    }
+
+
+    #cartoon-horror .cartoon hr {
+        display: block;
+        top: 3.5%;
+        right: 2.94117%;     /* 15px */
+        width: 59.80392%;    /* 305px */
+    }
+
+
+    #cartoon-horror .horror hr {
+        display: block;
+        top: 3.5%;
+        right: 2.94117%;     /* 15px */
+        width: 63.72549%;    /* 325px */
+    }
+    /* cartoon - horror */
+
+
 }
 
 /* berlaku untuk width window (480px - 767px) */
@@ -541,6 +581,34 @@
     /* education content */
 
 
+
+
+    /* cartoon - horror */
+    #cartoon-horror {
+        margin-top: 4%;
+    }
+
+
+    #cartoon-horror h2 {
+        font-size: 2.5rem;    /* 40px */
+    }
+
+
+    #cartoon-horror .cartoon hr {
+        top: 2.5%;
+        right: 2.17391%;     /* 15px */
+        width: 71.014492%;    /* 490px */
+    }
+
+
+    #cartoon-horror .horror hr {
+        top: 2%;
+        right: 2.17391%;     /* 15px */
+        width: 73.91304%;    /* 520px */
+    }
+    /* cartoon - horror */
+
+    
 }
 
 /* berlaku untuk width window (768px - 959px) */
@@ -583,8 +651,8 @@
 
 
     #education .header-education hr {
-        width: 78.82882%;      /* 875px */
-        left: 20.27027%;       /* 225px */
+        width: 81.08108%;      /* 900px */
+        left: 18.28828%;       /* 203px */
         top: 11.62790%;        /*   5px */
     }
 
@@ -614,13 +682,15 @@
 
 
     /* cartoon - horror */
-    #cartoon-horror {
-        margin-top: 55px;    
+    #cartoon-horror h2 {
+        font-size: 2.25rem;   /* 36px */
     }
 
 
     #cartoon-horror .cartoon hr {
-        width: 67%;
+        top: 2%;   
+        right: 2.77777%;     /* 15px */
+        width: 64.81481%;    /* 350px */
     }
 
 
@@ -630,7 +700,9 @@
 
 
     #cartoon-horror .horror hr {
-        width: 69%;
+        top: 2%;
+        right: 2.7777%;     /* 15px */
+        width: 66.66666%;   /* 360px */
     }
     /* cartoon - horror */
 
