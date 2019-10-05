@@ -1,6 +1,6 @@
 
 function hitungWidth() {
-    let width = $(window).width();
+    let width = $('#indonesian-book .header-indobook').width();
     $('.angka').html(width);
 }
 
