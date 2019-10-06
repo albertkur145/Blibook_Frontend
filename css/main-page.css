@@ -222,8 +222,8 @@
 
     /* promo murah */
     #promo-murah {
-        margin-top: 15px;
-        margin-bottom: 120px;
+        margin-top: 15%;
+        margin-bottom: 7.5rem;    /* 120px */
     }
 
 
@@ -235,22 +235,15 @@
     #promo-murah .judul-promo-murah h2 {
         font-family: 'Times New Roman', Times, serif;
         color: #333;
-        font-size: 36px;
+        font-size: 1.6rem;
     }
 
 
     #promo-murah .judul-promo-murah hr {
+        display: none;
         border: 3px solid #DCDCDC;
-        top: 11%;
-        right: 17px;
-        width: 20%;
         border-radius: 50px;
         position: absolute;
-    }
-
-
-    #promo-murah .items-buku-promo .col-margin-top {
-        margin-top: 50px;
     }
 
 
@@ -260,8 +253,8 @@
 
 
     #promo-murah .items-buku-promo .card-buku {
-        max-width: 213px;
-        max-height: 475px;
+        width: 100%;
+        height: 100%;
         border: 1px solid #6346D6;
         overflow: hidden;
     }
@@ -273,8 +266,8 @@
 
 
     #promo-murah .items-buku-promo .card-buku img {
-        width: 211px;
-        height: 300px;
+        width: 100%;
+        height: 60%;
     }
 
 
@@ -400,7 +393,7 @@
 
 
     #indonesian-book .header-indobook h2 {
-        font-size: 3rem;   /* 48px */
+        font-size: 2.75rem;   /* 44px */
     }
 
 
@@ -421,6 +414,20 @@
         top: 7.8125rem;    /* 125px */
     }
     /* indonesian book */
+
+
+
+
+    /* harga di bawah 100K */
+    #promo-murah {
+        margin-top: 10%;
+    }
+
+
+    #promo-murah .judul-promo-murah h2 {
+        font-size: 2.75rem;    /* 48px */
+    }
+    /* harga di bawah 100K */
 
 
 }
@@ -623,6 +630,28 @@
     /* indonesian book */
 
 
+
+
+    /* harga di bawah 100K */
+    #promo-murah {
+        margin-top: 8%;
+    }
+
+
+    #promo-murah .judul-promo-murah h2 {
+        font-size: 2.75rem;     /* 44px */
+    }
+
+
+    #promo-murah .judul-promo-murah hr {
+        display: block;
+        top: 10%;             /*  6px */
+        right: 3.13725%;      /* 16px */
+        width: 15.68627%;     /* 80px */
+    }
+    /* harga di bawah 100K */
+
+
 }
 
 /* berlaku untuk width window (480px - 767px) */
@@ -762,6 +791,27 @@
         top: 9.6875rem;        /* 155px */
     }
     /* indonesian book */
+
+
+
+    /* harga di bawah 100K */
+    #promo-murah {
+        margin-top: 5%;
+    }
+
+
+    #promo-murah .judul-promo-murah h2 {
+        font-size: 2.5rem;    /* 40px */
+    }
+
+
+    #promo-murah .judul-promo-murah hr {
+        top: 10.71428%;       /*   6px */
+        right: 2.31884%;      /*  16px */
+        width: 39.13043%;     /* 270px */
+    }
+    /* harga di bawah 100K */
+
 
 }
 
@@ -930,46 +980,53 @@
 
 
 
-    /* promo murah */
+    /* harga di bawah 100K */
     #promo-murah {
-        margin-top: 55px;
+        margin-top: 4%;
+    }
+
+
+    #promo-murah .judul-promo-murah h2 {
+        font-size: 2.25rem;     /* 36px */
     }
 
 
     #promo-murah .judul-promo-murah hr {
-        width: 64%;
+        top: 9.80392%;       /* 5px */
+        right: 1.53153%;     /* 17px */
+        width: 63.06306%;    /* 700px */
     }
+
+
+    #promo-murah .items-buku-promo a {
+        width: 120% !important;
+    }
+
 
 
     #promo-murah .items-buku-promo .card-buku {
-        max-width: 255px;
-        max-height: 540px;
+        width: 100%;
+        height: 100%;
     }
-
-
-    #promo-murah .items-buku-promo .col-margin-top {
-        margin-top: 0;
-    }
-
 
     #promo-murah .items-buku-promo .card-buku img {
-        width: 253px;
-        height: 350px;
+        width: 100%;
+        height: 65%;
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
-        font-size: 18px;
+        font-size: 1.125rem;    /* 18px */
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
-        font-size: 18px;
+        font-size: 1.125rem;     /* 18px */
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
-        font-size: 12px;
+        font-size: 0.75rem;      /* 0.75rem */
     }
 
 
@@ -983,7 +1040,7 @@
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
         font-size: 13px;
     }
-    /* promo murah */
+    /* harga di bawah 100K */
 }
 
 /* berlaku untuk width window >= 960px */
