@@ -1,13 +1,68 @@
 
-function hitungWidth() {
+function responsiveSize() {
     let width = $(window).width();
     $('.angka').html(width);
+
+    const buku = $('#promo-murah .items-buku-promo .card-buku');
+    let judulBuku = $('h5.judul-buku', buku);
+    let deskBuku = $('p.desk-buku', buku);
+    
+
+    if(width < 980) {
+
+        $('#promo-murah .items-buku-promo .row .col-sm-3').addClass('col-sm-4');
+        $('#promo-murah .items-buku-promo .row .col-sm-3').removeClass('col-sm-3');
+
+        // mengatasi jika length string pada judul buku terlalu panjang
+        $.each(judulBuku, (key, value) => {
+            let text = value.innerHTML;
+
+            if (text.length > 15) {
+                value.innerHTML = text.substring(0, 15) + '...';
+            }
+        });
+
+
+        // mengatasi jika length string pada deskripsi buku terlalu panjang
+        $.each(deskBuku, (key, value) => {
+            let text = value.innerHTML;
+
+            if (text.length > 102) {
+                value.innerHTML = text.substring(0, 102) + '...';
+            }
+        });
+
+    } else {
+
+        $('#promo-murah .items-buku-promo .row .col-sm-4').addClass('col-sm-3');
+        $('#promo-murah .items-buku-promo .row .col-sm-4').removeClass('col-sm-4');
+
+
+        // mengatasi jika length string pada judul buku terlalu panjang
+        $.each(judulBuku, (key, value) => {
+            let text = value.innerHTML;
+
+            if(text.length > 20) {
+                value.innerHTML = text.substring(0, 20) + '...';
+            }
+        });
+
+
+        // mengatasi jika length string pada deskripsi buku terlalu panjang
+        $.each(deskBuku, (key, value) => {
+            let text = value.innerHTML;
+
+            if (text.length > 117) {
+                value.innerHTML = text.substring(0, 117) + '...';
+            }
+        });
+
+    }
 }
 
 
-$(window).ready(hitungWidth);
-$(window).resize(hitungWidth);
-
+$(window).ready(responsiveSize);
+$(window).resize(responsiveSize);
 
 
 
