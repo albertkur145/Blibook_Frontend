@@ -268,7 +268,6 @@
 
     #promo-murah .items-buku-promo .card-buku img {
         width: 100%;
-        height: 60%;
     }
 
 
@@ -279,21 +278,21 @@
     #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
         color: #334241;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 1.125rem;    /* 18px */        
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
         color: #FF5C00;
-        font-size: 14px;
         font-weight: 500;
+        font-size: 1.125rem;    /* 18px */
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
         color: #626B61;
-        font-size: 12px;
         margin-top: -5px;
+        font-size: 0.75rem;     /* 12px */
     }
 
 
@@ -307,7 +306,7 @@
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
-        font-size: 12px;
+        font-size: 0.8125rem;    /* 13px */
     }
     /* promo murah */
 
@@ -807,32 +806,6 @@
         right: 2.31884%;      /*  16px */
         width: 39.13043%;     /* 270px */
     }
-
-
-    #promo-murah .items-buku-promo .card-buku img {
-        width: 100%;
-        height: 60%;
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
-        font-size: 1rem;       /* 16px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
-        font-size: 1rem;       /* 16px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
-        font-size: 0.75rem;    /* 12px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
-        font-size: 0.75rem;    /* 12px */
-    }
     /* harga di bawah 100K */
 
 
@@ -1018,32 +991,6 @@
         top: 9.80392%;       /* 5px */
         right: 1.53153%;     /* 17px */
         width: 63.06306%;    /* 700px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku img {
-        width: 100%;
-        height: 63%;
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
-        font-size: 1.125rem;    /* 18px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
-        font-size: 1.125rem;     /* 18px */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
-        font-size: 0.75rem;      /* 0.75rem */
-    }
-
-
-    #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
-        font-size: 0.8125rem;    /* 13rem */
     }
     /* harga di bawah 100K */
 }
