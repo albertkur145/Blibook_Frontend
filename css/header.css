@@ -76,7 +76,6 @@ body {
     background-color: #5F04D5;
     cursor: pointer;
 }
-
 /* navbar */
 
 
@@ -91,34 +90,34 @@ body {
 }
 
 
-.sub-navbar ul.kategori {
+.sub-navbar .kategori {
     padding: 0;
     margin: 0;
+}
+
+
+.sub-navbar .kategori a {
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+
+.sub-navbar .kategori a:hover {
+    text-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.7),
+                -0.5px -0.5px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+.sub-navbar .kategori a li {
     display: inline-block;
+    padding: 3px 10px;
 }
 
 
-.sub-navbar ul.kategori:nth-child(2) {
-    margin-left: 0;
-}
-
-
-.sub-navbar .kategori li {
-    display: inline-block;
-    padding: 2px 15px;
-}
-
-
-.sub-navbar .kategori li:first-child {
+.sub-navbar .kategori a li:first-child {
     padding-left: 0;
 }
-
-
-.sub-navbar .kategori li:hover {
-    color: #000;
-    cursor: pointer;
-}
-
 /* sub navbar */
 
 
