@@ -1,67 +1,204 @@
-/* footer */
-#footer {
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 30px 20px 20px 20px;
-    background-color: #472999;
-    font-family: 'Arial';
-    color: #DDD;
-    text-align: center;
+/* khusus desktop window < 320px */
+    
+
+    /* footer */
+    #footer {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.875rem 1.25rem 1.25rem 1.25rem;
+        background-color: #472999;
+        font-family: 'Arial';
+        color: #DDD;
+        text-align: center;
+    }
+
+
+
+    #footer .col-footer {
+        margin-bottom: 4.375rem;
+    }
+
+
+
+    #footer .col-footer:nth-child(4) {
+        margin-bottom: 0;
+    }
+
+
+
+    #footer h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+
+
+    #footer p {
+        font-size: 0.875rem;
+        font-weight: 300;
+    }
+
+
+
+    #footer p a {
+        color: #DDD;
+    }
+    /* footer */
+
+
+/* khusus desktop window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* footer */
+    #footer h2 {
+        font-size: 1.5rem;
+    }
+
+
+
+    #footer p {
+        font-size: 0.9375rem;
+    }
+    /* footer */
+
+
 }
 
+/* berlaku untuk width window (320px - 479px) */
 
-#footer .col-footer {
-    margin-bottom: 70px;
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* footer */
+    #footer .col-footer {
+        margin: 1rem 0;
+    }
+
+
+
+    #footer h2 {
+        font-size: 1.25rem;
+    }
+
+
+
+    #footer p {
+        font-size: 0.875rem;
+    }
+    /* footer */
+
+
 }
 
+/* berlaku untuk width window (480px - 767px) */
 
-#footer h2 {
-    font-size: 28px;
-    font-weight: 700;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* footer */
+    #footer h2 {
+        font-size: 1.5rem;
+    }
+    /* footer */
+
+
 }
 
-
-#footer p {
-    font-size: 16px;
-    font-weight: 300;
-}
-
-
-#footer p a {
-    color: #DDD;
-}
-
-/* footer */
+/* berlaku untuk width window (768px - 959px) */
 
 
 
 
 
-/* khusus desktop window >= 992px */
 
-@media (min-width: 992px) {
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
 
     /* footer */
     #footer {
         text-align: left;
     }
 
+    
 
     #footer .col-footer {
-        margin-bottom: 0px;
+        margin: 0;
     }
+
 
 
     #footer h2 {
-        font-size: 24px;
+        font-size: 1.4375rem;
     }
+
 
 
     #footer p {
-        font-size: 14px;
+        font-size: 0.9375rem;
     }
     /* footer */
 
+
 }
+
+/* berlaku untuk width window >= 960px */
