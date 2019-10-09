@@ -26,6 +26,10 @@ $.each(deskBuku, (key, value) => {
 
 
 
+
+
+
+
 // responsive - resize window
 
 $(window).ready(responsiveSize);
@@ -483,7 +487,7 @@ function responsiveSize() {
     }
 }
 
-// responsive - resize window
+// akhir responsive - resize window
 
 
 
@@ -493,67 +497,78 @@ function responsiveSize() {
 
 
 
-// bestsellers slider
 
-let xOffsetEducation = 0;
-let statsEducation = 0;
 
-$('#education .slider-container-education .kanan').on('click', () => {
-    if ((window.innerWidth >= 992 && xOffsetEducation >= 1113) || (window.innerWidth <= 576 && xOffsetEducation >= 1446)) {
-        statsEducation = 1;
+
+
+
+
+
+
+// promote slider
+
+let xOffsetPromote = 0;
+
+$('#promote .slider-container-promote .kanan').on('click', () => {
+
+    let widthWindow = $(window).width();
+
+    if (widthWindow < 945) 
+        xOffsetPromote >= 131.25 ? xOffsetPromote = 0 : xOffsetPromote += 43.75;
+
+    else if (widthWindow < 977)
+        xOffsetPromote >= 105 ? xOffsetPromote = 0 : xOffsetPromote += 35;
+
+    else if (widthWindow < 1185) {
+        if (xOffsetPromote >= 69.75)
+            xOffsetPromote >= 81.375 ? xOffsetPromote = 0 : xOffsetPromote += 11.625;
+        else
+            xOffsetPromote += 23.25;
     }
 
-
-    if (window.innerWidth >= 992) {
-        if (statsEducation == 0) 
-            xOffsetEducation += 371;
-        else {
-            xOffsetEducation = 0;
-            statsEducation = 0;
-        }
-    }
-    else if (window.innerWidth <= 576) {
-        if (statsEducation == 0) 
-            xOffsetEducation+=482;
-        else {
-            xOffsetEducation = 0;
-            statsEducation = 0;
-        }
-    }
-
-    console.log(xOffsetEducation);
-    $('.slider-container-education .slides-items-education').css('marginLeft', '-' + xOffsetEducation + 'px');
-})
-
-
-$('#education .slider-container-education .kiri').on('click', () => {
-    if (xOffsetEducation == 0) {
-        statsEducation = 1;
-    }
-
-
-    if (window.innerWidth >= 992) {
-        if (statsEducation == 0)
-            xOffsetEducation -= 371;
-        else {
-            xOffsetEducation = 1113;
-            statsEducation = 0;
-        }
-    }
-    else if (window.innerWidth <= 576) {
-        if (statsEducation == 0)
-            xOffsetEducation -= 477;
-        else {
-            xOffsetEducation = 1446;
-            statsEducation = 0;
-        }
-    }
-
-    console.log(xOffsetEducation);
-    $('.slider-container-education .slides-items-education').css('marginLeft', '-' + xOffsetEducation + 'px');
+    else if (widthWindow >= 1185)
+        xOffsetPromote >= 69.75 ? xOffsetPromote = 0 : xOffsetPromote += 34.875;
+    
+        
+    $('.slider-container-promote .slides-items-promote').css('marginLeft', '-' +  xOffsetPromote  + 'rem');
 });
 
-// bestsellers slider
+
+$('#promote .slider-container-promote .kiri').on('click', () => {
+
+    let widthWindow = $(window).width();
+
+    if (widthWindow < 945)
+        xOffsetPromote <= 0 ? xOffsetPromote = 131.25 : xOffsetPromote -= 43.75;
+
+    else if (widthWindow < 977)
+        xOffsetPromote <= 0 ? xOffsetPromote = 105 : xOffsetPromote -= 35;
+
+    else if (widthWindow < 1185) {
+        if (xOffsetPromote >= 69.75)
+            xOffsetPromote >= 81.375 ? xOffsetPromote -= 11.625 : xOffsetPromote -= 23.25;
+        else
+            xOffsetPromote <= 0 ? xOffsetPromote = 81.375 : xOffsetPromote -= 23.25;
+    }
+
+    else if (widthWindow >= 1185) 
+        xOffsetPromote <= 0 ? xOffsetPromote = 69.75 : xOffsetPromote -= 34.875;
+
+        
+    $('.slider-container-promote .slides-items-promote').css('marginLeft', '-' + xOffsetPromote + 'rem');
+});
+
+// akhir promote slider
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -565,61 +580,54 @@ $('#education .slider-container-education .kiri').on('click', () => {
 // indonesian book slider
 
 let xOffsetIndobook = 0;
-let statsIndobook = 0;
 
 $('#indonesian-book .slider-container-indobook .kanan').on('click', () => {
-    if ((window.innerWidth >= 992 && xOffsetIndobook >= 1113) || (window.innerWidth <= 576 && xOffsetIndobook >= 1446)) {
-        statsIndobook = 1;
+    
+    let widthWindow = $(window).width();
+
+    if (widthWindow < 945)
+        xOffsetIndobook >= 131.25 ? xOffsetIndobook = 0 : xOffsetIndobook += 43.75;
+
+    else if (widthWindow < 977)
+        xOffsetIndobook >= 105 ? xOffsetIndobook = 0 : xOffsetIndobook += 35;
+
+    else if (widthWindow < 1185) {
+        if (xOffsetIndobook >= 69.75)
+            xOffsetIndobook >= 81.375 ? xOffsetIndobook = 0 : xOffsetIndobook += 11.625;
+        else
+            xOffsetIndobook += 23.25;
     }
 
+    else if (widthWindow >= 1185)
+        xOffsetIndobook >= 69.75 ? xOffsetIndobook = 0 : xOffsetIndobook += 34.875;
 
-    if (window.innerWidth >= 992) {
-        if (statsIndobook == 0)
-            xOffsetIndobook += 371;
-        else {
-            xOffsetIndobook = 0;
-            statsIndobook = 0;
-        }
-    }
-    else if (window.innerWidth <= 576) {
-        if (statsIndobook == 0)
-            xOffsetIndobook += 482;
-        else {
-            xOffsetIndobook = 0;
-            statsIndobook = 0;
-        }
-    }
 
-    console.log(xOffsetIndobook);
-    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'px');
+    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'rem');
 })
 
 
 $('#indonesian-book .slider-container-indobook .kiri').on('click', () => {
-    if (xOffsetIndobook == 0) {
-        statsIndobook = 1;
+    
+    let widthWindow = $(window).width();
+
+    if (widthWindow < 945)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 131.25 : xOffsetIndobook -= 43.75;
+
+    else if (widthWindow < 977)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 105 : xOffsetIndobook -= 35;
+
+    else if (widthWindow < 1185) {
+        if (xOffsetIndobook >= 69.75)
+            xOffsetIndobook >= 81.375 ? xOffsetIndobook -= 11.625 : xOffsetIndobook -= 23.25;
+        else
+            xOffsetIndobook <= 0 ? xOffsetIndobook = 81.375 : xOffsetIndobook -= 23.25;
     }
 
+    else if (widthWindow >= 1185)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 69.75 : xOffsetIndobook -= 34.875;
 
-    if (window.innerWidth >= 992) {
-        if (statsIndobook == 0)
-            xOffsetIndobook -= 371;
-        else {
-            xOffsetIndobook = 1113;
-            statsIndobook = 0;
-        }
-    }
-    else if (window.innerWidth <= 576) {
-        if (statsIndobook == 0)
-            xOffsetIndobook -= 477;
-        else {
-            xOffsetIndobook = 1446;
-            statsIndobook = 0;
-        }
-    }
 
-    console.log(xOffsetIndobook);
-    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'px');
+    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'rem');
 });
 
-// indonesian book slider
+// akhir indonesian book slider

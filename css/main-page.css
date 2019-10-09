@@ -1,25 +1,25 @@
 /* berlaku untuk width window < 320 */
 
 
-    /* education content */
-    #education {
+    /* promote content */
+    #promote {
         position: relative;
     }
 
 
-    #education .header-education {
+    #promote .header-promote {
         position: relative;
     }
 
 
-    #education .header-education h2 {
+    #promote .header-promote h2 {
         font-family: 'Times New Roman', Times, serif;
         color: #333;
         font-size: 2.25rem;
     }
 
 
-    #education .header-education hr {
+    #promote .header-promote hr {
         display: none;
         border: 3px solid #DCDCDC;
         border-radius: 20px;
@@ -27,23 +27,23 @@
     }
 
 
-    #education .slider-container-education {
+    #promote .slider-container-promote {
         width: 100%;
         position: relative;
         overflow: hidden;
     }
 
 
-    #education .slider-container-education .slides-items-education {
-        width: 185.3125rem;     /* 2965px */
+    #promote .slider-container-promote .slides-items-promote {
+        width: 185.3125rem;     
         transition: all 1s ease-in-out;
     }
 
 
-    #education .slider-container-education .slides-items-education img {
-        width: 14.0625rem;         /* 225px */
-        height: 22.1875rem;        /* 355px */
-        margin-right: 0.1875rem;   /*   3px */
+    #promote .slider-container-promote .slides-items-promote img {
+        width: 14.0625rem;         
+        height: 22.1875rem;        
+        margin-right: 0.1875rem;  
     }
 
 
@@ -58,32 +58,32 @@
     }
 
 
-    #education .slider-container-education .kanan,
-    #education .slider-container-education .kiri {
+    #promote .slider-container-promote .kanan,
+    #promote .slider-container-promote .kiri {
         position: absolute;
         text-align: center;
-        font-size: 2.25rem;   /*  36px */
-        top: 9.0625rem;       /* 145px */
+        font-size: 2.25rem;  
+        top: 9.0625rem;       
         cursor: pointer;
         color: white;
     }
 
 
-    #education .slider-container-education .kanan:hover,
-    #education .slider-container-education .kiri:hover {
+    #promote .slider-container-promote .kanan:hover,
+    #promote .slider-container-promote .kiri:hover {
         color: rgba(0, 0, 0, 0.7);
     }
 
 
-    #education .slider-container-education .kanan {
-        right: 0.625rem;    /* 10px */
+    #promote .slider-container-promote .kanan {
+        right: 0.625rem;    
     }
 
 
-    #education .slider-container-education .kiri {
-        left: 0.3125rem;    /* 5px */
+    #promote .slider-container-promote .kiri {
+        left: 0.3125rem;   
     }
-    /* education content */
+    /* promote content */
 
 
 
@@ -177,15 +177,15 @@
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook {
-        width: 185.3125rem;     /* 2965px */
+        width: 185.3125rem;     
         transition: all 1s ease-in-out;
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook img {
-        width: 14.0625rem;          /* 225px */
-        height: 22.1875rem;         /* 355px */
-        margin-right: 0.1875rem;    /*   3px */
+        width: 14.0625rem;         
+        height: 22.1875rem;         
+        margin-right: 0.1875rem;    
     }
 
 
@@ -193,7 +193,7 @@
     #indonesian-book .slider-container-indobook .kiri {
         position: absolute;
         text-align: center;
-        font-size: 2.25rem;    /* 36px */
+        font-size: 2.25rem;    
         top: 9.0625rem;
         cursor: pointer;
         color: white;
@@ -207,12 +207,12 @@
 
 
     #indonesian-book .slider-container-indobook .kanan {
-        right: 0.625rem;   /* 10px */
+        right: 0.625rem;   
     }
 
 
     #indonesian-book .slider-container-indobook .kiri {
-        left: 0.3125rem;   /* 5px */
+        left: 0.3125rem;   
     }
     /* indonesian book content */
 
@@ -223,7 +223,7 @@
     /* promo murah */
     #promo-murah {
         margin-top: 15%;
-        margin-bottom: 7.5rem;    /* 120px */
+        margin-bottom: 7.5rem;    
     }
 
 
@@ -278,21 +278,21 @@
     #promo-murah .items-buku-promo .card-buku .card-body-buku h5.judul-buku {
         color: #334241;
         font-weight: 400;
-        font-size: 1.125rem;    /* 18px */        
+        font-size: 1.125rem;            
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.harga-buku {
         color: #FF5C00;
         font-weight: 500;
-        font-size: 1.125rem;    /* 18px */
+        font-size: 1.125rem;    
     }
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.diskon-buku {
         color: #626B61;
         margin-top: -5px;
-        font-size: 0.75rem;     /* 12px */
+        font-size: 0.75rem;     
     }
 
 
@@ -306,7 +306,7 @@
 
 
     #promo-murah .items-buku-promo .card-buku .card-body-buku p.desk-buku {
-        font-size: 0.8125rem;    /* 13px */
+        font-size: 0.8125rem;   
     }
     /* promo murah */
 
@@ -337,29 +337,29 @@
 @media (min-width: 320px) {
 
 
-    /* education content */
-    #education .header-education h2 {
-        font-size: 3rem;    /*  48px */
+    /* promote content */
+    #promote .header-promote h2 {
+        font-size: 3rem;    
     }
 
 
-    #education .slider-container-education .slides-items-education {
-        width: 164.375rem;    /* 2630px */
+    #promote .slider-container-promote .slides-items-promote {
+        width: 164.375rem; 
     }
 
 
-    #education .slider-container-education .slides-items-education img {
-        width: 13.3125rem;        /* 213px */
-        height: 20.3125rem;       /* 325px */
-        margin-right: 0.125rem;   /*   2px */
+    #promote .slider-container-promote .slides-items-promote img {
+        width: 13.3125rem;       
+        height: 20.3125rem;       
+        margin-right: 0.125rem; 
     }
 
 
-    #education .slider-container-education .kanan,
-    #education .slider-container-education .kiri {
-        top: 7.8125rem;        /* 125px */
+    #promote .slider-container-promote .kanan,
+    #promote .slider-container-promote .kiri {
+        top: 7.8125rem;  
     }
-    /* education content */
+    /* promote content */
 
 
 
@@ -371,7 +371,7 @@
 
 
     #cartoon-horror h2 {
-        font-size: 2.5rem;   /* 48px */
+        font-size: 2.5rem;  
     }
 
 
@@ -389,25 +389,25 @@
 
 
     #indonesian-book .header-indobook h2 {
-        font-size: 2.75rem;   /* 44px */
+        font-size: 2.75rem;  
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook {
-        width: 164.375rem;    /* 2630px */
+        width: 164.375rem;   
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook img {
-        width: 13.3125rem;        /* 213px */
-        height: 20.3125rem;       /* 325px */
-        margin-right: 0.125rem;   /*   2px */
+        width: 13.3125rem;       
+        height: 20.3125rem;      
+        margin-right: 0.125rem; 
     }
 
 
     #indonesian-book .slider-container-indobook .kanan,
     #indonesian-book .slider-container-indobook .kiri {
-        top: 7.8125rem;    /* 125px */
+        top: 7.8125rem;   
     }
     /* indonesian book */
 
@@ -421,7 +421,7 @@
 
 
     #promo-murah .judul-promo-murah h2 {
-        font-size: 2.75rem;    /* 48px */
+        font-size: 2.75rem;   
     }
     /* harga di bawah 100K */
 
@@ -455,69 +455,69 @@
 @media (min-width: 480px) {
 
 
-    /* education content */
-    #education .header-education h2 {
-        font-size: 2.75rem;   /*  44px */
+    /* promote content */
+    #promote .header-promote h2 {
+        font-size: 2.75rem;  
     }
 
 
-    #education .header-education hr {
+    #promote .header-promote hr {
         display: block;
-        width: 55.88235%;     /* 285px */
-        left: 43.13725%;      /* 220px */
-        top: 23.076923%;      /*  12px */
+        width: 55.88235%;     
+        left: 43.13725%; 
+        top: 23.076923%;     
     }
 
 
-    #education .slider-container-education .slides-items-education {
-        width: 195.3125rem;    /* 3125px */
+    #promote .slider-container-promote .slides-items-promote {
+        width: 195.3125rem;    
     }
 
 
-    #education .slider-container-education .slides-items-education img {
-        width: 15.625rem;         /* 250px */
-        height: 24.0625rem;       /* 385px */
-        margin-right: 0.375rem;   /*   6px */
+    #promote .slider-container-promote .slides-items-promote img {
+        width: 15.625rem;        
+        height: 24.0625rem;      
+        margin-right: 0.375rem;   
     }
 
 
-    #education .slider-container-education .kanan,
-    #education .slider-container-education .kiri {
-        width: 4.0625rem;     /*  65px */
-        height: 3.125rem;     /*  50px */
-        font-size: 2rem;      /*  32px */
-        top: 10.3125rem;      /* 165px */
+    #promote .slider-container-promote .kanan,
+    #promote .slider-container-promote .kiri {
+        width: 4.0625rem;     
+        height: 3.125rem;    
+        font-size: 2rem;    
+        top: 10.3125rem;     
         background-color: rgba(255, 255, 255, 0.8);
         color: black;
     }
 
 
-    #education .slider-container-education .kanan:hover,
-    #education .slider-container-education .kiri:hover {
+    #promote .slider-container-promote .kanan:hover,
+    #promote .slider-container-promote .kiri:hover {
         background-color: rgba(52, 95, 204, 0.8);
         color: white;
     }
 
 
-    #education .slider-container-education .kanan {
+    #promote .slider-container-promote .kanan {
         border-radius: 0 10px 10px 0;
     }
 
 
-    #education .slider-container-education .kiri {
+    #promote .slider-container-promote .kiri {
         border-radius: 10px 0 0 10px;
     }
 
 
-    #education .slider-container-education .kanan {
+    #promote .slider-container-promote .kanan {
         right: 0;
     }
 
 
-    #education .slider-container-education .kiri {
+    #promote .slider-container-promote .kiri {
         left: 0;
     }
-    /* education content */
+    /* promote content */
 
 
 
@@ -529,15 +529,15 @@
 
 
     #cartoon-horror h2 {
-        font-size: 2.5rem;   /* 40px */
+        font-size: 2.5rem; 
     }
 
 
     #cartoon-horror .cartoon hr {
         display: block;
         top: 3.5%;
-        right: 2.94117%;     /* 15px */
-        width: 59.80392%;    /* 305px */
+        right: 2.94117%;    
+        width: 59.80392%; 
     }
 
 
@@ -549,8 +549,8 @@
     #cartoon-horror .horror hr {
         display: block;
         top: 3.5%;
-        right: 2.94117%;     /* 15px */
-        width: 63.72549%;    /* 325px */
+        right: 2.94117%;     
+        width: 63.72549%;  
     }
     /* cartoon - horror */
 
@@ -563,36 +563,36 @@
 
 
     #indonesian-book .header-indobook h2 {
-        font-size: 2.75rem;    /* 44px */
+        font-size: 2.75rem; 
     }
 
 
     #indonesian-book .header-indobook hr {
         display: block;
-        width: 36.27450%;   /* 185px */
-        right: 3.13725%;    /*  16px */
-        top: 20%;           /*  12px */
+        width: 36.27450%;  
+        right: 3.13725%;   
+        top: 20%;         
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook {
-        width: 195.3125rem;    /* 3125px */
+        width: 195.3125rem; 
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook img {
-        width: 15.625rem;          /* 250px */
-        height: 24.0625rem;        /* 385px */
-        margin-right: 0.375rem;    /*   6px */
+        width: 15.625rem;          
+        height: 24.0625rem;       
+        margin-right: 0.375rem;    
     }
 
 
     #indonesian-book .slider-container-indobook .kanan,
     #indonesian-book .slider-container-indobook .kiri {
-        width: 4.0625rem;   /*  65px */
-        height: 3.125rem;   /*  50px */
-        font-size: 2rem;    /*  32px */
-        top: 10.3125rem;    /* 165px */
+        width: 4.0625rem;  
+        height: 3.125rem;   
+        font-size: 2rem;   
+        top: 10.3125rem;   
         background-color: rgba(255, 255, 255, 0.8);
         color: black;
     }
@@ -635,15 +635,15 @@
 
 
     #promo-murah .judul-promo-murah h2 {
-        font-size: 2.75rem;     /* 44px */
+        font-size: 2.75rem;   
     }
 
 
     #promo-murah .judul-promo-murah hr {
         display: block;
-        top: 10%;             /*  6px */
-        right: 3.13725%;      /* 16px */
-        width: 15.68627%;     /* 80px */
+        top: 10%;            
+        right: 3.13725%;     
+        width: 15.68627%;    
     }
     /* harga di bawah 100K */
 
@@ -679,39 +679,39 @@
 @media (min-width: 768px) {
 
 
-    /* education content */
-    #education .header-education h2 {
-        font-size: 2.5rem;   /*  40px */
+    /* promote content */
+    #promote .header-promote h2 {
+        font-size: 2.5rem;   
     }
 
 
-    #education .header-education hr {
-        width: 68.84057%;    /* 475px */
-        left: 30.43478%;     /* 210px */
-        top: 20.83333%;      /*  10px */
+    #promote .header-promote hr {
+        width: 68.84057%;   
+        left: 30.43478%;    
+        top: 20.83333%;     
     }
 
 
-    #education .slider-container-education .slides-items-education {
-        width: 175rem;       /* 2800px */
+    #promote .slider-container-promote .slides-items-promote {
+        width: 175rem;
     }
 
 
-    #education .slider-container-education .slides-items-education img {
-        width: 14.0625rem;       /* 180px */
-        height: 21.875rem;       /* 280px */
-        margin-right: 0.25rem;   /* 4px */
+    #promote .slider-container-promote .slides-items-promote img {
+        width: 14.0625rem;      
+        height: 21.875rem;     
+        margin-right: 0.25rem; 
     }
     
 
-    #education .slider-container-education .kanan,
-    #education .slider-container-education .kiri {
-        width: 3.75rem;         /* 60px */
-        height: 2.8125rem;      /* 45px */
-        font-size: 1.8125rem;   /* 29px */
-        top: 9.6875rem;         /* 155px */
+    #promote .slider-container-promote .kanan,
+    #promote .slider-container-promote .kiri {
+        width: 3.75rem;         
+        height: 2.8125rem;     
+        font-size: 1.8125rem;   
+        top: 9.6875rem;       
     }
-    /* education content */
+    /* promote content */
 
 
 
@@ -723,14 +723,14 @@
 
 
     #cartoon-horror h2 {
-        font-size: 2.5rem;    /* 40px */
+        font-size: 2.5rem;    
     }
 
 
     #cartoon-horror .cartoon hr {
         top: 2.5%;
-        right: 2.17391%;     /* 15px */
-        width: 71.014492%;    /* 490px */
+        right: 2.17391%;    
+        width: 71.014492%;   
     }
 
 
@@ -741,8 +741,8 @@
     
     #cartoon-horror .horror hr {
         top: 2%;
-        right: 2.17391%;     /* 15px */
-        width: 73.91304%;    /* 520px */
+        right: 2.17391%;     
+        width: 73.91304%;   
     }
     /* cartoon - horror */
 
@@ -756,35 +756,35 @@
 
 
     #indonesian-book .header-indobook h2 {
-        font-size: 2.5rem;   /* 40px */
+        font-size: 2.5rem; 
     }
 
 
     #indonesian-book .header-indobook hr {
-        width: 53.62318%;    /* 370px */
-        right: 2.31884%;     /* 16px */
-        top: 16.07142%;      /*  9px */
+        width: 53.62318%;   
+        right: 2.31884%;    
+        top: 16.07142%;     
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook {
-        width: 175rem;           /* 2800px */
+        width: 175rem;       
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook img {
-        width: 14.0625rem;       /* 180px */
-        height: 21.875rem;       /* 280px */
-        margin-right: 0.25rem;   /*   4px */
+        width: 14.0625rem;       
+        height: 21.875rem;      
+        margin-right: 0.25rem;   
     }
 
 
     #indonesian-book .slider-container-indobook .kanan,
     #indonesian-book .slider-container-indobook .kiri {
-        width: 3.75rem;        /* 60px */
-        height: 2.8125rem;     /* 45px */
-        font-size: 1.8125rem;  /* 29px */
-        top: 9.6875rem;        /* 155px */
+        width: 3.75rem;      
+        height: 2.8125rem;     
+        font-size: 1.8125rem; 
+        top: 9.6875rem;       
     }
     /* indonesian book */
 
@@ -797,14 +797,14 @@
 
 
     #promo-murah .judul-promo-murah h2 {
-        font-size: 2.5rem;    /* 40px */
+        font-size: 2.5rem;   
     }
 
 
     #promo-murah .judul-promo-murah hr {
-        top: 10.71428%;       /*   6px */
-        right: 2.31884%;      /*  16px */
-        width: 39.13043%;     /* 270px */
+        top: 10.71428%;      
+        right: 2.31884%;     
+        width: 39.13043%;   
     }
     /* harga di bawah 100K */
 
@@ -844,53 +844,53 @@
 @media (min-width: 960px) {
 
 
-    /* education content */
-    #education .header-education h2 {
-        font-size: 2.25rem;    /* 36px */   
+    /* promote content */
+    #promote .header-promote h2 {
+        font-size: 2.25rem;    
     }
 
 
-    #education .header-education hr {
-        width: 81.08108%;      /* 900px */
-        left: 18.28828%;       /* 203px */
-        top: 11.62790%;        /*   5px */
+    #promote .header-promote hr {
+        width: 81.08108%;     
+        left: 18.28828%;      
+        top: 11.62790%;    
     }
 
 
-    #education .slider-container-education .slides-items-education {
-        width: 140.625rem;    /* 2250px */
+    #promote .slider-container-promote .slides-items-promote {
+        width: 140.625rem;
     }
 
 
-    #education .slider-container-education .slides-items-education img {
-        width: 11.25rem;            /* 180px */
-        height: 17.5rem;            /* 280px */
-        margin-right: 0.125rem;     /* 2px */
+    #promote .slider-container-promote .slides-items-promote img {
+        width: 11.25rem;            
+        height: 17.5rem;           
+        margin-right: 0.125rem;    
     }
 
 
-    #education .slider-container-education .kanan,
-    #education .slider-container-education .kiri {
-        width: 3.1254rem;       /* 50px */
-        height: 2.1875rem;      /* 35px */
-        font-size: 1.375rem;    /* 20px */
-        top: 7.5rem;            /* 120px */
+    #promote .slider-container-promote .kanan,
+    #promote .slider-container-promote .kiri {
+        width: 3.1254rem;      
+        height: 2.1875rem;    
+        font-size: 1.375rem;   
+        top: 7.5rem;         
     }
-    /* education content */
+    /* promote content */
 
 
 
 
     /* cartoon - horror */
     #cartoon-horror h2 {
-        font-size: 2.25rem;   /* 36px */
+        font-size: 2.25rem; 
     }
 
 
     #cartoon-horror .cartoon hr {
         top: 2%;   
-        right: 2.77777%;     /* 15px */
-        width: 64.81481%;    /* 350px */
+        right: 2.77777%;    
+        width: 64.81481%;   
     }
 
 
@@ -901,8 +901,8 @@
 
     #cartoon-horror .horror hr {
         top: 2%;
-        right: 2.7777%;     /* 15px */
-        width: 66.66666%;   /* 360px */
+        right: 2.7777%;   
+        width: 66.66666%;  
     }
     /* cartoon - horror */
 
@@ -916,26 +916,26 @@
 
 
     #indonesian-book .header-indobook h2 {
-        font-size: 2.25rem;   /* 36px */
+        font-size: 2.25rem;  
     }
 
 
     #indonesian-book .header-indobook hr {
-        top: 9.80392%;       /* 5px */
-        right: 1.53153%;     /* 17px */
-        width: 69.81981%;    /* 775px */
+        top: 9.80392%;       
+        right: 1.53153%;     
+        width: 69.81981%;   
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook {
-        width: 140.625rem;    /* 2250px */
+        width: 140.625rem;  
     }
 
 
     #indonesian-book .slider-container-indobook .slides-items-indobook img {
-        width: 11.25rem;        /* 180px */
-        height: 17.5rem;        /* 280px */
-        margin-right: 0.125rem  /*   2px */
+        width: 11.25rem;       
+        height: 17.5rem;        
+        margin-right: 0.125rem  
     }
 
 
@@ -966,10 +966,10 @@
 
     #indonesian-book .slider-container-indobook .kanan,
     #indonesian-book .slider-container-indobook .kiri {
-        width: 3.1254rem;       /* 50px */
-        height: 2.1875rem;      /* 35px */
-        font-size: 1.375rem;    /* 20px */
-        top: 7.5rem;            /* 120px */
+        width: 3.1254rem;    
+        height: 2.1875rem;     
+        font-size: 1.375rem; 
+        top: 7.5rem;        
     }
     /* indonesian book content */
 
@@ -983,14 +983,14 @@
 
 
     #promo-murah .judul-promo-murah h2 {
-        font-size: 2.25rem;     /* 36px */
+        font-size: 2.25rem;    
     }
 
 
     #promo-murah .judul-promo-murah hr {
-        top: 9.80392%;       /* 5px */
-        right: 1.53153%;     /* 17px */
-        width: 63.06306%;    /* 700px */
+        top: 9.80392%;      
+        right: 1.53153%;   
+        width: 63.06306%;    
     }
     /* harga di bawah 100K */
 }
