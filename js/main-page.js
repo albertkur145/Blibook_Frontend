@@ -513,7 +513,34 @@ $('#promote .slider-container-promote .kanan').on('click', () => {
 
     let widthWindow = $(window).width();
 
-    if (widthWindow < 945) 
+
+    if (widthWindow < 285)
+        xOffsetPromote >= 160.1875 ? xOffsetPromote = 0 : xOffsetPromote += 14.5625;
+
+    else if (widthWindow < 305)
+    {
+        if (xOffsetPromote >= 145.625)
+            xOffsetPromote >= 156.6875 ? xOffsetPromote = 0 : xOffsetPromote += 11.0625;
+        else
+            xOffsetPromote += 14.5625;
+    } 
+
+    else if (widthWindow < 400)
+        xOffsetPromote >= 151.25 ? xOffsetPromote = 0 : xOffsetPromote += 13.75;
+
+    else if (widthWindow < 440)
+        xOffsetPromote >= 137.5 ? xOffsetPromote = 0 : xOffsetPromote += 13.75;
+
+    else if (widthWindow < 465)
+        xOffsetPromote >= 137.1875 ? xOffsetPromote = 0 : xOffsetPromote += 27.4375;
+
+    else if (widthWindow < 501)
+        xOffsetPromote >= 162.5 ? xOffsetPromote = 0 : xOffsetPromote += 16.25;
+
+    else if (widthWindow < 753)
+        xOffsetPromote >= 162.8125 ? xOffsetPromote = 0 : xOffsetPromote += 32.5625;
+
+    else if (widthWindow < 945) 
         xOffsetPromote >= 131.25 ? xOffsetPromote = 0 : xOffsetPromote += 43.75;
 
     else if (widthWindow < 977)
@@ -538,7 +565,33 @@ $('#promote .slider-container-promote .kiri').on('click', () => {
 
     let widthWindow = $(window).width();
 
-    if (widthWindow < 945)
+
+    if (widthWindow < 285)
+        xOffsetPromote <= 0 ? xOffsetPromote = 160.1875 : xOffsetPromote -= 14.5625;
+
+    else if (widthWindow < 305) {
+        if (xOffsetPromote >= 145.625)
+            xOffsetPromote >= 156.6875 ? xOffsetPromote -= 11.0625 : xOffsetPromote -= 14.5625;
+        else
+            xOffsetPromote <= 0 ? xOffsetPromote = 156.6875 : xOffsetPromote -= 14.5625;
+    }  
+
+    else if (widthWindow < 400)
+        xOffsetPromote <= 0 ? xOffsetPromote = 151.25 : xOffsetPromote -= 13.75;
+    
+    else if (widthWindow < 440)
+        xOffsetPromote <= 0 ? xOffsetPromote = 137.5 : xOffsetPromote -= 13.75;
+
+    else if (widthWindow < 465)
+        xOffsetPromote <= 0 ? xOffsetPromote = 137.1875 : xOffsetPromote -= 27.4375;
+
+    else if (widthWindow < 501)
+        xOffsetPromote <= 0 ? xOffsetPromote = 162.5 : xOffsetPromote -= 16.25;
+
+    else if (widthWindow < 753)
+        xOffsetPromote <= 0 ? xOffsetPromote = 162.8125 : xOffsetPromote -= 32.5625;
+
+    else if (widthWindow < 945)
         xOffsetPromote <= 0 ? xOffsetPromote = 131.25 : xOffsetPromote -= 43.75;
 
     else if (widthWindow < 977)
@@ -585,7 +638,33 @@ $('#indonesian-book .slider-container-indobook .kanan').on('click', () => {
     
     let widthWindow = $(window).width();
 
-    if (widthWindow < 945)
+
+    if (widthWindow < 285)
+        xOffsetIndobook >= 160.1875 ? xOffsetIndobook = 0 : xOffsetIndobook += 14.5625;
+
+    else if (widthWindow < 305) {
+        if (xOffsetIndobook >= 145.625)
+            xOffsetIndobook >= 156.6875 ? xOffsetIndobook = 0 : xOffsetIndobook += 11.0625;
+        else
+            xOffsetIndobook += 14.5625;
+    } 
+
+    else if (widthWindow < 400)
+        xOffsetIndobook >= 151.25 ? xOffsetIndobook = 0 : xOffsetIndobook += 13.75;
+
+    else if (widthWindow < 440)
+        xOffsetIndobook >= 137.5 ? xOffsetIndobook = 0 : xOffsetIndobook += 13.75;
+
+    else if (widthWindow < 465)
+        xOffsetIndobook >= 137.1875 ? xOffsetIndobook = 0 : xOffsetIndobook += 27.4375;
+
+    else if (widthWindow < 501)
+        xOffsetIndobook >= 162.5 ? xOffsetIndobook = 0 : xOffsetIndobook += 16.25;
+
+    else if (widthWindow < 753)
+        xOffsetIndobook >= 162.8125 ? xOffsetIndobook = 0 : xOffsetIndobook += 32.5625;
+
+    else if (widthWindow < 945)
         xOffsetIndobook >= 131.25 ? xOffsetIndobook = 0 : xOffsetIndobook += 43.75;
 
     else if (widthWindow < 977)
@@ -610,7 +689,33 @@ $('#indonesian-book .slider-container-indobook .kiri').on('click', () => {
     
     let widthWindow = $(window).width();
 
-    if (widthWindow < 945)
+
+    if (widthWindow < 285)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 160.1875 : xOffsetIndobook -= 14.5625;
+
+    else if (widthWindow < 305) {
+        if (xOffsetIndobook >= 145.625)
+            xOffsetIndobook >= 156.6875 ? xOffsetIndobook -= 11.0625 : xOffsetIndobook -= 14.5625;
+        else
+            xOffsetIndobook <= 0 ? xOffsetIndobook = 156.6875 : xOffsetIndobook -= 14.5625;
+    }  
+
+    else if (widthWindow < 400)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 151.25 : xOffsetIndobook -= 13.75;
+
+    else if (widthWindow < 440)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 137.5 : xOffsetIndobook -= 13.75;
+
+    else if (widthWindow < 465)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 137.1875 : xOffsetIndobook -= 27.4375;
+
+    else if (widthWindow < 501)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 162.5 : xOffsetIndobook -= 16.25;
+
+    else if (widthWindow < 753)
+        xOffsetIndobook <= 0 ? xOffsetIndobook = 162.8125 : xOffsetIndobook -= 32.5625;
+
+    else if (widthWindow < 945)
         xOffsetIndobook <= 0 ? xOffsetIndobook = 131.25 : xOffsetIndobook -= 43.75;
 
     else if (widthWindow < 977)
