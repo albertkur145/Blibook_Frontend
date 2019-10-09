@@ -1,151 +1,313 @@
+/* berlaku untuk width window < 320px */
 
-/* header */
-#header {
-    margin-top: 20px;
-    margin-left: 20px;
-    font-family: 'Roboto';
-    text-align: center;
-}
-
-
-#header a {
-    font-family: 'Viga';
-    font-size: 36px;
-    color: #754AEB;
-    text-decoration: none;
-}
-/* header */
-
-
-
-
-/* content */
-#content {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    font-family: 'Roboto';
-}
-
-
-#content .left {
-    text-align: center;
-    position: relative; 
-}
-
-
-#content .left h2 {
-    color: #8D66F6;
-    font-weight: 400;
-    font-size: 46px;
-}
-
-
-#content .left hr {
-    border: 1px solid #9B79F5;
-    position: absolute;
-    width: 66%;
-    top: 13%;
-    left: 17%;
-}
-
-
-#content .left .txt {
-    text-align: center;
-    margin-top: 5%;
-}
-
-
-#content .left p {
-    font-size: 26px;
-    color: #9573F4;
-}
-
-
-#content .left .quotes {
-    font-weight: 500;
-    margin-top: 8%;
-    text-align: center;
-}
-
-
-#content .left .quotes p {
-    font-size: 36px;
-    color: #E7E2F4;
-}
-
-
-#content .left .quotes p span {
-    color: #CFC1F8;
-}
-
-
-#content .left .quotes p.motivator {
-    font-size: 18px;
-}
-
-
-#content .right h2 {
-    margin-top: 20%;
-    margin-bottom: 7%;
-    font-weight: 400;
-    color: #555;
-}
-
-
-#content .right form {
-    color: #333;
-    font-weight: 300;
-}
-
-
-#content .right form .btn-right {
-    background-color: #8A61F7;
-    width: 100%;
-    color: #FFF;
-    font-size: 18px;
-}
-
-
-#content .right form .btn-right:hover {
-    background-color: #7B4DF6;
-}
-
-/* content */
-
-
-
-
-
-
-
-@media (min-width: 992px) {
 
     /* header */
     #header {
-        text-align: left;
+        font-family: 'Viga';
+        margin-top: 1.25rem;
+        margin-left: 1.25rem;
+    }
+
+
+
+    #header a {
+        color: #754AEB;
+        text-decoration: none;
+        font-size: 2rem;
     }
     /* header */
-
 
 
 
     /* content */
-    #content .left {
-        /* margin-top: 9%; */
-        text-align: left;
+    #content {
+        margin: 5rem 0;
+        font-family: 'Roboto';
     }
+
+
+
+    #content .right h2 {
+        margin-bottom: 7%;
+        color: #555;
+        font-weight: 400;
+        padding-top: 0.4375rem;
+        font-size: 1.5rem;
+    }
+
+
+
+    #content .right form {
+        color: #333;
+        font-weight: 300;
+        width: 100%;
+    }
+
+
+
+    #content .right form input {
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .right form .btn-right {
+        width: 100%;
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: #FFF;
+        background-color: #8A61F7;
+    }
+
+
+
+    #content .right form .btn-right:hover {
+        background-color: #7B4DF6;
+    }
+
+    /* content */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+    
+    
+    /* header */
+    #header a {
+        font-size: 2.125rem;
+    }
+    /* header */
+
+    
+
+    /* content */
+    #content .right h2 {
+        font-size: 1.75rem;
+    }
+
+
+    #content .right form input {
+        font-size: 1rem;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* content */
+    #content .left {
+        position: relative;
+    }
+
+
+    #content .left h2 {
+        color: #8D66F6;
+        font-weight: 400;
+        text-align: left;
+        font-size: 2.0625rem;
+    }
+
 
 
     #content .left hr {
-        width: 56%;
-        top: 9.5%;
+        display: none;
+    }
+
+
+
+    #content .left p.txt {
+        margin-top: 5%;
+        text-align: left;
+        font-size: 0.875rem;
+        color: #9573F4;
+    }
+
+
+
+    #content .left .quotes {
+        margin-top: 10%;
+        margin-right: 5%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+
+
+    #content .left .quotes p {
+        font-size: 1.375rem;
+        color: #E7E2F4;
+    }
+
+
+
+    #content .left .quotes p span {
+        color: #CFC1F8;
+    }
+
+
+
+    #content .left .quotes p.motivator {
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .right h2 {
+        font-size: 1.625rem;
+    }
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+    
+
+    /* content */
+    #content .left h2 {
+        text-align: left;
+        font-size: 2.5rem;
+    }
+
+
+
+    #content .left p.txt {
+        text-align: left;
+        font-size: 1.1875rem;
+    }
+
+
+
+    #content .left .quotes p {
+        font-size: 1.6875rem;
+    }
+
+
+
+    #content .left .quotes p.motivator {
+        font-size: 1rem;
+    }
+
+
+
+    #content .right h2 {
+        font-size: 2rem;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window < 960px */
+
+@media (min-width: 960px) {
+
+
+    /* header */
+    #header a {
+        font-size: 2.25rem;
+    }
+    /* header */
+
+
+
+    /* content */
+    #content .left h2 {
+        font-size: 2.875rem;
+    }
+
+
+
+    #content .left hr {
+        display: block;
+        position: absolute;
+        border: 0.0625rem solid #9B79F5;
         left: 3%;
     }
+    
+    
 
-
-    #content .left .txt {
-        text-align: left;
+    #content .left p.txt {
+        font-size: 1.625rem;
     }
+
 
 
     #content .left .quotes {
@@ -153,11 +315,32 @@
         margin-right: 22%;
     }
 
+    
+
+    #content .left .quotes p {
+        font-size: 2.25rem;
+    }
+
+
+    
+    #content .left .quotes p.motivator {
+        font-size: 1.125rem;
+    }
+    
+
 
     #content .right h2 {
-        margin-top: 0;
-        margin-bottom: 6%;
+        font-size: 2.25rem;
+    }
+
+
+
+    #content .right form {
+        width: 85%;
     }
     /* content */
 
+
 }
+
+/* berlaku untuk width window < 960px */
