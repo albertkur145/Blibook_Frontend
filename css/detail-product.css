@@ -11,6 +11,89 @@
 
 
 
+#product-detail img {
+    width: 90%;
+    height: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+#product-detail .keterangan-buku {
+    font-family: 'Roboto';
+    padding-top: 1.5rem;
+}
+
+
+
+#product-detail .keterangan-buku h2.judul-buku {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #5F5959;
+}
+
+
+
+#product-detail .keterangan-buku h2.title {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+    color: #5F5959;
+}
+
+
+
+#product-detail .keterangan-buku h2.content {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    margin-top: 0rem;
+    color: #5F5959;
+    padding-left: 2.5rem;
+}
+
+
+
+#product-detail .keterangan-buku h2.harga-buku {
+    color: #1A9980;
+    font-weight: 600;
+}
+
+
+
+#product-detail .keterangan-buku h2.diskon-buku {
+    color: #5F5959;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    margin-top: 0rem;
+    padding-left: 2.5rem;
+}
+
+
+
+#product-detail .keterangan-buku h2.diskon-buku span {
+    color: #FF0000;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+
+
+#product-detail .keterangan-buku .btn-beli-sekarang,
+#product-detail .keterangan-buku .btn-tambah-bag {
+    text-transform: uppercase;
+    font-family: 'Arial';
+    font-weight: 600;
+    border-radius: 3.125rem;
+    color: #FFF;
+    font-size: 0.625rem;
+    padding: 0.625rem 0;
+    margin-top: 0.75rem;
+}
+
+
+
 #product-detail .keterangan-buku .btn-beli-sekarang {
     background-color: #FFA72E;
     transition: background-color .3s;
@@ -34,9 +117,148 @@
 #product-detail .keterangan-buku .btn-tambah-bag:hover {
     background-color: #FD5252;
 }
+
+
+
+#product-detail .keterangan-buku a.add-wishlist {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.8125rem;
+    color: #000;
+    margin-top: 1rem;
+    padding-left: 0.3125rem;
+}
+
+
+
+#product-detail .keterangan-buku a.add-wishlist:hover {
+    color: #FC6666;
+}
+
+
+
+#product-detail hr {
+    margin-top: 2rem;
+    border: 0.0625rem solid #EEE;
+}
+
+
+
+#product-detail .deskripsi-buku {
+    margin-top: 1.75rem;
+    padding: 0 1rem;
+}
+
+
+
+#product-detail .deskripsi-buku h2 {
+    font-size: 1.625rem;
+    font-weight: 400;
+    color: #5F5959;
+    text-transform: uppercase;
+}
+
+
+
+#product-detail .deskripsi-buku p {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: #000;
+    text-align: justify;
+}
+
+
 /* product detail */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* product detail */
+    #product-detail .keterangan-buku {
+        font-family: 'Roboto';
+        padding-top: 1.5rem;
+    }
+
+
+
+    #product-detail .keterangan-buku h2.judul-buku {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+
+
+    #product-detail .keterangan-buku h2.title {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+
+
+    #product-detail .keterangan-buku h2.content {
+        font-size: 1.25rem;
+        margin-top: 0.25rem;
+        padding-left: 2.25rem;
+    }
+
+
+
+    #product-detail .keterangan-buku h2.diskon-buku {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        padding-left: 2.25rem;
+    }
+
+
+
+    #product-detail .keterangan-buku h2.diskon-buku span {
+        border: 0.0625rem solid #FF0000;
+        padding: 0.0625rem 0.3125rem;
+    }
+
+    
+
+    #product-detail .keterangan-buku .btn-beli-sekarang,
+    #product-detail .keterangan-buku .btn-tambah-bag {
+        font-size: 0.875rem;
+        padding: 0.75rem 0;
+        margin-top: 1.25rem;
+    }
+    
+
+
+    #product-detail .keterangan-buku a.add-wishlist {
+        font-size: 0.875rem;
+        margin-top: 1.25rem;
+    }
+
+
+
+    #product-detail .deskripsi-buku h2 {
+        font-size: 1.75rem;
+    }
+    /* product detail */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
 
 
 
@@ -70,102 +292,52 @@
 
 
     #product-detail .keterangan-buku {
-        font-family: 'Roboto';
         padding-top: 0.5rem;
     }
 
 
 
     #product-detail .keterangan-buku h2.judul-buku {
-        font-weight: 500;
         font-size: 1rem;
         margin-bottom: 1rem;
-        color: #5F5959;
     }
 
 
 
     #product-detail .keterangan-buku h2.title {
         font-size: 0.75rem;
-        font-weight: 400;
         margin-top: 0.25rem;
-        color: #5F5959;
     }
 
 
 
     #product-detail .keterangan-buku h2.content {
         font-size: 1rem;
-        font-weight: 300;
         margin-top: 0rem;
-        color: #5F5959;
         padding-left: 1.5rem;
-    }
-
-
-
-    #product-detail .keterangan-buku h2.harga-buku {
-        color: #1A9980;
-        font-weight: 600;
     }
 
 
 
     #product-detail .keterangan-buku h2.diskon-buku {
-        color: #5F5959;
-        font-weight: 400;
         font-size: 0.75rem;
         margin-top: 0rem;
         padding-left: 1.5rem;
-    }
-
-
-
-    #product-detail .keterangan-buku h2.diskon-buku span {
-        color: #FF0000;
-        font-weight: 500;
-        border: 0.0625rem solid #FF0000;
-        padding: 0.0625rem 0.3125rem;
-        margin-left: 0.5rem;
     }
 
 
 
     #product-detail .keterangan-buku .btn-beli-sekarang,
     #product-detail .keterangan-buku .btn-tambah-bag {
-        text-transform: uppercase;
-        font-family: 'Arial';
-        font-weight: 600;
-        border-radius: 3.125rem;
-        color: #FFF;
         font-size: 0.6875rem;
-        padding: 0.75rem 0;
         margin-top: 0.5rem;
     }
 
 
 
     #product-detail .keterangan-buku a.add-wishlist {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: 300;
         font-size: 0.75rem;
-        color: #000;
         margin-top: 0.5rem;
-        padding-left: 0.3125rem;
-    }
-
-
-
-    #product-detail .keterangan-buku a.add-wishlist:hover {
-        color: #FC6666;
-    }
-
-
-
-    #product-detail hr {
-        margin-top: 2rem;
-        border: 0.0625rem solid #EEE;
     }
 
 
@@ -179,18 +351,12 @@
 
     #product-detail .deskripsi-buku h2 {
         font-size: 1.5rem;
-        font-weight: 400;
-        color: #5F5959;
-        text-transform: uppercase;
     }
 
 
 
     #product-detail .deskripsi-buku p {
         font-size: 0.875rem;
-        font-weight: 300;
-        color: #000;
-        text-align: justify;
     }
     /* product detail */
 
