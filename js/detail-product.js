@@ -11,7 +11,7 @@ function responsiveSize() {
 
 
     if (width < 753) {
-        keteranganBuku.css('paddingLeft', '2.75rem');
+        keteranganBuku.css('paddingLeft', '2.5rem');
         $('.btn-beli-sekarang').css('width', '100%');
         $('.btn-tambah-bag').css('width', '100%');
         $('.btn-tambah-bag').css('marginLeft', '-1.5rem');

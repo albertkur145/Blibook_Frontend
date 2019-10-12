@@ -63,8 +63,8 @@
     /* product detail */
     #product-detail img {
         width: 13rem;
-        height: 20rem;
-        margin-left: 2.5rem;
+        height: 19rem;
+        margin-left: 2rem;
     }
 
 
@@ -140,7 +140,7 @@
         color: #FFF;
         font-size: 0.6875rem;
         padding: 0.75rem 0;
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
     }
 
 
@@ -149,17 +149,48 @@
         display: inline-block;
         text-decoration: none;
         font-weight: 300;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         color: #000;
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
         padding-left: 0.3125rem;
     }
 
 
 
-
     #product-detail .keterangan-buku a.add-wishlist:hover {
         color: #FC6666;
+    }
+
+
+
+    #product-detail hr {
+        margin-top: 2rem;
+        border: 0.0625rem solid #EEE;
+    }
+
+
+
+    #product-detail .deskripsi-buku {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+    }
+
+
+
+    #product-detail .deskripsi-buku h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #5F5959;
+        text-transform: uppercase;
+    }
+
+
+
+    #product-detail .deskripsi-buku p {
+        font-size: 0.875rem;
+        font-weight: 300;
+        color: #000;
+        text-align: justify;
     }
     /* product detail */
 
@@ -249,13 +280,6 @@
 
 
 
-    #product-detail hr {
-        margin-top: 2rem;
-        border: 0.0625rem solid #EEE;
-    }
-
-
-
     #product-detail .deskripsi-buku {
         margin-top: 1.5rem;
         padding: 0 2.5rem;
@@ -265,18 +289,12 @@
 
     #product-detail .deskripsi-buku h2 {
         font-size: 2rem;
-        font-weight: 400;
-        color: #5F5959;
-        text-transform: uppercase;
     }
 
 
 
     #product-detail .deskripsi-buku p {
         font-size: 0.9375rem;
-        font-weight: 300;
-        color: #000;
-        text-align: justify;
     }
     /* product detail */
 
