@@ -275,7 +275,7 @@
 
 
 
-/* berlaku untuk width window < 960px */
+/* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {
 
@@ -343,4 +343,4 @@
 
 }
 
-/* berlaku untuk width window < 960px */
+/* berlaku untuk width window >= 960px */

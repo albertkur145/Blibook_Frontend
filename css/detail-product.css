@@ -7,6 +7,7 @@
 
 #product-detail .bg-white {
     padding: 1.875rem 0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1)
 }
 
 
@@ -163,8 +164,8 @@
 
 #product-detail .deskripsi-buku p {
     font-size: 0.9375rem;
-    font-weight: 300;
-    color: #000;
+    font-weight: 400;
+    color: #444;
     text-align: justify;
 }
 
@@ -487,7 +488,7 @@
 
 
 
-/* berlaku untuk width window < 960px */
+/* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {
 
@@ -573,4 +574,4 @@
 
 }
 
-/* berlaku untuk width window < 960px */
+/* berlaku untuk width window >= 960px */
