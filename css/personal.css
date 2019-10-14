@@ -86,12 +86,13 @@
     #content .right .head h2.title {
         font-size: 1.875rem;
         font-weight: 500;
+        color: #8729FF;
     }
 
 
 
     #content .right .rbody {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     /* content */

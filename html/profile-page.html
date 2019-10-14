@@ -87,11 +87,11 @@
 
 
 
+
     <!-- content -->
     <div id="content">
         <div class="container">
             <div class="row">
-
 
                     <!-- left -->
                     <div class="col-3 left">
@@ -129,22 +129,96 @@
                         <!-- rbody -->
                         <div class="rbody">
                             
+                            <!-- form profile -->
                             <form action="" method="post">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                        anyone else.</small>
+
+                                <!-- nama lengkap -->
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="nama">Nama Lengkap <span>*</span></label>
+                                        <input type="text" id="nama" class="form-control" autocomplete="off">
+                                    </div>
                                 </div>
+                                <!-- nama lengkap -->
+
+                                <!-- email -->
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="email">Email <span>*</span></label>
+                                        <input type="email" id="email" class="form-control" autocomplete="off">
+                                    </div>
+                                </div>
+                                <!-- email -->
+
+                                <!-- TTL -->
+                                <div class="form-row">
+                                    <div class="form-group col-3">
+                                        <label>Tanggal Lahir <span>*</span></label>
+                                        <select id="tanggal" class="form-control">
+                                            <!-- tanggal lahir append js -->
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <label for="">&nbsp;</label> 
+                                        <select id="bulan" class="form-control">
+                                            <option value="Januari">Januari</option>
+                                            <option value="Februari">Februari</option>
+                                            <option value="Maret">Maret</option>
+                                            <option value="April">April</option>
+                                            <option value="Mei">Mei</option>
+                                            <option value="Juni">Juni</option>
+                                            <option value="Juli">Juli</option>
+                                            <option value="Agustus">Agustus</option>
+                                            <option value="September">September</option>
+                                            <option value="Oktober">Oktober</option>
+                                            <option value="November">November</option>
+                                            <option value="Desember">Desember</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <label for="">&nbsp;</label>
+                                        <select id="tahun" class="form-control">
+                                            <!-- tahun lahir append js -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- TTL -->
+
+                                <!-- nomor handphone -->
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="nomor">Nomor Handphone <span>*</span></label>
+                                        <input type="tel" id="nomor" class="form-control" autocomplete="off">
+                                    </div>
+                                </div>
+                                <!-- nomor handphone -->
+
+                                <!-- jenis kelamin -->
+                                <label style="display: block;">Jenis Kelamin <span>*</span></label>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="pria" value="pria" checked>
+                                    <label class="form-check-label" for="pria">Pria</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="wanita" value="wanita">
+                                    <label class="form-check-label" for="wanita">Wanita</label>
+                                </div>
+                                <!-- jenis kelamin -->
+
+                                <button type="submit" class="btn-simpan" onclick="return validationForm();">Simpan</button>
+
                             </form>
+                            <!-- form profile -->
                             
                         </div>
                         <!-- rbody -->
 
                     </div>
                     <!-- right -->
-
 
             </div>
         </div>
@@ -204,6 +278,7 @@
 
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/profile-page.js"></script>
     <script src="../js/footer.js"></script>
 </body>
 </html>

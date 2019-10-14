@@ -1,0 +1,71 @@
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* content */
+    #content .right .rbody label {
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+
+
+    #content .right .rbody label span {
+        color: #DD0000;
+    }
+
+
+
+    #content .right .rbody input,
+    #content .right .rbody select {
+        font-size: 0.875rem;
+        color: #000;
+    }
+
+
+
+    #content .right .rbody input:focus,
+    #content .right .rbody select:focus {
+        border: 0.0625rem solid #B38FFF;
+        box-shadow: 0rem 0rem 0.25rem 0.09375rem #B38FFF;
+    }
+
+
+
+    #content .right .rbody .col-12 input {
+        width: 65%;
+    }
+
+
+    
+    #content .right .rbody input[type="radio"]:focus {
+        box-shadow: 0 0 0;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan {
+        display: block;
+        border: 0;
+        background-color: #8811FF;
+        padding: 0.75rem 3rem;
+        margin-top: 2.5rem;
+        font-size: 0.9375rem;
+        color: #FFF;
+        font-weight: 500;
+        transition: background-color .2s;
+        border-radius: 0.3125rem;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan:hover {
+        background-color: #8000FF;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window >= 960px */
