@@ -1,0 +1,102 @@
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* content */
+    #content {
+        margin: 3rem 0;
+    }
+
+
+
+    #content .left .head {
+        font-family: 'Roboto';
+        border-top: 0.25rem solid #E1D2F8;
+        border-bottom: 0.25rem solid #E1D2F8;
+        padding: 1rem;
+        text-transform: uppercase;
+    }
+
+
+
+    #content .left .head h2.nama-user {
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: #444;
+        font-weight: 500;
+    }
+
+
+
+    #content .left .head p.as {
+        font-size: 1rem;
+        color: #ACACAC;
+        font-weight: 400;
+    }
+
+
+
+    #content .left .tab {
+        margin-top: 1.5rem;
+    }
+
+
+
+    #content .left .tab a {
+        color: #000;
+        text-decoration: none;
+    }
+
+
+
+    #content .left .tab a p {
+        padding: 0.6875rem 1rem;
+        margin: 0;
+        border-bottom: 0.0625rem solid #DBDBDB;
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .left .tab a p:hover {
+        background-color: rgba(219, 219, 219, 0.2);
+        cursor: pointer;
+    }
+
+
+
+    .is-active {
+        border-left: 0.3125rem solid #8F5AFF;
+        color: #8F5AFF;
+        font-weight: 600;
+        padding-left: 0.6875rem !important;
+    }
+
+
+
+    #content .right {
+        font-family: 'Roboto';
+        padding-left: 1.5rem;
+    }
+
+
+
+    #content .right .head h2.title {
+        font-size: 1.875rem;
+        font-weight: 500;
+    }
+
+
+
+    #content .right .rbody {
+        margin-top: 2rem;
+    }
+
+    /* content */
+
+
+}
+
+/* berlaku untuk width window >= 960px */
