@@ -25,6 +25,13 @@
 
 
 
+    #content .right .rbody small {
+        display: none;
+        color: #DA0000 !important;
+    }
+
+
+
     #content .right .rbody input:focus,
     #content .right .rbody select:focus {
         border: 0.0625rem solid #B38FFF;
@@ -39,6 +46,12 @@
 
 
     
+    #content .right .rbody input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+
+
     #content .right .rbody input[type="radio"]:focus {
         box-shadow: 0 0 0;
     }
