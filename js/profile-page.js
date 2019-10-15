@@ -1,13 +1,30 @@
 
 $(window).ready(DOM_Manipulation);
+$(window).resize(responsiveSize);
 
 
 // saat window ready
+responsiveSize();
 function DOM_Manipulation() {
     appendTTL();
     borderTab();
 }
 // saat window ready
+
+
+// responsive - resize window
+function responsiveSize() {
+    let width = $(window).width();
+
+    if (width < 753) {
+        $('#content .right .rbody .ttl .opt-ttl').addClass('col-4');
+        $('#content .right .rbody .ttl .opt-ttl').removeClass('col-3');
+    } else if (width >= 753) {
+        $('#content .right .rbody .ttl .opt-ttl').addClass('col-3');
+        $('#content .right .rbody .ttl .opt-ttl').removeClass('col-4');
+    }
+}
+// responsive - resize window
 
 
 // append tanggal dan tahun lahir

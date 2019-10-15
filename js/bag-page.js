@@ -8,6 +8,7 @@ $("#middle .input-jumlah-buku div.plus").on('click', () => {
 
     inputJumlahBuku.val(jumlah);
 });
+// tombol plus di klik, increment input number
 
 
 
@@ -20,3 +21,4 @@ $("#middle .input-jumlah-buku div.minus").on('click', () => {
 
     inputJumlahBuku.val(jumlah);
 });
+// tombol minus di klik, decrement input number

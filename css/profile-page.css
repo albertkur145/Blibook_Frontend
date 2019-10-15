@@ -1,11 +1,54 @@
-/* berlaku untuk width window >= 960px */
 
-@media (min-width: 960px) {
+/* berlaku untuk width window < 320px */
+
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
 
 
     /* content */
     #content .right .rbody label {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         font-weight: 500;
     }
 
@@ -19,13 +62,14 @@
 
     #content .right .rbody input,
     #content .right .rbody select {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         color: #000;
     }
 
 
 
     #content .right .rbody small {
+        font-size: 0.75rem;
         display: none;
         color: #DA0000 !important;
     }
@@ -34,6 +78,12 @@
 
     #content .right .rbody small#error-ttl {
         margin-top: -0.75rem;
+    }
+
+
+
+    #content .right .rbody .ttl .txt-ttl {
+        margin: 0;
     }
 
 
@@ -47,11 +97,11 @@
 
 
     #content .right .rbody .col-12 input {
-        width: 65%;
+        width: 100%;
     }
 
 
-    
+
     #content .right .rbody input[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
     }
@@ -65,22 +115,120 @@
 
 
     #content .right .rbody button.btn-simpan {
+        padding: 0.6875rem 2.5rem;
+        margin-top: 1.25rem;
+        font-size: 0.8125rem;
+        border-radius: 0.3125rem;
         display: block;
         border: 0;
         background-color: #8811FF;
-        padding: 0.75rem 3rem;
-        margin-top: 2.5rem;
-        font-size: 0.9375rem;
         color: #FFF;
         font-weight: 500;
         transition: background-color .2s;
-        border-radius: 0.3125rem;
     }
 
 
 
     #content .right .rbody button.btn-simpan:hover {
         background-color: #8000FF;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* content */
+    #content .right .rbody label {
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .right .rbody input,
+    #content .right .rbody select {
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .right .rbody small {
+        font-size: 0.8125rem;
+    }
+
+
+
+    #content .right .rbody .col-12 input {
+        width: 90%;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.75rem 3rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;=
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* content */
+    #content .right .rbody .col-12 input {
+        width: 65%;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan {
+        margin-top: 2rem;
+        font-size: 0.9375rem;
     }
     /* content */
 

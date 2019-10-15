@@ -16,7 +16,7 @@ $.each(deskBuku, (key, value) => {
     textBuku.push(value.innerHTML);
 });
 
-// akhir ambil data json
+// ambil data json
 
 
 
@@ -487,7 +487,7 @@ function responsiveSize() {
     }
 }
 
-// akhir responsive - resize window
+// responsive - resize window
 
 
 
