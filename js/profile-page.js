@@ -14,7 +14,7 @@ function DOM_Manipulation() {
 function appendTTL() {
     for (let i = 1950; i <= 2019; i++) {
         $('#content .right .rbody select#tahun').append(`
-            <option value="`+ i +`">`+ i +`</option>
+            <option value="`+ i + `">` + i + `</option>
         `);
     }
 
@@ -38,10 +38,11 @@ function borderTab() {
 const form = $('#content .right .rbody form');
 const nama = $('#nama', form);
 const email = $('#email', form);
-const tanggal = $('#tanggal option:selected', form).text();
-const bulan = $('#bulan option:selected', form).text();
-const tahun = $('#tahun :selected', form).text();
+const tanggal = $('#tanggal', form);
+const bulan = $('#bulan', form);
+const tahun = $('#tahun', form);
 const nomor = $('#nomor', form);
+
 
 function validationForm() {
     if (nama.val().length == 0) {
@@ -58,9 +59,19 @@ function validationForm() {
         $('small#error-nomor').css('display', 'block');
         return false;
     }
-    alert(tanggal);
 
-    return false;
+    let tgl = $('option:selected', tanggal).val();
+    let bln = $('option:selected', bulan).val();
+
+    if (tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12)) {
+        $('small#error-ttl').css('display', 'block');
+        return false;
+    }
+
+    if (tgl > 28 && bln == 2) {
+        $('small#error-ttl').css('display', 'block');
+        return false;
+    }
 }
 
 nama.focusout(() => {
@@ -73,11 +84,11 @@ email.focusout(() => {
     nama.val().length == 0 ? $('small#error-nama', form).css('display', 'block') : $('small#error-nama', form).css('display', 'none');
     email.val().length == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
     nomor.val().length == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
-})
+});
 
 nomor.focusout(() => {
     nama.val().length == 0 ? $('small#error-nama', form).css('display', 'block') : $('small#error-nama', form).css('display', 'none');
     email.val().length == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
     nomor.val().length == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
-})
+});
 // validasi form

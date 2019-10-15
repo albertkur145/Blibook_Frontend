@@ -32,6 +32,12 @@
 
 
 
+    #content .right .rbody small#error-ttl {
+        margin-top: -0.75rem;
+    }
+
+
+
     #content .right .rbody input:focus,
     #content .right .rbody select:focus {
         border: 0.0625rem solid #B38FFF;
