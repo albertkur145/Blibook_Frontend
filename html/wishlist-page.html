@@ -8,20 +8,21 @@
 
     <link rel="shortcut icon" type="image/png" href="../icons/blibuku.jpg">
     <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/main-page.css">
+    <link rel="stylesheet" href="../css/personal.css">
     <link rel="stylesheet" href="../css/wishlist-page.css">
     <link rel="stylesheet" href="../css/footer.css">
 
-    <title>Wishlist Page</title>
+    <title>Wishlist | Blibuku.com</title>
 </head>
 
 <body>
+
     <!-- background body -->
     <div class="backgroundAll"></div>
     <!-- background body -->
@@ -48,6 +49,7 @@
                     <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i> Bag</a>
                     <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
                     <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
+                    <a class="nav-item nav-link option-user" href=""><i class="fas fa-user"></i>Hi, Albert Kurniawan<span><i class="fas fa-chevron-down"></i></span></a>
                 </div>
             </div>
             <!-- nav -->
@@ -62,11 +64,10 @@
     <!-- akhir navbar -->
 
 
-
     <!-- sub navbar -->
     <div class="sub-navbar">
         <div class="container">
-            
+
             <!-- kategori buku -->
             <ul class="kategori">
                 <a href=""><li>Buku Indonesia</li></a>
@@ -86,107 +87,60 @@
     <!-- akhir sub navbar -->
 
 
-    <!-- wishlist -->
-    <div id="wishlist">
+
+    <!-- content -->
+    <div id="content">
         <div class="container">
-            <div class="bg-white">
-            
-                <!-- text wishlist saya -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="text-wishlist">Wishlist Saya</h2>
+            <div class="row">
+
+                <!-- left -->
+                <div class="col-3 left">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="nama-user">Albert Kurniawan</h2>
+                        <p class="as">Signature Member</p>
                     </div>
-                </div>
-                <!-- text wishlist saya -->
+                    <!-- head -->
 
-                <hr>
-
-                <!-- daftar wishlist -->
-                <div class="row daftar-wishlist">
-
-                    <!-- image -->
-                    <div class="col-lg-2 img-wish">
-                        <img src="../pictures/A Boy Cover Book.jpg">
+                    <!-- tab -->
+                    <div class="tab">
+                        <a href="profile-page.html"><p class="profile-tab">Profile</p></a>
+                        <a href="wishlist-page.html"><p class="wishlist-tab ">Wishlist</p></a>
+                        <a href=""><p class="pembelian-tab">Pembelian</p></a>
+                        <a href=""><p class="perpustakaan-tab">Perpustakaan</p></a>
+                        <a href=""><p class="keluar-tab">Keluar</p></a>
                     </div>
-                    <!-- image -->
-                    
-                    <!-- deskripsi -->
-                    <div class="col-lg-5 desk-wish">
-                        <h2 class="judul-buku">A Boy in Winter</h2>
-                        <h3 class="harga-buku">Rp68.305 <span>50% OFF</span></h3>
-                        <p class="harga-sebelum-diskon">Rp136.610</p>
-                        <a href="" class="hapus">hapus</a>
-                    </div>
-                    <!-- deskripsi -->
-
-                    <!-- tombol beli sekarang -->
-                    <div class="col-lg-3 offset-lg-2 btn-wish">
-                        <a href="" class="btn-beli-sekarang">Beli Sekarang</a>
-                    </div>
-                    <!-- tombol beli sekarang -->
-                    
-                </div>
-
-                <hr>
-
-                <div class="row daftar-wishlist">
-
-                    <!-- image -->
-                    <div class="col-lg-2 img-wish">
-                        <img src="../pictures/The Night Gardener Cover Book.jpg">
-                    </div>
-                    <!-- image -->
-
-                    <!-- deskripsi -->
-                    <div class="col-lg-5 desk-wish">
-                        <h2 class="judul-buku">The Night Gardener</h2>
-                        <h3 class="harga-buku">Rp42.822 <span>22% OFF</span></h3>
-                        <p class="harga-sebelum-diskon">Rp57.973</p>
-                        <a href="" class="hapus">hapus</a>
-                    </div>
-                    <!-- deskripsi -->
-
-                    <!-- tombol beli sekarang -->
-                    <div class="col-lg-3 offset-lg-2 btn-wish">
-                        <a href="" class="btn-beli-sekarang">Beli Sekarang</a>
-                    </div>
-                    <!-- tombol beli sekarang -->
+                    <!-- tab -->
 
                 </div>
+                <!-- left -->
 
-                <hr>
 
-                <div class="row daftar-wishlist">
+                <!-- right -->
+                <div class="col-9 right">
 
-                    <!-- image -->
-                    <div class="col-lg-2 img-wish">
-                        <img src="../pictures/Pulang Cover Buku.jpg">
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="title">Wishlist</h2>
                     </div>
-                    <!-- image -->
+                    <!-- head -->
 
-                    <!-- deskripsi -->
-                    <div class="col-lg-5 desk-wish">
-                        <h2 class="judul-buku">Pulang</h2>
-                        <h3 class="harga-buku">Rp42.775 <span>70% OFF</span></h3>
-                        <p class="harga-sebelum-diskon">Rp202.470</p>
-                        <a href="" class="hapus">hapus</a>
-                    </div>
-                    <!-- deskripsi -->
+                    <!-- rbody -->
+                    <div class="rbody">
 
-                    <!-- tombol beli sekarang -->
-                    <div class="col-lg-3 offset-lg-2 btn-wish">
-                        <a href="" class="btn-beli-sekarang">Beli Sekarang</a>
+                        <!-- code -->
+
                     </div>
-                    <!-- tombol beli sekarang -->
+                    <!-- rbody -->
 
                 </div>
-                
-                <hr>
-                
+                <!-- right -->
+
             </div>
         </div>
     </div>
-    <!-- akhir wishlist -->
+    <!-- akhir content -->
 
 
 
@@ -226,19 +180,17 @@
 
         </div>
     </div>
-    <!-- footer -->
+    <!-- akhir footer -->
 
 
-
-
-    
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="../bootstrap/js/bootstrap.min.js"></script>    
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
+    <script src="../js/personal.js"></script>
     <script src="../js/wishlist-page.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
 </html>
