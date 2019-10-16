@@ -299,6 +299,7 @@
 
 
     .nav-blibuku .masuk {
+        display: none;
         background-color: #6F4AD7;
         border: 0.125rem solid #6F4AD7;
         font-weight: 500;
@@ -315,6 +316,7 @@
 
 
     .nav-blibuku .daftar {
+        display: none;
         border: 0.125rem solid #6F4AD7;
     }
 
@@ -335,6 +337,27 @@
 
 
     .nav-blibuku .bag:hover {
+        text-decoration: none;
+    }
+
+
+
+    .nav-blibuku .option-user {
+        display: block;
+        margin-top: 0.203125rem;
+        font-weight: 500;
+    }
+
+
+
+    .nav-blibuku .option-user span {
+        padding-left: 0.25rem;
+        font-size: 0.875rem;
+    }
+
+
+
+    .nav-blibuku .option-user:hover {
         text-decoration: none;
     }
 

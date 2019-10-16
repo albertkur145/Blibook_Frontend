@@ -16,12 +16,45 @@ function DOM_Manipulation() {
 function responsiveSize() {
     let width = $(window).width();
 
-    if (width < 753) {
-        $('#content .right .rbody .ttl .opt-ttl').addClass('col-4');
-        $('#content .right .rbody .ttl .opt-ttl').removeClass('col-3');
+
+    if (width < 420) {
+
+        if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-3')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-12');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-3');
+        }
+
+        else if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-4')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-12');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-4');
+        }
+        
+    }
+
+    else if (width < 753) {
+
+        if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-3')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-4');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-3');
+        }
+
+        else if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-12')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-4');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-12');
+        }
+        
     } else if (width >= 753) {
-        $('#content .right .rbody .ttl .opt-ttl').addClass('col-3');
-        $('#content .right .rbody .ttl .opt-ttl').removeClass('col-4');
+
+        if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-4')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-3');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-4');
+        }
+
+        else if ($('#content .right .rbody .ttl .opt-ttl').hasClass('col-4')) {
+            $('#content .right .rbody .ttl .opt-ttl').addClass('col-3');
+            $('#content .right .rbody .ttl .opt-ttl').removeClass('col-4');
+        }
+        
     }
 }
 // responsive - resize window

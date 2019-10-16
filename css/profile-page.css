@@ -2,53 +2,9 @@
 /* berlaku untuk width window < 320px */
 
 
-
-/* berlaku untuk width window < 320px */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* berlaku untuk width window (320px - 479px) */
-
-@media (min-width: 320px) {
-
-}
-
-/* berlaku untuk width window (320px - 479px) */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* berlaku untuk width window (480px - 767px) */
-
-@media (min-width: 480px) {
-
-
     /* content */
     #content .right .rbody label {
-        font-size: 0.8125rem;
+        font-size: 1rem;
         font-weight: 500;
     }
 
@@ -62,14 +18,14 @@
 
     #content .right .rbody input,
     #content .right .rbody select {
-        font-size: 0.8125rem;
+        font-size: 1rem;
         color: #000;
     }
 
 
 
     #content .right .rbody small {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         display: none;
         color: #DA0000 !important;
     }
@@ -115,9 +71,9 @@
 
 
     #content .right .rbody button.btn-simpan {
-        padding: 0.6875rem 2.5rem;
-        margin-top: 1.25rem;
-        font-size: 0.8125rem;
+        padding: 0.75rem 2.5rem;
+        margin-top: 1.75rem;
+        font-size: 1rem;
         border-radius: 0.3125rem;
         display: block;
         border: 0;
@@ -131,6 +87,112 @@
 
     #content .right .rbody button.btn-simpan:hover {
         background-color: #8000FF;
+    }
+    /* content */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* content */
+    #content .right .rbody label {
+        font-size: 0.9375rem;
+    }
+
+
+
+    #content .right .rbody input,
+    #content .right .rbody select {
+        font-size: 0.9375rem;
+    }
+
+
+
+    #content .right .rbody small {
+        font-size: 0.8125rem;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.625rem 2.25rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan:hover {
+        background-color: #8000FF;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* content */
+    #content .right .rbody label {
+        font-size: 0.8125rem;
+    }
+
+
+
+    #content .right .rbody input,
+    #content .right .rbody select {
+        font-size: 0.8125rem;
+    }
+
+
+
+    #content .right .rbody small {
+        font-size: 0.75rem;
+    }
+
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.6875rem 2.5rem;
+        margin-top: 1.25rem;
+        font-size: 0.8125rem;
     }
     /* content */
 
@@ -188,7 +250,7 @@
     #content .right .rbody button.btn-simpan {
         padding: 0.75rem 3rem;
         margin-top: 1.5rem;
-        font-size: 0.875rem;=
+        font-size: 0.875rem;
     }
     /* content */
 
