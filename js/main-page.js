@@ -37,7 +37,6 @@ $(window).resize(responsiveSize);
 
 function responsiveSize() {
     let width = $(window).width();
-    $('.angka').html(width);
 
     const itemsBuku = $('#promo-murah .items-buku-promo .row');
 

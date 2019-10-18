@@ -1,0 +1,195 @@
+
+
+/* berlaku untuk width window < 320px */
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    #content .right .rbody .wishlist hr {
+        border: 0.03125rem solid #410095;
+    }
+
+
+    #content .right .rbody .wishlist .image-buku img {
+        width: 11.25rem;
+        height: 15.9375rem;
+    }
+
+    
+    #content .right .rbody .wishlist .desk-buku p {
+        padding: 0.125rem 0;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a {
+        text-decoration: none;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.judul {
+        font-size: 1.5rem;
+        color: #444;
+        line-height: 2rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.deskripsi {
+        font-size: 0.9375rem;
+        text-align: justify;
+        color: #AAA;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.harga {
+        font-size: 1.125rem;
+        color: #4C06E2;        
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.harga span {
+        margin-left: 0.5rem;
+        padding: 0.375rem 0.625rem;
+        border: 0.0625rem solid #4C06E2;
+        font-weight: 500;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.diskon {
+        font-size: 0.875rem;
+        text-decoration: line-through;
+        color: #666;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a.hapus {
+        text-decoration: underline;
+        font-size: 0.75rem;
+        color: #F90000;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a.hapus:hover {
+        color: #D30140;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli {
+        text-align: right;
+        padding-top: 7rem;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli a {
+        background-color: #850EE2;
+        padding: 0.8125rem 1.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: #FFF;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+        transition: background-color .2s;
+    }
+    
+
+    #content .right .rbody .wishlist .button-beli a:hover {
+        background-color: #7F05DF;
+    }
+
+}
+
+/* berlaku untuk width window >= 960px */

@@ -1,9 +1,27 @@
 
+// ambil data json
+const buku = $('#content .right .rbody .wishlist');
+let judulBuku = $('.desk-buku p.judul', buku)
+let deskBuku = $('.desk-buku p.deskripsi', buku);
+let textJudul = [];
+let textDeskripsi = [];
+
+$.each(judulBuku, (key, value) => {
+    textJudul.push(value.innerHTML);
+});
+
+$.each(deskBuku, (key, value) => {
+    textDeskripsi.push(value.innerHTML);
+});
+// ambil data json
+
+
+
 $(window).ready(DOM_Manipulation);
 $(window).resize(responsiveSize);
 
-
 // saat window ready
+responsiveSize();
 function DOM_Manipulation() {
     borderTab();
 }
@@ -12,7 +30,24 @@ function DOM_Manipulation() {
 
 // responsive - resize window
 function responsiveSize() {
+    let width = $(window).width();
     
+
+    if (width >= 1185) {
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 30) {
+                let temp = textJudul[i].substring(0, 30) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 142) {
+                let temp = textDeskripsi[i].substring(0, 142) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+    }
 }
 // responsive - resize window
 
