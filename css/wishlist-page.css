@@ -24,6 +24,105 @@
 
 @media (min-width: 320px) {
 
+
+    /* content */
+    #content .right .rbody .wishlist hr {
+        border: 0.03125rem solid #410095;
+    }
+
+
+    #content .right .rbody .wishlist .image-buku img {
+        width: 8.125rem;
+        height: 13.125rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p {
+        padding: 0.125rem 0 0.125rem 2.5rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a {
+        text-decoration: none;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.judul {
+        font-size: 1.25rem;
+        color: #444;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.deskripsi {
+        display: block;
+        text-align: justify;
+        color: #AAA;
+        font-size: 0.75rem;
+    }
+    
+
+    #content .right .rbody .wishlist .desk-buku p.harga {
+        font-size: 0.8125rem;
+        color: #4C06E2;
+        margin-top: -0.5rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.harga span {
+        display: inline-block;
+        font-weight: 500;
+        border: 0.0625rem solid #4C06E2;
+        margin-left: 0.3125rem;
+        padding: 0.125rem 0.3125rem;      
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.diskon {
+        font-size: 0.75rem;
+        margin-top: -0.9375rem;
+        text-decoration: line-through;
+        color: #666;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a.hapus {
+        text-decoration: underline;
+        color: #F90000;
+        font-size: 0.75rem;
+        padding-left: 2.5rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a.hapus:hover {
+        color: #D30140;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli {
+        text-align: right;
+        padding-top: 5.75rem;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli a {
+        padding: 0.625rem 1rem;
+        font-size: 0.75rem;
+        background-color: #850EE2;
+        font-weight: 500;
+        text-decoration: none;
+        color: #FFF;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+        transition: background-color .2s;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli a:hover {
+        background-color: #7F05DF;
+    }
+    /* content */
+
+
 }
 
 /* berlaku untuk width window (320px - 479px) */
@@ -47,6 +146,67 @@
 /* berlaku untuk width window (480px - 767px) */
 
 @media (min-width: 480px) {
+
+
+    /* content */
+    #content .right .rbody .wishlist .image-buku img {
+        width: 7.5rem;
+        height: 11.875rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p {
+        padding: 0.125rem 0 0.125rem 3.25rem;
+    }
+
+
+
+    #content .right .rbody .wishlist .desk-buku p.judul {
+        font-size: 1.125rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.deskripsi {
+        display: none;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.harga {
+        font-size: 0.875rem;
+        margin-top: -0.25rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.harga span {
+        padding: 0.0625rem 0.25rem;
+        margin-top: 0.3125rem;
+        margin-left: 0;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku p.diskon {
+        font-size: 0.75rem;
+        margin-top: -0.75rem;
+    }
+
+
+    #content .right .rbody .wishlist .desk-buku a.hapus {
+        font-size: 0.625rem;
+        padding-left: 3.25rem;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli {
+        padding-top: 5rem;
+    }
+
+
+    #content .right .rbody .wishlist .button-beli a {
+        padding: 0.625rem 0.9375rem;
+        font-size: 0.6875rem;
+    }
+    /* content */
+
 
 }
 
@@ -74,11 +234,6 @@
 
 
     /* content */
-    #content .right .rbody .wishlist hr {
-        border: 0.03125rem solid #410095;
-    }
-
-
     #content .right .rbody .wishlist .image-buku img {
         width: 9.5rem;
         height: 15rem;
@@ -90,60 +245,43 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a {
-        text-decoration: none;
-    }
-
-
     #content .right .rbody .wishlist .desk-buku p.judul {
         font-size: 1.3125rem;
-        color: #444;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.deskripsi {
+        display: block;
         font-size: 0.8125rem;
-        text-align: justify;
-        color: #AAA;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.harga {
         font-size: 0.9375rem;
-        color: #4C06E2;
+        margin-top: 0;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.harga span {
         margin-left: 0.5rem;
         padding: 0.25rem 0.5rem;
-        border: 0.0625rem solid #4C06E2;
-        font-weight: 500;
+        margin-top: 0;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.diskon {
         font-size: 0.75rem;
-        text-decoration: line-through;
-        color: #666;
+        margin-top: -0.9375rem;
     }
 
 
     #content .right .rbody .wishlist .desk-buku a.hapus {
-        text-decoration: underline;
         font-size: 0.6875rem;
-        color: #F90000;
         padding-left: 2.25rem;
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus:hover {
-        color: #D30140;
-    }
-
-
     #content .right .rbody .wishlist .button-beli {
-        text-align: right;
         padding-top: 6.5rem;
     }
 
@@ -151,18 +289,6 @@
     #content .right .rbody .wishlist .button-beli a {
         padding: 0.6875rem 2rem;
         font-size: 0.75rem;
-        background-color: #850EE2;
-        font-weight: 500;
-        text-decoration: none;
-        color: #FFF;
-        text-transform: uppercase;
-        border-radius: 0.25rem;
-        transition: background-color .2s;
-    }
-
-
-    #content .right .rbody .wishlist .button-beli a:hover {
-        background-color: #7F05DF;
     }
     /* content */
 
