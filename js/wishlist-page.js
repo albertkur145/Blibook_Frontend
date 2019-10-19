@@ -31,9 +31,52 @@ function DOM_Manipulation() {
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
-    
+    const wish = $('#content .right .rbody .wishlist');
+    const image = $('.image-buku', wish);
 
-    if (width >= 1185) {
+
+    if (width < 945) {
+        $('img', image).css('width', '9.375rem');
+        $('img', image).css('height', '14.375rem');
+
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 14) {
+                let temp = textJudul[i].substring(0, 14) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 82) {
+                let temp = textDeskripsi[i].substring(0, 82) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+    }
+
+    else if (width < 1185) {
+        $('img', image).css('width', '10rem');
+        $('img', image).css('height', '15.625rem');
+
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 24) {
+                let temp = textJudul[i].substring(0, 24) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 117) {
+                let temp = textDeskripsi[i].substring(0, 117) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+    }
+
+    else if (width >= 1185) {
+        $('img', image).css('width', '11.25rem');
+        $('img', image).css('height', '15.9375rem');
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length > 30) {
                 let temp = textJudul[i].substring(0, 30) + "...";
