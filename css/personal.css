@@ -8,7 +8,6 @@
     }
 
 
-
     #content .left .head {
         font-family: 'Roboto';
         border-top: 0.25rem solid #E1D2F8;
@@ -17,7 +16,6 @@
         text-transform: uppercase;
         text-align: center;
     }
-
 
 
     #content .left .head h2.nama-user {
@@ -29,13 +27,11 @@
     }
 
 
-
     #content .left .head p.as {
         font-size: 1rem;
         color: #ACACAC;
         font-weight: 400;
     }
-
 
 
     #content .left .tab {
@@ -44,12 +40,10 @@
     }
 
 
-
     #content .left .tab a {
         color: #000;
         text-decoration: none;
     }
-
 
 
     #content .left .tab a p {
@@ -60,12 +54,10 @@
     }
 
 
-
     #content .left .tab a p:hover {
         background-color: rgba(219, 219, 219, 0.2);
         cursor: pointer;
     }
-
 
 
     .is-active {
@@ -76,13 +68,11 @@
     }
 
 
-
     #content .right {
         font-family: 'Roboto';
         padding-left: 1rem;
         margin-top: 2.5rem;
     }
-
 
 
     #content .right .head h2.title {
@@ -92,7 +82,6 @@
     }
 
 
-
     #content .right .rbody {
         margin-top: 0.75rem;
     }
@@ -100,12 +89,6 @@
 
 
 /* berlaku untuk width window < 320px */
-
-
-
-
-
-
 
 
 
@@ -129,7 +112,6 @@
     }
 
 
-
     #content .left .head h2.nama-user {
         margin-top: 0.5rem;
         font-size: 1.75rem;
@@ -137,11 +119,9 @@
     }
 
 
-
     #content .left .head p.as {
         font-size: 1.125rem;
     }
-
 
 
     #content .left .tab {
@@ -149,11 +129,9 @@
     }
 
 
-
     #content .left .tab a p {
         font-size: 0.9375rem;
     }
-
 
 
     .is-active {
@@ -162,17 +140,14 @@
     }
 
 
-
     #content .right {
         margin-top: 3rem;
     }
 
 
-
     #content .right .head h2.title {
         font-size: 1.75rem;
     }
-
 
 
     #content .right .rbody {
@@ -196,15 +171,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 /* berlaku untuk width window (480px - 767px) */
 
 @media (min-width: 480px) {
@@ -216,12 +182,10 @@
     }
 
 
-
     #content .left .head {
         padding: 0.5rem;
         text-align: left;
     }
-
 
 
     #content .left .head h2.nama-user {
@@ -231,11 +195,9 @@
     }
 
 
-
     #content .left .head p.as {
         font-size: 0.8125rem;
     }
-
 
 
     #content .left .tab {
@@ -244,12 +206,10 @@
     }
 
 
-
     #content .left .tab a p {
         padding: 0.6875rem 0.5rem;
         font-size: 0.8125rem;
     }
-
 
 
     .is-active {
@@ -258,18 +218,15 @@
     }
 
 
-
     #content .right {
         padding-left: 1.25rem;
         margin-top: 0rem;
     }
 
 
-
     #content .right .head h2.title {
         font-size: 1.5rem;
     }
-
 
 
     #content .right .rbody {
@@ -293,13 +250,6 @@
 
 
 
-
-
-
-
-
-
-
 /* berlaku untuk width window (768px - 959px) */
 
 @media (min-width: 768px) {
@@ -311,11 +261,9 @@
     }
 
 
-
     #content .left .head {
         padding: 0.75rem;
     }
-
 
 
     #content .left .head h2.nama-user {
@@ -324,11 +272,9 @@
     }
 
 
-
     #content .left .tab {
         margin-top: 1.5rem;
     }
-
 
 
     #content .left .tab a p {
@@ -337,12 +283,10 @@
     }
 
 
-
     .is-active {
         border-left: 0.25rem solid #8F5AFF;
         padding-left: 0.5625rem !important;
     }
-
 
 
     #content .right {
@@ -350,11 +294,9 @@
     }
 
 
-
     #content .right .head h2.title {
         font-size: 1.625rem;
     }
-
 
 
     #content .right .rbody {
@@ -378,14 +320,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {
@@ -397,11 +331,9 @@
     }
 
 
-
     #content .left .head {
         padding: 1rem;
     }
-
 
 
     #content .left .head h2.nama-user {
@@ -411,11 +343,9 @@
     }
 
 
-
     #content .left .head p.as {
         font-size: 1rem;
     }
-
 
 
     #content .left .tab {
@@ -423,11 +353,9 @@
     }
 
 
-
     #content .left .tab a p {
         padding: 0.6875rem 1rem;
     }
-
 
 
     .is-active {
@@ -436,17 +364,14 @@
     }
 
 
-
     #content .right {
         padding-left: 1.5rem;
     }
 
 
-
     #content .right .head h2.title {
         font-size: 1.875rem;
     }
-
 
 
     #content .right .rbody {

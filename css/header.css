@@ -27,7 +27,6 @@
     }
 
 
-
     .navbar .blibuku-brand {
         font-family: 'Viga';
         color: white !important;
@@ -35,11 +34,9 @@
     }
 
 
-
     .navbar .nav-item {
         color: white !important;
     }
-
 
 
     .navbar .nav-item:hover {
@@ -47,11 +44,9 @@
     }
 
 
-
     .nav-blibuku form {
         width: 100%;
     }
-
 
 
     .nav-blibuku .search {
@@ -65,7 +60,6 @@
         padding-bottom: 0.125rem;
         margin: 0.5rem 0;
     }
-
 
 
     .nav-blibuku .cari-btn {
@@ -82,7 +76,6 @@
         outline: none;
         margin-left: -11%;
     }
-
 
 
     .nav-blibuku .cari-btn:hover {
@@ -102,12 +95,10 @@
     }
 
 
-
     .sub-navbar .kategori {
         padding: 0;
         margin: 0;
     }
-
 
 
     .sub-navbar .kategori a {
@@ -117,19 +108,16 @@
     }
 
 
-
     .sub-navbar .kategori a:hover {
         text-shadow: 0.03125rem 0.03125rem 0.1875rem rgba(0, 0, 0, 0.7),
                     -0.03125rem -0.03125rem 0.1875rem rgba(0, 0, 0, 0.7);
     }
 
 
-
     .sub-navbar .kategori a li {
         display: inline-block;
         padding: 0.1875rem 0.625rem;
     }
-
 
 
     .sub-navbar .kategori a li:first-child {
@@ -139,10 +127,6 @@
 
 
 /* berlaku untuk width window < 320px */
-
-
-
-
 
 
 
@@ -171,7 +155,6 @@
         height: 2.75rem;
     }
 
-    
 
     .nav-blibuku .cari-btn {
         width: 20%;
@@ -196,10 +179,6 @@
 
 
 
-
-
-
-
 /* berlaku untuk width window (480px - 767px) */
 
 @media (min-width: 480px) {
@@ -210,7 +189,6 @@
         width: 90%;
         height: 2.5rem;
     }
-
 
 
     .nav-blibuku .cari-btn {
@@ -236,11 +214,6 @@
 
 
 
-
-
-
-
-
 /* berlaku untuk width window (768px - 959px) */
 
 @media (min-width: 768px) {
@@ -250,7 +223,6 @@
     .nav-blibuku .search {
         width: 96%;     
     }
-
 
 
     .nav-blibuku .cari-btn {
@@ -274,10 +246,6 @@
 
 
 
-
-
-
-
 /* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {
@@ -289,13 +257,11 @@
     }
 
 
-
     .nav-blibuku .nav-item {
         margin-right: 0.625rem;        
         padding: 0.3125rem 1.25rem !important;
         border-radius: 1.25rem;
     }
-
 
 
     .nav-blibuku .masuk {
@@ -306,7 +272,6 @@
     }
 
 
-
     .nav-blibuku .masuk:hover {
         background-color: #FFF;
         color: #6F4AD7 !important;
@@ -314,12 +279,10 @@
     }
 
 
-
     .nav-blibuku .daftar {
         display: block;
         border: 0.125rem solid #6F4AD7;
     }
-
 
 
     .nav-blibuku .daftar:hover {
@@ -329,17 +292,14 @@
     }
 
 
-
     .nav-blibuku .bag {
         font-size: 1.1875rem;
     }
 
 
-
     .nav-blibuku .bag:hover {
         text-decoration: none;
     }
-
 
 
     .nav-blibuku .option-user {
@@ -349,12 +309,10 @@
     }
 
 
-
     .nav-blibuku .option-user span {
         padding-left: 0.25rem;
         font-size: 0.875rem;
     }
-
 
 
     .nav-blibuku .option-user:hover {
@@ -362,11 +320,9 @@
     }
 
 
-
     .nav-blibuku form {
         width: 0;
     }
-
 
 
     .nav-blibuku .search {
@@ -378,7 +334,6 @@
         font-size: 0.9375rem;
         margin: 0;  
     }
-
 
 
     .nav-blibuku .cari-btn {
@@ -395,5 +350,3 @@
 }
 
 /* berlaku untuk width window >= 960px */
-
-

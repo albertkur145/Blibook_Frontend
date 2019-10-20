@@ -1,5 +1,4 @@
 /* icon bag */
-
 p.icon-bag {
     font-size: 32px;
     margin-top: 50px;
@@ -7,14 +6,12 @@ p.icon-bag {
     color: #444;
     font-weight: 500;
 }
-
 /* icon bag */
 
 
 
 
 /* top */
-
 #top {
     margin-top: 40px;
     padding-top: 13px;
@@ -96,7 +93,6 @@ p.icon-bag {
     font-size: 18px;
     color: #666;
 }
-
 /* top */
 
 
@@ -104,7 +100,6 @@ p.icon-bag {
 
 
 /* middle */
-
 #middle {
     margin-top: 30px;
     padding: 13px 0;
@@ -297,7 +292,6 @@ p.icon-bag {
 
 
 /* bottom */
-
 #bottom {
     margin-top: 30px;
     padding-top: 12px;
@@ -316,7 +310,6 @@ p.icon-bag {
     color: #388753;
     margin-top: -10px;
 }
-
 /* bottom */
 
 
@@ -324,7 +317,6 @@ p.icon-bag {
 
 
 /* checkout */
-
 #checkout {
     margin-bottom: 70px;
     margin-top: 30px;
@@ -347,7 +339,6 @@ p.icon-bag {
 #checkout .btn-checkout:hover {
     background-color: #FF8A00;
 }
-
 /* checkout */
 
 
@@ -355,7 +346,6 @@ p.icon-bag {
 
 
 /* khusus desktop window >= 992px */
-
 @media (min-width: 992px) { 
 
     /* top */
@@ -371,5 +361,4 @@ p.icon-bag {
         left: 35%;
     }
     /* middle */
-
 }

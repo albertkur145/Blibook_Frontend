@@ -9,11 +9,9 @@
     }
 
 
-
     #content .right .rbody label span {
         color: #DD0000;
     }
-
 
 
     #content .right .rbody input,
@@ -23,7 +21,6 @@
     }
 
 
-
     #content .right .rbody small {
         font-size: 0.875rem;
         display: none;
@@ -31,17 +28,14 @@
     }
 
 
-
     #content .right .rbody small#error-ttl {
         margin-top: -0.75rem;
     }
 
 
-
     #content .right .rbody .ttl .txt-ttl {
         margin: 0;
     }
-
 
 
     #content .right .rbody input:focus,
@@ -51,11 +45,9 @@
     }
 
 
-
     #content .right .rbody .col-12 input {
         width: 100%;
     }
-
 
 
     #content .right .rbody input[type="number"]::-webkit-inner-spin-button {
@@ -63,11 +55,9 @@
     }
 
 
-
     #content .right .rbody input[type="radio"]:focus {
         box-shadow: 0 0 0;
     }
-
 
 
     #content .right .rbody button.btn-simpan {
@@ -84,7 +74,6 @@
     }
 
 
-
     #content .right .rbody button.btn-simpan:hover {
         background-color: #8000FF;
     }
@@ -92,8 +81,6 @@
 
 
 /* berlaku untuk width window < 320px */
-
-
 
 
 
@@ -118,12 +105,10 @@
     }
 
 
-
     #content .right .rbody input,
     #content .right .rbody select {
         font-size: 0.9375rem;
     }
-
 
 
     #content .right .rbody small {
@@ -131,13 +116,11 @@
     }
 
 
-
     #content .right .rbody button.btn-simpan {
         padding: 0.625rem 2.25rem;
         margin-top: 1.5rem;
         font-size: 0.875rem;
     }
-
 
 
     #content .right .rbody button.btn-simpan:hover {
@@ -162,8 +145,6 @@
 
 
 
-
-
 /* berlaku untuk width window (480px - 767px) */
 
 @media (min-width: 480px) {
@@ -175,18 +156,15 @@
     }
 
 
-
     #content .right .rbody input,
     #content .right .rbody select {
         font-size: 0.8125rem;
     }
 
 
-
     #content .right .rbody small {
         font-size: 0.75rem;
     }
-
 
 
     #content .right .rbody button.btn-simpan {
@@ -212,10 +190,6 @@
 
 
 
-
-
-
-
 /* berlaku untuk width window (768px - 959px) */
 
 @media (min-width: 768px) {
@@ -227,12 +201,10 @@
     }
 
 
-
     #content .right .rbody input,
     #content .right .rbody select {
         font-size: 0.875rem;
     }
-
 
 
     #content .right .rbody small {
@@ -240,11 +212,9 @@
     }
 
 
-
     #content .right .rbody .col-12 input {
         width: 90%;
     }
-
 
 
     #content .right .rbody button.btn-simpan {
@@ -270,12 +240,6 @@
 
 
 
-
-
-
-
-
-
 /* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {
@@ -285,7 +249,6 @@
     #content .right .rbody .col-12 input {
         width: 65%;
     }
-
 
 
     #content .right .rbody button.btn-simpan {

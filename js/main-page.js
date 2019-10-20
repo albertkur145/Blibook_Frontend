@@ -20,16 +20,6 @@ $.each(deskBuku, (key, value) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // responsive - resize window
 
 $(window).ready(responsiveSize);
@@ -37,11 +27,9 @@ $(window).resize(responsiveSize);
 
 function responsiveSize() {
     let width = $(window).width();
-
     const itemsBuku = $('#promo-murah .items-buku-promo .row');
 
-
-    if(width < 300) {
+    if (width < 300) {
 
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
@@ -61,7 +49,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 37) {
                 let temp = textJudul[i].substring(0, 37) + "...";
@@ -69,7 +57,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 137) {
                 let temp = textBuku[i].substring(0, 137) + "...";
@@ -77,7 +64,7 @@ function responsiveSize() {
             }
         }
 
-    } else if(width < 320) {
+    } else if (width < 320) {
 
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
@@ -98,7 +85,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 27) {
                 let temp = textJudul[i].substring(0, 27) + "...";
@@ -106,7 +93,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 127) {
                 let temp = textBuku[i].substring(0, 127) + "...";
@@ -135,7 +121,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 37) {
                 let temp = textJudul[i].substring(0, 37) + "...";
@@ -143,7 +129,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 132) {
                 let temp = textBuku[i].substring(0, 132) + "...";
@@ -172,7 +157,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 40) {
                 let temp = textJudul[i].substring(0, 40) + "...";
@@ -180,7 +165,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 207) {
                 let temp = textBuku[i].substring(0, 207) + "...";
@@ -209,7 +193,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '50%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 10) {
                 let temp = textJudul[i].substring(0, 10) + "...";
@@ -217,7 +201,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 59) {
                 let temp = textBuku[i].substring(0, 59) + "...";
@@ -246,7 +229,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '50%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 11) {
                 let temp = textJudul[i].substring(0, 11) + "...";
@@ -254,7 +237,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 67) {
                 let temp = textBuku[i].substring(0, 67) + "...";
@@ -283,7 +265,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '53%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
@@ -291,7 +273,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 87) {
                 let temp = textBuku[i].substring(0, 87) + "...";
@@ -320,7 +301,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 14) {
                 let temp = textJudul[i].substring(0, 14) + "...";
@@ -328,7 +309,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 107) {
                 let temp = textBuku[i].substring(0, 107) + "...";
@@ -357,7 +337,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '57%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 17) {
                 let temp = textJudul[i].substring(0, 17) + "...";
@@ -365,7 +345,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 107) {
                 let temp = textBuku[i].substring(0, 107) + "...";
@@ -394,7 +373,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '56%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 15) {
                 let temp = textJudul[i].substring(0, 15) + "...";
@@ -402,7 +381,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 127) {
                 let temp = textBuku[i].substring(0, 127) + "...";
@@ -431,7 +409,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '56%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
@@ -439,7 +417,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 137) {
                 let temp = textBuku[i].substring(0, 137) + "...";
@@ -468,7 +445,7 @@ function responsiveSize() {
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '60%');
 
-        // mengatasi jika length string pada judul buku terlalu panjang
+
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 17) {
                 let temp = textJudul[i].substring(0, 17) + "...";
@@ -476,7 +453,6 @@ function responsiveSize() {
             }
         }
 
-        // mengatasi jika length string pada deskripsi buku terlalu panjang
         for (let i = 0; i < textBuku.length; i++) {
             if (textBuku[i].length >= 217) {
                 let temp = textBuku[i].substring(0, 217) + "...";
