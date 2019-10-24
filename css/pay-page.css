@@ -27,6 +27,103 @@
     }
     /* header */
 
+
+
+    /* content */
+    #content {
+        margin: 3rem 0;
+        font-family: 'Roboto';
+    }
+
+
+    #content .left, #content .right {
+        padding: 0.5rem 1rem;
+    }
+
+
+    #content .left h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #444;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .left .biodata {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem 0.25rem;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+        color: #666;
+    }
+
+
+    #content .left .biodata .key p.title {
+        font-size: 1rem;
+        margin-top: 0.1875rem;
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+
+
+    #content .left .pesanan {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+        color: #666;
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 7.1875rem;
+        height: 10.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        font-size: 1.4375rem;
+        font-weight: 300;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        margin-top: 1.5rem;
+        font-size: 1.25rem;
+        color: #1A9980;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        font-size: 1rem;
+        color: #DD4200;
+        margin-left: 0.5rem;
+        border: 0.0625rem solid #DD4200;
+        padding: 0.3125rem 0.75rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        font-size: 0.9375rem;
+        text-decoration: line-through;
+        margin-top: -0.625rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        margin-top: 1.5rem;
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+    /* content */
+
+
 }
 
 /* berlaku untuk width window >= 960px */
