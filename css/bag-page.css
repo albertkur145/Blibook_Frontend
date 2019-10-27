@@ -1,208 +1,845 @@
 
-/* produk */
-#produk {
-    margin: 3rem;
-    font-family: 'Roboto';
+
+
+/* berlaku untuk width window < 320px */
+
+
+    /* produk */
+    #produk {
+        margin: 2rem;
+        font-family: 'Roboto';
+    }
+
+
+    #produk .left .pilih-semua,
+    #produk .left .buku,
+    #produk .right .detail-pembelian {
+        box-shadow: 0rem 0rem 0.1875rem rgba(0, 0, 0, 0.3);
+        background-color: #FFF;
+    }
+
+
+    #produk .left .pilih-semua {
+        padding: 0.5rem 0.5rem 0rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input {
+        position: absolute;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+        top: 0;
+        left: 0.9375rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox {
+        display: inline-block;
+        border: 0.125rem solid #666;
+        border-radius: 0.25rem;
+        transition: all .2s;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+        border: solid #FFF;
+        border-width: 0 0.1875rem 0.1875rem 0;
+        transform: rotate(45deg);
+        width: 0.375rem;
+        height: 0.625rem;
+        top: 0.15625rem;
+        left: 1.25rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input:hover+span.checkbox {
+        border: 0.125rem solid rgb(113, 57, 233);
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input:checked+span.checkbox {
+        background-color: #834DF6;
+        border: 0.125rem solid #834DF6;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input:checked+span.checkbox:after {
+        display: block;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih {
+        margin-top: -0.125rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih label {
+        font-weight: 500;
+        color: #444;
+        cursor: pointer;
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .left .pilih-semua .hapus-semua a {
+        display: none;
+        text-decoration: none;
+        font-weight: 500;
+        color: #666;
+    }
+
+
+    #produk .left .buku {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input {
+        position: absolute;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+        top: 0;
+        left: 0.9375rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox {
+        display: inline-block;
+        border: 0.125rem solid #666;
+        border-radius: 0.25rem;
+        transition: all .2s;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox:after {
+        border: solid #FFF;
+        border-width: 0 0.1875rem 0.1875rem 0;
+        transform: rotate(45deg);
+        width: 0.375rem;
+        height: 0.625rem;
+        top: 0.1875rem;
+        left: 1.25rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input:hover+span.checkbox {
+        border: 0.125rem solid rgb(113, 57, 233);
+    }
+
+
+    #produk .left .buku .checkbox-pilih input:checked+span.checkbox {
+        background-color: #834DF6;
+        border: 0.125rem solid #834DF6;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input:checked+span.checkbox:after {
+        display: block;
+    }
+
+
+    #produk .left .buku .detail-buku .img-buku img {
+        width: 100%;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.judul {
+        font-weight: 500;
+        color: #454545;
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.author {
+        color: #454545;
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga {
+        font-weight: 500;
+        color: #FF6B00;
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga span {
+        border: 0.0625rem solid #FF6B00;
+        padding: 0.125rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.diskon {
+        text-decoration: line-through;
+        color: #777;
+        margin-top: -0.75rem;
+        font-size: 0.75rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .jumlah p {
+        margin-bottom: 0;
+        color: #555;
+        font-size: 0.75rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .aksi a {
+        display: inline-block;
+        text-decoration: none;
+        color: #BBB;
+        font-size: 0.875rem;
+        margin: 0 0.25rem;
+    }
+
+
+    #produk .right .detail-pembelian {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+    }
+
+
+    #produk .right .detail-pembelian hr {
+        border: 0.03125rem solid rgba(0, 39, 75, 0.2);
+    }
+
+
+    #produk .right .detail-pembelian p.txt-title {
+        font-weight: 500;
+        color: #444;
+        font-size: 0.875rem;
+    }
+
+
+    #produk .right .detail-pembelian .txt-total-harga p {
+        color: #666;
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .right .detail-pembelian .total-harga p {
+        font-weight: 500;
+        color: #555;
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .right .detail-pembelian button.btn-beli {
+        border-radius: 0.375rem;
+        color: #FFF;
+        font-weight: 500;
+        width: 100%;
+        transition: background-color .2s ease-in-out;
+        border: 0;
+        background-color: #0094FF;
+        margin-top: 0.75rem;
+        padding: 0.375rem;
+        font-size: 0.875rem;
+    }
+
+
+    #produk .right .detail-pembelian button.btn-beli:hover {
+        background-color: #0085FF;
+    }
+    /* produk */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* produk */
+    #produk .left .pilih-semua {
+        padding: 0.625rem 0.625rem 0rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih label {
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku {
+        padding: 0.625rem;        
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.judul {
+        font-size: 1.25rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.author {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga span {
+        padding: 0.125rem 0.25rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.diskon {
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .jumlah p {
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .aksi a {
+        font-size: 1.25rem;
+        margin: -0.25rem 0.25rem 0;
+    }
+
+
+    #produk .right .detail-pembelian {
+        padding: 0.625rem;        
+    }
+
+
+    #produk .right .detail-pembelian p.txt-title {
+        font-size: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian .txt-total-harga p {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .right .detail-pembelian .total-harga p {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .right .detail-pembelian button.btn-beli {
+        padding: 0.5rem;
+        font-size: 0.9375rem;
+    }
+    /* produk */
+    
+    
 }
 
+/* berlaku untuk width window (320px - 479px) */
 
-#produk .pilih-semua, #produk .buku {
-    box-shadow: 0rem 0rem 0.1875rem rgba(0, 0, 0, 0.3);
-    background-color: #FFF;
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* produk */
+    #produk {
+        margin: 2.5rem;
+    }
+
+
+    #produk .left .pilih-semua {
+        padding: 0.625rem 0.75rem 0rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+        width: 0.4375rem;
+        height: 0.6875rem;
+        top: 0.09375rem;
+        left: 1.28125rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih label {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .left .pilih-semua .hapus-semua {
+        margin-top: -0.125rem;
+    }
+
+
+    #produk .left .pilih-semua .hapus-semua a {
+        display: block;
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .left .buku {
+        margin-top: 0.5rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox:after {
+        width: 0.4375rem;
+        height: 0.6875rem;
+        top: 0.125rem;
+        left: 1.3125rem;
+    }
+
+
+    #produk .left .buku .detail-buku .img-buku img {
+        width: 6.25rem;
+        height: 9.0625rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.judul {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.author {
+        margin-top: -0.75rem;
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga {
+        font-weight: 500;
+        color: #FF6B00;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga span {
+        padding: 0.25rem 0.375rem;
+        margin-left: 0.375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.diskon {
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .jumlah p {
+        font-size: 0.84375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .aksi a {
+        font-size: 0.875rem;
+        margin: 0 0.375rem;
+    }
+
+
+    #produk .right .detail-pembelian {
+        padding: 0.625rem 0.75rem;
+    }
+
+
+    #produk .right .detail-pembelian p.txt-title {
+        font-size: 1.125rem;
+    }
+
+
+    #produk .right .detail-pembelian .txt-total-harga p {
+        font-size: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian .total-harga p {
+        font-size: 1rem;
+    }
+    /* produk */
+
+
 }
 
+/* berlaku untuk width window (480px - 767px) */
 
-#produk .pilih-semua {
-    padding: 1rem 2rem 0.5rem;
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* produk */
+    #produk {
+        margin: 3rem;
+    }
+
+
+    #produk .left .pilih-semua {
+        padding: 0.75rem 1.75rem 0.125rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+        width: 0.5rem;
+        height: 0.875rem;
+        top: 0.0625rem;
+        left: 1.3125rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih {
+        margin-top: -0.09375rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih label {
+        font-size: 1rem;
+    }
+
+    
+    #produk .left .pilih-semua .hapus-semua {
+        margin-top: -0.09375rem;
+    }
+
+    
+    #produk .left .pilih-semua .hapus-semua a {
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku {
+        padding: 0.75rem 1.75rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input {
+        width: 1.25rem;
+        height: 1.25rem;
+        left: 0.9375rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox:after {
+        top: 0.0625rem;
+        left: 1.3125rem;
+        width: 0.5rem;
+        height: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .img-buku img {
+        width: 5.9375rem;
+        height: 9.0625rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.judul {
+        font-size: 1rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.author {
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga span {
+        padding: 0.125rem 0.25rem;
+        margin-left: 0.5rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.diskon {
+        margin-top: -0.75rem;
+        font-size: 0.75rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .jumlah p {
+        font-size: 0.875rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .aksi a {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .right .detail-pembelian {
+        margin-top: 0;
+        padding: 0.6875rem;
+    }
+
+
+    #produk .right .detail-pembelian p.txt-title {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .right .detail-pembelian .txt-total-harga p {
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .right .detail-pembelian .total-harga p {
+        font-size: 0.8125rem;
+    }
+
+
+    #produk .right .detail-pembelian button.btn-beli {
+        margin-top: 0.375rem;
+        padding: 0.375rem;
+        font-size: 0.875rem;
+    }
+    /* produk */
+
 }
 
+/* berlaku untuk width window (768px - 959px) */
 
-#produk .pilih-semua .checkbox-pilih-semua input {
-    position: absolute;
-    width: 1.375rem;
-    height: 1.375rem;
-    top: 0;
-    left: 25%;
-    opacity: 0;
-    z-index: 1;
-    cursor: pointer;
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* produk */
+    #produk .left .pilih-semua {
+        padding: 1rem 2rem 0.375rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua input {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+
+
+    #produk .left .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+        top: 0.125rem;
+        left: 1.375rem;
+    }
+
+
+    #produk .left .pilih-semua .text-pilih label {
+        font-size: 1.0625rem;
+    }
+
+
+    #produk .left .pilih-semua .hapus-semua a {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .left .buku {
+        padding: 1rem 2rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih input {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+
+
+    #produk .left .buku .checkbox-pilih span.checkbox:after {
+        top: 0.125rem;
+        left: 1.375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .img-buku img {
+        width: 6.875rem;
+        height: 10rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.judul {
+        font-size: 1.25rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.author {
+        font-size: 1rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga {
+        font-size: 1rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.harga span {
+        padding: 0.25rem 0.5rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.diskon {
+        font-size: 0.875rem;
+        margin-top: -0.625rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .jumlah p {
+        font-size: 0.9375rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku .aksi a {
+        font-size: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian {
+        padding: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian p.txt-title {
+        font-size: 1.125rem;
+    }
+
+
+    #produk .right .detail-pembelian .txt-total-harga p {
+        font-size: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian .total-harga p {
+        font-size: 1rem;
+    }
+
+
+    #produk .right .detail-pembelian button.btn-beli {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    /* produk */
+
+
 }
 
-
-#produk .pilih-semua .checkbox-pilih-semua span.checkbox {
-    display: inline-block;
-    border: 0.125rem solid #666;
-    width: 1.375rem;
-    height: 1.375rem;
-    border-radius: 0.25rem;
-    transition: all .2s;
-}
+/* berlaku untuk width window >= 960px */
 
 
-#produk .pilih-semua .checkbox-pilih-semua span.checkbox:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-
-#produk .pilih-semua .checkbox-pilih-semua span.checkbox:after {
-    top: 5%;
-    left: 38%;
-    border: solid #FFF;
-    border-width: 0 0.1875rem 0.1875rem 0;
-    width: 0.5rem;
-    height: 0.875rem;
-    transform: rotate(45deg);
-}
-
-
-#produk .pilih-semua .checkbox-pilih-semua input:hover + span.checkbox {
-    border: 0.125rem solid rgb(113, 57, 233);
-}
-
-
-#produk .pilih-semua .checkbox-pilih-semua input:checked + span.checkbox {
-    background-color: #834DF6;
-    border: 0.125rem solid #834DF6;
-}
-
-
-#produk .pilih-semua .checkbox-pilih-semua input:checked + span.checkbox:after {
-    display: block;
-}
-
-
-#produk .pilih-semua .text-pilih label {
-    font-size: 1.0625rem;
-    font-weight: 500;
-    color: #444;
-    cursor: pointer;
-}
-
-
-#produk .pilih-semua .hapus-semua a {
-    text-decoration: none;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: #666;
-}
-
-
-#produk .buku {
-    margin-top: 0.5rem;
-    padding: 1rem 2rem;
-}
-
-
-#produk .buku .checkbox-pilih input {
-    position: absolute;
-    width: 1.375rem;
-    height: 1.375rem;
-    top: 0;
-    left: 25%;
-    opacity: 0;
-    z-index: 1;
-    cursor: pointer;
-}
-
-
-#produk .buku .checkbox-pilih span.checkbox {
-    display: inline-block;
-    border: 0.125rem solid #666;
-    width: 1.375rem;
-    height: 1.375rem;
-    border-radius: 0.25rem;
-    transition: all .2s;
-}
-
-
-#produk .buku .checkbox-pilih span.checkbox:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-
-#produk .buku .checkbox-pilih span.checkbox:after {
-    top: 1%;
-    left: 38%;
-    border: solid #FFF;
-    border-width: 0 0.1875rem 0.1875rem 0;
-    width: 0.5rem;
-    height: 0.875rem;
-    transform: rotate(45deg);
-}
-
-
-#produk .buku .checkbox-pilih input:hover + span.checkbox {
-    border: 0.125rem solid rgb(113, 57, 233);
-}
-
-
-#produk .buku .checkbox-pilih input:checked + span.checkbox {
-    background-color: #834DF6;
-    border: 0.125rem solid #834DF6;
-}
-
-
-#produk .buku .checkbox-pilih input:checked + span.checkbox:after {
-    display: block;
-}
-
-
-#produk .buku .detail-buku .img-buku img {
-    width: 6.875rem;
-    height: 10rem;
-}
-
-
-#produk .buku .detail-buku .desk-buku p.judul {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #454545;
-}
-
-
-#produk .buku .detail-buku .desk-buku p.author {
-    margin-top: -0.75rem;
-    color: #454545;
-}
-
-
-#produk .buku .detail-buku .desk-buku p.harga {
-    font-weight: 500;
-    color: #FF6B00;
-}
-
-
-#produk .buku .detail-buku .desk-buku p.harga span {
-    border: 0.0625rem solid #FF6B00;
-    padding: 0.25rem 0.5rem;
-    margin-left: 0.5rem;
-}
-
-
-#produk .buku .detail-buku .desk-buku p.diskon {
-    font-size: 0.875rem;
-    text-decoration: line-through;
-    color: #777;
-    margin-top: -0.625rem;
-}
-
-
-#produk .buku .detail-buku .desk-buku .jumlah p {
-    font-size: 0.9375rem;
-    margin-bottom: 0;
-    color: #555;
-}
-
-
-#produk .buku .detail-buku .desk-buku .aksi a {
-    display: inline-block;
-    font-size: 1rem;
-    text-decoration: none;
-    margin: 0 0.375rem;
-    color: #BBB;
-}
-/* produk */
