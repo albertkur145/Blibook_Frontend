@@ -1,364 +1,208 @@
-/* icon bag */
-p.icon-bag {
-    font-size: 32px;
-    margin-top: 50px;
-    text-align: center;
-    color: #444;
-    font-weight: 500;
-}
-/* icon bag */
 
-
-
-
-/* top */
-#top {
-    margin-top: 40px;
-    padding-top: 13px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+/* produk */
+#produk {
+    margin: 3rem;
+    font-family: 'Roboto';
 }
 
 
-#top .checkbox-semua {
-    position: relative;
-}
-
-
-#top .checkbox-semua input {
-    opacity: 0;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 14%;
-    left: 5%;
-    z-index: 1;
-}
-
-
-#top .checkbox-semua span.checkbox-pilih {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    border: 1px solid #666;
-    top: 14%;
-    left: 5%;
-    transition: all 0.4s;
-}
-
-
-#top .checkbox-semua label {
-    font-weight: 600;
-    font-size: 20px;
-    padding-left: 50px;
-    color: #444;
-}
-
-
-#top .checkbox-semua input:hover + span.checkbox-pilih {
-    border: 1px solid #A17BF1 !important;
-}
-
-
-#top .checkbox-semua span.checkbox-pilih:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-
-#top .checkbox-semua input:checked + span.checkbox-pilih {
-    background-color: #834DF6;
-    border: 1px solid #834DF6;
-}
-
-
-#top .checkbox-semua input:checked + span.checkbox-pilih:after {
-    display: block;
-}
-
-
-#top .checkbox-semua span.checkbox-pilih:after {
-    left: 32%;
-    top: 5.5%;
-    width: 7px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(40deg);
-}
-
-
-#top .text-label p {
-    padding-top: 2px;
-    font-size: 18px;
-    color: #666;
-}
-/* top */
-
-
-
-
-
-/* middle */
-#middle {
-    margin-top: 30px;
-    padding: 13px 0;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-}
-
-
-#middle .mid {
-    padding: 25px 0;
-}
-
-
-#middle .checkbox-buku {
-    position: relative;
-}
-
-
-#middle .checkbox-buku input {
-    opacity: 0;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 40%;
-    left: 5%;
-    z-index: 1;
-}
-
-
-#middle .checkbox-buku span.checkbox-pilih {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    border: 1px solid #666;
-    top: 40%;
-    left: 5%;
-    transition: all 0.4s;
-}
-
-
-#middle .checkbox-buku input:hover + span.checkbox-pilih {
-    border: 1px solid #A17BF1 !important;
-}
-
-
-#middle .checkbox-buku span.checkbox-pilih:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-
-#middle .checkbox-buku input:checked + span.checkbox-pilih {
-    background-color: #834DF6;
-    border: 1px solid #834DF6;
-}
-
-
-#middle .checkbox-buku input:checked + span.checkbox-pilih:after {
-    display: block;
-}
-
-
-#middle .checkbox-buku span.checkbox-pilih:after {
-    left: 32%;
-    top: 5.5%;
-    width: 7px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(40deg);
-}
-
-
-#middle .checkbox-buku img {
-    width: 15%;
-    margin-left: 50px;
-}
-
-
-#middle .fix-layout {
-    position: absolute;
-    left: 28%;
-    color: #444;
-}
-
-
-#middle .checkbox-buku p.judul-buku {
-    top: 15%;
-    font-size: 22px;
-}
-
-
-#middle .checkbox-buku p.author-buku {
-    top: 50%;
-}
-
-
-#middle .desk-harga p.harga-buku {
-    font-size: 20px;
-    margin-top: 16px;
-    color: #1A9980;
-    font-weight: 500;
-}
-
-
-#middle .desk-harga p.diskon-buku {
-    font-size: 14px;
-    margin-top: -5px;
-}
-
-
-#middle .desk-harga p.diskon-buku span {
-    color: #CB1212;
-    margin-left: 10px;
-    font-weight: 600;
-}
-
-
-#middle .input-jumlah-buku {
-    position: relative;
-}
-
-
-#middle .input-jumlah-buku input {
-    opacity: 1;
-    position: absolute;
-    width: 45%;
-    height: 40%;
-    border: 1px solid #AAA;
-    text-align: center;
-    outline: none;
-    top: 25%;
-    left: 20%;
-    color: #666;
-    font-weight: 500;
-}
-
-
-#middle .input-jumlah-buku div {
-    display: inline-block;
-    position: absolute;
+#produk .pilih-semua, #produk .buku {
+    box-shadow: 0rem 0rem 0.1875rem rgba(0, 0, 0, 0.3);
     background-color: #FFF;
-    color: #666;
-    font-size: 18px;
-    text-align: center;
-    border: 1px solid #AAA;
-    width: 13%;
-    height: 40%;
-    top: 25%;
+}
+
+
+#produk .pilih-semua {
+    padding: 1rem 2rem 0.5rem;
+}
+
+
+#produk .pilih-semua .checkbox-pilih-semua input {
+    position: absolute;
+    width: 1.375rem;
+    height: 1.375rem;
+    top: 0;
+    left: 25%;
+    opacity: 0;
+    z-index: 1;
     cursor: pointer;
-    line-height: 40px;
 }
 
 
-#middle .input-jumlah-buku div.minus {
-    border-radius: 10px 0 0 10px;
-    left: 10%;
-}
-
-
-#middle .input-jumlah-buku div.plus {
-    border-radius: 0 10px 10px 0;
-    right: 30%;
-}
-
-
-#middle .options {
-    padding-top: 2%;
-}
-
-
-#middle .options a {
+#produk .pilih-semua .checkbox-pilih-semua span.checkbox {
     display: inline-block;
-    cursor: pointer;
-    margin-bottom: 10px;
+    border: 0.125rem solid #666;
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 0.25rem;
+    transition: all .2s;
 }
 
 
-#middle .options a.opt-wishlist:hover {
-    color: #F85E5E;
+#produk .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 
-#middle .options a.opt-hapus:hover {
-    color: #922626;
-}
-/* middle */
-
-
-
-
-/* bottom */
-#bottom {
-    margin-top: 30px;
-    padding-top: 12px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+#produk .pilih-semua .checkbox-pilih-semua span.checkbox:after {
+    top: 5%;
+    left: 38%;
+    border: solid #FFF;
+    border-width: 0 0.1875rem 0.1875rem 0;
+    width: 0.5rem;
+    height: 0.875rem;
+    transform: rotate(45deg);
 }
 
 
-#bottom .jumlah-beli {
+#produk .pilih-semua .checkbox-pilih-semua input:hover + span.checkbox {
+    border: 0.125rem solid rgb(113, 57, 233);
+}
+
+
+#produk .pilih-semua .checkbox-pilih-semua input:checked + span.checkbox {
+    background-color: #834DF6;
+    border: 0.125rem solid #834DF6;
+}
+
+
+#produk .pilih-semua .checkbox-pilih-semua input:checked + span.checkbox:after {
+    display: block;
+}
+
+
+#produk .pilih-semua .text-pilih label {
+    font-size: 1.0625rem;
     font-weight: 500;
+    color: #444;
+    cursor: pointer;
 }
 
 
-#bottom .total-harga {
-    font-weight: 700;
-    font-size: 20px;
-    color: #388753;
-    margin-top: -10px;
-}
-/* bottom */
-
-
-
-
-
-/* checkout */
-#checkout {
-    margin-bottom: 70px;
-    margin-top: 30px;
+#produk .pilih-semua .hapus-semua a {
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #666;
 }
 
 
-#checkout .btn-checkout {
-    font-family: 'Arial';
-    border-radius: 7px;
-    border: 0;
-    padding: 7px 30px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #FFF;
-    background-color: #FF9922;
-    transition: all 0.3s;
+#produk .buku {
+    margin-top: 0.5rem;
+    padding: 1rem 2rem;
 }
 
 
-#checkout .btn-checkout:hover {
-    background-color: #FF8A00;
+#produk .buku .checkbox-pilih input {
+    position: absolute;
+    width: 1.375rem;
+    height: 1.375rem;
+    top: 0;
+    left: 25%;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
 }
-/* checkout */
 
 
-
-
-
-/* khusus desktop window >= 992px */
-@media (min-width: 992px) { 
-
-    /* top */
-    #top .checkbox-semua span.checkbox-pilih:after {
-        left: 35%;
-    }
-    /* top */
-
-
-
-    /* middle */
-    #middle .checkbox-buku span.checkbox-pilih:after {
-        left: 35%;
-    }
-    /* middle */
+#produk .buku .checkbox-pilih span.checkbox {
+    display: inline-block;
+    border: 0.125rem solid #666;
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 0.25rem;
+    transition: all .2s;
 }
+
+
+#produk .buku .checkbox-pilih span.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+#produk .buku .checkbox-pilih span.checkbox:after {
+    top: 1%;
+    left: 38%;
+    border: solid #FFF;
+    border-width: 0 0.1875rem 0.1875rem 0;
+    width: 0.5rem;
+    height: 0.875rem;
+    transform: rotate(45deg);
+}
+
+
+#produk .buku .checkbox-pilih input:hover + span.checkbox {
+    border: 0.125rem solid rgb(113, 57, 233);
+}
+
+
+#produk .buku .checkbox-pilih input:checked + span.checkbox {
+    background-color: #834DF6;
+    border: 0.125rem solid #834DF6;
+}
+
+
+#produk .buku .checkbox-pilih input:checked + span.checkbox:after {
+    display: block;
+}
+
+
+#produk .buku .detail-buku .img-buku img {
+    width: 6.875rem;
+    height: 10rem;
+}
+
+
+#produk .buku .detail-buku .desk-buku p.judul {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #454545;
+}
+
+
+#produk .buku .detail-buku .desk-buku p.author {
+    margin-top: -0.75rem;
+    color: #454545;
+}
+
+
+#produk .buku .detail-buku .desk-buku p.harga {
+    font-weight: 500;
+    color: #FF6B00;
+}
+
+
+#produk .buku .detail-buku .desk-buku p.harga span {
+    border: 0.0625rem solid #FF6B00;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+}
+
+
+#produk .buku .detail-buku .desk-buku p.diskon {
+    font-size: 0.875rem;
+    text-decoration: line-through;
+    color: #777;
+    margin-top: -0.625rem;
+}
+
+
+#produk .buku .detail-buku .desk-buku .jumlah p {
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+    color: #555;
+}
+
+
+#produk .buku .detail-buku .desk-buku .aksi a {
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 0 0.375rem;
+    color: #BBB;
+}
+/* produk */

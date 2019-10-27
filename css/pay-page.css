@@ -3,6 +3,19 @@
 /* berlaku untuk width window < 320px */
 
 
+    /* background body fixed */
+    .backgroundAll {
+        position: fixed;
+        z-index: -999;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #FAFAFA;
+    }
+    /* background body fixed */
+
+    
     /* header */
     #header {
         padding: 1rem 0rem 0.75rem;

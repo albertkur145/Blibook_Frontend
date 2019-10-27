@@ -180,7 +180,7 @@ function responsiveSize() {
             deskBuku.removeClass('col-12');
         }
 
-    } else if (width <= 1400) {
+    } else if (width <= 1600) {
 
         if (left.hasClass('col-12')) {
             left.addClass('col-7');
