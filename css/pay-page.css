@@ -50,7 +50,7 @@
 
 
     #content .left h2, #content .right h2 {
-        font-size: 1.25rem;
+        font-size: 1.0625rem;
         font-weight: 400;
         color: #444;
     }
@@ -95,14 +95,14 @@
 
     #content .left .pesanan .desk-buku p.judul {
         padding-top: 0.75rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 300;
     }
 
 
     #content .left .pesanan .desk-buku p.harga {
         color: #1A9980;
-        font-size: 1rem;
+        font-size: 0.9375rem;
     }
 
 
@@ -116,13 +116,13 @@
 
     #content .left .pesanan .desk-buku p.diskon {
         text-decoration: line-through;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         margin-top: -0.5rem;
     }
 
 
     #content .left .pesanan .desk-buku p.jumlah {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
         font-weight: 300;
         margin-bottom: 0;
     }
@@ -252,7 +252,7 @@
 
 
     #content .left h2, #content .right h2 {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 
 
