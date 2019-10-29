@@ -33,6 +33,7 @@ function DOM_Manipulation() {
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
+    
     const wish = $('#content .right .rbody .wishlist');
     const image = $('.image-buku', wish);
     const desk = $('.desk-buku', wish);

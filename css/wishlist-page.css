@@ -20,7 +20,8 @@
 
 
     #content .right .rbody .wishlist .desk-buku p.judul {
-        font-size: 1.5rem;
+        margin-top: 0.25rem;
+        font-size: 1.25rem;
         color: #444;
     }
 
@@ -28,12 +29,12 @@
     #content .right .rbody .wishlist .desk-buku p.deskripsi {
         text-align: justify;
         color: #AAA;
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.harga {
-        font-size: 1.125rem;
+        font-size: 1rem;
         color: #4C06E2;
     }
 
@@ -48,7 +49,7 @@
 
 
     #content .right .rbody .wishlist .desk-buku p.diskon {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         margin-top: -1.25rem;
         text-decoration: line-through;
         color: #666;
@@ -58,7 +59,7 @@
     #content .right .rbody .wishlist .desk-buku a.hapus {
         text-decoration: underline;
         color: #F90000;
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
 
@@ -119,6 +120,7 @@
 
 
     #content .right .rbody .wishlist .desk-buku p.judul {
+        margin-top: 0rem;
         font-size: 1.25rem;
     }
 

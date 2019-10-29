@@ -20,7 +20,7 @@
 
     #content .left .head h2.nama-user {
         margin-top: 0.625rem;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         line-height: 2.25rem;
         color: #444;
         font-weight: 500;
@@ -76,7 +76,7 @@
 
 
     #content .right .head h2.title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 500;
         color: #8729FF;
     }
@@ -114,13 +114,13 @@
 
     #content .left .head h2.nama-user {
         margin-top: 0.5rem;
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         line-height: 2.5rem;
     }
 
 
     #content .left .head p.as {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
 
@@ -130,7 +130,7 @@
 
 
     #content .left .tab a p {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
 
@@ -146,7 +146,7 @@
 
 
     #content .right .head h2.title {
-        font-size: 1.75rem;
+        font-size: 1.625rem;
     }
 
 

@@ -4,7 +4,7 @@
 
     /* content */
     #content .right .rbody label {
-        font-size: 1rem;
+        font-size: 0.8125rem;
         font-weight: 500;
     }
 
@@ -16,13 +16,13 @@
 
     #content .right .rbody input,
     #content .right .rbody select {
-        font-size: 1rem;
+        font-size: 0.8125rem;
         color: #000;
     }
 
 
     #content .right .rbody small {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         display: none;
         color: #DA0000 !important;
     }
@@ -101,13 +101,13 @@
 
     /* content */
     #content .right .rbody label {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
 
     #content .right .rbody input,
     #content .right .rbody select {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
 
