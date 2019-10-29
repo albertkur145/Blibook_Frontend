@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../icons/blibuku.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/bukaToko-page.css">
+    <link rel="stylesheet" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Buka Toko | Blibuku.com</title>
+</head>
+
+<body>
+    <!-- background body -->
+    <div class="backgroundAll"></div>
+    <!-- background body -->
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
+        <div class="container">
+
+            <!-- judul nav -->
+            <a class="navbar-brand blibuku-brand" href="main-page.html"><i class="fas fa-book-open"></i> blibuku.com</a>
+            <!-- judul nav -->
+
+            <!-- button burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- button burger -->
+
+            <!-- nav -->
+            <div class="collapse navbar-collapse" id="nav-header">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i> Bag</a>
+                    <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
+                    <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
+                    <a class="nav-item nav-link option-user" href=""><i class="fas fa-user"></i>Hi, Albert
+                        Kurniawan<span><i class="fas fa-chevron-down"></i></span></a>
+                </div>
+            </div>
+            <!-- nav -->
+
+            <form action="" method="post">
+                <input type="text" name="keyword" class="search" autocomplete="off"
+                    placeholder="&#x1F50D; Cari buku disini...">
+                <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
+            </form>
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+
+    <!-- sub navbar -->
+    <div class="sub-navbar">
+        <div class="container">
+
+            <!-- kategori buku -->
+            <ul class="kategori">
+                <a href=""><li>Buku Indonesia</li></a>
+                <a href=""><li>Cartoon</li></a>
+                <a href=""><li>Technology</li></a>
+                <a href=""><li>Comics</li></a>
+                <a href=""><li>Animals</li></a>
+                <a href=""><li>Horror</li></a>
+                <a href=""><li>Novel</li></a>
+                <a href=""><li>Business</li></a>
+                <a href=""><li>Medical</li></a>
+            </ul>
+            <!-- kategori buku -->
+
+        </div>
+    </div>
+    <!-- akhir sub navbar -->
+
+
+    <!-- content -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+
+                <!-- left -->
+                <div class="col-3 left">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="nama-user">Albert Kurniawan</h2>
+                        <p class="as">Signature Member</p>
+                    </div>
+                    <!-- head -->
+
+                    <!-- tab -->
+                    <div class="tab">
+                        <a href="profile-page.html"><p class="profile-tab">Profile</p></a>
+                        <a href="wishlist-page.html?a=albert"><p class="wishlist-tab ">Wishlist</p></a>
+                        <a href=""><p class="perpustakaan-tab">Perpustakaan</p></a>
+                        <a href="bukaToko-page.html"><p class="buka-toko-tab">Buka Toko</p></a>
+                        <a href=""><p class="toko-saya-tab">Toko Saya</p></a>
+                        <a href=""><p class="keluar-tab">Keluar</p></a>
+                    </div>
+                    <!-- tab -->
+
+                </div>
+                <!-- left -->
+
+
+                <!-- right -->
+                <div class="col-9 right">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="title">Buka Toko</h2>
+                    </div>
+                    <!-- head -->
+
+                    <!-- rbody -->
+                    <div class="rbody">
+
+                        <!-- form buka toko -->
+                        <form action="" method="post">
+                        
+                            <!-- nama toko -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nama">Nama Toko <span>*</span></label>
+                                    <input type="text" id="nama" class="form-control" autocomplete="off">
+                                    <small id="error-nama" class="form-text text-muted">Nama toko harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- nama toko -->
+
+                            <!-- alamat toko -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="alamat">Alamat <span>*</span></label>
+                                    <input type="text" id="alamat" class="form-control" autocomplete="off">
+                                    <small id="error-alamat" class="form-text text-muted">Alamat toko harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- alamat toko -->
+
+                            <!-- provinsi -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label>Provinsi <span>*</span></label>
+
+                                    <select id="provinsi" class="form-control" onchange="changeKota()">
+                                        <option value="">-- PILIH PROVINSI --</option>
+                                        <option value="Aceh">Aceh</option>
+                                        <option value="Bali">Bali</option>
+                                        <option value="Bangka Belitung">Bangka Belitung</option>
+                                        <option value="Banten">Banten</option>
+                                        <option value="Bengkulu">Bengkulu</option>
+                                        <option value="Gorontalo">Gorontalo</option>
+                                        <option value="Jakarta">Jakarta</option>
+                                        <option value="Jambi">Jambi</option>
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Kalimantan Barat">Kalimantan Barat</option>
+                                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                        <option value="Kalimantan Utara">Kalimantan Utara</option>
+                                        <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                        <option value="Lampung">Lampung</option>
+                                        <option value="Maluku">Maluku</option>
+                                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                                        <option value="Papua">Papua</option>
+                                        <option value="Riau">Riau</option>
+                                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                                        <option value="Sulawesi Utara">Sulawesi Utara</option>
+                                        <option value="Sumatra Barat">Sumatra Barat</option>
+                                        <option value="Sumatra Selatan">Sumatra Selatan</option>
+                                        <option value="Sumatra Utara">Sumatra Utara</option>
+                                        <option value="Yogyakarta">Yogyakarta</option>
+                                    </select>
+                                    <small id="error-provinsi" class="form-text text-muted">Provinsi tidak boleh kosong.</small>
+                                </div>
+                            </div>
+                            <!-- provinsi -->
+
+                            <!-- kota -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label>Kota <span>*</span></label>
+
+                                    <select id="kota" class="form-control">
+                                        <!-- append js -->
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- kota -->
+                            
+                            <button type="submit" class="btn-simpan" onclick="return validationForm()">Buka Toko</button>
+
+                        </form>
+                        <!-- form buka toko -->
+
+                    </div>
+                    <!-- rbody -->
+
+                </div>
+                <!-- right -->
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir content -->
+
+
+
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU.COM</h2>
+                    <p><a href="">Tentang blibuku.com</a></p>
+                    <p><a href="">Kebijakan privasi</a></p>
+                    <p><a href="">Aturan penggunaan</a></p>
+                    <p><a href="">Hubungi kami</a></p>
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">CUSTOMER CARE</h2>
+                    <p>Buka 24 jam setiap hari</p>
+                    <p><i class="fas fa-tty"></i> 0804 1 871 871</p>
+                    <p><i class="fas fa-envelope"></i> customer.care@blibli.com</p>
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU FAMILY</h2>
+                    <img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"><br>
+                    <img src="../icons/tiketcom.png" width="150px" height="40px">
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">PENGHARGAAN</h2>
+                    <p><i class="fas fa-check"></i> Kualitas buku sangat baik.</p>
+                    <p><i class="fas fa-check"></i> Respon cepat.</p>
+                    <p><i class="fas fa-check"></i> Customer care 24 jam.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- akhir footer -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/personal.js"></script>
+    <script src="../js/bukaToko-page.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+
+</html>

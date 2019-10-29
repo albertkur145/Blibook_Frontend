@@ -6,7 +6,6 @@ let deskBuku = $('.desk-buku p.deskripsi', buku);
 let textJudul = [];
 let textDeskripsi = [];
 
-console.log(judulBuku);
 
 $.each(judulBuku, (key, value) => {
     textJudul.push(value.innerHTML);
