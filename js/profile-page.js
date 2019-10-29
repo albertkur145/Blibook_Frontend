@@ -92,6 +92,8 @@ const tanggal = $('#tanggal', form);
 const bulan = $('#bulan', form);
 const tahun = $('#tahun', form);
 const nomor = $('#nomor', form);
+const regexEmail = /^[a-zA-Z0-9._-]+@[a-z]{5,5}.[a-z]{2,3}$/;
+const regexHP = /^08[0-9]{8,10}$/;
 
 
 function validationForm() {
@@ -100,12 +102,12 @@ function validationForm() {
         return false;
     }
 
-    if (email.val().length == 0) {
+    if (!regexEmail.test(email.val())) {
         $('small#error-email').css('display', 'block');
         return false;
     }
 
-    if (nomor.val().length == 0) {
+    if (!regexHP.test(nomor.val())) {
         $('small#error-nomor').css('display', 'block');
         return false;
     }
@@ -126,19 +128,19 @@ function validationForm() {
 
 nama.focusout(() => {
     nama.val().length == 0 ? $('small#error-nama', form).css('display', 'block') : $('small#error-nama', form).css('display', 'none');
-    email.val().length == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
-    nomor.val().length == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
+    regexEmail.test(email.val()) == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
+    regexHP.test(nomor.val()) == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
 });
 
 email.focusout(() => {
     nama.val().length == 0 ? $('small#error-nama', form).css('display', 'block') : $('small#error-nama', form).css('display', 'none');
-    email.val().length == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
-    nomor.val().length == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
+    regexEmail.test(email.val()) == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
+    regexHP.test(nomor.val()) == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
 });
 
 nomor.focusout(() => {
     nama.val().length == 0 ? $('small#error-nama', form).css('display', 'block') : $('small#error-nama', form).css('display', 'none');
-    email.val().length == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
-    nomor.val().length == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
+    regexEmail.test(email.val()) == 0 ? $('small#error-email', form).css('display', 'block') : $('small#error-email', form).css('display', 'none');
+    regexHP.test(nomor.val()) == 0 ? $('small#error-nomor', form).css('display', 'block') : $('small#error-nomor', form).css('display', 'none');
 });
 // validasi form

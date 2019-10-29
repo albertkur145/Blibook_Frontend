@@ -46,6 +46,18 @@
     }
 
 
+    #content .right form input:focus {
+        border: 0.0625rem solid #B38FFF;
+        box-shadow: 0rem 0rem 0.25rem 0.09375rem #B38FFF;
+    }
+
+
+    #content .right form small {
+        display: none;
+        color: #DA0000 !important;
+    }
+
+
     #content .right form .btn-right {
         width: 100%;
         font-weight: 500;

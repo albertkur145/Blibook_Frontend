@@ -53,28 +53,30 @@
 
                     <form action="main-page.html" method="post">
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Masukkan username" required>
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap" autocomplete="off">
+                            <small id="error-nama" class="form-text text-muted">Nama lengkap harus diisi.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                            <input type="text" class="form-control" id="email" placeholder="Masukkan email" autocomplete="off">
+                            <small id="error-email" class="form-text text-muted">Email tidak valid.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Masukkan password"
-                                required>
+                            <input type="password" class="form-control" id="password" placeholder="Masukkan password" autocomplete="off">
+                            <small id="error-password" class="form-text text-muted">Password harus diisi.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Konfirmasi Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Masukkan konfirmasi password"
-                                required>
+                            <input type="password" class="form-control" id="konfirm-password" placeholder="Masukkan konfirmasi password" autocomplete="off">
+                            <small id="error-konfirm-password" class="form-text text-muted">Password tidak sama.</small>
                         </div>
 
-                        <button type="submit" class="btn btn-right mt-3">Daftar</button>
+                        <button type="submit" class="btn btn-right mt-3" onclick="return validationForm()">Daftar</button>
                     </form>
                 </div>
                 <!-- right -->
