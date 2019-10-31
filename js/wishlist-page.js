@@ -130,13 +130,6 @@ function responsiveSize() {
                 judulBuku[i].innerHTML = temp;
             }
         }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 27) {
-                let temp = textDeskripsi[i].substring(0, 27) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
     }
 
     else if (width < 385) {
@@ -161,13 +154,6 @@ function responsiveSize() {
             if (textJudul[i].length > 11) {
                 let temp = textJudul[i].substring(0, 11) + "...";
                 judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 27) {
-                let temp = textDeskripsi[i].substring(0, 27) + "...";
-                deskBuku[i].innerHTML = temp;
             }
         }
     }
@@ -328,13 +314,6 @@ function responsiveSize() {
                 judulBuku[i].innerHTML = temp;
             }
         }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 82) {
-                let temp = textDeskripsi[i].substring(0, 82) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
     }
 
     else if (width < 753) {
@@ -359,13 +338,6 @@ function responsiveSize() {
             if (textJudul[i].length > 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
                 judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 82) {
-                let temp = textDeskripsi[i].substring(0, 82) + "...";
-                deskBuku[i].innerHTML = temp;
             }
         }
     }
