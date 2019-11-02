@@ -3,6 +3,150 @@
 /* berlaku untuk width window < 320px */
 
     
+    /* content */
+    #content .right .rbody .biodata-toko {
+        position: relative;
+        border: 0.0625rem solid #666;
+        padding: 0.3125rem 0.625rem;
+    }
+
+
+    #content .right .rbody .biodata-toko p.nama-toko {
+        color: #444;
+        font-size: 1.125rem;
+    }
+
+
+    #content .right .rbody .biodata-toko p.alamat-toko {
+        color: #666;
+        font-size: 0.8125rem;
+        margin-top: -0.8125rem;
+    }
+
+
+    #content .right .rbody .biodata-toko a.btn-jual-buku {
+        display: inline-block;
+        background-color: #20AC47;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 0.375rem;
+        transition: background-color .2s ease-in-out;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.375rem;
+    }
+
+
+    #content .right .rbody .biodata-toko a.btn-jual-buku:hover {
+        background-color: #22B94C;
+    }
+
+
+    #content .right .rbody .penjualan {
+        margin-top: 2.25rem;
+    }
+
+
+    #content .right .rbody .penjualan h2.txt-list-buku {
+        color: #8729FF;
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .image-buku img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku a {
+        text-decoration: none;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.judul {
+        color: #444;
+        font-size: 1.25rem;
+        margin-top: 0.75rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.deskripsi {
+        text-align: justify;
+        color: #AAA;
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.harga {
+        color: #FF6B00;
+        font-size: 0.8125rem;
+        margin-top: -0.25rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.harga span {
+        display: inline-block;
+        font-weight: 500;
+        border: 0.0625rem solid #FF6B00;
+        padding: 0.125rem 0.3125rem;
+        margin-left: 0.25rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.diskon {
+        text-decoration: line-through;
+        color: #666;
+        margin-top: -0.75rem;
+        font-size: 0.6875rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku a.hapus {
+        display: block;
+        text-decoration: underline;
+        color: #F90000;
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku a.hapus:hover {
+        color: #D30140;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail {
+        margin-top: 1.75rem;
+        text-align: right;
+        margin-bottom: -0.5rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail a {
+        border: 0.125rem solid #FD1E7B;
+        color: #FD1E7B;
+        border-radius: 0.25rem;
+        transition: background-color .8s,
+        border-radius .3s ease-out;
+        padding: 0.625rem 2.5rem;
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail a:hover {
+        background-color: #FB3085;
+        color: #FFF;
+        border-radius: 3rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail p.tooltip-text span {
+        display: none;
+    }
+
+
     #content .right .rbody .penjualan .buku hr {
         border: 0.03125rem solid #410095;
     }
@@ -25,6 +169,95 @@
 
 @media (min-width: 320px) {
 
+
+    /* content */
+    #content .right .rbody .biodata-toko {
+        padding: 0.375rem 0.875rem;
+    }
+
+
+    #content .right .rbody .biodata-toko p.nama-toko {
+        font-size: 1.25rem;
+    }
+
+
+    #content .right .rbody .biodata-toko p.alamat-toko {
+        font-size: 0.875rem;
+        margin-top: -0.75rem;
+    }
+
+
+    #content .right .rbody .biodata-toko a.btn-jual-buku {
+        padding: 0.5625rem 1.0625rem;
+        font-size: 0.8125rem;
+        margin-bottom: 0.25rem;
+    }
+
+
+    #content .right .rbody .penjualan {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .right .rbody .penjualan h2.txt-list-buku {
+        font-size: 1.375rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .image-buku img {
+        width: 8rem;
+        height: 12.5rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.judul {
+        font-size: 1.0625rem;
+        margin-top: 0;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.deskripsi {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.harga {
+        font-size: 0.75rem;
+        margin-top: -0.5rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.harga span {
+        margin-left: 0;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku p.diskon {
+        margin-top: -0.8125rem;
+        font-size: 0.6875rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .desk-buku a.hapus {
+        margin-top: -0.25rem;
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail {
+        padding-top: 20%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+
+    #content .right .rbody .penjualan .buku .button-detail a {
+        padding: 0.375rem;
+        font-size: 0.875rem;
+    }
+    /* content */
+
+    
 }
 
 /* berlaku untuk width window (320px - 479px) */
@@ -47,41 +280,25 @@
 
     /* content */
     #content .right .rbody .biodata-toko {
-        position: relative;
-        border: 0.0625rem solid #666;
         padding: 0.25rem 0.75rem;
     }
 
 
     #content .right .rbody .biodata-toko p.nama-toko {
-        color: #444;
         font-size: 1.125rem;
     }
 
 
     #content .right .rbody .biodata-toko p.alamat-toko {
-        color: #666;
         font-size: 0.8125rem;
         margin-top: -0.875rem;
     }
 
 
     #content .right .rbody .biodata-toko a.btn-jual-buku {
-        display: inline-block;
-        background-color: #20AC47;
-        color: #FFF;
-        text-decoration: none;
-        font-weight: 500;
-        border-radius: 0.375rem;
-        transition: background-color .2s ease-in-out;
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
         margin-bottom: 0.25rem;
-    }
-
-
-    #content .right .rbody .biodata-toko a.btn-jual-buku:hover {
-        background-color: #22B94C;
     }
 
 
@@ -91,8 +308,6 @@
 
 
     #content .right .rbody .penjualan h2.txt-list-buku {
-        color: #8729FF;
-        font-weight: 500;
         font-size: 1.25rem;
     }
 
@@ -103,25 +318,12 @@
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a {
-        text-decoration: none;
-    }
-
-
     #content .right .rbody .penjualan .buku .desk-buku p.judul {
-        color: #444;
         font-size: 1.0625rem;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku p.deskripsi {
-        text-align: justify;
-        color: #AAA;
-    }
-
-
     #content .right .rbody .penjualan .buku .desk-buku p.harga {
-        color: #FF6B00;
         font-size: 0.875rem;
         margin-right: 1.5rem;
         margin-top: -0.75rem;
@@ -129,9 +331,6 @@
 
 
     #content .right .rbody .penjualan .buku .desk-buku p.harga span {
-        display: inline-block;
-        font-weight: 500;
-        border: 0.0625rem solid #FF6B00;
         margin-top: 0.25rem;
         padding: 0.0625rem 0.3125rem;
         margin-left: 0;
@@ -139,75 +338,25 @@
 
 
     #content .right .rbody .penjualan .buku .desk-buku p.diskon {
-        text-decoration: line-through;
-        color: #666;
         margin-top: -0.5rem;
         font-size: 0.75rem;
     }
 
 
     #content .right .rbody .penjualan .buku .desk-buku a.hapus {
-        display: block;
-        text-decoration: underline;
-        color: #F90000;
         font-size: 0.75rem;
         margin-top: -0.25rem;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus:hover {
-        color: #D30140;
-    }
-
-
     #content .right .rbody .penjualan .buku .button-detail {
-        text-align: left;
         padding-top: 4rem;
     }
 
 
     #content .right .rbody .penjualan .buku .button-detail a {
-        border: 0.125rem solid #FD1E7B;
-        color: #FD1E7B;
-        border-radius: 0.25rem;
-        transition: background-color .8s,
-        border-radius .3s ease-out;
         padding: 0.4375rem;
         font-size: 0.75rem;
-    }
-
-
-    #content .right .rbody .penjualan .buku .button-detail a:hover {
-        background-color: #FB3085;
-        color: #FFF;
-        border-radius: 3rem;
-    }
-
-
-    #content .right .rbody .penjualan .buku .button-detail a:hover+p.tooltip-text span {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-
-    #content .right .rbody .penjualan .buku .button-detail p.tooltip-text {
-        position: relative;
-        margin-top: 1.375rem;
-    }
-
-
-    #content .right .rbody .penjualan .buku .button-detail p.tooltip-text span {
-        display: inline-block;
-        opacity: 0;
-        transition: opacity .5s, transform 0.3s ease-out;
-        background-color: #FF006B;
-        border-radius: 0.25rem;
-        color: #FFF;
-        margin-top: -1rem;
-        transform: translateY(-0.5rem);
-        margin-right: 0;
-        padding: 0.125rem 0.25rem;
-        font-size: 0.6875rem;
     }
     /* content */
 
@@ -313,7 +462,6 @@
 
 
     #content .right .rbody .penjualan .buku .button-detail {
-        text-align: right;
         padding-top: 6rem;
     }
 
@@ -324,12 +472,25 @@
     }
 
 
+    #content .right .rbody .penjualan .buku .button-detail a:hover+p.tooltip-text span {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
     #content .right .rbody .penjualan .buku .button-detail p.tooltip-text {
         margin-top: 1.375rem;
     }
 
 
     #content .right .rbody .penjualan .buku .button-detail p.tooltip-text span {
+        display: inline-block;
+        opacity: 0;
+        transition: opacity .5s,
+        transform 0.3s ease-out;
+        background-color: #FF006B;
+        border-radius: 0.25rem;
+        color: #FFF;
         margin-top: 0;
         transform: translateY(-0.5rem);
         margin-right: -0.5rem;
