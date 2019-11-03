@@ -1,11 +1,6 @@
 
-$(window).ready(DOM_Manipulation);
 
-
-function DOM_Manipulation() {
-    constraintNama();
-}
-
+// batasan length string nama
 function constraintNama() {
     const optUser = $('.nav-blibuku .option-user');
     let namaUser = optUser.text();
@@ -18,5 +13,9 @@ function constraintNama() {
         <span><i class="fas fa-chevron-down"></i></span>
     `);
 }
+
+
+// document ready
+constraintNama();
 
 

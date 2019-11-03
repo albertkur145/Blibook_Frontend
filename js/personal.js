@@ -1,8 +1,6 @@
 
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
 
-
+// responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
     $('.angka').html(width);
@@ -10,6 +8,7 @@ function responsiveSize() {
 
     if (width < 465) {
 
+        // manipulasi column
         if ($('#content .left').hasClass('col-4')) {
             $('#content .left').addClass('col-12');
             $('#content .left').removeClass('col-4');
@@ -28,6 +27,7 @@ function responsiveSize() {
     
     } else if (width < 753) {
 
+        // manipulasi column
         if ($('#content .left').hasClass('col-3')) {
             $('#content .left').addClass('col-4');
             $('#content .left').removeClass('col-3');
@@ -46,6 +46,7 @@ function responsiveSize() {
 
     } else if (width >= 753) {
 
+        // manipulasi column
         if ($('#content .left').hasClass('col-4')) {
             $('#content .left').addClass('col-3');
             $('#content .left').removeClass('col-4');
@@ -64,5 +65,10 @@ function responsiveSize() {
 
     }
 }
+
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);
 
 

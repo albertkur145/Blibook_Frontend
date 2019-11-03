@@ -1,20 +1,9 @@
 
-$(window).ready(DOM_Manipulation);
 
-
-// saat window ready
-function DOM_Manipulation() {
-    borderTab();
-    changeKota();
-}
-// saat window ready
-
-
-// mark tab
+// mark side tab
 function borderTab() {
     $('#content .left .tab .buka-toko-tab').addClass('is-active');
 }
-// mark tab
 
 
 // validation form
@@ -101,15 +90,10 @@ selectProvinsi.focusout(() => {
     else
         $('small#error-provinsi').css('display', 'none');
         
-})
-
-function changeCSS(id, property, value) {
-    $(id).css(property, value);
-}
-// validation form
+});
 
 
-// change selected
+// change selected provinsi
 function changeKota() {
     const option = $('option:selected', selectProvinsi).val();
 
@@ -360,7 +344,7 @@ function changeKota() {
             <option value="Binjai">Binjai</option>
             <option value="Medan">Medan</option>
             <option value="Padang Sidempuan">Padang Sidempuan</option>
-            <option value="Pematan Siantar">Pematan Siantar</option>
+            <option value="Pematang Siantar">Pematang Siantar</option>
             <option value="Sibolga">Sibolga</option>
             <option value="Tanjungbalai">Tanjungbalai</option>
             <option value="Tebingtinggi">Tebingtinggi</option>
@@ -374,4 +358,9 @@ function changeKota() {
 
     }
 }
-// change selected
+
+
+// document ready
+borderTab();
+changeKota();
+

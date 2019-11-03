@@ -1,9 +1,6 @@
 
 
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
-
-
+// responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
 
@@ -18,6 +15,7 @@ function responsiveSize() {
 
     if (width < 465) {
 
+        // manipulasi column
         if (left.hasClass('col-8')) {
             left.addClass('col-12');
             left.removeClass('col-8');
@@ -55,6 +53,7 @@ function responsiveSize() {
 
     } else if (width < 753) {
 
+        // manipulasi column
         if (left.hasClass('col-8')) {
             left.addClass('col-12');
             left.removeClass('col-8'); 
@@ -92,6 +91,7 @@ function responsiveSize() {
 
     } else if (width < 945) {
 
+        // manipulasi column
         if (left.hasClass('col-12')) {
             left.addClass('col-8');
             left.removeClass('col-12');
@@ -130,6 +130,7 @@ function responsiveSize() {
 
     } else if (width >= 945) {
 
+        // manipulasi column
         if (left.hasClass('col-12')) {
             left.addClass('col-8');
             left.removeClass('col-12');
@@ -168,5 +169,9 @@ function responsiveSize() {
 
     }
 
-
 }
+
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);

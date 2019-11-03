@@ -1,6 +1,5 @@
 
 // ambil data json
-
 const buku = $('#pencarian-buku .items-search .card-buku');
 let judulBuku = $('h5.judul-buku', buku);
 let deskBuku = $('p.desk-buku', buku);
@@ -8,6 +7,8 @@ let deskBuku = $('p.desk-buku', buku);
 let textJudul = [];
 let textBuku = [];
 
+
+// copy data
 $.each(judulBuku, (key, value) => {
     textJudul.push(value.innerHTML);
 });
@@ -16,15 +17,8 @@ $.each(deskBuku, (key, value) => {
     textBuku.push(value.innerHTML);
 });
 
-// ambil data json
 
-
-
-
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
-
-
+// responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
     const itemsBuku = $('#pencarian-buku .items-search .row');
@@ -32,25 +26,27 @@ function responsiveSize() {
 
     if (width < 300) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-12');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
         }
-
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-12');
             $('.col-6', itemsBuku).removeClass('col-6');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 37) {
                 let temp = textJudul[i].substring(0, 37) + "...";
@@ -67,26 +63,28 @@ function responsiveSize() {
 
     } else if (width < 320) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
         }
-
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-12');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
         }
-
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-12');
             $('.col-6', itemsBuku).removeClass('col-6');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '75%');
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 27) {
                 let temp = textJudul[i].substring(0, 27) + "...";
@@ -103,26 +101,28 @@ function responsiveSize() {
 
     } else if (width < 345) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-12');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-12');
             $('.col-6', itemsBuku).removeClass('col-6');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '75%');
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 37) {
                 let temp = textJudul[i].substring(0, 37) + "...";
@@ -139,26 +139,28 @@ function responsiveSize() {
 
     } else if (width < 385) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-12');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-12');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-12');
             $('.col-6', itemsBuku).removeClass('col-6');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '75%');
         $('.card-buku', itemsBuku).css('marginLeft', '15%');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 40) {
                 let temp = textJudul[i].substring(0, 40) + "...";
@@ -175,26 +177,28 @@ function responsiveSize() {
 
     } else if (width < 400) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-6');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
+        } 
 
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-6');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-6');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '105%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '50%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 10) {
                 let temp = textJudul[i].substring(0, 10) + "...";
@@ -211,26 +215,28 @@ function responsiveSize() {
 
     } else if (width < 420) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-6');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-6');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-6');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '50%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 11) {
                 let temp = textJudul[i].substring(0, 11) + "...";
@@ -247,26 +253,28 @@ function responsiveSize() {
 
     } else if (width < 440) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-6');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-6');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-6');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '53%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
@@ -283,26 +291,28 @@ function responsiveSize() {
 
     } else if (width < 465) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-6');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-6');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-6');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '55%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 14) {
                 let temp = textJudul[i].substring(0, 14) + "...";
@@ -319,26 +329,28 @@ function responsiveSize() {
 
     } else if (width < 753) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-6');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-6');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-6');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '57%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 17) {
                 let temp = textJudul[i].substring(0, 17) + "...";
@@ -355,26 +367,28 @@ function responsiveSize() {
 
     } else if (width < 977) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-sm-4');
             $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-sm-4');
             $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-sm-4');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '56%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 15) {
                 let temp = textJudul[i].substring(0, 15) + "...";
@@ -391,26 +405,28 @@ function responsiveSize() {
 
     } else if (width < 1185) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-sm-3');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-sm-3');
             $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-sm-3');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipluasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '56%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
@@ -427,26 +443,28 @@ function responsiveSize() {
 
     } else if (width >= 1185) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-sm-3');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-6')) {
             $('.col-6', itemsBuku).addClass('col-sm-3');
             $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
+        } 
+        
         if (itemsBuku.find('.col-12')) {
             $('.col-12', itemsBuku).addClass('col-sm-3');
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '60%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 17) {
                 let temp = textJudul[i].substring(0, 17) + "...";
@@ -462,3 +480,8 @@ function responsiveSize() {
         }
     }
 }
+
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);

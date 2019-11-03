@@ -31,7 +31,7 @@
         font-weight: 400;
         text-align: center;
         padding-top: 0.4375rem;
-        font-size: 1.375rem;        
+        font-size: 1.375rem;
     }
 
 
@@ -44,19 +44,18 @@
 
 
     #content .right form input {
-        font-size: 0.75rem;        
+        font-size: 0.75rem;
+    }
+
+
+    #content .right form small {
+        color: #DA0000 !important;
     }
 
 
     #content .right form input:focus {
         border: 0.0625rem solid #B38FFF;
         box-shadow: 0rem 0rem 0.25rem 0.09375rem #B38FFF;
-    }
-
-
-    #content .right form small {
-        display: none;
-        color: #DA0000 !important;
     }
 
 
@@ -91,15 +90,15 @@
 /* berlaku untuk width window (320px - 479px) */
 
 @media (min-width: 320px) {
-    
-    
+
+
     /* header */
     #header a {
         font-size: 2rem;
     }
     /* header */
 
-    
+
 
     /* content */
     #content .right h2 {
@@ -158,7 +157,7 @@
 
 
     #content .left p.txt {
-        margin-top: -0.125rem;
+        margin-top: -0.125rem;        
         text-align: left;
         font-size: 0.875rem;
         color: #9573F4;
@@ -228,7 +227,7 @@
 /* berlaku untuk width window (768px - 959px) */
 
 @media (min-width: 768px) {
-    
+
 
     /* content */
     #content .left h2 {
@@ -243,6 +242,11 @@
     }
 
 
+    #content .left .quotes {
+        margin-top: 2rem;
+    }
+
+
     #content .left .quotes p {
         font-size: 1.75rem;
     }
@@ -254,8 +258,8 @@
 
 
     #content .right h2 {
-        font-size: 1.75rem;
         text-align: left;
+        font-size: 1.75rem;
     }
 
 
@@ -299,6 +303,7 @@
     #header a {
         font-size: 2.25rem;
     }
+
     /* header */
 
 
@@ -307,8 +312,8 @@
     #content .left h2 {
         font-size: 2.875rem;
     }
-    
-    
+
+
     #content .left p.txt {
         margin-top: -0.125rem;
         font-size: 1.625rem;

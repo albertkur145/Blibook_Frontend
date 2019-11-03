@@ -1,11 +1,8 @@
 
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
 
-
+// responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
-    
 
     const left = $('#content .left');
     const right = $('#content .right');
@@ -19,6 +16,7 @@ function responsiveSize() {
 
     if (width < 305) {
 
+        // manipulasi column
         if (left.hasClass('col-7')) {
             left.addClass('col-12');
             left.removeClass('col-7');
@@ -59,6 +57,7 @@ function responsiveSize() {
 
     } else if (width < 465) {
 
+        // manipulasi column
         if (left.hasClass('col-7')) {
             left.addClass('col-12');
             left.removeClass('col-7');
@@ -100,6 +99,7 @@ function responsiveSize() {
 
     } else if (width < 753) {
 
+        // manipulasi column
         if (left.hasClass('col-7')) {
             left.addClass('col-12');
             left.removeClass('col-7');
@@ -141,6 +141,7 @@ function responsiveSize() {
 
     } else if (width < 945) {
 
+        // manipulasi column
         if (left.hasClass('col-12')) {
             left.addClass('col-7');
             left.removeClass('col-12');
@@ -182,6 +183,7 @@ function responsiveSize() {
 
     } else if (width <= 1600) {
 
+        // manipulasi column
         if (left.hasClass('col-12')) {
             left.addClass('col-7');
             left.removeClass('col-12');
@@ -222,4 +224,10 @@ function responsiveSize() {
         }
 
     }
+
 }
+
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);

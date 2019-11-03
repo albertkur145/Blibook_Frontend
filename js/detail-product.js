@@ -1,8 +1,6 @@
+
+
 // responsive - resize window
-
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
-
 function responsiveSize() {
     let width = $(window).width();
 
@@ -12,6 +10,8 @@ function responsiveSize() {
 
 
     if (width < 465) {
+
+        // manipulasi column
         if (imageProduct.hasClass('col-5')) {
             imageProduct.addClass('col-12');
             imageProduct.removeClass('col-5');
@@ -22,13 +22,15 @@ function responsiveSize() {
             keteranganBuku.removeClass('col-7');
         }
 
+        // manipulasi css
         keteranganBuku.css('paddingLeft', '2rem');
         $('.btn-beli-sekarang').css('width', '100%');
         $('.btn-tambah-bag').css('width', '100%');
         $('.btn-tambah-bag').css('marginLeft', '-1rem');
-    }
 
-    else if (width < 753) {
+    } else if (width < 753) {
+
+        // manipulasi column
         if (imageProduct.hasClass('col-12')) {
             imageProduct.addClass('col-5');
             imageProduct.removeClass('col-12');
@@ -39,13 +41,15 @@ function responsiveSize() {
             keteranganBuku.removeClass('col-12');
         }
 
+        // manipulasi css
         keteranganBuku.css('paddingLeft', '2.5rem');
         $('.btn-beli-sekarang').css('width', '100%');
         $('.btn-tambah-bag').css('width', '100%');
         $('.btn-tambah-bag').css('marginLeft', '-1.5rem');
-    }
 
-    else if (width < 945) {
+    } else if (width < 945) {
+
+        // manipulasi column
         if (imageProduct.hasClass('col-12')) {
             imageProduct.addClass('col-5');
             imageProduct.removeClass('col-12');
@@ -56,14 +60,15 @@ function responsiveSize() {
             keteranganBuku.removeClass('col-12');
         }
 
+        // manipulasi css
         keteranganBuku.css('paddingLeft', '3rem');
         $('.btn-beli-sekarang').css('width', '85%');
         $('.btn-tambah-bag').css('width', '85%');
         $('.btn-tambah-bag').css('marginLeft', '-2.5rem');
-    }
 
+    } else if (width < 1185) {
 
-    else if (width < 1185) {
+        // manipulasi column
         if (imageProduct.hasClass('col-12')) {
             imageProduct.addClass('col-5');
             imageProduct.removeClass('col-12');
@@ -74,13 +79,15 @@ function responsiveSize() {
             keteranganBuku.removeClass('col-12');
         }
 
+        // manipulasi css
         keteranganBuku.css('paddingLeft', '5rem');
         $('.btn-beli-sekarang').css('width', '80%');
         $('.btn-tambah-bag').css('width', '80%');
         $('.btn-tambah-bag').css('marginLeft', '-3.4375rem');
-    }
 
-    else if (width > 1185) {
+    } else if (width >= 1185) {
+
+        // manipulasi column
         if (imageProduct.hasClass('col-12')) {
             imageProduct.addClass('col-5');
             imageProduct.removeClass('col-12');
@@ -91,11 +98,16 @@ function responsiveSize() {
             keteranganBuku.removeClass('col-12');
         }
 
+        // manipulasi css
         keteranganBuku.css('paddingLeft', '2rem');
         $('.btn-beli-sekarang').css('width', '60%');
         $('.btn-tambah-bag').css('width', '60%');
         $('.btn-tambah-bag').css('marginLeft', '-7.6875rem');
+
     }
 }
 
-// responsive - resize window
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);

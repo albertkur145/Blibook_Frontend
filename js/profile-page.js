@@ -1,15 +1,25 @@
 
-$(window).ready(DOM_Manipulation);
-$(window).resize(responsiveSize);
 
+// append tanggal dan tahun lahir
+function appendTTL() {
+    for (let i = 1950; i <= 2019; i++) {
+        $('#content .right .rbody select#tahun').append(`
+            <option value="` + i + `">` + i + `</option>
+        `);
+    }
 
-// saat window ready
-responsiveSize();
-function DOM_Manipulation() {
-    appendTTL();
-    borderTab();
+    for (let i = 1; i <= 31; i++) {
+        $('#content .right .rbody select#tanggal').append(`
+            <option value="` + i + `">` + i + `</option>
+        `);
+    }
 }
-// saat window ready
+
+
+// mark side tab
+function borderTab() {
+    $('#content .left .tab .profile-tab').addClass('is-active');
+}
 
 
 // responsive - resize window
@@ -19,69 +29,39 @@ function responsiveSize() {
 
     if (width < 420) {
 
+        // manipulasi column
         if (optTTL.hasClass('col-3')) {
             optTTL.addClass('col-12');
             optTTL.removeClass('col-3');
-        }
-
-        else if (optTTL.hasClass('col-4')) {
+        } else if (optTTL.hasClass('col-4')) {
             optTTL.addClass('col-12');
             optTTL.removeClass('col-4');
         }
         
-    }
+    } else if (width < 753) {
 
-    else if (width < 753) {
-
+        // manipulasi column
         if (optTTL.hasClass('col-3')) {
             optTTL.addClass('col-4');
             optTTL.removeClass('col-3');
-        }
-
-        else if (optTTL.hasClass('col-12')) {
+        } else if (optTTL.hasClass('col-12')) {
             optTTL.addClass('col-4');
             optTTL.removeClass('col-12');
         }
         
     } else if (width >= 753) {
 
+        // manipulasi column
         if (optTTL.hasClass('col-4')) {
             optTTL.addClass('col-3');
             optTTL.removeClass('col-4');
-        }
-
-        else if (optTTL.hasClass('col-12')) {
+        } else if (optTTL.hasClass('col-12')) {
             optTTL.addClass('col-3');
             optTTL.removeClass('col-12');
         }
         
     }
 }
-// responsive - resize window
-
-
-// append tanggal dan tahun lahir
-function appendTTL() {
-    for (let i = 1950; i <= 2019; i++) {
-        $('#content .right .rbody select#tahun').append(`
-            <option value="`+ i + `">` + i + `</option>
-        `);
-    }
-
-    for (let i = 1; i <= 31; i++) {
-        $('#content .right .rbody select#tanggal').append(`
-            <option value="`+ i +`">`+ i +`</option>
-        `);
-    }
-}
-// append tanggal dan tahun lahir
-
-
-// mark tab
-function borderTab() {
-    $('#content .left .tab .profile-tab').addClass('is-active');
-}
-// mark tab
 
 
 // validasi form
@@ -202,4 +182,10 @@ bulan.focusout(() => {
 tahun.focusout(() => {
     $('small#error-ttl').css('display', 'none');
 });
-// validasi form
+
+
+// document ready
+appendTTL();
+borderTab();
+responsiveSize();
+$(window).resize(responsiveSize);
