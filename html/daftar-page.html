@@ -53,25 +53,28 @@
                     <form action="main-page.html" method="post">
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap" autocomplete="off">
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap" autocomplete="off"
+                            onkeyup="keyUpNama()">
                             <small id="error-nama" class="form-text text-muted">Nama lengkap harus diisi.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Masukkan email" autocomplete="off">
+                            <input type="text" class="form-control" id="email" placeholder="Masukkan email" autocomplete="off"
+                            onkeyup="keyUpEmail()">
                             <small id="error-email" class="form-text text-muted">Email tidak valid.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Masukkan password" autocomplete="off">
+                            <input type="password" class="form-control" id="password" placeholder="Masukkan password"
+                            autocomplete="off" onkeyup="keyUpPassword()">
                             <small id="error-password" class="form-text text-muted">Password harus diisi.</small>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Konfirmasi Password</label>
-                            <input type="password" class="form-control" id="konfirm-password" placeholder="Masukkan konfirmasi password" autocomplete="off">
+                            <input type="password" class="form-control" id="konfirm-password" placeholder="Masukkan konfirmasi password" autocomplete="off" onkeyup="keyUpKonfirmPassword()">
                             <small id="error-konfirm-password" class="form-text text-muted">Password tidak sama.</small>
                         </div>
 

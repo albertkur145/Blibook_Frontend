@@ -53,7 +53,7 @@ const konfirmPassword = $('#konfirm-password', form);
 const regex = /^[a-zA-Z0-9._-]+@[a-z]{5,5}.[a-z]{2,3}$/;
 
 
-function validationForm() {
+function validationForm () {
     if (nama.val().length != 0 && password.val().length != 0 && 
         password.val() == konfirmPassword.val() && regex.test(email.test())) {
         return true;
@@ -74,21 +74,33 @@ function validationForm() {
     return false;
 }
 
-nama.focusout(() => {
-    nama.val().length == 0 ? console.log('') : $('small#error-nama').css('display', 'none');
-});
+function keyUpNama () {
+    if (nama.val().length == 0)
+        $('small#error-nama').css('display', 'block');
+    else
+        $('small#error-nama').css('display', 'none');
+}
 
-email.focusout(() => {
-    email.val().length == 0 ? console.log('') : $('small#error-email').css('display', 'none');
-});
+function keyUpEmail () {
+    if (!regex.test(email.val()))
+        $('small#error-email').css('display', 'block');
+    else
+        $('small#error-email').css('display', 'none');
+}
 
-password.focusout(() => {
-    password.val().length == 0 ? console.log('') : $('small#error-password').css('display', 'none');
-});
+function keyUpPassword () {
+    if (password.val().length == 0)
+        $('small#error-password').css('display', 'block');
+    else
+        $('small#error-password').css('display', 'none');
+}
 
-konfirmPassword.focusout(() => {
-    konfirmPassword.val().length == 0 ? console.log('') : $('small#error-konfirm-password').css('display', 'none');
-});
+function keyUpKonfirmPassword () {
+    if (password.val() != konfirmPassword.val())
+        $('small#error-konfirm-password').css('display', 'block');
+    else 
+        $('small#error-konfirm-password').css('display', 'none');
+}   
 
 
 // document ready

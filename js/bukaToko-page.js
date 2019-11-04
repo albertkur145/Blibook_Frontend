@@ -28,68 +28,25 @@ function validationForm() {
     return false;
 }
 
-namaToko.focusout(() => {
-
-    if (namaToko.val().length == 0) 
-        $('small#error-nama').css('display', 'block');        
-    else 
-        $('small#error-nama').css('display', 'none');
-    
-
-    if (alamatToko.val().length == 0) 
-        $('small#error-alamat').css('display', 'block');
-    else 
-        $('small#error-alamat').css('display', 'none');
-
-
-    if ($('option:selected', selectProvinsi).val().length == 0) 
-        $('small#error-provinsi').css('display', 'block');
-    else 
-        $('small#error-provinsi').css('display', 'none');
-
-})
-
-alamatToko.focusout(() => {
-    
+function keyUpNamaToko () {
     if (namaToko.val().length == 0)
         $('small#error-nama').css('display', 'block');
     else
         $('small#error-nama').css('display', 'none');
+}
 
-
+function keyUpAlamatToko () {
     if (alamatToko.val().length == 0)
         $('small#error-alamat').css('display', 'block');
     else
         $('small#error-alamat').css('display', 'none');
-
-
-    if ($('option:selected', selectProvinsi).val().length == 0)
-        $('small#error-provinsi').css('display', 'block');
-    else
-        $('small#error-provinsi').css('display', 'none');
-
-
-})
+}
 
 selectProvinsi.focusout(() => {
-    
-    if (namaToko.val().length == 0)
-        $('small#error-nama').css('display', 'block');
-    else
-        $('small#error-nama').css('display', 'none');
-
-
-    if (alamatToko.val().length == 0)
-        $('small#error-alamat').css('display', 'block');
-    else
-        $('small#error-alamat').css('display', 'none');
-
-
     if ($('option:selected', selectProvinsi).val().length == 0)
         $('small#error-provinsi').css('display', 'block');
     else
         $('small#error-provinsi').css('display', 'none');
-        
 });
 
 

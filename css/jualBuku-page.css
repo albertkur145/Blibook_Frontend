@@ -1,3 +1,5 @@
+
+
 /* berlaku untuk width window < 320px */
 
 
@@ -14,35 +16,43 @@
 
 
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         font-size: 0.8125rem;
         color: #000;
     }
 
 
+    #content .right .rbody input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+
     #content .right .rbody small {
-        font-size: 0.75rem;
         display: none;
+        font-size: 0.75rem;
         color: #DA0000 !important;
     }
 
 
     #content .right .rbody input:focus,
-    #content .right .rbody select:focus {
+    #content .right .rbody select:focus,
+    #content .right .rbody textarea:focus {
         border: 0.0625rem solid #B38FFF;
         box-shadow: 0rem 0rem 0.25rem 0.09375rem #B38FFF;
     }
 
 
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         width: 100%;
     }
 
 
     #content .right .rbody button.btn-simpan {
         padding: 0.5rem 1.375rem;
-        margin-top: 0.5rem;
+        margin-top: 1.25rem;
         font-size: 0.8125rem;
         border-radius: 0.3125rem;
         display: block;
@@ -85,7 +95,8 @@
 
 
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         font-size: 0.875rem;
     }
 
@@ -97,7 +108,7 @@
 
     #content .right .rbody button.btn-simpan {
         padding: 0.5rem 1.5rem;
-        margin-top: 0.25rem;
+        margin-top: 1.5rem;
         font-size: 0.875rem;
     }
     /* content */
@@ -130,7 +141,8 @@
 
 
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         font-size: 0.8125rem;
     }
 
@@ -142,13 +154,14 @@
 
     #content .right .rbody button.btn-simpan {
         padding: 0.5625rem 1.4375rem;
-        margin-top: 0.5rem;
+        margin-top: 1.25rem;
         font-size: 0.75rem;
     }
     /* content */
 
 
 }
+
 /* berlaku untuk width window (480px - 767px) */
 
 
@@ -174,7 +187,8 @@
 
 
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         font-size: 0.875rem;
     }
 
@@ -192,7 +206,7 @@
 
     #content .right .rbody button.btn-simpan {
         padding: 0.6875rem 1.6875rem;
-        margin-top: 0.75rem;
+        margin-top: 1.5rem;
         font-size: 0.8125rem;
     }
     /* content */
@@ -219,18 +233,27 @@
 
 
     /* content */
+    #content .right .head h2.title span {
+        color: #AAA;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+
     #content .right .rbody input,
-    #content .right .rbody select {
+    #content .right .rbody select,
+    #content .right .rbody textarea {
         width: 65%;
     }
 
 
     #content .right .rbody button.btn-simpan {
         padding: 0.75rem 1.75rem;
-        margin-top: 1rem;
+        margin-top: 1.75rem;
         font-size: 0.9375rem;
     }
     /* content */
+
 
 }
 

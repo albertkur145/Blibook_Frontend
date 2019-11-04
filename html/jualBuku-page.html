@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../icons/blibuku.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/jualBuku-page.css">
+    <link rel="stylesheet" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Jual Buku | Blibuku.com</title>
+</head>
+
+<body>
+    <!-- background body -->
+    <div class="backgroundAll"></div>
+    <!-- background body -->
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
+        <div class="container">
+
+            <!-- judul nav -->
+            <a class="navbar-brand blibuku-brand" href="main-page.html"><i class="fas fa-book-open"></i> blibuku.com</a>
+            <!-- judul nav -->
+
+            <!-- button burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- button burger -->
+
+            <!-- nav -->
+            <div class="collapse navbar-collapse" id="nav-header">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i> Bag</a>
+                    <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
+                    <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
+                    <a class="nav-item nav-link option-user" href=""><i class="fas fa-user"></i>Hi, Albert
+                        Kurniawan<span><i class="fas fa-chevron-down"></i></span></a>
+                </div>
+            </div>
+            <!-- nav -->
+
+            <form action="" method="post">
+                <input type="text" name="keyword" class="search" autocomplete="off"
+                    placeholder="&#x1F50D; Cari buku disini...">
+                <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
+            </form>
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+
+    <!-- sub navbar -->
+    <div class="sub-navbar">
+        <div class="container">
+
+            <!-- kategori buku -->
+            <ul class="kategori">
+                <a href=""><li>Buku Indonesia</li></a>
+                <a href=""><li>Cartoon</li></a>
+                <a href=""><li>Technology</li></a>
+                <a href=""><li>Comics</li></a>
+                <a href=""><li>Animals</li></a>
+                <a href=""><li>Horror</li></a>
+                <a href=""><li>Novel</li></a>
+                <a href=""><li>Business</li></a>
+                <a href=""><li>Medical</li></a>
+            </ul>
+            <!-- kategori buku -->
+
+        </div>
+    </div>
+    <!-- akhir sub navbar -->
+
+
+    <!-- content -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+
+                <!-- left -->
+                <div class="col-3 left">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="nama-user">Albert Kurniawan</h2>
+                        <p class="as">Signature Member</p>
+                    </div>
+                    <!-- head -->
+
+                    <!-- tab -->
+                    <div class="tab">
+                        <a href="profile-page.html"><p class="profile-tab">Profile</p></a>
+                        <a href="wishlist-page.html"><p class="wishlist-tab ">Wishlist</p></a>
+                        <a href=""><p class="perpustakaan-tab">Perpustakaan</p></a>
+                        <a href="bukaToko-page.html"><p class="buka-toko-tab">Buka Toko</p></a>
+                        <a href="tokoSaya-page.html"><p class="toko-saya-tab">Toko Saya</p></a>
+                        <a href="main-page.html"><p class="keluar-tab">Keluar</p></a>
+                    </div>
+                    <!-- tab -->
+
+                </div>
+                <!-- left -->
+
+
+                <!-- right -->
+                <div class="col-9 right">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="title"><span>Toko Saya /</span> Jual Buku</h2>
+                    </div>
+                    <!-- head -->
+
+                    <!-- rbody -->
+                    <div class="rbody">
+
+                        <!-- form jual buku -->
+                        <form action="" method="post">
+
+                            <!-- judul buku -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="judul">Judul buku <span>*</span></label>
+                                    <input type="text" id="judul" class="form-control" autocomplete="off" 
+                                    onkeyup="keyUpJudulBuku()">
+                                    <small id="error-judul" class="form-text text-muted">Judul buku harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- judul buku -->
+
+                            <!-- penulis -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="penulis">Penulis <span>*</span></label>
+                                    <input type="text" id="penulis" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpPenulisBuku()">
+                                    <small id="error-penulis" class="form-text text-muted">Penulis harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- penulis -->
+
+                            <!-- jumlah halaman -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="halaman">Jumlah halaman <span>*</span></label>
+                                    <input type="number" id="halaman" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpJumlahHalaman()">
+                                    <small id="error-halaman" class="form-text text-muted">Jumlah halaman tidak valid.</small>
+                                </div>
+                            </div>
+                            <!-- jumlah halaman -->
+
+                            <!-- tahun terbit -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="tahun">Tahun terbit <span>*</span></label>
+
+                                    <select id="tahun" class="form-control">
+                                        <option value="">-- PILIH TAHUN TERBIT --</option>
+                                        <!-- append js -->
+                                    </select>
+                                    <small id="error-tahun" class="form-text text-muted">Tahun harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- tahun terbit -->
+
+                            <!-- negara -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="negara">Negara <span>*</span></label>
+
+                                    <select id="negara" class="form-control">
+                                        <option value="">-- PILIH NEGARA --</option>  
+                                        <option value="Afganistan">Afganistan</option>
+                                        <option value="Afrika Selatan">Afrika Selatan</option>
+                                        <option value="Afrika Tengah">Afrika Tengah</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Aljazair">Aljazair</option>
+                                        <option value="Amerika Serikat">Amerika Serikat</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Antigua dan Barbuda">Antigua dan Barbuda</option>
+                                        <option value="Arab Saudi">Arab Saudi</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Armenia">Armenia</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Azerbaijan">Azerbaijan</option>
+                                        <option value="Bahama">Bahama</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Barbados">Barbados</option>
+                                        <option value="Belanda">Belanda</option>
+                                        <option value="Belarus">Belarus</option>
+                                        <option value="Belgia">Belgia</option>
+                                        <option value="Belize">Belize</option>
+                                        <option value="Benin">Benin</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="Bolivia">Bolivia</option>
+                                        <option value="Bosnia dan Herzegovina">Bosnia dan Herzegovina</option>
+                                        <option value="Botswana">Botswana</option>
+                                        <option value="Brasil">Brasil</option>
+                                        <option value="Britania Raya">Britania Raya</option>
+                                        <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                        <option value="Bulgaria">Bulgaria</option>
+                                        <option value="Burkina Faso">Burkina Faso</option>
+                                        <option value="Burundi">Burundi</option>
+                                        <option value="Ceko">Ceko</option>
+                                        <option value="Chad">Chad</option>
+                                        <option value="Chili">Chili</option>
+                                        <option value="China">China</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Djibouti">Djibouti</option>
+                                        <option value="Dominika">Dominika</option>
+                                        <option value="Ekuador">Ekuador</option>
+                                        <option value="El Salvador">El Salvador</option>
+                                        <option value="Eritrea">Eritrea</option>
+                                        <option value="Estonia">Estonia</option>
+                                        <option value="Ethiopia">Ethiopia</option>
+                                        <option value="Fiji">Fiji</option>
+                                        <option value="Filipina">Filipina</option>
+                                        <option value="Finlandia">Finlandia</option>
+                                        <option value="Gabon">Gabon</option>
+                                        <option value="Gambia">Gambia</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Grenada">Grenada</option>
+                                        <option value="Guatemala">Guatemala</option>
+                                        <option value="Guinea">Guinea</option>
+                                        <option value="Guinea Bissau">Guinea Bissau</option>
+                                        <option value="Guinea Khatulistiwa">Guinea Khatulistiwa</option>
+                                        <option value="Guyana">Guyana</option>
+                                        <option value="Haiti">Haiti</option>
+                                        <option value="Honduras">Honduras</option>
+                                        <option value="Hongaria">Hongaria</option>
+                                        <option value="India">India</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Irak">Irak</option>
+                                        <option value="Iran">Iran</option>
+                                        <option value="Irlandia">Irlandia</option>
+                                        <option value="Islandia">Islandia</option>
+                                        <option value="Israel">Israel</option>
+                                        <option value="Italia">Italia</option>
+                                        <option value="Jamaika">Jamaika</option>
+                                        <option value="Jepang">Jepang</option>
+                                        <option value="Jerman">Jerman</option>
+                                        <option value="Kamboja">Kamboja</option>
+                                        <option value="Kamerun">Kamerun</option>
+                                        <option value="Kanada">Kanada</option>
+                                        <option value="Kazakhstan">Kazakhstan</option>
+                                        <option value="Kenya">Kenya</option>
+                                        <option value="Kirgizstan">Kirgizstan</option>
+                                        <option value="Kiribati">Kiribati</option>
+                                        <option value="Kolombia">Kolombia</option>
+                                        <option value="Komoro">Komoro</option>
+                                        <option value="Republik Kongo">Republik Kongo</option>
+                                        <option value="Korea Selatan">Korea Selatan</option>
+                                        <option value="Korea Utara">Korea Utara</option>
+                                        <option value="Kosta Rika">Kosta Rika</option>
+                                        <option value="Kroasia">Kroasia</option>
+                                        <option value="Kuba">Kuba</option>
+                                        <option value="Kuwait">Kuwait</option>
+                                        <option value="Laos">Laos</option>
+                                        <option value="Latvia">Latvia</option>
+                                        <option value="Lebanon">Lebanon</option>
+                                        <option value="Lesotho">Lesotho</option>
+                                        <option value="Liberia">Liberia</option>
+                                        <option value="Libya">Libya</option>
+                                        <option value="Liechtenstein">Liechtenstein</option>
+                                        <option value="Lituania">Lituania</option>
+                                        <option value="Luksemburg">Luksemburg</option>
+                                        <option value="Madagaskar">Madagaskar</option>
+                                        <option value="Makedonia">Makedonia</option>
+                                        <option value="Maladewa">Maladewa</option>
+                                        <option value="Malawi">Malawi</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Mali">Mali</option>
+                                        <option value="Malta">Malta</option>
+                                        <option value="Maroko">Maroko</option>
+                                        <option value="Marshall">Marshall</option>
+                                        <option value="Mauritania">Mauritania</option>
+                                        <option value="Mauritius">Mauritius</option>
+                                        <option value="Meksiko">Meksiko</option>
+                                        <option value="Mesir">Mesir</option>
+                                        <option value="Mikronesia">Mikronesia</option>
+                                        <option value="Moldova">Moldova</option>
+                                        <option value="Monako">Monako</option>
+                                        <option value="Mongolia">Mongolia</option>
+                                        <option value="Montenegro">Montenegro</option>
+                                        <option value="Mozambik">Mozambik</option>
+                                        <option value="Myanmar">Myanmar</option>
+                                        <option value="Namibia">Namibia</option>
+                                        <option value="Nauru">Nauru</option>
+                                        <option value="Nepal">Nepal</option>
+                                        <option value="Niger">Niger</option>
+                                        <option value="Nigeria">Nigeria</option>
+                                        <option value="Nikaragua">Nikaragua</option>
+                                        <option value="Norwegia">Norwegia</option>
+                                        <option value="Oman">Oman</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Palau">Palau</option>
+                                        <option value="Panama">Panama</option>
+                                        <option value="Pantai Gading">Pantai Gading</option>
+                                        <option value="Papua Nugini">Papua Nugini</option>
+                                        <option value="Paraguay">Paraguay</option>
+                                        <option value="Perancis">Perancis</option>
+                                        <option value="Peru">Peru</option>
+                                        <option value="Polandia">Polandia</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Qatar">Qatar</option>
+                                        <option value="Republik Demokratik Kongo">Republik Demokratik Kongo</option>
+                                        <option value="Republik Dominika">Republik Dominika</option>
+                                        <option value="Rumania">Rumania</option>
+                                        <option value="Rusia">Rusia</option>
+                                        <option value="Rwanda">Rwanda</option>
+                                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                        <option value="Saint Lucia">Saint Lucia</option>
+                                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                                        <option value="Samoa">Samoa</option>
+                                        <option value="San Marino">San Marino</option>
+                                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                        <option value="Selandia Baru">Selandia Baru</option>
+                                        <option value="Senegal">Senegal</option>
+                                        <option value="Serbia">Serbia</option>
+                                        <option value="Seychelles">Seychelles</option>
+                                        <option value="Sierra Leone">Sierra Leone</option>
+                                        <option value="Singapura">Singapura</option>
+                                        <option value="Siprus">Siprus</option>
+                                        <option value="Slovenia">Slovenia</option>
+                                        <option value="Slowakia">Slowakia</option>
+                                        <option value="Solomon">Solomon</option>
+                                        <option value="Somalia">Somalia</option>
+                                        <option value="Spanyol">Spanyol</option>
+                                        <option value="Sri Lanka">Sri Lanka</option>
+                                        <option value="Sudan">Sudan</option>
+                                        <option value="Sudan Selatan">Sudan Selatan</option>
+                                        <option value="Suriah">Suriah</option>
+                                        <option value="Suriname">Suriname</option>
+                                        <option value="Swaziland">Swaziland</option>
+                                        <option value="Swedia">Swedia</option>
+                                        <option value="Swiss">Swiss</option>
+                                        <option value="Tajikistan">Tajikistan</option>
+                                        <option value="Tanjung Verde">Tanjung Verde</option>
+                                        <option value="Tanzania">Tanzania</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Timor Leste">Timor Leste</option>
+                                        <option value="Togo">Togo</option>
+                                        <option value="Tonga">Tonga</option>
+                                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                        <option value="Tunisia">Tunisia</option>
+                                        <option value="Turki">Turki</option>
+                                        <option value="Turkmenistan">Turkmenistan</option>
+                                        <option value="Tuvalu">Tuvalu</option>
+                                        <option value="Uganda">Uganda</option>
+                                        <option value="Ukraina">Ukraina</option>
+                                        <option value="Uni Emirat Arab">Uni Emirat Arab</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                        <option value="Uzbekistan">Uzbekistan</option>
+                                        <option value="Vanuatu">Vanuatu</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                        <option value="Vietnam">Vietnam</option>
+                                        <option value="Yaman">Yaman</option>
+                                        <option value="Yordania">Yordania</option>
+                                        <option value="Yunani">Yunani</option>
+                                        <option value="Zambia">Zambia</option>
+                                        <option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                    <small id="error-negara" class="form-text text-muted">Negara harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- negara -->
+
+                            <!-- bahasa -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="bahasa">Bahasa <span>*</span></label>
+                                    <input type="text" id="bahasa" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpBahasa()">
+                                    <small id="error-bahasa" class="form-text text-muted">Bahasa harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- bahasa -->
+
+                            <!-- harga -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="harga">Harga <span>*</span></label>
+                                    <input type="number" id="harga" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpHargaBuku()">
+                                    <small id="error-harga" class="form-text text-muted">Harga tidak valid.</small>
+                                </div>
+                            </div>
+                            <!-- harga -->
+
+                            <!-- diskon -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="diskon">Diskon (dalam persen) <span>*</span></label>
+                                    <input type="number" id="diskon" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpDiskonBuku()">
+                                    <small id="error-diskon" class="form-text text-muted">Diskon tidak valid (1-100).</small>
+                                </div>
+                            </div>
+                            <!-- diskon -->
+
+                            <!-- harga setelah diskon -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="harga-diskon">Harga setelah diskon</label>
+                                    <input type="number" id="harga-diskon" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <!-- harga setelah diskon -->
+
+                            <!-- deskripsi buku -->
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi buku</label>
+                                <textarea class="form-control" id="deskripsi" rows="5" onkeydown="keyUpDeskripsiBuku()"></textarea>
+                                <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 24 karakter.</small>
+                            </div>
+                            <!-- deskripsi buku -->
+
+                            <!-- upload gambar -->
+                            <div class="form-group">
+                                <label for="gambar">Upload Gambar</label>
+                                <input type="file" class="form-control-file" id="gambar">
+                                <small id="error-gambar" class="form-text text-muted">Gambar buku harus tersedia.</small>
+                            </div>
+                            <!-- upload gambar -->
+
+                            <button type="submit" class="btn-simpan" onclick="return validationForm()">Jual Buku</button>
+
+                        </form>
+                        <!-- form jual buku -->
+
+                    </div>
+                    <!-- rbody -->
+
+                </div>
+                <!-- right -->
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir content -->
+
+
+
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU.COM</h2>
+                    <p><a href="">Tentang blibuku.com</a></p>
+                    <p><a href="">Kebijakan privasi</a></p>
+                    <p><a href="">Aturan penggunaan</a></p>
+                    <p><a href="">Hubungi kami</a></p>
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">CUSTOMER CARE</h2>
+                    <p>Buka 24 jam setiap hari</p>
+                    <p><i class="fas fa-tty"></i> 0804 1 871 871</p>
+                    <p><i class="fas fa-envelope"></i> customer.care@blibli.com</p>
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">BLIBUKU FAMILY</h2>
+                    <img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"><br>
+                    <img src="../icons/tiketcom.png" width="150px" height="40px">
+                </div>
+
+                <div class="col-3 col-footer">
+                    <h2 class="mb-3">PENGHARGAAN</h2>
+                    <p><i class="fas fa-check"></i> Kualitas buku sangat baik.</p>
+                    <p><i class="fas fa-check"></i> Respon cepat.</p>
+                    <p><i class="fas fa-check"></i> Customer care 24 jam.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- akhir footer -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/personal.js"></script>
+    <script src="../js/jualBuku-page.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+
+</html>

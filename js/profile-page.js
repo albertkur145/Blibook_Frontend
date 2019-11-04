@@ -4,13 +4,13 @@
 function appendTTL() {
     for (let i = 1950; i <= 2019; i++) {
         $('#content .right .rbody select#tahun').append(`
-            <option value="` + i + `">` + i + `</option>
+            <option value="${i}">${i}</option>
         `);
     }
 
     for (let i = 1; i <= 31; i++) {
         $('#content .right .rbody select#tanggal').append(`
-            <option value="` + i + `">` + i + `</option>
+            <option value="${i}">${i}</option>
         `);
     }
 }
@@ -102,77 +102,29 @@ function validationForm() {
     return false;
 }
 
-nama.focusout(() => {
-    
-    if (nama.val().length == 0)
-        $('small#error-nama', form).css('display', 'block');
-    else 
-        $('small#error-nama', form).css('display', 'none');
-
-
-    if (regexEmail.test(email.val()) == 0)
-        $('small#error-email', form).css('display', 'block');
-    else 
-        $('small#error-email', form).css('display', 'none');
-
-    
-    if (regexHP.test(nomor.val()) == 0)
-        $('small#error-nomor', form).css('display', 'block');
-    else 
-        $('small#error-nomor', form).css('display', 'none');
-
-    $('small#error-ttl').css('display', 'none');    
-
-});
-
-email.focusout(() => {
-    
+function keyUpNama () {
     if (nama.val().length == 0)
         $('small#error-nama', form).css('display', 'block');
     else
         $('small#error-nama', form).css('display', 'none');
+}
 
-
+function keyUpEmail () {
     if (regexEmail.test(email.val()) == 0)
         $('small#error-email', form).css('display', 'block');
     else
         $('small#error-email', form).css('display', 'none');
+}
 
-
+function keyUpNomor () {
     if (regexHP.test(nomor.val()) == 0)
         $('small#error-nomor', form).css('display', 'block');
     else
         $('small#error-nomor', form).css('display', 'none');
-    
-    $('small#error-ttl').css('display', 'none');
-
-});
-
-nomor.focusout(() => {
-    
-    if (nama.val().length == 0)
-        $('small#error-nama', form).css('display', 'block');
-    else
-        $('small#error-nama', form).css('display', 'none');
-
-
-    if (regexEmail.test(email.val()) == 0)
-        $('small#error-email', form).css('display', 'block');
-    else
-        $('small#error-email', form).css('display', 'none');
-
-
-    if (regexHP.test(nomor.val()) == 0)
-        $('small#error-nomor', form).css('display', 'block');
-    else
-        $('small#error-nomor', form).css('display', 'none');
-
-    $('small#error-ttl').css('display', 'none');    
-
-});
+}
 
 tanggal.focusout(() => {
-    $('small#error-ttl').css('display', 'none');    
+    $('small#error-ttl').css('display', 'none');       
 });
 
 bulan.focusout(() => {
