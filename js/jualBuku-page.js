@@ -83,6 +83,9 @@ function validationForm() {
     if (deskripsiBuku.val().length < 24)
         $('small#error-deskripsi').css('display', 'block');
 
+    if (uploadGambar.val().length == 0)
+        $('small#error-gambar').css('display', 'block');        
+
 
     return false;
 }
