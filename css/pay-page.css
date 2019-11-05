@@ -252,23 +252,23 @@
 
 
     #content .left h2, #content .right h2 {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
 
     #content .left .biodata {
-        padding: 0.75rem 1.25rem 0rem;
+        padding: 0.75rem 0.75rem 0rem;
     }
 
 
     #content .left .biodata .key p.title {
         display: block;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
     }
 
 
     #content .left .biodata .values p.value {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         font-weight: 300;
     }
 
@@ -279,7 +279,7 @@
 
 
     #content .left .pesanan {
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem;
     }
 
 
@@ -323,7 +323,7 @@
 
     #content .right .rincian-bayar {
         margin-top: 1rem;
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem;
     }
 
 
@@ -340,7 +340,7 @@
 
     #content .right .konfirmasi {
         margin-top: 0.75rem;
-        padding: 0.75rem 1.25rem 0;
+        padding: 0.75rem 0.75rem 0;
     }
 
 

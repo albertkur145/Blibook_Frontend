@@ -1,5 +1,27 @@
 
 
+// check all (pilih semua)
+function checkAll() {
+    let checkboxAll = $(`input[type="checkbox"]`);
+
+    if($('#check-pilih-semua')[0].checked) {
+        $.each(checkboxAll, (key, value) => {
+            value.checked = true;
+        });
+    } else {
+        $.each(checkboxAll, (key, value) => {
+            value.checked = false;
+        });
+    }
+}
+
+
+// check one
+function checkOne() {
+    $('#check-pilih-semua')[0].checked = false;
+}
+
+
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
