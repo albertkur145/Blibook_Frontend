@@ -438,8 +438,9 @@
                             <!-- upload gambar -->
                             <div class="form-group">
                                 <label for="gambar">Upload Gambar</label>
-                                <input type="file" class="form-control-file" id="gambar">
-                                <small id="error-gambar" class="form-text text-muted">Gambar buku harus tersedia.</small>
+                                <input type="file" class="form-control-file" id="gambar" accept="image/*">
+                                <small id="error-gambar" class="form-text text-muted">Extension gambar tidak valid (jpg/jpeg/png/bmp).</small>
+                                <small id="error-size-gambar" class="form-text text-muted">Ukuran gambar (max: 2MB)</small>
                             </div>
                             <!-- upload gambar -->
 

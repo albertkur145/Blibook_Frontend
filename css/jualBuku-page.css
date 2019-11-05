@@ -4,6 +4,13 @@
 
 
     /* content */
+    #content .right .head h2.title span {
+        color: #AAA;
+        font-weight: 400;
+        font-size: 0.75rem;
+    }
+
+
     #content .right .rbody label {
         font-size: 0.8125rem;
         font-weight: 500;
@@ -89,6 +96,11 @@
 
 
     /* content */
+    #content .right .head h2.title span {
+        font-size: 0.875rem;
+    }
+
+
     #content .right .rbody label {
         font-size: 0.875rem;
     }
@@ -135,6 +147,11 @@
 
 
     /* content */
+    #content .right .head h2.title span {
+        font-size: 0.75rem;
+    }
+
+
     #content .right .rbody label {
         font-size: 0.8125rem;
     }
@@ -181,6 +198,11 @@
 
 
     /* content */
+    #content .right .head h2.title span {
+        font-size: 0.875rem;
+    }
+
+
     #content .right .rbody label {
         font-size: 0.875rem;
     }
@@ -234,8 +256,6 @@
 
     /* content */
     #content .right .head h2.title span {
-        color: #AAA;
-        font-weight: 400;
         font-size: 1rem;
     }
 
