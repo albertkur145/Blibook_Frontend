@@ -1,0 +1,258 @@
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* detail product */
+    #detail-product {
+        margin-top: 2.5rem;
+        font-family: 'Roboto';
+    }
+
+
+    #detail-product .bg-white {
+        box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+    }
+
+
+    #detail-product .top .left .image-buku img {
+        border: 0.0625rem solid rgba(0, 0, 0, 0.3);
+        width: 14.25rem;
+        height: 21.25rem;
+    }
+
+
+    #detail-product .top .left .ket-buku {
+        padding: 0;
+    }
+
+
+    #detail-product .top .left .ket-buku .judul p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #484848;
+    }
+
+
+    #detail-product .top .left .ket-buku p.title {
+        font-size: 1rem;
+        color: #666;
+    }
+
+
+    #detail-product .top .left .ket-buku p.value {
+        font-size: 1rem;
+        color: #444;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga {
+        font-size: 1rem;
+        color: #1A9980;
+        font-weight: 500;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga span {
+        padding: 0.125rem 0.25rem;
+        margin-left: 0.375rem;
+        border: 1px solid #FF004D;
+        color: #FF004D;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga-diskon {
+        margin-top: -0.5rem;
+        font-size: 0.875rem;
+        color: #666;
+        text-decoration: line-through;
+    }
+
+
+    #detail-product .top .left .ket-buku button {
+        border: 0;
+        color: #FFF;
+        padding: 0.6875rem 1.375rem;
+        margin-right: 0.75rem;
+        border-radius: 0.3125rem;
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        font-weight: 500;
+    }
+
+
+    #detail-product .top .left .ket-buku button.btn-beli {
+        background-color: #FF8717;
+        transition: background-color .2s ease-in-out;
+    }
+
+
+    #detail-product .top .left .ket-buku button.btn-bag {
+        background-color: #FF2876;
+        transition: background-color .2s ease-in-out;
+    }
+
+
+    #detail-product .top .left .ket-buku button.btn-beli:hover {
+        background-color: #FF8F28;
+    }
+
+
+    #detail-product .top .left .ket-buku button.btn-bag:hover {
+        background-color: #FF347D;
+    }
+
+
+    #detail-product .top .right p {
+        margin-bottom: 0.375rem;
+    }
+
+
+    #detail-product .top .right h2.identitas-toko {
+        color: #444;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+
+    
+    #detail-product .top .right .box-toko {
+        margin-top: 1rem;
+        padding: 0.5rem 0.75rem;
+        border: 0.0625rem solid #AFAFAF;
+    }
+
+
+    #detail-product .top .right .box-toko h2.nama-toko {
+        color: #484848;
+        font-weight: 400;
+        font-size: 1.1875rem;
+    }
+
+
+    #detail-product .top .right p {
+        color: #666;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .bottom {
+        margin-top: 1.25rem;
+        margin-bottom: 5rem;
+    }
+
+
+    #detail-product .bottom .left {
+        color: #555;
+    }
+
+
+    #detail-product .bottom .left .txt-deskripsi h2 {
+        font-size: 1.375rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p {
+        text-align: justify;
+        margin-top: 0.5rem;
+        font-size: 0.9375rem;        
+    }
+
+
+    #detail-product .bottom .right .image-buku img {
+        width: 6.5rem;
+        height: 9.25rem;
+    }
+
+
+    #detail-product .bottom .right .judul-buku p {
+        font-size: 1rem;
+    }
+    /* detail product */
+
+
+}
+
+/* berlaku untuk width window >= 960px */
