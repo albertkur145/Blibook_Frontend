@@ -35,6 +35,11 @@
     }
 
 
+    #content .right .rbody input#harga-diskon:hover {
+        cursor: no-drop;
+    }
+
+
     #content .right .rbody small {
         display: none;
         font-size: 0.75rem;

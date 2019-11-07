@@ -3,6 +3,7 @@
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
+    $('.angka').html(width);
 
     if (width < 465) {
 

@@ -27,6 +27,7 @@ const hargaBuku = $('#content .right .rbody #harga');
 const diskonBuku = $('#content .right .rbody #diskon');
 const hargaSetelahDiskon = $('#content .right .rbody #harga-diskon');
 const deskripsiBuku = $('#content .right .rbody #deskripsi');
+const linkEbook = $('#content .right .rbody #link')
 const uploadGambar = $('#content .right .rbody #gambar');
 
 const extensionsImg = ["jpg", "jpeg", "png", "bmp"];
@@ -36,7 +37,7 @@ function validationForm() {
     if (judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && 
         $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 &&
         bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && regexNumber.test(diskonBuku.val()) && 
-        diskonBuku.val() <= 100 && deskripsiBuku.val().length >= 24) {
+        diskonBuku.val() <= 100 && deskripsiBuku.val().length >= 24 && linkEbook.val().length != 0) {
             if (uploadGambar.val().length > 0) {
 
                 if (uploadGambar[0].files[0].size > 2000000) 
@@ -82,6 +83,9 @@ function validationForm() {
 
     if (deskripsiBuku.val().length < 24)
         $('small#error-deskripsi').css('display', 'block');
+
+    if (linkEbook.val().length == 0)
+        $('small#error-ebook').css('display', 'block');
 
     if (uploadGambar.val().length == 0)
         $('small#error-gambar').css('display', 'block');        
@@ -167,6 +171,13 @@ function keyUpDeskripsiBuku () {
         $('small#error-deskripsi').css('display', 'block');
     else
         $('small#error-deskripsi').css('display', 'none');
+}
+
+function keyUpLinkEbook () {
+    if (linkEbook.val().length == 0)
+        $('small#error-ebook').css('display', 'block');
+    else
+        $('small#error-ebook').css('display', 'none');
 }
 
 uploadGambar.focusout(() => {

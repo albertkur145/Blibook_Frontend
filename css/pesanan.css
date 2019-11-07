@@ -1,0 +1,85 @@
+
+
+/* berlaku untuk width window < 320px */
+
+
+    
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+}
+
+/* berlaku untuk width window >= 960px */
