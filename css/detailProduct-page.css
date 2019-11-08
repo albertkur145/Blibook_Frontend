@@ -3,135 +3,72 @@
 /* berlaku untuk width window < 320px */
 
 
-
-
-
-/* berlaku untuk width window < 320px */
-
-
-
-
-
-
-
-
-
-
-
-
-/* berlaku untuk width window (320px - 479px) */
-
-@media (min-width: 320px) {
-
-}
-
-/* berlaku untuk width window (320px - 479px) */
-
-
-
-
-
-
-
-
-
-
-
-
-/* berlaku untuk width window (480px - 767px) */
-
-@media (min-width: 480px) {
-
-
-}
-
-/* berlaku untuk width window (480px - 767px) */
-
-
-
-
-
-
-
-
-
-
-
-
-/* berlaku untuk width window (768px - 959px) */
-
-@media (min-width: 768px) {
-
-
     /* detail product */
     #detail-product {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         font-family: 'Roboto';
     }
 
 
     #detail-product .bg-white {
         box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.4);
-        padding: 1rem;
+        padding: 1.125rem;
     }
 
 
     #detail-product .top .left .image-buku img {
         border: 0.0625rem solid rgba(0, 0, 0, 0.3);
-        width: 10rem;
-        height: 16rem;
-    }
-
-
-    #detail-product .top .left .ket-buku {
-        padding-left: 0.875rem;
+        width: 100%;
+        height: 100%;
     }
 
 
     #detail-product .top .left .ket-buku p {
-        margin-bottom: 0.875rem;
+        margin-bottom: 0.625rem;
     }
 
 
     #detail-product .top .left .ket-buku .judul p {
         font-weight: 500;
         color: #484848;
+        margin-top: 0.75rem;
         font-size: 1rem;
     }
 
 
     #detail-product .top .left .ket-buku p.title {
         color: #666;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
     }
 
 
     #detail-product .top .left .ket-buku p.value {
         color: #444;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
     }
 
 
     #detail-product .top .left .ket-buku p.harga {
         color: #1A9980;
         font-weight: 500;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
     }
 
 
     #detail-product .top .left .ket-buku p.harga span {
+        display: inline-block;
         border: 0.0625rem solid #FF004D;
         color: #FF004D;
-        padding: 0.0625rem 0.125rem;
         margin-left: 0.25rem;
+        padding: 0.125rem;
     }
 
 
     #detail-product .top .left .ket-buku p.harga-diskon {
         color: #666;
         text-decoration: line-through;
-        margin-top: -0.75rem;
-        font-size: 0.6875rem;
+        margin-top: -0.625rem;
+        font-size: 0.75rem;
     }
 
 
@@ -141,8 +78,8 @@
         border-radius: 0.3125rem;
         text-transform: uppercase;
         font-weight: 500;
-        padding: 0.5rem 0.75rem;
-        margin-right: 0.375rem;
+        width: 48%;
+        padding: 0.625rem 0.25rem;
         font-size: 0.6875rem;
     }
 
@@ -169,6 +106,11 @@
     }
 
 
+    #detail-product .top .right {
+        margin-top: 1rem;
+    }
+
+
     #detail-product .top .right p {
         margin-bottom: 0.25rem;
     }
@@ -183,8 +125,8 @@
 
     #detail-product .top .right .box-toko {
         border: 0.0625rem solid #AFAFAF;
-        margin-top: 1rem;
-        padding: 0.25rem 0.5rem;
+        margin-top: 0.75rem;
+        padding: 0.5rem 0.75rem;
     }
 
 
@@ -197,13 +139,15 @@
 
     #detail-product .top .right p {
         color: #666;
-        font-size: 0.75rem;
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+
     }
 
 
     #detail-product .bottom {
         margin-top: 1rem;
-        margin-bottom: 4rem;
+        margin-bottom: 1.75rem;
     }
 
 
@@ -227,44 +171,40 @@
 
 
     #detail-product .bottom .left .deskripsi p.read-more span {
-        font-size: 0.875rem;
         color: #AAA;
         font-weight: 500;
         cursor: pointer;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .bottom .right {
+        margin-top: 1rem;
     }
 
 
     #detail-product .bottom .right .image-buku img {
-        border: 0.0625rem solid rgba(0, 0, 0, 0.3);
-        width: 4.25rem;
-        height: 6.75rem;
+        display: none;
     }
 
 
     #detail-product .bottom .right .ket-buku p {
-        margin-bottom: 0.1875rem;
+        display: none;
     }
 
 
     #detail-product .bottom .right .ket-buku p.judul-buku {
-        font-size: 0.8125rem;
+        display: none;
     }
 
 
     #detail-product .bottom .right .ket-buku p.harga {
-        color: #1A9980;
-        font-weight: 500;
-        font-size: 0.75rem;
+        display: none;
     }
 
 
     #detail-product .bottom .right .ket-buku p.diskon {
-        display: inline-block;
-        border: 0.0625rem solid #FF004D;
-        color: #FF004D;
-        font-weight: 500;
-        font-size: 0.625rem;
-        padding: 0.0625rem 0.1875rem;
+        display: none;
     }
 
 
@@ -274,11 +214,10 @@
         border-radius: 0.3125rem;
         text-transform: uppercase;
         font-weight: 500;
-        width: 47%;
-        margin-right: 1%;
-        padding: 0.4375rem 0;
-        margin-top: 0.75rem;
-        font-size: 0.5625rem;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.6875rem;
+        font-size: 0.75rem;
     }
 
 
@@ -301,6 +240,592 @@
 
     #detail-product .bottom .right button.btn-bag:hover {
         background-color: #FF347D;
+    }
+    /* detail product */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* detail product */
+    #detail-product {
+        margin-top: 2rem;
+    }
+
+
+    #detail-product .bg-white {
+        padding: 0.4375rem;
+    }
+
+
+    #detail-product .top .left .image-buku img {
+        width: 9.875rem;
+        height: 15.5rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p {
+        margin-bottom: 0.4375rem;
+    }
+
+
+    #detail-product .top .left .ket-buku .judul p {
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.title {
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.value {
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga {
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga span {
+        margin-left: 0.1875rem;
+        padding: 0.0625rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga-diskon {
+        margin-top: -0.125rem;
+        font-size: 0.6875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku button {
+        width: 44%;
+        margin-right: 1%;
+        padding: 0.5rem;
+        font-size: 0.625rem;
+    }
+
+
+    #detail-product .top .right {
+        margin-top: 0.5rem;
+    }
+
+
+    #detail-product .top .right p {
+        margin-bottom: 0.25rem;
+    }
+
+
+    #detail-product .top .right h2.identitas-toko {
+        font-size: 1.0625rem;
+    }
+
+
+    #detail-product .top .right .box-toko {
+        margin-top: 1rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+
+    #detail-product .top .right .box-toko h2.nama-toko {
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .top .right p {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+
+    }
+
+
+    #detail-product .bottom {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+
+    #detail-product .bottom .left .txt-deskripsi h2 {
+        font-size: 0.9375rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.desk {
+        margin-top: 0.375rem;
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.read-more span {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .bottom .right {
+        margin-top: 0.5rem;
+    }
+
+
+    #detail-product .bottom .right .image-buku img {
+        display: block;
+        border: 0.0625rem solid rgba(0, 0, 0, 0.3);
+        width: 7.5rem;
+        height: 11rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku {
+        display: block;
+        margin-left: -1.5rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.judul-buku {
+        display: block;
+        font-size: 1.125rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.harga {
+        display: block;
+        color: #1A9980;
+        font-weight: 500;
+        font-size: 0.9375rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.diskon {
+        display: inline-block;
+        border: 0.0625rem solid #FF004D;
+        color: #FF004D;
+        font-weight: 500;
+        padding: 0.125rem 0.375rem;
+        font-size: 0.9375rem;
+    }
+
+
+    #detail-product .bottom .right button {
+        width: 90%;
+        margin-top: 0.5rem;
+        padding: 0.625rem;
+        font-size: 0.6875rem;
+    }
+
+
+    #detail-product .bottom .right button.btn-beli {
+        background-color: #FF8717;
+        transition: background-color .2s ease-in-out;
+    }
+
+
+    #detail-product .bottom .right button.btn-bag {
+        background-color: #FF2876;
+        transition: background-color .2s ease-in-out;
+    }
+
+
+    #detail-product .bottom .right button.btn-beli:hover {
+        background-color: #FF8F28;
+    }
+
+
+    #detail-product .bottom .right button.btn-bag:hover {
+        background-color: #FF347D;
+    }
+    /* detail product */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* detail product */
+    #detail-product {
+        margin-top: 1.5rem;
+    }
+
+
+    #detail-product .bg-white {
+        padding: 0.75rem;
+    }
+
+
+    #detail-product .top .left .image-buku img {
+        width: 9.875rem;
+        height: 15.5rem;
+    }
+
+
+    #detail-product .top .left .ket-buku {
+        padding: 0;
+    }
+
+
+    #detail-product .top .left .ket-buku p {
+        margin-bottom: 0.6875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku .judul p {
+        font-weight: 500;
+        color: #484848;
+        font-size: 1.125rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.title {
+        color: #666;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.value {
+        color: #444;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga {
+        color: #1A9980;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga span {      
+        margin-left: 0.25rem;
+        padding: 0.125rem 0.1875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga-diskon {
+        margin-top: -0.5rem;
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .top .left .ket-buku button {
+        font-size: 0.6875rem;
+        width: 40%;
+        margin-right: 2%;
+    }
+
+
+    #detail-product .top .right {
+        margin-top: 0.75rem;
+    }
+
+
+    #detail-product .top .right p {
+        margin-bottom: 0.5rem;
+    }
+
+
+    #detail-product .top .right h2.identitas-toko {
+        font-size: 1.25rem;
+    }
+
+
+    #detail-product .top .right .box-toko {
+        margin-top: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+
+    #detail-product .top .right .box-toko h2.nama-toko {
+        font-size: 1rem;
+    }
+
+
+    #detail-product .top .right p {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .bottom {
+        margin-top: 0.75rem;
+        margin-bottom: 3rem;
+    }
+
+
+    #detail-product .bottom .left .txt-deskripsi h2 {
+        font-size: 1.125rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.desk {
+        margin-top: 0.375rem;
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.read-more span {
+        font-size: 0.9375rem;
+    }
+
+
+    #detail-product .bottom .right {
+        margin-top: 0.75rem;
+    }
+
+
+    #detail-product .bottom .right .image-buku img {
+        width: 8rem;
+        height: 11.75rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku {
+        margin-left: -2.5rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p {
+        margin-bottom: 0.75rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.judul-buku {
+        font-size: 1.375rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.harga {
+        font-size: 1rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.diskon {
+        font-size: 1rem;
+    }
+
+
+    #detail-product .bottom .right button {
+        width: 85%;
+        padding: 0.6875rem;
+        font-size: 0.75rem;
+    }
+    /* detail product */
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* detail product */
+    #detail-product {
+        margin-top: 2rem;
+    }
+
+
+    #detail-product .bg-white {
+        padding: 1rem;
+    }
+
+
+    #detail-product .top .left .image-buku img {
+        width: 10rem;
+        height: 16rem;
+    }
+
+
+    #detail-product .top .left .ket-buku {
+        padding-left: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p {
+        margin-bottom: 0.875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku .judul p {
+        font-size: 1rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.title {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.value {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga span {
+        padding: 0.0625rem 0.125rem;
+    }
+
+
+    #detail-product .top .left .ket-buku p.harga-diskon {
+        margin-top: -0.75rem;
+        font-size: 0.6875rem;
+    }
+
+
+    #detail-product .top .left .ket-buku button {
+        padding: 0.5625rem;
+        width: 44%;
+        margin-right: 1%;
+    }
+
+
+    #detail-product .top .right {
+        margin-top: 0;
+    }
+
+
+    #detail-product .top .right p {
+        margin-bottom: 0.25rem;
+    }
+
+
+    #detail-product .top .right h2.identitas-toko {
+        font-size: 1.125rem;
+    }
+
+
+    #detail-product .top .right .box-toko {
+        padding: 0.25rem 0.5rem;
+    }
+
+
+    #detail-product .top .right .box-toko h2.nama-toko {
+        font-size: 0.9375rem;
+    }
+
+
+    #detail-product .top .right p {
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .bottom {
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
+
+
+    #detail-product .bottom .left .txt-deskripsi h2 {
+        font-size: 1rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.desk {
+        margin-top: 0.25rem;
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .bottom .left .deskripsi p.read-more span {
+        font-size: 0.875rem;
+    }
+
+
+    #detail-product .bottom .right {
+        margin-top: 0;
+    }
+
+
+    #detail-product .bottom .right .image-buku img {
+        width: 4.25rem;
+        height: 6.75rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku {
+        margin-left: 0;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p {
+        margin-bottom: 0.1875rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.judul-buku {
+        font-size: 0.8125rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.harga {
+        font-size: 0.75rem;
+    }
+
+
+    #detail-product .bottom .right .ket-buku p.diskon {
+        font-size: 0.625rem;
+        padding: 0.0625rem 0.1875rem;
+    }
+
+
+    #detail-product .bottom .right button {
+        width: 100%;
+        padding: 0.4375rem 0;
+        font-size: 0.5625rem;
     }
     /* detail product */
 
@@ -385,9 +910,10 @@
 
 
     #detail-product .top .left .ket-buku button {
-        padding: 0.6875rem 1.375rem;
-        margin-right: 0.75rem;
-        font-size: 0.8125rem;
+        padding: 0.75rem;
+        width: 42%;
+        margin-right: 2%;
+        font-size: 0.875rem;
     }
 
 
@@ -467,9 +993,7 @@
 
 
     #detail-product .bottom .right button {
-        margin-right: 2%;
-        padding: 0.625rem 0;
-        margin-top: 1rem;
+        padding: 0.625rem;
         font-size: 0.6875rem;
     }
     /* detail product */
