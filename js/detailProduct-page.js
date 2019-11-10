@@ -27,7 +27,7 @@ function bacaSelengkapnya() {
         else if (width < 945) 
             deskBuku.text(deskripsiBuku.substring(0, 925) + '...');
 
-        else if (width < 1400) 
+        else if (width < 1600) 
             deskBuku.text(deskripsiBuku.substring(0, 1225) + '...');     
         
 

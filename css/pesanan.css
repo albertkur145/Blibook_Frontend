@@ -3,7 +3,26 @@
 /* berlaku untuk width window < 320px */
 
 
-    
+    #content .right .rbody .pesanan table .cursor-cross {
+        transition: .3s;
+    }
+
+
+    #content .right .rbody .pesanan table .cursor-cross:hover {
+        cursor: pointer;
+        color: #FF1B36 !important;
+    }
+
+
+    #content .right .rbody .pesanan table .cursor-accept {
+        transition: .3s;
+    }
+
+
+    #content .right .rbody .pesanan table .cursor-accept:hover {
+        cursor: pointer;
+        color: #1B4DFF !important;
+    }
 
 
 /* berlaku untuk width window < 320px */
