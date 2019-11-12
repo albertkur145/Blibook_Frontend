@@ -21,9 +21,25 @@
 
 
 
+    /* bg hover */
+    .bg-hover {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: -999;
+        transition: opacity .4s ease-out;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    /* bg hover */
+
+
+
     /* navbar */
     .nav-blibuku {
-        /* background-color: #8A64F3; */
         background-image: linear-gradient(to bottom, #6D46DB, #7A57DC);
     }
 
@@ -83,6 +99,27 @@
         background-color: #5F04D5;
         cursor: pointer;
     }   
+
+
+    .nav-blibuku .masuk { 
+        display: none;
+    }
+
+    
+    .nav-blibuku .daftar {
+        display: none;
+    }
+
+
+    .nav-blibuku .user {
+        display: block;
+        font-weight: 500;
+    }
+
+
+    .nav-blibuku .option {
+        display: none;
+    }
     /* navbar */
 
 
@@ -266,7 +303,6 @@
 
 
     .nav-blibuku .masuk {
-        display: block;
         background-color: #5F32DC;
         border: 0.125rem solid #501EDC;
         font-weight: 500;
@@ -281,7 +317,6 @@
 
 
     .nav-blibuku .daftar {
-        display: block;
         border: 0.125rem solid #501EDC;
     }
 
@@ -303,21 +338,8 @@
     }
 
 
-    .nav-blibuku .option-user {
-        display: none;
-        margin-top: 0.203125rem;
-        font-weight: 500;
-    }
-
-
-    .nav-blibuku .option-user span {
-        padding-left: 0.25rem;
-        font-size: 0.875rem;
-    }
-
-
-    .nav-blibuku .option-user:hover {
-        text-decoration: none;
+    .nav-blibuku {
+        position: relative;
     }
 
 
@@ -344,6 +366,80 @@
         width: 6.44427%;
         height: 2.1875rem;
         font-size: 1.125rem;
+    }
+
+
+    .nav-blibuku .user {
+        margin-top: 0.203125rem;
+    }
+
+
+    .nav-blibuku .user:hover {
+        text-decoration: none;
+    }
+
+
+    .nav-blibuku .user:hover + .option {
+        opacity: 1;
+        z-index: 999;
+    }
+
+
+    .nav-blibuku .user span {
+        font-size: 0.875rem;
+        padding-left: 0.25rem;
+    }
+
+
+    .nav-blibuku .option {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: -999;
+        width: 85%;
+        left: 1rem;
+        top: 2.375rem;
+        transition: opacity .4s ease-out;
+    }
+
+
+    .nav-blibuku .option:hover {
+        opacity: 1;
+        z-index: 999;
+    }
+
+
+    .nav-blibuku .option .arrow span {
+        display: inline-block;
+        background-color: #FFF;
+        border-radius: 0rem 1rem 1rem 1rem;
+        margin-top: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        transform: rotate(45deg);
+    }
+
+
+    .nav-blibuku .option .list-opt {
+        background-color: #FFF;
+        border-radius: 0.375rem;
+        padding: 0.5rem 0;
+        margin-top: -1.0625rem;
+    }
+
+
+    .nav-blibuku .option .list-opt a {
+        text-decoration: none;
+        display: block;
+        color: #555;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
+    }
+
+
+    .nav-blibuku .option .list-opt a:hover {
+        background-color: #F2F2F2;
     }
     /* navbar */
 

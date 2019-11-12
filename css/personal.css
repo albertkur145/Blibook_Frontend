@@ -4,7 +4,8 @@
 
     /* content */
     #content {
-        margin: 1.25rem 0;
+        position: relative;
+        padding: 1.25rem 0;
     }
 
 
@@ -108,7 +109,7 @@
 
     /* content */
     #content {
-        margin: 1.5rem 0;
+        padding: 1.5rem 0;
     }
 
 
@@ -178,7 +179,7 @@
 
     /* content */
     #content {
-        margin: 1.75rem 0;
+        padding: 1.75rem 0;
     }
 
 
@@ -257,7 +258,7 @@
 
     /* content */
     #content {
-        margin: 2rem 0;
+        padding: 2rem 0;
     }
 
 
@@ -327,7 +328,7 @@
 
     /* content */
     #content {
-        margin: 3rem 0;
+        padding: 3rem 0;
     }
 
 

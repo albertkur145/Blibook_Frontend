@@ -6,7 +6,7 @@
 
     /* produk */
     #produk {
-        margin: 2rem;
+        padding: 2rem 0;
         font-family: 'Roboto';
     }
 
@@ -390,7 +390,7 @@
 
     /* produk */
     #produk {
-        margin: 2.5rem;
+        padding: 2.5rem 0;
     }
 
 
@@ -550,7 +550,7 @@
 
     /* produk */
     #produk {
-        margin: 3rem;
+        padding: 3rem 0;
     }
 
 

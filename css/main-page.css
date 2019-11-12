@@ -326,6 +326,11 @@
 
 
     /* promote content */
+    #promote {
+        padding-top: 2.25rem;
+    }
+
+
     #promote .header-promote h2 {
         font-size: 3rem;    
     }
@@ -433,6 +438,11 @@
 
 
     /* promote content */
+    #promote {
+        padding-top: 2.5rem;
+    }
+
+
     #promote .header-promote h2 {
         font-size: 2.75rem;  
     }
@@ -644,6 +654,11 @@
 
 
     /* promote content */
+    #promote {
+        padding-top: 2.75rem;
+    }
+
+
     #promote .header-promote h2 {
         font-size: 2.5rem;   
     }
@@ -792,6 +807,11 @@
 
 
     /* promote content */
+    #promote {
+        padding-top: 3rem;
+    }
+
+
     #promote .header-promote h2 {
         font-size: 2.25rem;    
     }
