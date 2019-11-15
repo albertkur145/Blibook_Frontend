@@ -1,4 +1,10 @@
 
+
+// variabel global
+let xPromote = 0;
+let xIndonesian = 0;
+
+
 // ambil data json
 
 const buku = $('#promo-murah .items-buku-promo .card-buku');
@@ -27,7 +33,11 @@ $(window).resize(responsiveSize);
 
 function responsiveSize() {
     let width = $(window).width();
+    $('.angka').html(width);
+
     const itemsBuku = $('#promo-murah .items-buku-promo .row');
+    const cartoon = $('#cartoon-horror .cartoon');
+    const horror = $('#cartoon-horror .horror');
 
     if (width < 300) {
 
@@ -426,6 +436,7 @@ function responsiveSize() {
         
     } else if (width >= 1185) {
 
+        // manipulasi column
         if (itemsBuku.find('.col-sm-4')) {
             $('.col-sm-4', itemsBuku).addClass('col-sm-3');
             $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
@@ -441,11 +452,12 @@ function responsiveSize() {
             $('.col-12', itemsBuku).removeClass('col-12');
         }
 
+        // manipulasi css
         $('.card-buku', itemsBuku).css('width', '100%');
         $('.card-buku', itemsBuku).css('marginLeft', '0');
         $('.card-buku img', itemsBuku).css('height', '60%');
 
-
+        // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 17) {
                 let temp = textJudul[i].substring(0, 17) + "...";
@@ -462,252 +474,284 @@ function responsiveSize() {
     }
 }
 
-// responsive - resize window
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // promote slider
+function sliderKanan(kode) {
+    const slides = $(`.${kode} .slider-container .slides-items`);
+    let widthGlobal = $(window).width();
 
-let xOffsetPromote = 0;
+    if (kode === 'promote') {
+        if (widthGlobal < 250) {
+            if (xPromote >= 83.75)
+                xPromote >= 86 ? xPromote = 0 : xPromote += 2.25;
+            else
+                xPromote += 8.375;
+        }
 
-$('#promote .slider-container-promote .kanan').on('click', () => {
+        else if (widthGlobal < 270) {
+            if (xPromote >= 83.75)
+                xPromote >= 85.75 ? xPromote = 0 : xPromote += 2;
+            else
+                xPromote += 8.375;
+        }
 
-    let widthWindow = $(window).width();
+        else if (widthGlobal < 300)
+            xPromote >= 83.75 ? xPromote = 0 : xPromote += 8.375;
 
+        else if (widthGlobal < 325) 
+            xPromote >= 91.25 ? xPromote = 0 : xPromote += 9.125;
 
-    if (widthWindow < 285)
-        xOffsetPromote >= 160.1875 ? xOffsetPromote = 0 : xOffsetPromote += 14.5625;
+        else if (widthGlobal < 365) {
+            if (xPromote >= 82.125)
+                xPromote >= 88.75 ? xPromote = 0 : xPromote += 6.625;
+            else
+                xPromote += 9.125;
+        }
 
-    else if (widthWindow < 305)
-    {
-        if (xOffsetPromote >= 145.625)
-            xOffsetPromote >= 156.6875 ? xOffsetPromote = 0 : xOffsetPromote += 11.0625;
-        else
-            xOffsetPromote += 14.5625;
-    } 
+        else if (widthGlobal < 400) {
+            if (xPromote >= 82.125)
+                xPromote >= 86.5 ? xPromote = 0 : xPromote += 4.375;
+            else
+                xPromote += 9.125;
+        }
 
-    else if (widthWindow < 400)
-        xOffsetPromote >= 151.25 ? xOffsetPromote = 0 : xOffsetPromote += 13.75;
-
-    else if (widthWindow < 440)
-        xOffsetPromote >= 137.5 ? xOffsetPromote = 0 : xOffsetPromote += 13.75;
-
-    else if (widthWindow < 465)
-        xOffsetPromote >= 137.1875 ? xOffsetPromote = 0 : xOffsetPromote += 27.4375;
-
-    else if (widthWindow < 501)
-        xOffsetPromote >= 162.5 ? xOffsetPromote = 0 : xOffsetPromote += 16.25;
-
-    else if (widthWindow < 753)
-        xOffsetPromote >= 162.8125 ? xOffsetPromote = 0 : xOffsetPromote += 32.5625;
-
-    else if (widthWindow < 945) 
-        xOffsetPromote >= 131.25 ? xOffsetPromote = 0 : xOffsetPromote += 43.75;
-
-    else if (widthWindow < 977)
-        xOffsetPromote >= 105 ? xOffsetPromote = 0 : xOffsetPromote += 35;
-
-    else if (widthWindow < 1185) {
-        if (xOffsetPromote >= 69.75)
-            xOffsetPromote >= 81.375 ? xOffsetPromote = 0 : xOffsetPromote += 11.625;
-        else
-            xOffsetPromote += 23.25;
-    }
-
-    else if (widthWindow >= 1185)
-        xOffsetPromote >= 69.75 ? xOffsetPromote = 0 : xOffsetPromote += 34.875;
-    
+        else if (widthGlobal < 435) {
+            if (xPromote >= 82.125)
+                xPromote >= 84.375 ? xPromote = 0 : xPromote += 2.25;
+            else
+                xPromote += 9.125;
+        }
         
-    $('.slider-container-promote .slides-items-promote').css('marginLeft', '-' +  xOffsetPromote  + 'rem');
-});
+        else if (widthGlobal < 465) 
+            xPromote >= 82.125 ? xPromote = 0 : xPromote += 9.125;
 
-
-$('#promote .slider-container-promote .kiri').on('click', () => {
-
-    let widthWindow = $(window).width();
-
-
-    if (widthWindow < 285)
-        xOffsetPromote <= 0 ? xOffsetPromote = 160.1875 : xOffsetPromote -= 14.5625;
-
-    else if (widthWindow < 305) {
-        if (xOffsetPromote >= 145.625)
-            xOffsetPromote >= 156.6875 ? xOffsetPromote -= 11.0625 : xOffsetPromote -= 14.5625;
-        else
-            xOffsetPromote <= 0 ? xOffsetPromote = 156.6875 : xOffsetPromote -= 14.5625;
-    }  
-
-    else if (widthWindow < 400)
-        xOffsetPromote <= 0 ? xOffsetPromote = 151.25 : xOffsetPromote -= 13.75;
-    
-    else if (widthWindow < 440)
-        xOffsetPromote <= 0 ? xOffsetPromote = 137.5 : xOffsetPromote -= 13.75;
-
-    else if (widthWindow < 465)
-        xOffsetPromote <= 0 ? xOffsetPromote = 137.1875 : xOffsetPromote -= 27.4375;
-
-    else if (widthWindow < 501)
-        xOffsetPromote <= 0 ? xOffsetPromote = 162.5 : xOffsetPromote -= 16.25;
-
-    else if (widthWindow < 753)
-        xOffsetPromote <= 0 ? xOffsetPromote = 162.8125 : xOffsetPromote -= 32.5625;
-
-    else if (widthWindow < 945)
-        xOffsetPromote <= 0 ? xOffsetPromote = 131.25 : xOffsetPromote -= 43.75;
-
-    else if (widthWindow < 977)
-        xOffsetPromote <= 0 ? xOffsetPromote = 105 : xOffsetPromote -= 35;
-
-    else if (widthWindow < 1185) {
-        if (xOffsetPromote >= 69.75)
-            xOffsetPromote >= 81.375 ? xOffsetPromote -= 11.625 : xOffsetPromote -= 23.25;
-        else
-            xOffsetPromote <= 0 ? xOffsetPromote = 81.375 : xOffsetPromote -= 23.25;
-    }
-
-    else if (widthWindow >= 1185) 
-        xOffsetPromote <= 0 ? xOffsetPromote = 69.75 : xOffsetPromote -= 34.875;
-
+        else if (widthGlobal < 490) {
+            if (xPromote >= 96.1875)
+                xPromote >= 99.6875 ? xPromote = 0 : xPromote += 3.5;
+            else
+                xPromote += 10.6875;
+        }
         
-    $('.slider-container-promote .slides-items-promote').css('marginLeft', '-' + xOffsetPromote + 'rem');
-});
+        else if (widthGlobal < 530) {
+            if (xPromote >= 85.5)
+                xPromote >= 97.125 ? xPromote = 0 : xPromote += 11.625;
+            else
+                xPromote += 10.6875;
+        } 
 
-// akhir promote slider
+        else if (widthGlobal < 753)
+            xPromote >= 96.1875 ? xPromote = 0 : xPromote += 10.6875;
 
+        else if (widthGlobal < 945)
+            xPromote >= 87 ? xPromote = 0 : xPromote += 10.875;
 
+        else if (widthGlobal < 1185) 
+            xPromote >= 81.375 ? xPromote = 0 : xPromote += 11.625;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// indonesian book slider
-
-let xOffsetIndobook = 0;
-
-$('#indonesian-book .slider-container-indobook .kanan').on('click', () => {
+        else if (widthGlobal >= 1185) 
+            xPromote >= 69.75 ? xPromote = 0 : xPromote += 11.625;
     
-    let widthWindow = $(window).width();
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xPromote}rem`);
 
+    } else if (kode === 'indonesian') {
+        if (widthGlobal < 250) {
+            if (xIndonesian >= 83.75)
+                xIndonesian >= 86 ? xIndonesian = 0 : xIndonesian += 2.25;
+            else
+                xIndonesian += 8.375;
+        } else if (widthGlobal < 270) {
+            if (xIndonesian >= 83.75)
+                xIndonesian >= 85.75 ? xIndonesian = 0 : xIndonesian += 2;
+            else
+                xIndonesian += 8.375;
+        } else if (widthGlobal < 300)
+            xIndonesian >= 83.75 ? xIndonesian = 0 : xIndonesian += 8.375;
 
-    if (widthWindow < 285)
-        xOffsetIndobook >= 160.1875 ? xOffsetIndobook = 0 : xOffsetIndobook += 14.5625;
+        else if (widthGlobal < 325)
+            xIndonesian >= 91.25 ? xIndonesian = 0 : xIndonesian += 9.125;
 
-    else if (widthWindow < 305) {
-        if (xOffsetIndobook >= 145.625)
-            xOffsetIndobook >= 156.6875 ? xOffsetIndobook = 0 : xOffsetIndobook += 11.0625;
-        else
-            xOffsetIndobook += 14.5625;
-    } 
+        else if (widthGlobal < 365) {
+            if (xIndonesian >= 82.125)
+                xIndonesian >= 88.75 ? xIndonesian = 0 : xIndonesian += 6.625;
+            else
+                xIndonesian += 9.125;
+        } else if (widthGlobal < 400) {
+            if (xIndonesian >= 82.125)
+                xIndonesian >= 86.5 ? xIndonesian = 0 : xIndonesian += 4.375;
+            else
+                xIndonesian += 9.125;
+        } else if (widthGlobal < 435) {
+            if (xIndonesian >= 82.125)
+                xIndonesian >= 84.375 ? xIndonesian = 0 : xIndonesian += 2.25;
+            else
+                xIndonesian += 9.125;
+        } else if (widthGlobal < 465)
+            xIndonesian >= 82.125 ? xIndonesian = 0 : xIndonesian += 9.125;
 
-    else if (widthWindow < 400)
-        xOffsetIndobook >= 151.25 ? xOffsetIndobook = 0 : xOffsetIndobook += 13.75;
+        else if (widthGlobal < 490) {
+            if (xIndonesian >= 96.1875)
+                xIndonesian >= 99.6875 ? xIndonesian = 0 : xIndonesian += 3.5;
+            else
+                xIndonesian += 10.6875;
+        } else if (widthGlobal < 530) {
+            if (xIndonesian >= 85.5)
+                xIndonesian >= 97.125 ? xIndonesian = 0 : xIndonesian += 11.625;
+            else
+                xIndonesian += 10.6875;
+        } else if (widthGlobal < 753)
+            xIndonesian >= 96.1875 ? xIndonesian = 0 : xIndonesian += 10.6875;
 
-    else if (widthWindow < 440)
-        xOffsetIndobook >= 137.5 ? xOffsetIndobook = 0 : xOffsetIndobook += 13.75;
+        else if (widthGlobal < 945)
+            xIndonesian >= 87 ? xIndonesian = 0 : xIndonesian += 10.875;
 
-    else if (widthWindow < 465)
-        xOffsetIndobook >= 137.1875 ? xOffsetIndobook = 0 : xOffsetIndobook += 27.4375;
+        else if (widthGlobal < 1185)
+            xIndonesian >= 81.375 ? xIndonesian = 0 : xIndonesian += 11.625;
 
-    else if (widthWindow < 501)
-        xOffsetIndobook >= 162.5 ? xOffsetIndobook = 0 : xOffsetIndobook += 16.25;
+        else if (widthGlobal >= 1185)
+            xIndonesian >= 69.75 ? xIndonesian = 0 : xIndonesian += 11.625;
 
-    else if (widthWindow < 753)
-        xOffsetIndobook >= 162.8125 ? xOffsetIndobook = 0 : xOffsetIndobook += 32.5625;
-
-    else if (widthWindow < 945)
-        xOffsetIndobook >= 131.25 ? xOffsetIndobook = 0 : xOffsetIndobook += 43.75;
-
-    else if (widthWindow < 977)
-        xOffsetIndobook >= 105 ? xOffsetIndobook = 0 : xOffsetIndobook += 35;
-
-    else if (widthWindow < 1185) {
-        if (xOffsetIndobook >= 69.75)
-            xOffsetIndobook >= 81.375 ? xOffsetIndobook = 0 : xOffsetIndobook += 11.625;
-        else
-            xOffsetIndobook += 23.25;
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xIndonesian}rem`);
     }
+}
 
-    else if (widthWindow >= 1185)
-        xOffsetIndobook >= 69.75 ? xOffsetIndobook = 0 : xOffsetIndobook += 34.875;
+function sliderKiri(kode) {
+    const slides = $(`.${kode} .slider-container .slides-items`);
+    let widthGlobal = $(window).width();
 
+    if (kode === 'promote') {
+        if (widthGlobal < 250) {
+            if (xPromote > 83.75)
+                xPromote -= 2.25;
+            else
+                xPromote <= 0 ? xPromote = 86 : xPromote -= 8.375;
+        }
 
-    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'rem');
-})
+        else if (widthGlobal < 270) {
+            if (xPromote > 83.75)
+                xPromote -= 2;
+            else
+                xPromote <= 0 ? xPromote = 85.75 : xPromote -= 8.375;
+        }
 
+        else if (widthGlobal < 300)
+            xPromote <= 0 ? xPromote = 83.75 : xPromote -= 8.375;
 
-$('#indonesian-book .slider-container-indobook .kiri').on('click', () => {
-    
-    let widthWindow = $(window).width();
+        else if (widthGlobal < 325) 
+            xPromote <= 0 ? xPromote = 91.25 : xPromote -= 9.125;
+        
+        else if (widthGlobal < 365) {
+            if (xPromote > 82.125)
+                xPromote -= 6.625;
+            else
+                xPromote <= 0 ? xPromote = 88.75 : xPromote -= 9.125;
+        }
 
+        else if (widthGlobal < 400) {
+            if (xPromote > 82.125)
+                xPromote -= 4.375;
+            else
+                xPromote <= 0 ? xPromote = 86.5 : xPromote -= 9.125;
+        }
 
-    if (widthWindow < 285)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 160.1875 : xOffsetIndobook -= 14.5625;
+        else if (widthGlobal < 435) {
+            if (xPromote > 82.125)
+                xPromote -= 2.25;
+            else
+                xPromote <= 0 ? xPromote = 84.375 : xPromote -= 9.125;
+        }
 
-    else if (widthWindow < 305) {
-        if (xOffsetIndobook >= 145.625)
-            xOffsetIndobook >= 156.6875 ? xOffsetIndobook -= 11.0625 : xOffsetIndobook -= 14.5625;
-        else
-            xOffsetIndobook <= 0 ? xOffsetIndobook = 156.6875 : xOffsetIndobook -= 14.5625;
-    }  
+        else if (widthGlobal < 465)
+            xPromote <= 0 ? xPromote = 82.125 : xPromote -= 9.125;
 
-    else if (widthWindow < 400)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 151.25 : xOffsetIndobook -= 13.75;
+        else if (widthGlobal < 490) {
+            if (xPromote > 96.1875)
+                xPromote -= 3.5;
+            else
+                xPromote <= 0 ? xPromote = 99.6875 : xPromote -= 10.6875;
+        }
 
-    else if (widthWindow < 440)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 137.5 : xOffsetIndobook -= 13.75;
+        else if (widthGlobal < 530) {
+            if (xPromote > 85.5)
+                xPromote -= 11.625;
+            else
+                xPromote <= 0 ? xPromote = 97.125 : xPromote -= 10.6875;
+        }
+        
+        else if (widthGlobal < 753)
+            xPromote <= 0 ? xPromote = 96.1875 : xPromote -= 10.6875;
 
-    else if (widthWindow < 465)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 137.1875 : xOffsetIndobook -= 27.4375;
+        else if (widthGlobal < 945)
+            xPromote <= 0 ? xPromote = 87 : xPromote -= 10.875;
 
-    else if (widthWindow < 501)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 162.5 : xOffsetIndobook -= 16.25;
+        else if (widthGlobal < 1185)
+            xPromote <= 0 ? xPromote = 81.375 : xPromote -= 11.625;
+        
+        else if (widthGlobal >= 1185) 
+            xPromote <= 0 ? xPromote = 69.75 : xPromote -= 11.625
 
-    else if (widthWindow < 753)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 162.8125 : xOffsetIndobook -= 32.5625;
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xPromote}rem`);
 
-    else if (widthWindow < 945)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 131.25 : xOffsetIndobook -= 43.75;
+    } else if (kode === 'indonesian') {
+        if (widthGlobal < 250) {
+            if (xIndonesian > 83.75)
+                xIndonesian -= 2.25;
+            else
+                xIndonesian <= 0 ? xIndonesian = 86 : xIndonesian -= 8.375;
+        } else if (widthGlobal < 270) {
+            if (xIndonesian > 83.75)
+                xIndonesian -= 2;
+            else
+                xIndonesian <= 0 ? xIndonesian = 85.75 : xIndonesian -= 8.375;
+        } else if (widthGlobal < 300)
+            xIndonesian <= 0 ? xIndonesian = 83.75 : xIndonesian -= 8.375;
 
-    else if (widthWindow < 977)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 105 : xOffsetIndobook -= 35;
+        else if (widthGlobal < 325)
+            xIndonesian <= 0 ? xIndonesian = 91.25 : xIndonesian -= 9.125;
 
-    else if (widthWindow < 1185) {
-        if (xOffsetIndobook >= 69.75)
-            xOffsetIndobook >= 81.375 ? xOffsetIndobook -= 11.625 : xOffsetIndobook -= 23.25;
-        else
-            xOffsetIndobook <= 0 ? xOffsetIndobook = 81.375 : xOffsetIndobook -= 23.25;
+        else if (widthGlobal < 365) {
+            if (xIndonesian > 82.125)
+                xIndonesian -= 6.625;
+            else
+                xIndonesian <= 0 ? xIndonesian = 88.75 : xIndonesian -= 9.125;
+        } else if (widthGlobal < 400) {
+            if (xIndonesian > 82.125)
+                xIndonesian -= 4.375;
+            else
+                xIndonesian <= 0 ? xIndonesian = 86.5 : xIndonesian -= 9.125;
+        } else if (widthGlobal < 435) {
+            if (xIndonesian > 82.125)
+                xIndonesian -= 2.25;
+            else
+                xIndonesian <= 0 ? xIndonesian = 84.375 : xIndonesian -= 9.125;
+        } else if (widthGlobal < 465)
+            xIndonesian <= 0 ? xIndonesian = 82.125 : xIndonesian -= 9.125;
+
+        else if (widthGlobal < 490) {
+            if (xIndonesian > 96.1875)
+                xIndonesian -= 3.5;
+            else
+                xIndonesian <= 0 ? xIndonesian = 99.6875 : xIndonesian -= 10.6875;
+        } else if (widthGlobal < 530) {
+            if (xIndonesian > 85.5)
+                xIndonesian -= 11.625;
+            else
+                xIndonesian <= 0 ? xIndonesian = 97.125 : xIndonesian -= 10.6875;
+        } else if (widthGlobal < 753)
+            xIndonesian <= 0 ? xIndonesian = 96.1875 : xIndonesian -= 10.6875;
+
+        else if (widthGlobal < 945)
+            xIndonesian <= 0 ? xIndonesian = 87 : xIndonesian -= 10.875;
+
+        else if (widthGlobal < 1185)
+            xIndonesian <= 0 ? xIndonesian = 81.375 : xIndonesian -= 11.625;
+
+        else if (widthGlobal >= 1185)
+            xIndonesian <= 0 ? xIndonesian = 69.75 : xIndonesian -= 11.625
+
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xIndonesian}rem`);
     }
-
-    else if (widthWindow >= 1185)
-        xOffsetIndobook <= 0 ? xOffsetIndobook = 69.75 : xOffsetIndobook -= 34.875;
-
-
-    $('.slider-container-indobook .slides-items-indobook').css('marginLeft', '-' + xOffsetIndobook + 'rem');
-});
-
-// akhir indonesian book slider
+}

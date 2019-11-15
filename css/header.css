@@ -32,7 +32,7 @@
         opacity: 0;
         z-index: -999;
         transition: opacity .4s ease-out;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.8);
     }
     /* bg hover */
 
