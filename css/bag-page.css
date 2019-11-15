@@ -65,13 +65,13 @@
 
 
     #produk .left .pilih-semua .checkbox-pilih-semua input:hover+span.checkbox {
-        border: 0.125rem solid rgb(113, 57, 233);
+        border: 0.125rem solid #0085FF;
     }
 
 
     #produk .left .pilih-semua .checkbox-pilih-semua input:checked+span.checkbox {
-        background-color: #834DF6;
-        border: 0.125rem solid #834DF6;
+        background-color: #0085FF;
+        border: 0.125rem solid #0085FF;
     }
 
 
@@ -148,13 +148,13 @@
 
 
     #produk .left .buku .checkbox-pilih input:hover+span.checkbox {
-        border: 0.125rem solid rgb(113, 57, 233);
+        border: 0.125rem solid #0085FF;
     }
 
 
     #produk .left .buku .checkbox-pilih input:checked+span.checkbox {
-        background-color: #834DF6;
-        border: 0.125rem solid #834DF6;
+        background-color: #0085FF;
+        border: 0.125rem solid #0085FF;
     }
 
 
@@ -258,7 +258,7 @@
         width: 100%;
         transition: background-color .2s ease-in-out;
         border: 0;
-        background-color: #0094FF;
+        background-color: #FF8A00;
         margin-top: 0.75rem;
         padding: 0.375rem;
         font-size: 0.875rem;
@@ -266,7 +266,7 @@
 
 
     #produk .right .detail-pembelian button.btn-beli:hover {
-        background-color: #0085FF;
+        background-color: #FF9416;
     }
     /* produk */
 

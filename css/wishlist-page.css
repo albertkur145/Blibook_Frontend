@@ -4,7 +4,7 @@
 
     /* content */
     #content .right .rbody .wishlist hr {
-        border: 0.03125rem solid #410095;
+        border: 0.03125rem solid #0B5F83;
     }
 
 
@@ -35,14 +35,14 @@
 
     #content .right .rbody .wishlist .desk-buku p.harga {
         font-size: 1rem;
-        color: #4C06E2;
+        color: #1A9980;
     }
 
 
     #content .right .rbody .wishlist .desk-buku p.harga span {
         display: inline-block;
         font-weight: 500;
-        border: 0.0625rem solid #4C06E2;
+        border: 0.0625rem solid #1A9980;
         padding: 0.25rem 0.5rem;
         margin-left: 0.25rem;
     }
@@ -78,7 +78,7 @@
     #content .right .rbody .wishlist .button-beli a {
         padding: 0.875rem 2.5rem;
         font-size: 0.875rem;
-        background-color: #850EE2;
+        background-color: #FC317A;
         font-weight: 500;
         text-decoration: none;
         color: #FFF;
@@ -89,7 +89,7 @@
 
 
     #content .right .rbody .wishlist .button-beli a:hover {
-        background-color: #7F05DF;
+        background-color: #FC2673;
     }
     /* content */
 

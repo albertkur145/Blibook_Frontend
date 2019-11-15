@@ -26,8 +26,8 @@
     }
 
 
-    #content .right .rbody .mybooks a:hover>img {
-        border: 0.0625rem solid #8F00FF;
+    #content .right .rbody .mybooks a:hover > img {
+        border: 0.0625rem solid #005F95;
     }
     /* content */
 

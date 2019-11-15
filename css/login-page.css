@@ -10,7 +10,7 @@
 
 
     #header a {
-        color: #754AEB;
+        color: #0066FF;
         text-decoration: none;
         font-size: 1.75rem;
     }
@@ -63,13 +63,13 @@
         width: 100%;
         font-weight: 500;
         color: #FFF;
-        background-color: #8A61F7;
+        background-color: #FF8A00;
         font-size: 0.8125rem;
     }
 
 
     #content .right form .btn-right:hover {
-        background-color: #7B4DF6;
+        background-color: #FF9416;
     }
     /* content */
 
@@ -149,7 +149,7 @@
 
 
     #content .left h2 {
-        color: #8D66F6;
+        color: #0085FF;
         font-weight: 400;
         text-align: left;
         font-size: 1.75rem;
@@ -160,7 +160,7 @@
         margin-top: -0.125rem;        
         text-align: left;
         font-size: 0.875rem;
-        color: #9573F4;
+        color: #2797FF;
     }
 
 
@@ -173,12 +173,12 @@
 
     #content .left .quotes p {
         font-size: 1.375rem;
-        color: #E7E2F4;
+        color: #DBEEFF;
     }
 
 
     #content .left .quotes p span {
-        color: #CFC1F8;
+        color: #C9E5FF;
     }
 
 

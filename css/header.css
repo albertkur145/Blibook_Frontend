@@ -40,19 +40,19 @@
 
     /* navbar */
     .nav-blibuku {
-        background-image: linear-gradient(to bottom, #6D46DB, #7A57DC);
+        background-image: linear-gradient(to bottom, #0066FF, #1D77FF);
     }
 
 
     .navbar .blibuku-brand {
         font-family: 'Viga';
-        color: white !important;
+        color: #FFF !important;
         font-size: 2.125rem;
     }
 
 
     .navbar .nav-item {
-        color: white !important;
+        color: #FFF !important;
     }
 
 
@@ -69,7 +69,7 @@
     .nav-blibuku .search {
         width: 80%;
         height: 3rem;
-        border: 0.125rem solid #6506DE;
+        border: 0.0625rem solid #0046CD;
         padding-left: 0.75rem;
         border-radius: 1.5625rem;
         outline: none;
@@ -85,19 +85,21 @@
         font-size: 1rem;
         padding: 0 0.625rem;
         padding-right: 0.9375rem;
-        border: 0.125rem solid #6506DE;
-        background-color: #6506DE;
+        border: 0.0625rem solid #0046CD;
+        background-color: #1061FF;
         border-radius: 0 1.5625rem 1.5625rem 0;
-        color: white;
+        color: #FFF;
         font-weight: 500;
         outline: none;
         margin-left: -11%;
+        transition: background-color .1s ease-out;
+        cursor: pointer;
     }
 
 
     .nav-blibuku .cari-btn:hover {
-        background-color: #5F04D5;
-        cursor: pointer;
+        color: #FFF;
+        background-color: #0055FB;
     }   
 
 
@@ -126,8 +128,7 @@
 
     /* sub navbar */
     .sub-navbar {
-        background-color: #7A57DC;
-        color: white;
+        background-color: #1D77FF;
         box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
         padding: 0.625rem 0;
     }
@@ -147,8 +148,7 @@
 
 
     .sub-navbar .kategori a:hover {
-        text-shadow: 0.03125rem 0.03125rem 0.1875rem rgba(26, 0, 69, 1),
-                    -0.03125rem -0.03125rem 0.1875rem rgba(26, 0, 69, 1);
+        color: #152F61;
     }
 
 

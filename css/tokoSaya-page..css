@@ -26,7 +26,7 @@
 
     #content .right .rbody .biodata-toko a.btn-jual-buku {
         display: inline-block;
-        background-color: #20AC47;
+        background-color: #01B591;
         color: #FFF;
         text-decoration: none;
         font-weight: 500;
@@ -39,7 +39,7 @@
 
 
     #content .right .rbody .biodata-toko a.btn-jual-buku:hover {
-        background-color: #22B94C;
+        background-color: #00A685;
     }
 
 
@@ -49,7 +49,7 @@
 
 
     #content .right .rbody .penjualan h2.txt-list-buku {
-        color: #8729FF;
+        color: #3278FF;
         font-weight: 500;
         font-size: 1.25rem;
     }
