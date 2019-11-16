@@ -3,6 +3,8 @@
 // variabel global
 let xPromote = 0;
 let xIndonesian = 0;
+let xCartoon = 0;
+let xMusic = 0;
 
 
 // ambil data json
@@ -36,8 +38,8 @@ function responsiveSize() {
     $('.angka').html(width);
 
     const itemsBuku = $('#promo-murah .items-buku-promo .row');
-    const cartoon = $('#cartoon-horror .cartoon');
-    const horror = $('#cartoon-horror .horror');
+    const cartoon = $('.cartoon-music .cartoon');
+    const music = $('.cartoon-music .music');
 
     if (width < 300) {
 
@@ -72,6 +74,17 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 137) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
         }
 
     } else if (width < 320) {
@@ -110,6 +123,16 @@ function responsiveSize() {
             }
         }
 
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
     } else if(width < 345) {
 
         if (itemsBuku.find('.col-sm-3')) {
@@ -144,6 +167,17 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 132) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
         }
 
     } else if(width < 385) {
@@ -182,6 +216,17 @@ function responsiveSize() {
             }
         }
 
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
     } else if(width < 400) {
 
         if (itemsBuku.find('.col-sm-3')) {
@@ -216,6 +261,16 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 59) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
         }
 
     } else if(width < 420) {
@@ -254,6 +309,16 @@ function responsiveSize() {
             }
         }
 
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
     } else if(width < 440) {
 
         if (itemsBuku.find('.col-sm-3')) {
@@ -288,6 +353,16 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 87) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
         }
 
     } else if(width < 465) {
@@ -326,6 +401,17 @@ function responsiveSize() {
             }
         }
 
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
     } else if(width < 753) {
 
         if (itemsBuku.find('.col-sm-3')) {
@@ -362,7 +448,18 @@ function responsiveSize() {
             }
         }
 
-    } else if (width < 977) {
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+    } else if (width < 945) {
 
         if (itemsBuku.find('.col-sm-3')) {
             $('.col-sm-3', itemsBuku).addClass('col-sm-4');
@@ -396,6 +493,16 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 127) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-12')) {
+            cartoon.addClass('col-6');
+            cartoon.removeClass('col-12');
+
+            music.addClass('col-6');
+            music.removeClass('col-12');
         }
 
     } else if (width < 1185) {
@@ -432,6 +539,17 @@ function responsiveSize() {
                 let temp = textBuku[i].substring(0, 137) + "...";
                 deskBuku[i].innerHTML = temp;
             }
+        }
+
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-12')) {
+            cartoon.addClass('col-6');
+            cartoon.removeClass('col-12');
+
+            music.addClass('col-6');
+            music.removeClass('col-12');
         }
         
     } else if (width >= 1185) {
@@ -471,6 +589,16 @@ function responsiveSize() {
                 deskBuku[i].innerHTML = temp;
             }
         }
+
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-12')) {
+            cartoon.addClass('col-6');
+            cartoon.removeClass('col-12');
+
+            music.addClass('col-6');
+            music.removeClass('col-12');
+        }
     }
 }
 
@@ -481,63 +609,23 @@ function sliderKanan(kode) {
     let widthGlobal = $(window).width();
 
     if (kode === 'promote') {
-        if (widthGlobal < 250) {
-            if (xPromote >= 83.75)
-                xPromote >= 86 ? xPromote = 0 : xPromote += 2.25;
-            else
-                xPromote += 8.375;
-        }
-
-        else if (widthGlobal < 270) {
-            if (xPromote >= 83.75)
-                xPromote >= 85.75 ? xPromote = 0 : xPromote += 2;
-            else
-                xPromote += 8.375;
-        }
+        if (widthGlobal < 280)
+            xPromote >= 92.125 ? xPromote = 0 : xPromote += 8.375;
 
         else if (widthGlobal < 300)
             xPromote >= 83.75 ? xPromote = 0 : xPromote += 8.375;
 
-        else if (widthGlobal < 325) 
+        else if (widthGlobal < 325)
             xPromote >= 91.25 ? xPromote = 0 : xPromote += 9.125;
 
-        else if (widthGlobal < 365) {
-            if (xPromote >= 82.125)
-                xPromote >= 88.75 ? xPromote = 0 : xPromote += 6.625;
-            else
-                xPromote += 9.125;
-        }
+        else if (widthGlobal < 440)
+            xPromote >= 91.25 ? xPromote = 0 : xPromote += 9.125;
 
-        else if (widthGlobal < 400) {
-            if (xPromote >= 82.125)
-                xPromote >= 86.5 ? xPromote = 0 : xPromote += 4.375;
-            else
-                xPromote += 9.125;
-        }
-
-        else if (widthGlobal < 435) {
-            if (xPromote >= 82.125)
-                xPromote >= 84.375 ? xPromote = 0 : xPromote += 2.25;
-            else
-                xPromote += 9.125;
-        }
-        
-        else if (widthGlobal < 465) 
+        else if (widthGlobal < 465)
             xPromote >= 82.125 ? xPromote = 0 : xPromote += 9.125;
 
-        else if (widthGlobal < 490) {
-            if (xPromote >= 96.1875)
-                xPromote >= 99.6875 ? xPromote = 0 : xPromote += 3.5;
-            else
-                xPromote += 10.6875;
-        }
-        
-        else if (widthGlobal < 530) {
-            if (xPromote >= 85.5)
-                xPromote >= 97.125 ? xPromote = 0 : xPromote += 11.625;
-            else
-                xPromote += 10.6875;
-        } 
+        else if (widthGlobal < 510)
+            xPromote >= 106.875 ? xPromote = 0 : xPromote += 10.6875;
 
         else if (widthGlobal < 753)
             xPromote >= 96.1875 ? xPromote = 0 : xPromote += 10.6875;
@@ -545,61 +633,35 @@ function sliderKanan(kode) {
         else if (widthGlobal < 945)
             xPromote >= 87 ? xPromote = 0 : xPromote += 10.875;
 
-        else if (widthGlobal < 1185) 
+        else if (widthGlobal < 1185)
             xPromote >= 81.375 ? xPromote = 0 : xPromote += 11.625;
 
-        else if (widthGlobal >= 1185) 
+        else if (widthGlobal >= 1185)
             xPromote >= 69.75 ? xPromote = 0 : xPromote += 11.625;
     
         // manipulasi margin slider
         slides.css('marginLeft', `-${xPromote}rem`);
 
     } else if (kode === 'indonesian') {
-        if (widthGlobal < 250) {
-            if (xIndonesian >= 83.75)
-                xIndonesian >= 86 ? xIndonesian = 0 : xIndonesian += 2.25;
-            else
-                xIndonesian += 8.375;
-        } else if (widthGlobal < 270) {
-            if (xIndonesian >= 83.75)
-                xIndonesian >= 85.75 ? xIndonesian = 0 : xIndonesian += 2;
-            else
-                xIndonesian += 8.375;
-        } else if (widthGlobal < 300)
+        if (widthGlobal < 280)
+            xIndonesian >= 92.125 ? xIndonesian = 0 : xIndonesian += 8.375;
+
+        else if (widthGlobal < 300)
             xIndonesian >= 83.75 ? xIndonesian = 0 : xIndonesian += 8.375;
 
         else if (widthGlobal < 325)
             xIndonesian >= 91.25 ? xIndonesian = 0 : xIndonesian += 9.125;
 
-        else if (widthGlobal < 365) {
-            if (xIndonesian >= 82.125)
-                xIndonesian >= 88.75 ? xIndonesian = 0 : xIndonesian += 6.625;
-            else
-                xIndonesian += 9.125;
-        } else if (widthGlobal < 400) {
-            if (xIndonesian >= 82.125)
-                xIndonesian >= 86.5 ? xIndonesian = 0 : xIndonesian += 4.375;
-            else
-                xIndonesian += 9.125;
-        } else if (widthGlobal < 435) {
-            if (xIndonesian >= 82.125)
-                xIndonesian >= 84.375 ? xIndonesian = 0 : xIndonesian += 2.25;
-            else
-                xIndonesian += 9.125;
-        } else if (widthGlobal < 465)
+        else if (widthGlobal < 440)
+            xIndonesian >= 91.25 ? xIndonesian = 0 : xIndonesian += 9.125;
+
+        else if (widthGlobal < 465)
             xIndonesian >= 82.125 ? xIndonesian = 0 : xIndonesian += 9.125;
 
-        else if (widthGlobal < 490) {
-            if (xIndonesian >= 96.1875)
-                xIndonesian >= 99.6875 ? xIndonesian = 0 : xIndonesian += 3.5;
-            else
-                xIndonesian += 10.6875;
-        } else if (widthGlobal < 530) {
-            if (xIndonesian >= 85.5)
-                xIndonesian >= 97.125 ? xIndonesian = 0 : xIndonesian += 11.625;
-            else
-                xIndonesian += 10.6875;
-        } else if (widthGlobal < 753)
+        else if (widthGlobal < 510)
+            xIndonesian >= 106.875 ? xIndonesian = 0 : xIndonesian += 10.6875;
+
+        else if (widthGlobal < 753)
             xIndonesian >= 96.1875 ? xIndonesian = 0 : xIndonesian += 10.6875;
 
         else if (widthGlobal < 945)
@@ -611,8 +673,77 @@ function sliderKanan(kode) {
         else if (widthGlobal >= 1185)
             xIndonesian >= 69.75 ? xIndonesian = 0 : xIndonesian += 11.625;
 
+
         // manipulasi margin slider
         slides.css('marginLeft', `-${xIndonesian}rem`);
+
+    } else if (kode === 'cartoon') {
+        if (widthGlobal < 280) 
+            xCartoon >= 92.125 ? xCartoon = 0 : xCartoon += 8.375;
+
+        else if (widthGlobal < 300)
+            xCartoon >= 83.75 ? xCartoon = 0 : xCartoon += 8.375;
+
+        else if (widthGlobal < 325)
+            xCartoon >= 91.25 ? xCartoon = 0 : xCartoon += 9.125;
+
+        else if (widthGlobal < 440) 
+            xCartoon >= 91.25 ? xCartoon = 0 : xCartoon += 9.125;
+        
+        else if (widthGlobal < 465)
+            xCartoon >= 82.125 ? xCartoon = 0 : xCartoon += 9.125;
+        
+        else if (widthGlobal < 510)
+            xCartoon >= 106.875 ? xCartoon = 0 : xCartoon += 10.6875;
+
+        else if (widthGlobal < 753)
+            xCartoon >= 96.1875 ? xCartoon = 0 : xCartoon += 10.6875;
+
+        else if (widthGlobal < 945)
+            xCartoon >= 108.75 ? xCartoon = 0 : xCartoon += 10.875;
+
+        else if (widthGlobal < 1185)
+            xCartoon >= 116.25 ? xCartoon = 0 : xCartoon += 11.625;
+
+        else if (widthGlobal >= 1185)
+            xCartoon >= 104.625 ? xCartoon = 0 : xCartoon += 11.625;
+
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xCartoon}rem`);
+
+    } else if (kode === 'music') {
+        if (widthGlobal < 280)
+            xMusic >= 92.125 ? xMusic = 0 : xMusic += 8.375;
+
+        else if (widthGlobal < 300)
+            xMusic >= 83.75 ? xMusic = 0 : xMusic += 8.375;
+
+        else if (widthGlobal < 325)
+            xMusic >= 91.25 ? xMusic = 0 : xMusic += 9.125;
+
+        else if (widthGlobal < 440)
+            xMusic >= 91.25 ? xMusic = 0 : xMusic += 9.125;
+
+        else if (widthGlobal < 465)
+            xMusic >= 82.125 ? xMusic = 0 : xMusic += 9.125;
+
+        else if (widthGlobal < 510)
+            xMusic >= 106.875 ? xMusic = 0 : xMusic += 10.6875;
+
+        else if (widthGlobal < 753)
+            xMusic >= 96.1875 ? xMusic = 0 : xMusic += 10.6875;
+
+        else if (widthGlobal < 945)
+            xMusic >= 108.75 ? xMusic = 0 : xMusic += 10.875;
+
+        else if (widthGlobal < 1185)
+            xMusic >= 116.25 ? xMusic = 0 : xMusic += 11.625;
+
+        else if (widthGlobal >= 1185)
+            xMusic >= 104.625 ? xMusic = 0 : xMusic += 11.625;
+
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xMusic}rem`);
     }
 }
 
@@ -621,64 +752,24 @@ function sliderKiri(kode) {
     let widthGlobal = $(window).width();
 
     if (kode === 'promote') {
-        if (widthGlobal < 250) {
-            if (xPromote > 83.75)
-                xPromote -= 2.25;
-            else
-                xPromote <= 0 ? xPromote = 86 : xPromote -= 8.375;
-        }
-
-        else if (widthGlobal < 270) {
-            if (xPromote > 83.75)
-                xPromote -= 2;
-            else
-                xPromote <= 0 ? xPromote = 85.75 : xPromote -= 8.375;
-        }
+        if (widthGlobal < 280)
+            xPromote <= 0 ? xPromote = 92.125 : xPromote -= 8.375;
 
         else if (widthGlobal < 300)
             xPromote <= 0 ? xPromote = 83.75 : xPromote -= 8.375;
 
-        else if (widthGlobal < 325) 
+        else if (widthGlobal < 325)
             xPromote <= 0 ? xPromote = 91.25 : xPromote -= 9.125;
-        
-        else if (widthGlobal < 365) {
-            if (xPromote > 82.125)
-                xPromote -= 6.625;
-            else
-                xPromote <= 0 ? xPromote = 88.75 : xPromote -= 9.125;
-        }
 
-        else if (widthGlobal < 400) {
-            if (xPromote > 82.125)
-                xPromote -= 4.375;
-            else
-                xPromote <= 0 ? xPromote = 86.5 : xPromote -= 9.125;
-        }
-
-        else if (widthGlobal < 435) {
-            if (xPromote > 82.125)
-                xPromote -= 2.25;
-            else
-                xPromote <= 0 ? xPromote = 84.375 : xPromote -= 9.125;
-        }
+        else if (widthGlobal < 440)
+            xPromote <= 0 ? xPromote = 91.25 : xPromote -= 9.125;
 
         else if (widthGlobal < 465)
             xPromote <= 0 ? xPromote = 82.125 : xPromote -= 9.125;
 
-        else if (widthGlobal < 490) {
-            if (xPromote > 96.1875)
-                xPromote -= 3.5;
-            else
-                xPromote <= 0 ? xPromote = 99.6875 : xPromote -= 10.6875;
-        }
+        else if (widthGlobal < 510)
+            xPromote <= 0 ? xPromote = 106.875 : xPromote -= 10.6875;
 
-        else if (widthGlobal < 530) {
-            if (xPromote > 85.5)
-                xPromote -= 11.625;
-            else
-                xPromote <= 0 ? xPromote = 97.125 : xPromote -= 10.6875;
-        }
-        
         else if (widthGlobal < 753)
             xPromote <= 0 ? xPromote = 96.1875 : xPromote -= 10.6875;
 
@@ -687,59 +778,33 @@ function sliderKiri(kode) {
 
         else if (widthGlobal < 1185)
             xPromote <= 0 ? xPromote = 81.375 : xPromote -= 11.625;
-        
-        else if (widthGlobal >= 1185) 
-            xPromote <= 0 ? xPromote = 69.75 : xPromote -= 11.625
+
+        else if (widthGlobal >= 1185)
+            xPromote <= 0 ? xPromote = 69.75 : xPromote -= 11.625;
 
         // manipulasi margin slider
         slides.css('marginLeft', `-${xPromote}rem`);
 
     } else if (kode === 'indonesian') {
-        if (widthGlobal < 250) {
-            if (xIndonesian > 83.75)
-                xIndonesian -= 2.25;
-            else
-                xIndonesian <= 0 ? xIndonesian = 86 : xIndonesian -= 8.375;
-        } else if (widthGlobal < 270) {
-            if (xIndonesian > 83.75)
-                xIndonesian -= 2;
-            else
-                xIndonesian <= 0 ? xIndonesian = 85.75 : xIndonesian -= 8.375;
-        } else if (widthGlobal < 300)
+        if (widthGlobal < 280)
+            xIndonesian <= 0 ? xIndonesian = 92.125 : xIndonesian -= 8.375;
+
+        else if (widthGlobal < 300)
             xIndonesian <= 0 ? xIndonesian = 83.75 : xIndonesian -= 8.375;
 
         else if (widthGlobal < 325)
             xIndonesian <= 0 ? xIndonesian = 91.25 : xIndonesian -= 9.125;
 
-        else if (widthGlobal < 365) {
-            if (xIndonesian > 82.125)
-                xIndonesian -= 6.625;
-            else
-                xIndonesian <= 0 ? xIndonesian = 88.75 : xIndonesian -= 9.125;
-        } else if (widthGlobal < 400) {
-            if (xIndonesian > 82.125)
-                xIndonesian -= 4.375;
-            else
-                xIndonesian <= 0 ? xIndonesian = 86.5 : xIndonesian -= 9.125;
-        } else if (widthGlobal < 435) {
-            if (xIndonesian > 82.125)
-                xIndonesian -= 2.25;
-            else
-                xIndonesian <= 0 ? xIndonesian = 84.375 : xIndonesian -= 9.125;
-        } else if (widthGlobal < 465)
+        else if (widthGlobal < 440)
+            xIndonesian <= 0 ? xIndonesian = 91.25 : xIndonesian -= 9.125;
+
+        else if (widthGlobal < 465)
             xIndonesian <= 0 ? xIndonesian = 82.125 : xIndonesian -= 9.125;
 
-        else if (widthGlobal < 490) {
-            if (xIndonesian > 96.1875)
-                xIndonesian -= 3.5;
-            else
-                xIndonesian <= 0 ? xIndonesian = 99.6875 : xIndonesian -= 10.6875;
-        } else if (widthGlobal < 530) {
-            if (xIndonesian > 85.5)
-                xIndonesian -= 11.625;
-            else
-                xIndonesian <= 0 ? xIndonesian = 97.125 : xIndonesian -= 10.6875;
-        } else if (widthGlobal < 753)
+        else if (widthGlobal < 510)
+            xIndonesian <= 0 ? xIndonesian = 106.875 : xIndonesian -= 10.6875;
+
+        else if (widthGlobal < 753)
             xIndonesian <= 0 ? xIndonesian = 96.1875 : xIndonesian -= 10.6875;
 
         else if (widthGlobal < 945)
@@ -749,9 +814,78 @@ function sliderKiri(kode) {
             xIndonesian <= 0 ? xIndonesian = 81.375 : xIndonesian -= 11.625;
 
         else if (widthGlobal >= 1185)
-            xIndonesian <= 0 ? xIndonesian = 69.75 : xIndonesian -= 11.625
+            xIndonesian <= 0 ? xIndonesian = 69.75 : xIndonesian -= 11.625;
 
         // manipulasi margin slider
         slides.css('marginLeft', `-${xIndonesian}rem`);
+
+    } else if (kode === 'cartoon') {
+        if (widthGlobal < 280) 
+            xCartoon <= 0 ? xCartoon = 92.125 : xCartoon -= 8.375;
+
+        else if (widthGlobal < 300)
+            xCartoon <= 0 ? xCartoon = 83.75 : xCartoon -= 8.375;
+
+        else if (widthGlobal < 325)
+            xCartoon <= 0 ? xCartoon = 91.25 : xCartoon -= 9.125;
+        
+        else if (widthGlobal < 440)
+            xCartoon <= 0 ? xCartoon = 91.25 : xCartoon -= 9.125;
+        
+        else if (widthGlobal < 465)
+            xCartoon <= 0 ? xCartoon = 82.125 : xCartoon -= 9.125;
+
+        else if (widthGlobal < 510) 
+            xCartoon <= 0 ? xCartoon = 106.875 : xCartoon -= 10.6875;
+
+        else if (widthGlobal < 753)
+            xCartoon <= 0 ? xCartoon = 96.1875 : xCartoon -= 10.6875;
+
+        else if (widthGlobal < 945)
+            xCartoon <= 0 ? xCartoon = 108.75 : xCartoon -= 10.875;
+
+        else if (widthGlobal < 1185)
+            xCartoon <= 0 ? xCartoon = 116.25 : xCartoon -= 11.625;
+
+        else if (widthGlobal >= 1185)
+            xCartoon <= 0 ? xCartoon = 104.625 : xCartoon -= 11.625;
+
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xCartoon}rem`);
+
+    } else if (kode === 'music') {
+        if (widthGlobal < 280)
+            xMusic <= 0 ? xMusic = 92.125 : xMusic -= 8.375;
+
+        else if (widthGlobal < 300)
+            xMusic <= 0 ? xMusic = 83.75 : xMusic -= 8.375;
+
+        else if (widthGlobal < 325)
+            xMusic <= 0 ? xMusic = 91.25 : xMusic -= 9.125;
+
+        else if (widthGlobal < 440)
+            xMusic <= 0 ? xMusic = 91.25 : xMusic -= 9.125;
+
+        else if (widthGlobal < 465)
+            xMusic <= 0 ? xMusic = 82.125 : xMusic -= 9.125;
+
+        else if (widthGlobal < 510)
+            xMusic <= 0 ? xMusic = 106.875 : xMusic -= 10.6875;
+
+        else if (widthGlobal < 753)
+            xMusic <= 0 ? xMusic = 96.1875 : xMusic -= 10.6875;
+
+        else if (widthGlobal < 945)
+            xMusic <= 0 ? xMusic = 108.75 : xMusic -= 10.875;
+
+        else if (widthGlobal < 1185)
+            xMusic <= 0 ? xMusic = 116.25 : xMusic -= 11.625;
+
+        else if (widthGlobal >= 1185)
+            xMusic <= 0 ? xMusic = 104.625 : xMusic -= 11.625;
+
+        // manipulasi margin slider
+        slides.css('marginLeft', `-${xMusic}rem`);
+
     }
 }

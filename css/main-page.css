@@ -64,29 +64,41 @@
         position: absolute;
         text-align: center;     
         cursor: pointer;
-        color: white;
-        width: 1.5rem;
-        height: 2.125rem;
+        width: 2rem;
+        height: 2rem;
         font-size: 1.25rem;
         top: 4.875rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
     }
 
 
     .content .slider-container .kanan:hover,
     .content .slider-container .kiri:hover {
-        color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(52, 95, 204, 0.9);
+        color: white;
     }
 
 
     .content .slider-container .kanan {
-        right: 0;
+        right: 0.25rem;
+        border-radius: 0 0.625rem 0.625rem 0;
     }
 
 
     .content .slider-container .kiri {
-        left: 0;
+        left: 0.25rem;
+        border-radius: 0.625rem 0 0 0.625rem;
     }
-    /* promote content */
+    /* content */
+
+
+
+    /* cartoon music */
+    .cartoon-music .music {
+        margin-top: 2rem;
+    }
+    /* cartoon music */
 
 
 
@@ -212,7 +224,6 @@
 
     .content .header hr {
         display: block;
-        width: 50%;
         top: 0.0625rem;
         right: 0;
     }
@@ -232,12 +243,46 @@
 
     .content .slider-container .kanan,
     .content .slider-container .kiri {
-        width: 2rem;
-        height: 2.125rem;
-        font-size: 1.5rem;
+        width: 2.5rem;
+        height: 2.1875rem;
+        font-size: 1.375rem;
         top: 5.25rem;
     }
     /* content */
+
+
+
+    /* promote */
+    .promote .header hr {
+        width: 50%;
+    }
+    /* promote */
+
+
+
+    /* cartoon music */
+    .cartoon-music .cartoon .header hr {
+        width: 63%;
+    }
+
+
+    .cartoon-music .music .header hr {
+        width: 70%;
+    }
+
+
+    .cartoon-music .music {
+        margin-top: 2.25rem;
+    }
+    /* cartoon music */
+
+
+
+    /* indonesian */
+    .indonesian .header hr {
+        width: 35%;
+    }
+    /* indonesian */
 
 
 
@@ -285,7 +330,6 @@
 
 
     .content .header hr {
-        width: 60%;
         top: 0.125rem;
     }
 
@@ -303,12 +347,45 @@
 
     .content .slider-container .kanan,
     .content .slider-container .kiri {
-        width: 2.5rem;
-        height: 2.125rem;
+        width: 2.75rem;
+        height: 2.5rem;
         font-size: 1.625rem;
         top: 6.25rem;
     }
     /* content */
+
+
+    /* promote */
+    .promote .header hr {
+        width: 60%;
+    }
+    /* promote */
+
+
+
+    /* cartoon music */
+    .cartoon-music .cartoon .header hr {
+        width: 67%;
+    }
+
+
+    .cartoon-music .music .header hr {
+        width: 72%;
+    }
+
+
+    .cartoon-music .music {
+        margin-top: 2.5rem;
+    }
+    /* cartoon music */
+
+
+
+    /* indonesian */
+    .indonesian .header hr {
+        width: 50%;
+    }
+    /* indonesian */
 
 
     /* promo murah */
@@ -363,7 +440,6 @@
 
 
     .content .header hr {
-        width: 68%;
         top: 0.375rem;
     }
 
@@ -382,31 +458,46 @@
 
     .content .slider-container .kanan,
     .content .slider-container .kiri {
-        font-size: 1.375rem;
+        width: 2.625rem;
+        height: 2.25rem;
+        font-size: 1.4375rem;
         top: 6.6875rem;
-        background-color: rgba(255, 255, 255, 0.8);
-        color: black;
-    }
-
-
-    .content .slider-container .kanan {
-        right: 0;
-        border-radius: 0 0.625rem 0.625rem 0;
-    }
-
-
-    .content .slider-container .kiri {
-        left: 0;
-        border-radius: 0.625rem 0 0 0.625rem;
-    }
-
-
-    .content .slider-container .kanan:hover,
-    .content .slider-container .kiri:hover {
-        background-color: rgba(52, 95, 204, 0.8);
-        color: white;
     }
     /* content */
+
+
+
+    /* promote */
+    .promote .header hr {
+        width: 68%;
+    }
+    /* promote */
+
+
+
+    /* cartoon music */
+    .cartoon-music .cartoon .header hr {
+        width: 53%;
+    }
+
+
+    .cartoon-music .music .header hr {
+        width: 58%;
+    }
+
+
+    .cartoon-music .music {
+        margin-top: 0;
+    }
+    /* cartoon music */
+
+
+
+    /* indonesian */
+    .indonesian .header hr {
+        width: 60%;
+    }
+    /* indonesian */
 
 
 
@@ -461,7 +552,6 @@
 
 
     .content .header hr {
-        width: 75%;
         top: 0.4375rem;
     }
 
@@ -481,11 +571,40 @@
     .content .slider-container .kanan,
     .content .slider-container .kiri {
         width: 3rem;      
-        height: 2.25rem;    
-        font-size: 1.4375rem;   
-        top: 7.25rem;         
+        height: 2.5rem;    
+        font-size: 1.5rem;   
+        top: 7rem;         
     }
     /* content */
+
+
+
+    /* promote indonesian */
+    .promote .header hr {
+        width: 75%;
+    }
+    /* promote indonesian */
+
+
+
+    /* cartoon music */
+    .cartoon-music .cartoon .header hr {
+        width: 65%;
+    }
+
+
+    .cartoon-music .music .header hr {
+        width: 70%;
+    }
+    /* cartoon music */
+
+
+
+    /* indonesian */
+    .indonesian .header hr {
+        width: 70%;
+    }
+    /* indonesian */
 
 
 
