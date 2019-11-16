@@ -523,30 +523,30 @@
 
                             <!-- deskripsi buku -->
                             <div class="form-group">
-                                <label for="deskripsi">Deskripsi buku</label>
+                                <label for="deskripsi">Deskripsi buku <span>*</span></label>
                                 <textarea class="form-control" id="deskripsi" rows="5" onkeydown="keyUpDeskripsiBuku()"></textarea>
                                 <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 24 karakter.</small>
                             </div>
                             <!-- deskripsi buku -->
 
-                            <!-- link e-book -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="link">Link E-Book <span>*</span></label>
-                                    <input type="text" id="link" class="form-control" autocomplete="off" onkeyup="keyUpLinkEbook()">
-                                    <small id="error-ebook" class="form-text text-muted">Link e-book harus diisi.</small>
-                                </div>
-                            </div>
-                            <!-- link e-book -->
-
                             <!-- upload gambar -->
                             <div class="form-group">
-                                <label for="gambar">Upload Gambar</label>
+                                <label for="gambar">Upload Cover Buku <span>*</span></label>
                                 <input type="file" class="form-control-file" id="gambar" accept="image/*">
                                 <small id="error-gambar" class="form-text text-muted">Extension gambar tidak valid (jpg/jpeg/png/bmp).</small>
                                 <small id="error-size-gambar" class="form-text text-muted">Ukuran gambar (max: 2MB)</small>
                             </div>
                             <!-- upload gambar -->
+
+                            <!-- upload buku -->
+                            <div class="form-group">
+                                <label for="pdf">Upload Buku (PDF) <span>*</span></label>
+                                <input type="file" class="form-control-file" id="pdf" accept="application/pdf">
+                                <small id="error-pdf" class="form-text text-muted">Extension file tidak valid (pdf).</small>
+                                <small id="error-size-pdf" class="form-text text-muted">Ukuran pdf (max:
+                                    20MB)</small>
+                            </div>
+                            <!-- upload buku -->
 
                             <button type="submit" class="btn-simpan" onclick="return validationForm()">Jual Buku</button>
 

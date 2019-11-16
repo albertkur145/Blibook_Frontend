@@ -6,16 +6,14 @@ let xIndonesian = 0;
 let xCartoon = 0;
 let xMusic = 0;
 
-
-// ambil data json
-
-const buku = $('#promo-murah .items-buku-promo .card-buku');
+const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
 let judulBuku = $('h5.judul-buku', buku);
 let deskBuku = $('p.desk-buku', buku);
-
 let textJudul = [];
 let textBuku = [];
 
+
+// copy text, agar value asli tidak berubah
 $.each(judulBuku, (key, value) => {
     textJudul.push(value.innerHTML);
 });
@@ -24,59 +22,22 @@ $.each(deskBuku, (key, value) => {
     textBuku.push(value.innerHTML);
 });
 
-// ambil data json
-
 
 
 // responsive - resize window
-
 $(window).ready(responsiveSize);
 $(window).resize(responsiveSize);
 
 function responsiveSize() {
     let width = $(window).width();
-    $('.angka').html(width);
 
-    const itemsBuku = $('#promo-murah .items-buku-promo .row');
+    const buku = $('#promo-murah .items-buku-promo .buku');
+    const img = $('#promo-murah .items-buku-promo .buku .card-buku img');
     const cartoon = $('.cartoon-music .cartoon');
     const music = $('.cartoon-music .music');
 
-    if (width < 300) {
 
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-12');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-12');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-12');
-            $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-
-
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 37) {
-                let temp = textJudul[i].substring(0, 37) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 137) {
-                let temp = textBuku[i].substring(0, 137) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-
+    if (width < 250) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -86,44 +47,158 @@ function responsiveSize() {
             music.addClass('col-12');
             music.removeClass('col-6');
         }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-6');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 16) {
+                let temp = textJudul[i].substring(0, 16) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 152) {
+                let temp = textBuku[i].substring(0, 152) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '16.375rem');
+
+    } else if (width < 265) {
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-6');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 18) {
+                let temp = textJudul[i].substring(0, 18) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 167) {
+                let temp = textBuku[i].substring(0, 167) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '17.25rem');
+
+    } else if (width < 285) {
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-6');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 20) {
+                let temp = textJudul[i].substring(0, 20) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 177) {
+                let temp = textBuku[i].substring(0, 177) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '18.25rem');
+
+    } else if (width < 305) {
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-12');
+            buku.removeClass('col-6');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 22) {
+                let temp = textJudul[i].substring(0, 22) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 193) {
+                let temp = textBuku[i].substring(0, 193) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '20.5rem');
 
     } else if (width < 320) {
 
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-12');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-12');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-12');
-            $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '75%');
-        $('.card-buku', itemsBuku).css('marginLeft', '15%');
-        $('.card-buku img', itemsBuku).css('height', '55%');
-
-
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 27) {
-                let temp = textJudul[i].substring(0, 27) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 127) {
-                let temp = textBuku[i].substring(0, 127) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
             cartoon.addClass('col-12');
@@ -132,45 +207,38 @@ function responsiveSize() {
             music.addClass('col-12');
             music.removeClass('col-6');
         }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 9) {
+                let temp = textJudul[i].substring(0, 9) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 47) {
+                let temp = textBuku[i].substring(0, 47) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '9.75rem');
 
     } else if(width < 345) {
 
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-12');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-12');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-12');
-            $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '75%');
-        $('.card-buku', itemsBuku).css('marginLeft', '15%');
-        $('.card-buku img', itemsBuku).css('height', '55%');
-
-
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 37) {
-                let temp = textJudul[i].substring(0, 37) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 132) {
-                let temp = textBuku[i].substring(0, 132) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-
-
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
             cartoon.addClass('col-12');
@@ -180,75 +248,18 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
-    } else if(width < 385) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-12');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-12');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-12');
-            $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '75%');
-        $('.card-buku', itemsBuku).css('marginLeft', '15%');
-        $('.card-buku img', itemsBuku).css('height', '55%');
-
-
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 40) {
-                let temp = textJudul[i].substring(0, 40) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 207) {
-                let temp = textBuku[i].substring(0, 207) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-
-
-        // manipulasi kolom
-        if (cartoon.hasClass('col-6')) {
-            cartoon.addClass('col-12');
-            cartoon.removeClass('col-6');
-
-            music.addClass('col-12');
-            music.removeClass('col-6');
-        }
-
-    } else if(width < 400) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-6');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
-        }
-
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-6');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-6');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '105%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '50%');
-
-
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 10) {
                 let temp = textJudul[i].substring(0, 10) + "...";
@@ -257,12 +268,16 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 59) {
-                let temp = textBuku[i].substring(0, 59) + "...";
+            if (textBuku[i].length >= 57) {
+                let temp = textBuku[i].substring(0, 57) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
+        // manipulasi css
+        img.css('height', '10.5rem');
+
+    } else if (width < 365) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -273,28 +288,18 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
-    } else if(width < 420) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-6');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-6');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-6');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '50%');
-
-
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 11) {
                 let temp = textJudul[i].substring(0, 11) + "...";
@@ -309,6 +314,10 @@ function responsiveSize() {
             }
         }
 
+        // manipulasi css
+        img.css('height', '11.25rem');
+
+    } else if(width < 380) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -319,28 +328,18 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
-    } else if(width < 440) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-6');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-6');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-6');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '53%');
-
-
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
@@ -355,6 +354,10 @@ function responsiveSize() {
             }
         }
 
+        // manipulasi css
+        img.css('height', '12.25rem');
+
+    } else if(width < 395) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -365,28 +368,58 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
-    } else if(width < 465) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-6');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-6');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 13) {
+                let temp = textJudul[i].substring(0, 13) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
         }
 
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-6');
-            $('.col-12', itemsBuku).removeClass('col-12');
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 97) {
+                let temp = textBuku[i].substring(0, 97) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
         }
 
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '55%');
+        // manipulasi css
+        img.css('height', '13.25rem');
 
+    } else if (width < 410) {
+        
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
 
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 14) {
                 let temp = textJudul[i].substring(0, 14) + "...";
@@ -395,13 +428,16 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 107) {
-                let temp = textBuku[i].substring(0, 107) + "...";
+            if (textBuku[i].length >= 117) {
+                let temp = textBuku[i].substring(0, 117) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
+        // manipulasi css
+        img.css('height', '14rem');
 
+    } else if (width < 430) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -412,43 +448,36 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
-    } else if(width < 753) {
-
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-6');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-6');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-6');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-        
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '57%');
-
-
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 17) {
-                let temp = textJudul[i].substring(0, 17) + "...";
+            if (textJudul[i].length >= 15) {
+                let temp = textJudul[i].substring(0, 15) + "...";
                 judulBuku[i].innerHTML = temp;
             }
         }
 
         for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 107) {
-                let temp = textBuku[i].substring(0, 107) + "...";
+            if (textBuku[i].length >= 123) {
+                let temp = textBuku[i].substring(0, 123) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
+        // manipulasi css
+        img.css('height', '15.25rem');
 
+    } else if(width < 465) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-6')) {
@@ -459,28 +488,218 @@ function responsiveSize() {
             music.removeClass('col-6');
         }
 
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-4')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-6');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 16) {
+                let temp = textJudul[i].substring(0, 16) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 133) {
+                let temp = textBuku[i].substring(0, 133) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '16rem');
+
+    } else if (width < 485) {
+        
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 9) {
+                let temp = textJudul[i].substring(0, 9) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 73) {
+                let temp = textBuku[i].substring(0, 73) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '11.0625rem');
+
+    }else if (width < 500) {
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 10) {
+                let temp = textJudul[i].substring(0, 10) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 87) {
+                let temp = textBuku[i].substring(0, 87) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '11.75rem');
+
+    } else if (width < 540) {
+        
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 11) {
+                let temp = textJudul[i].substring(0, 11) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 97) {
+                let temp = textBuku[i].substring(0, 97) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '12.125rem');
+
+    } else if(width < 753) {
+
+        // manipulasi kolom
+        if (cartoon.hasClass('col-6')) {
+            cartoon.addClass('col-12');
+            cartoon.removeClass('col-6');
+
+            music.addClass('col-12');
+            music.removeClass('col-6');
+        }
+
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 12) {
+                let temp = textJudul[i].substring(0, 12) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 103) {
+                let temp = textBuku[i].substring(0, 103) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '12.5rem');
+
     } else if (width < 945) {
 
-        if (itemsBuku.find('.col-sm-3')) {
-            $('.col-sm-3', itemsBuku).addClass('col-sm-4');
-            $('.col-sm-3', itemsBuku).removeClass('col-sm-3');
+        // manipulasi kolom
+        if (cartoon.hasClass('col-12')) {
+            cartoon.addClass('col-6');
+            cartoon.removeClass('col-12');
+
+            music.addClass('col-6');
+            music.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-sm-4');
-            $('.col-6', itemsBuku).removeClass('col-6');
+        if (buku.hasClass('col-3')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-3');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-4');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-sm-4');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '56%');
-
-
+        // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length >= 15) {
                 let temp = textJudul[i].substring(0, 15) + "...";
@@ -495,54 +714,11 @@ function responsiveSize() {
             }
         }
 
-
-        // manipulasi kolom
-        if (cartoon.hasClass('col-12')) {
-            cartoon.addClass('col-6');
-            cartoon.removeClass('col-12');
-
-            music.addClass('col-6');
-            music.removeClass('col-12');
-        }
+        // manipulasi css
+        img.css('height', '17rem');
 
     } else if (width < 1185) {
 
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-sm-3');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
-        }
-
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-sm-3');
-            $('.col-6', itemsBuku).removeClass('col-6');
-        }
-
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-sm-3');
-            $('.col-12', itemsBuku).removeClass('col-12');
-        }
-
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '56%');
-
-
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 12) {
-                let temp = textJudul[i].substring(0, 12) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 137) {
-                let temp = textBuku[i].substring(0, 137) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-
-
         // manipulasi kolom
         if (cartoon.hasClass('col-12')) {
             cartoon.addClass('col-6');
@@ -551,45 +727,37 @@ function responsiveSize() {
             music.addClass('col-6');
             music.removeClass('col-12');
         }
-        
-    } else if (width >= 1185) {
 
-        // manipulasi column
-        if (itemsBuku.find('.col-sm-4')) {
-            $('.col-sm-4', itemsBuku).addClass('col-sm-3');
-            $('.col-sm-4', itemsBuku).removeClass('col-sm-4');
+        if (buku.hasClass('col-4')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-12');
         }
 
-        if (itemsBuku.find('.col-6')) {
-            $('.col-6', itemsBuku).addClass('col-sm-3');
-            $('.col-6', itemsBuku).removeClass('col-6');
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 14) {
+                let temp = textJudul[i].substring(0, 14) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
         }
 
-        if (itemsBuku.find('.col-12')) {
-            $('.col-12', itemsBuku).addClass('col-sm-3');
-            $('.col-12', itemsBuku).removeClass('col-12');
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 173) {
+                let temp = textBuku[i].substring(0, 173) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
         }
 
         // manipulasi css
-        $('.card-buku', itemsBuku).css('width', '100%');
-        $('.card-buku', itemsBuku).css('marginLeft', '0');
-        $('.card-buku img', itemsBuku).css('height', '60%');
-
-        // batasan length string
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 17) {
-                let temp = textJudul[i].substring(0, 17) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textBuku.length; i++) {
-            if (textBuku[i].length >= 217) {
-                let temp = textBuku[i].substring(0, 217) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
+        img.css('height', '17.25rem');
+        
+    } else if (width >= 1185) {
 
         // manipulasi kolom
         if (cartoon.hasClass('col-12')) {
@@ -599,6 +767,35 @@ function responsiveSize() {
             music.addClass('col-6');
             music.removeClass('col-12');
         }
+
+        if (buku.hasClass('col-4')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-4');
+        } else if (buku.hasClass('col-6')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-6');
+        } else if (buku.hasClass('col-12')) {
+            buku.addClass('col-3');
+            buku.removeClass('col-12');
+        }
+
+        // batasan length judul/desk
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length >= 18) {
+                let temp = textJudul[i].substring(0, 18) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textBuku.length; i++) {
+            if (textBuku[i].length >= 212) {
+                let temp = textBuku[i].substring(0, 212) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        img.css('height', '20.5rem');
     }
 }
 

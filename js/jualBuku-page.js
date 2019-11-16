@@ -27,8 +27,8 @@ const hargaBuku = $('#content .right .rbody #harga');
 const diskonBuku = $('#content .right .rbody #diskon');
 const hargaSetelahDiskon = $('#content .right .rbody #harga-diskon');
 const deskripsiBuku = $('#content .right .rbody #deskripsi');
-const linkEbook = $('#content .right .rbody #link')
 const uploadGambar = $('#content .right .rbody #gambar');
+const uploadPDF = $('#content .right .rbody #pdf');
 
 const extensionsImg = ["jpg", "jpeg", "png", "bmp"];
 const regexNumber = /^[0-9]+$/;
@@ -37,25 +37,38 @@ function validationForm() {
     if (judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && 
         $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 &&
         bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && regexNumber.test(diskonBuku.val()) && 
-        diskonBuku.val() <= 100 && deskripsiBuku.val().length >= 24 && linkEbook.val().length != 0) {
-            if (uploadGambar.val().length > 0) {
-
-                if (uploadGambar[0].files[0].size > 2000000) 
-                    $('small#error-size-gambar').css('display', 'block');
+        diskonBuku.val() <= 100 && deskripsiBuku.val().length >= 24) {
+            if (uploadPDF.val().length > 0) {
+                if (uploadPDF[0].files[0].size > 20000000)
+                    $('small#error-size-pdf').css('display', 'block');
                 else {
-                    let temp = uploadGambar.val().split(".");
-                    temp = temp[temp.length - 1].toLowerCase();
+                    let pdf = uploadPDF.val().split(".");
+                    pdf = pdf[pdf.length - 1].toLowerCase();
 
-                    for (let i = 0; i < extensionsImg.length; i++) {
-                        if (temp == extensionsImg[i])
-                            return true;
-                    }
+                    if (pdf == 'pdf') {
+                        if (uploadGambar.val().length > 0) {
 
-                    $('small#error-gambar').css('display', 'block');
+                            if (uploadGambar[0].files[0].size > 2000000)
+                                $('small#error-size-pdf').css('display', 'block');
+                            else {
+                                let temp = uploadGambar.val().split(".");
+                                temp = temp[temp.length - 1].toLowerCase();
+
+                                for (let i = 0; i < extensionsImg.length; i++) {
+                                    if (temp == extensionsImg[i])
+                                        return true;
+                                }
+
+                                $('small#error-gambar').css('display', 'block');
+                            }
+
+                        }
+                    } else 
+                        $('small#error-pdf').css('display', 'block');
                 }
-                
             }
         }
+
 
     if (judulBuku.val().length == 0)
         $('small#error-judul').css('display', 'block');
@@ -84,12 +97,11 @@ function validationForm() {
     if (deskripsiBuku.val().length < 24)
         $('small#error-deskripsi').css('display', 'block');
 
-    if (linkEbook.val().length == 0)
-        $('small#error-ebook').css('display', 'block');
-
     if (uploadGambar.val().length == 0)
         $('small#error-gambar').css('display', 'block');        
 
+    if (uploadPDF.val().length == 0)
+        $('small#error-pdf').css('display', 'block');   
 
     return false;
 }
@@ -173,16 +185,15 @@ function keyUpDeskripsiBuku () {
         $('small#error-deskripsi').css('display', 'none');
 }
 
-function keyUpLinkEbook () {
-    if (linkEbook.val().length == 0)
-        $('small#error-ebook').css('display', 'block');
-    else
-        $('small#error-ebook').css('display', 'none');
-}
-
 uploadGambar.focusout(() => {
     $('small#error-gambar').css('display', 'none');
     $('small#error-size-gambar').css('display', 'none');
+});
+
+
+uploadPDF.focusout(() => {
+    $('small#error-pdf').css('display', 'none');
+    $('small#error-size-pdf').css('display', 'none');
 });
 
 
