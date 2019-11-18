@@ -20,11 +20,12 @@
 </head>
 
 <body>
+
     <!-- background body -->
     <div class="backgroundAll"></div>
     <!-- background body -->
 
-    
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
         <div class="container">
@@ -46,10 +47,31 @@
                     <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i> Bag</a>
                     <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
                     <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
-                    <a class="nav-item nav-link user" href="profile-page.html"><i class="fas fa-user"></i> Hi, Albert Kurniawan<span><i class="fas fa-chevron-down"></i></span></a>
+
+                    <!-- kategori -->
+                    <span class="nav-item nav-link kategori"><i class="fas fa-bars"></i> Kategori <span><i class="fas fa-chevron-down"></i></span></span>
+
+                    <div class="opt-kategori">
+                        <div class="arrow text-right"><span></span></div>
+
+                        <div class="list-opt">
+                            <a href="#">Buku Indonesia</a>
+                            <a href="#">Kartun</a>
+                            <a href="#">Teknologi</a>
+                            <a href="#">Komik</a>
+                            <a href="#">Musik</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Novel</a>
+                            <a href="#">Bisnis</a>
+                            <a href="#">Kesehatan</a>
+                        </div>
+                    </div>
+                    <!-- kategori -->
 
                     <!-- option / space user -->
-                    <div class="option">
+                    <span class="nav-item nav-link user"><i class="fas fa-user"></i> Hi, Albert Kurniawan <span><i class="fas fa-chevron-down"></i></span></span>
+                    
+                    <div class="opt-user">
                         <div class="arrow text-right"><span></span></div>
 
                         <div class="list-opt">
@@ -145,7 +167,8 @@
             <!-- nav -->
 
             <form action="" method="post">
-                <input type="text" name="keyword" class="search" autocomplete="off" placeholder="&#x1F50D; Cari buku disini...">
+                <input type="text" name="keyword" class="search" autocomplete="off"
+                    placeholder="&#x1F50D; Cari buku disini...">
                 <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
             </form>
         </div>
@@ -157,25 +180,43 @@
     <!-- sub navbar -->
     <div class="sub-navbar">
         <div class="container">
-            
+
             <!-- kategori buku -->
             <ul class="kategori">
-                <a href=""><li>Buku Indonesia</li></a>
-                <a href=""><li>Cartoon</li></a>
-                <a href=""><li>Technology</li></a>
-                <a href=""><li>Comics</li></a>
-                <a href=""><li>Animals</li></a>
-                <a href=""><li>Horror</li></a>
-                <a href=""><li>Novel</li></a>
-                <a href=""><li>Business</li></a>
-                <a href=""><li>Medical</li></a>
+                <a href="">
+                    <li>Buku Indonesia</li>
+                </a>
+                <a href="">
+                    <li>Kartun</li>
+                </a>
+                <a href="">
+                    <li>Teknologi</li>
+                </a>
+                <a href="">
+                    <li>Komik</li>
+                </a>
+                <a href="">
+                    <li>Musik</li>
+                </a>
+                <a href="">
+                    <li>Horror</li>
+                </a>
+                <a href="">
+                    <li>Novel</li>
+                </a>
+                <a href="">
+                    <li>Bisnis</li>
+                </a>
+                <a href="">
+                    <li>Kesehatan</li>
+                </a>
             </ul>
             <!-- kategori buku -->
 
         </div>
     </div>
     <!-- akhir sub navbar -->
-    
+
 
     <div class="position-relative" id="main">
         <div class="bg-hover"></div>

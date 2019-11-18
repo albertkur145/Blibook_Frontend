@@ -18,23 +18,38 @@ function constraintNama() {
 }
 
 
-// hover option user
+// hover option user dan kategori
 $('.nav-blibuku .user').hover(() => {
     $('.bg-hover').css('opacity', '1');
-    $('.bg-hover').css('zIndex', '998');
+    $('.bg-hover').css('zIndex', '900');
 }, () => {
     $('.bg-hover').css('opacity', '0');
     $('.bg-hover').css('zIndex', '-999');
 });
 
-$('.nav-blibuku .option').hover(() => {
+$('.nav-blibuku .opt-user').hover(() => {
     $('.bg-hover').css('opacity', '1');
-    $('.bg-hover').css('zIndex', '998');
+    $('.bg-hover').css('zIndex', '900');
 }, () => {
     $('.bg-hover').css('opacity', '0');
     $('.bg-hover').css('zIndex', '-999');
 });
 
+$('.nav-blibuku .kategori').hover(() => {
+    $('.bg-hover').css('opacity', '1');
+    $('.bg-hover').css('zIndex', '900');
+}, () => {
+    $('.bg-hover').css('opacity', '0');
+    $('.bg-hover').css('zIndex', '-999');
+});
+
+$('.nav-blibuku .opt-kategori').hover(() => {
+    $('.bg-hover').css('opacity', '1');
+    $('.bg-hover').css('zIndex', '900');
+}, () => {
+    $('.bg-hover').css('opacity', '0');
+    $('.bg-hover').css('zIndex', '-999');
+});
 
 
 // responsive - resize window
@@ -43,7 +58,7 @@ function responsiveSize() {
 
     if (width < 945) {
         optUser.html(`
-            <i class = "fas fa-user"></i> ${namaUser}
+            <i class = "fas fa-user"></i> ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
         `);
     }
     else if (width >= 945) {
@@ -52,9 +67,7 @@ function responsiveSize() {
 }
 
 
-// document ready
+// window ready
 responsiveSize();
 $(window).resize(responsiveSize);
-
-
 
