@@ -104,7 +104,8 @@
 
     /* promo murah */
     #promo-murah {
-        margin: 2rem 0 1rem;
+        padding: 2rem 0 1rem;
+        margin: 0;
     }
 
 
@@ -305,7 +306,7 @@
 
     /* promo murah */
     #promo-murah {
-        margin: 2.25rem 0 1.25rem;
+        padding: 2.25rem 0 1.25rem;
     }
 
 
@@ -469,7 +470,7 @@
 
     /* promo murah */
     #promo-murah {
-        margin: 2.5rem 0 1.5rem;
+        padding: 2.5rem 0 1.5rem;
     }
 
 
@@ -633,7 +634,7 @@
 
     /* promo murah */
     #promo-murah {
-        margin: 2.75rem 0 1.75rem;
+        padding: 2.75rem 0 1.75rem;
     }
 
 
@@ -793,7 +794,7 @@
 
     /* promo murah */
     #promo-murah {
-        margin: 3rem 0 2rem;
+        padding: 3rem 0 2rem;
     }
 
 

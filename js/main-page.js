@@ -25,9 +25,6 @@ $.each(deskBuku, (key, value) => {
 
 
 // responsive - resize window
-$(window).ready(responsiveSize);
-$(window).resize(responsiveSize);
-
 function responsiveSize() {
     let width = $(window).width();
 
@@ -1086,3 +1083,8 @@ function sliderKiri(kode) {
 
     }
 }
+
+
+// document ready
+responsiveSize();
+$(window).resize(responsiveSize);

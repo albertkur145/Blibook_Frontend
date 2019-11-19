@@ -509,16 +509,9 @@
 
 
     .nav-blibuku .opt-user {
-        display: block;
-        opacity: 0;
         width: 85%;
         left: 1rem;
         top: 2.375rem;
-    }
-
-
-    .nav-blibuku .opt-user:hover {
-        opacity: 1;
     }
     /* navbar */
 
