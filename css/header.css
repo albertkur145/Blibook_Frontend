@@ -133,6 +133,11 @@
     }
 
 
+    .toggle-opt {
+        width: 0;
+    }
+
+
     .nav-blibuku .opt-user,
     .nav-blibuku .opt-kategori {
         display: none;

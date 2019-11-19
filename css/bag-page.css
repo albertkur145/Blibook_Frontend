@@ -306,17 +306,18 @@
 
 
     #produk .left .buku .detail-buku .desk-buku p.judul {
-        font-size: 1.25rem;
+        margin-top: 0;
+        font-size: 0.9375rem;
     }
 
 
     #produk .left .buku .detail-buku .desk-buku p.author {
-        font-size: 0.9375rem;
+        font-size: 0.8125rem;
     }
 
 
     #produk .left .buku .detail-buku .desk-buku p.harga {
-        font-size: 0.9375rem;
+        font-size: 0.8125rem;
     }
 
 
@@ -326,17 +327,17 @@
 
 
     #produk .left .buku .detail-buku .desk-buku p.diskon {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
     }
 
 
     #produk .left .buku .detail-buku .desk-buku .jumlah p {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
     }
 
 
     #produk .left .buku .detail-buku .desk-buku .aksi a {
-        font-size: 1.25rem;
+        font-size: 0.8125rem;
         margin: -0.25rem 0.25rem 0;
     }
 
@@ -469,7 +470,6 @@
 
     #produk .left .buku .detail-buku .desk-buku p.judul {
         font-size: 1rem;
-        margin-top: 0;
     }
 
 

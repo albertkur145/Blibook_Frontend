@@ -31,7 +31,12 @@
     .content .slider-container {
         width: 100%;
         position: relative;
-        overflow: hidden;
+        overflow: scroll;
+    }
+
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 
 
@@ -61,6 +66,7 @@
 
     .content .slider-container .kanan,
     .content .slider-container .kiri {
+        display: none;
         position: absolute;
         text-align: center;     
         cursor: pointer;
@@ -575,6 +581,11 @@
     }
 
 
+    .content .slider-container {
+        overflow: hidden;
+    }
+
+
     .content .slider-container .slides-items {
         width: 130.5625rem;
     }
@@ -589,6 +600,7 @@
 
     .content .slider-container .kanan,
     .content .slider-container .kiri {
+        display: block;
         width: 2.625rem;
         height: 2.25rem;
         font-size: 1.4375rem;

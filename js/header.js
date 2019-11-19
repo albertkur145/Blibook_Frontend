@@ -18,7 +18,7 @@ function constraintNama() {
 }
 
 
-// hover option user dan kategori
+// hover option user dan kategori (desktop)
 $('.nav-blibuku .user').hover(() => {
     $('.bg-hover').css('opacity', '1');
     $('.bg-hover').css('zIndex', '900');
@@ -49,6 +49,34 @@ $('.nav-blibuku .opt-kategori').hover(() => {
 }, () => {
     $('.bg-hover').css('opacity', '0');
     $('.bg-hover').css('zIndex', '-999');
+});
+
+// click option user dan kategori (mobile)
+function toggleOption(opt) {
+    const width = $(window).width();
+
+    if (width < 945) {
+        if ($(opt).hasClass('toggle-opt')) {
+            $(opt).removeClass('toggle-opt');
+            $(opt).css('display', 'none');
+        } else {
+            $(opt).addClass('toggle-opt');
+            $(opt).css('display', 'block');
+        }
+    }
+}
+
+// display none option, click blank space
+$('body').click(function (e) {
+    if ($(e.target).attr('class') !== 'nav-item nav-link user') {
+        $('.opt-user').removeClass('toggle-opt');
+        $('.opt-user').css('display', 'none');
+    }
+
+    if ($(e.target).attr('class') !== 'nav-item nav-link kategori') {
+        $('.opt-kategori').removeClass('toggle-opt');
+        $('.opt-kategori').css('display', 'none');
+    }
 });
 
 
