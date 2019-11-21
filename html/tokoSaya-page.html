@@ -22,213 +22,14 @@
 </head>
 
 <body>
-    <!-- background body -->
-    <div class="backgroundAll"></div>
-    <!-- background body -->
+    
+    <!-- header from templating -->
+    <div id="header"></div>
+    <!-- header from templating -->
 
-
-    <div class="sticky-top">
-
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light nav-blibuku">
-            <div class="container">
-
-                <!-- judul nav -->
-                <a class="navbar-brand blibuku-brand" href="main-page.html"><i class="fas fa-book-open"></i>
-                    blibuku.com</a>
-                <!-- judul nav -->
-
-                <!-- button burger -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-header"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- button burger -->
-
-                <!-- nav -->
-                <div class="collapse navbar-collapse" id="nav-header">
-                    <div class="navbar-nav ml-auto position-relative">
-                        <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i>
-                            Bag</a>
-                        <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
-                        <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
-
-                        <!-- kategori -->
-                        <span class="nav-item nav-link kategori" onclick="toggleOption('.opt-kategori')"><i class="fas fa-bars"></i> Kategori <span><i
-                                    class="fas fa-chevron-down"></i></span></span>
-
-                        <div class="opt-kategori">
-                            <div class="arrow text-right"><span></span></div>
-
-                            <div class="list-opt">
-                                <a href="#">Buku Indonesia</a>
-                                <a href="#">Anak</a>
-                                <a href="#">Teknologi</a>
-                                <a href="#">Komik</a>
-                                <a href="#">Musik</a>
-                                <a href="#">Horror</a>
-                                <a href="#">Novel</a>
-                                <a href="#">Bisnis</a>
-                                <a href="#">Kesehatan</a>
-                            </div>
-                        </div>
-                        <!-- kategori -->
-
-                        <!-- option / space user -->
-                        <span class="nav-item nav-link user" onclick="toggleOption('.opt-user')"><i class="fas fa-user"></i> Hi, Albert Kurniawan <span><i
-                                    class="fas fa-chevron-down"></i></span></span>
-
-                        <div class="opt-user">
-                            <div class="arrow text-right"><span></span></div>
-
-                            <div class="list-opt">
-                                <a href="profile-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-user-circle"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Profile
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="wishlist-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-heart"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Wishlist
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="perpusatakaan-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-book"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Perpustakaan
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="bukaToko-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-door-open"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Buka Toko
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="tokoSaya-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-store"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Toko Saya
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="pesanan-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-envelope-open-text"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Pesanan Masuk
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="main-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Keluar
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- option / space user -->
-
-                    </div>
-                </div>
-                <!-- nav -->
-
-                <form action="" method="post">
-                    <input type="text" name="keyword" class="search" autocomplete="off"
-                        placeholder="&#x1F50D; Cari buku disini...">
-                    <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
-                </form>
-            </div>
-        </nav>
-        <!-- akhir navbar -->
-
-
-
-        <!-- sub navbar -->
-        <div class="sub-navbar">
-            <div class="container">
-
-                <!-- kategori buku -->
-                <ul class="kategori">
-                    <a href="">
-                        <li>Buku Indonesia</li>
-                    </a>
-                    <a href="">
-                        <li>Teknologi</li>
-                    </a>
-                    <a href="">
-                        <li>Kartun</li>
-                    </a>
-                    <a href="">
-                        <li>Music</li>
-                    </a>
-                    <a href="">
-                        <li>Komik</li>
-                    </a>
-                    <a href="">
-                        <li>Horror</li>
-                    </a>
-                    <a href="">
-                        <li>Novel</li>
-                    </a>
-                    <a href="">
-                        <li>Bisnis</li>
-                    </a>
-                    <a href="">
-                        <li>Kesehatan</li>
-                    </a>
-                </ul>
-                <!-- kategori buku -->
-
-            </div>
-        </div>
-        <!-- akhir sub navbar -->
-
-    </div>
-
-
+    
     <!-- content -->
-    <div id="content">
+    <div id="content" class="margin-content">
         <div class="bg-hover"></div>
         <div class="container">
             <div class="row">
@@ -303,6 +104,7 @@
                                         <p class="harga">Rp 97.639 <span>29% OFF</span></p>
                                         <p class="diskon">Rp 137.520</p>
                                         <a href="" class="hapus">Hapus</a>
+                                        <a href="updateBuku-page.html" class="edit">Edit</a>
                                     </div>
                                     <!-- desk -->
 
@@ -332,6 +134,7 @@
                                         <p class="harga">Rp 27.717 <span>67% OFF</span></p>
                                         <p class="diskon">Rp 83.992</p>
                                         <a href="" class="hapus">Hapus</a>
+                                        <a href="updateBuku-page.html" class="edit">Edit</a>
                                     </div>
                                     <!-- desk -->
                                 
@@ -361,6 +164,7 @@
                                         <p class="harga">Rp 38.866 <span>42% OFF</span></p>
                                         <p class="diskon">Rp 92.540</p>
                                         <a href="" class="hapus">Hapus</a>
+                                        <a href="updateBuku-page.html" class="edit">Edit</a>
                                     </div>
                                     <!-- desk -->
                                 
@@ -392,52 +196,17 @@
     <!-- akhir content -->
 
 
-
-
-    <!-- footer -->
-    <div id="footer">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-3 col-footer">
-                    <h2 class="mb-3">BLIBUKU.COM</h2>
-                    <p><a href="">Tentang blibuku.com</a></p>
-                    <p><a href="">Kebijakan privasi</a></p>
-                    <p><a href="">Aturan penggunaan</a></p>
-                    <p><a href="">Hubungi kami</a></p>
-                </div>
-
-                <div class="col-3 col-footer">
-                    <h2 class="mb-3">CUSTOMER CARE</h2>
-                    <p>Buka 24 jam setiap hari</p>
-                    <p><i class="fas fa-tty"></i> 0804 1 871 871</p>
-                    <p><i class="fas fa-envelope"></i> customer.care@blibli.com</p>
-                </div>
-
-                <div class="col-3 col-footer">
-                    <h2 class="mb-3">BLIBUKU FAMILY</h2>
-                    <img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"><br>
-                    <img src="../icons/tiketcom.png" width="150px" height="40px">
-                </div>
-
-                <div class="col-3 col-footer">
-                    <h2 class="mb-3">PENGHARGAAN</h2>
-                    <p><i class="fas fa-check"></i> Kualitas buku sangat baik.</p>
-                    <p><i class="fas fa-check"></i> Respon cepat.</p>
-                    <p><i class="fas fa-check"></i> Customer care 24 jam.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- akhir footer -->
-
+    <!-- footer from templating -->
+    <div id="footer"></div>
+    <!-- footer from templating -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/templateHeader.js"></script>
+    <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/tokoSaya-page.js"></script>
     <script src="../js/personal.js"></script>

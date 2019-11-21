@@ -68,14 +68,18 @@ function toggleOption(opt) {
 
 // display none option, click blank space
 $('body').click(function (e) {
-    if ($(e.target).attr('class') !== 'nav-item nav-link user') {
-        $('.opt-user').removeClass('toggle-opt');
-        $('.opt-user').css('display', 'none');
-    }
+    const width = $(window).width();
 
-    if ($(e.target).attr('class') !== 'nav-item nav-link kategori') {
-        $('.opt-kategori').removeClass('toggle-opt');
-        $('.opt-kategori').css('display', 'none');
+    if (width < 945) {
+        if ($(e.target).attr('class') !== 'nav-item nav-link user') {
+            $('.opt-user').removeClass('toggle-opt');
+            $('.opt-user').css('display', 'none');
+        }
+
+        if ($(e.target).attr('class') !== 'nav-item nav-link kategori') {
+            $('.opt-kategori').removeClass('toggle-opt');
+            $('.opt-kategori').css('display', 'none');
+        }
     }
 });
 
@@ -89,6 +93,7 @@ function responsiveSize() {
             <i class = "fas fa-user"></i> ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
         `);
     }
+    
     else if (width >= 945) {
         constraintNama();
     }
