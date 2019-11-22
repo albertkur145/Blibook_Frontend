@@ -79,9 +79,19 @@ const regexHP = /^08[0-9]{8,10}$/;
 function validationForm() {
     let tgl = $('option:selected', tanggal).val();
     let bln = $('option:selected', bulan).val();
+    let thn = $('option:selected', tahun).val();
 
-    if (nama.val().length != 0 && regexEmail.test(email.val()) && regexHP.test(nomor.val()) && !(tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12)) && !(tgl > 28 && bln == 2))
+    if (nama.val().length != 0 && regexEmail.test(email.val()) && regexHP.test(nomor.val()) && !(tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12))) {
+        if (tgl > 28 && bln == 2) {
+            if (tgl != 29 || thn % 4 != 0) {
+                $('small#error-ttl').css('display', 'block');
+                return false;
+            }
+        }
+
         return true;
+    }
+        
 
     if (nama.val().length == 0)
         $('small#error-nama').css('display', 'block');
@@ -95,9 +105,13 @@ function validationForm() {
     if (tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12)) 
         $('small#error-ttl').css('display', 'block');
 
-    if (tgl > 28 && bln == 2) 
-        $('small#error-ttl').css('display', 'block');
-    
+    if (tgl > 28 && bln == 2) {
+        if (tgl == 29 && thn%4 == 0) {}
+        else
+            $('small#error-ttl').css('display', 'block');
+    }
+        
+
 
     return false;
 }
