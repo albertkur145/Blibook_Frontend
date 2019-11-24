@@ -91,8 +91,6 @@ function responsiveSize() {
         // manipulasi css
         $('img', imgBukuTop).css('width', '100%');
         $('img', imgBukuTop).css('height', '100%');
-        $('img', imgBukuBottom).css('width', '5.5rem');
-        $('img', imgBukuBottom).css('height', '8.5rem');
 
     } else if (width < 325) {
 
@@ -132,8 +130,6 @@ function responsiveSize() {
         // manipulasi css
         $('img', imgBukuTop).css('width', '7rem');
         $('img', imgBukuTop).css('height', '10.75rem');
-        $('img', imgBukuBottom).css('width', '5.5rem');
-        $('img', imgBukuBottom).css('height', '8.5rem');
 
     } else if (width < 340) {
 
@@ -173,8 +169,6 @@ function responsiveSize() {
         // manipulasi css
         $('img', imgBukuTop).css('width', '7.5rem');
         $('img', imgBukuTop).css('height', '11.25rem');
-        $('img', imgBukuBottom).css('width', '6rem');
-        $('img', imgBukuBottom).css('height', '9.5rem');
 
     } else if (width < 360) {
 
@@ -214,8 +208,6 @@ function responsiveSize() {
         // manipulasi css
         $('img', imgBukuTop).css('width', '7.75rem');
         $('img', imgBukuTop).css('height', '11.75rem');
-        $('img', imgBukuBottom).css('width', '6.25rem');
-        $('img', imgBukuBottom).css('height', '9.75rem');
 
     } else if (width < 380) {
 
@@ -254,9 +246,7 @@ function responsiveSize() {
 
         // manipulasi css
         $('img', imgBukuTop).css('width', '8rem');
-        $('img', imgBukuTop).css('height', '12rem');
-        $('img', imgBukuBottom).css('width', '6.5rem');
-        $('img', imgBukuBottom).css('height', '10rem');
+        $('img', imgBukuTop).css('height', '11.75rem');
 
     } else if (width < 400) {
 
@@ -294,10 +284,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '8.25rem');
-        $('img', imgBukuTop).css('height', '12.25rem');
-        $('img', imgBukuBottom).css('width', '6.75rem');
-        $('img', imgBukuBottom).css('height', '10.25rem');
+        $('img', imgBukuTop).css('width', '7.875rem');
+        $('img', imgBukuTop).css('height', '10.875rem');
 
     } else if (width < 465) {
 
@@ -335,10 +323,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '8.75rem');
-        $('img', imgBukuTop).css('height', '12.25rem');
-        $('img', imgBukuBottom).css('width', '7.5rem');
-        $('img', imgBukuBottom).css('height', '11.5rem');
+        $('img', imgBukuTop).css('width', '8.125rem');
+        $('img', imgBukuTop).css('height', '11.125rem');
 
     } else if (width < 753) {
 
@@ -377,10 +363,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '9.875rem');
-        $('img', imgBukuTop).css('height', '15.5rem');
-        $('img', imgBukuBottom).css('width', '8rem');
-        $('img', imgBukuBottom).css('height', '12.25rem');
+        $('img', imgBukuTop).css('width', '9.75rem');
+        $('img', imgBukuTop).css('height', '13.875rem');
 
     } else if (width < 945) {
 
@@ -421,7 +405,7 @@ function responsiveSize() {
         $('img', imgBukuTop).css('width', '10.1875rem');
         $('img', imgBukuTop).css('height', '16rem');
         $('img', imgBukuBottom).css('width', '4.25rem');
-        $('img', imgBukuBottom).css('height', '6.75rem');
+        $('img', imgBukuBottom).css('height', '6.375rem');
         
     } else if (width < 1185) {
 
