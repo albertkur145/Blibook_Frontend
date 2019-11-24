@@ -74,12 +74,13 @@
         width: 80%;
         height: 3rem;
         border: 0.0625rem solid #0046CD;
-        padding-left: 0.75rem;
+        padding-left: 1.25rem;
         border-radius: 1.5625rem;
         outline: none;
         color: #666;
         padding-bottom: 0.125rem;
         margin: 0.5rem 0;
+        font-size: 0.875rem;
     }
 
 
@@ -98,6 +99,7 @@
         margin-left: -11%;
         transition: background-color .1s ease-out;
         cursor: pointer;
+        font-size: 0.875rem;
     }
 
 
@@ -349,6 +351,7 @@
     .nav-blibuku .search {
         width: 90%;
         height: 2.5rem;
+        font-size: 1rem;
     }
 
 
@@ -356,6 +359,7 @@
         width: 15%;
         height: 2.5rem;
         margin-left: -7%;
+        font-size: 1rem;
     }
 
 
@@ -399,7 +403,7 @@
 
     /* navbar */
     .nav-blibuku .search {
-        width: 96%;     
+        width: 96%;    
     }
 
 
@@ -510,8 +514,8 @@
         top: 30%;
         left: 31.99451%;
         width: 30.326%;
-        height: 2.1875rem;
-        font-size: 0.9375rem;
+        height: 2.25rem;
+        font-size: 1.0625rem;
         margin: 0;  
     }
 
@@ -521,8 +525,8 @@
         top: 30%;
         right: 34.87490%;
         width: 6.44427%;
-        height: 2.1875rem;
-        font-size: 1.125rem;
+        height: 2.25rem;
+        font-size: 1.0625rem;
     }
 
 

@@ -147,7 +147,7 @@ const header = `
 
                 <form action="" method="post">
                     <input type="text" name="keyword" class="search" autocomplete="off"
-                        placeholder="&#x1F50D; Cari buku disini...">
+                        placeholder="Cari buku Anda disini....">
                     <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
                 </form>
             </div>
