@@ -7,9 +7,8 @@ const footer = `
                 <div class="col-3 col-footer">
                     <h2 class="mb-3">BLIBUKU.COM</h2>
                     <p><a href="tentang-page.html">Tentang blibuku.com</a></p>
-                    <p><a href="">Kebijakan privasi</a></p>
-                    <p><a href="">Aturan penggunaan</a></p>
-                    <p><a href="">Hubungi kami</a></p>
+                    <p><a href="kebijakan-page.html">Kebijakan privasi</a></p>
+                    <p><a href="aturan-page.html">Aturan penggunaan</a></p>
                 </div>
 
                 <div class="col-3 col-footer">
@@ -26,8 +25,8 @@ const footer = `
                 </div>
 
                 <div class="col-3 col-footer">
-                    <h2 class="mb-3">PENGHARGAAN</h2>
-                    <p><i class="fas fa-check"></i> Kualitas buku sangat baik.</p>
+                    <h2 class="mb-3">KEUNTUNGAN</h2>
+                    <p><i class="fas fa-check"></i> Buku lengkap dan variatif.</p>
                     <p><i class="fas fa-check"></i> Respon cepat.</p>
                     <p><i class="fas fa-check"></i> Customer care 24 jam.</p>                    
                 </div>
