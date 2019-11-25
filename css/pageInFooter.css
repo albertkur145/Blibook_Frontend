@@ -1,0 +1,16 @@
+#tentang-kami {
+    padding: 3rem 0;
+}
+
+
+#tentang-kami h2.judul {
+    font-size: 1.875rem;
+    font-weight: 500;
+    color: #1456FF;
+}
+
+
+#tentang-kami p.isi {
+    font-size: 1rem;
+    color: #444;
+}
