@@ -6,22 +6,10 @@ let xIndonesian = 0;
 let xCartoon = 0;
 let xMusic = 0;
 
-const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
-let judulBuku = $('h5.judul-buku', buku);
-let deskBuku = $('p.desk-buku', buku);
+let judulBuku;
+let deskBuku;
 let textJudul = [];
 let textBuku = [];
-
-
-// copy text, agar value asli tidak berubah
-$.each(judulBuku, (key, value) => {
-    textJudul.push(value.innerHTML);
-});
-
-$.each(deskBuku, (key, value) => {
-    textBuku.push(value.innerHTML);
-});
-
 
 
 // responsive - resize window
@@ -218,8 +206,8 @@ function responsiveSize() {
 
         // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 9) {
-                let temp = textJudul[i].substring(0, 9) + "...";
+            if (textJudul[i].length >= 7) {
+                let temp = textJudul[i].substring(0, 7) + "...";
                 judulBuku[i].innerHTML = temp;
             }
         }
@@ -232,7 +220,7 @@ function responsiveSize() {
         }
 
         // manipulasi css
-        img.css('height', '9.75rem');
+        img.css('height', '8.5rem');
 
     } else if(width < 345) {
 
@@ -552,7 +540,7 @@ function responsiveSize() {
         }
 
         // manipulasi css
-        img.css('height', '11.0625rem');
+        img.css('height', '10.5rem');
 
     }else if (width < 500) {
 
@@ -1085,6 +1073,69 @@ function sliderKiri(kode) {
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    let harga = angka.toString();                           // misal : 75250330
+
+    let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+    let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+    let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                            // match return array, test return boolean, /g semua match
+    let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+    rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+    return rupiah;
+}
+
+
 // document ready
-responsiveSize();
+$(document).ready(() => {
+    
+    // get api buku
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            
+            response.forEach(value => {
+
+                // copy data, supaya yang asli tidak berubah waktu dimanipulasi
+                textJudul.push(value.judul);
+                textBuku.push(value.deskripsi);
+
+                // ubah menjadi format rupiah
+                let harga = generateRupiah(value.harga);
+
+                // add buku ke dom
+                $('#promo-murah .items-buku-promo .row').append(`
+                    <div class="col-3 buku">
+                        <a href="">
+                            <div class="card-buku">
+                                <img src="../pictures/${value.picture}">
+                                <div class="card-body-buku">
+                                    <h5 class="judul-buku">${value.judul}</h5>
+                                    <p class="harga-buku">Rp ${harga}</p>
+                                    <p class="desk-buku">${value.deskripsi}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>    
+                `);
+            });
+        }
+
+    }).then(() => {
+        const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
+        judulBuku = $('h5.judul-buku', buku);
+        deskBuku = $('p.desk-buku', buku);
+    }).then(() => {
+        responsiveSize();
+    });
+    
+});
+
 $(window).resize(responsiveSize);
+
+

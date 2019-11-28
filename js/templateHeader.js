@@ -35,7 +35,7 @@ const header = `
 
                             <div class="list-opt">
                                 <a href="">Buku Indonesia</a>
-                                <a href="">Anak</a>
+                                <a href="">Kartun</a>
                                 <a href="">Teknologi</a>
                                 <a href="">Komik</a>
                                 <a href="">Musik</a>
@@ -166,16 +166,16 @@ const header = `
                         <li>Buku Indonesia</li>
                     </a>
                     <a href="">
-                        <li>Teknologi</li>
-                    </a>
-                    <a href="">
                         <li>Kartun</li>
                     </a>
                     <a href="">
-                        <li>Music</li>
+                        <li>Teknologi</li>
                     </a>
                     <a href="">
                         <li>Komik</li>
+                    </a>
+                    <a href="">
+                        <li>Musik</li>
                     </a>
                     <a href="">
                         <li>Horror</li>
