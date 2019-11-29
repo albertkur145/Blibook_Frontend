@@ -1073,6 +1073,12 @@ function sliderKiri(kode) {
 }
 
 
+// saat klik direct ke detail product page
+function sendID(data) {
+    localStorage.setItem("id-buku", $(data).attr("data-id"));
+}   
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     let harga = angka.toString();                           // misal : 75250330
@@ -1088,9 +1094,43 @@ function generateRupiah(angka) {
 }
 
 
+// harga dibawah 100K
+function jsonPromoMurah(value) {
+
+    // copy data, supaya yang asli tidak berubah waktu dimanipulasi
+    textJudul.push(value.productName);
+    textBuku.push(value.productDescription);
+
+    // ubah menjadi format rupiah
+    let harga = generateRupiah(value.productPrice);
+
+    // add buku ke dom
+    $('#promo-murah .items-buku-promo .row').append(`
+        <div class="col-3 buku">
+            <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)">
+                <div class="card-buku">
+                    <img src="../pictures/${value.productPhotoLink}">
+                    <div class="card-body-buku">
+                        <h5 class="judul-buku">${value.productName}</h5>
+                        <p class="harga-buku">Rp ${harga}</p>
+                        <p class="desk-buku">${value.productDescription}</p>
+                    </div>
+                </div>
+            </a>
+        </div>    
+    `);
+}
+
+
 // document ready
 $(document).ready(() => {
-    
+
+    let iTeknologi = 1;
+    let iKartun = 1;
+    let iMusik = 1;
+    let iIndonesia = 1;
+    let iPromoMurah = 1;
+
     // get api buku
     $.ajax({
         url: "../json/buku.json",
@@ -1098,31 +1138,43 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function (response) {
-            
+
             response.forEach(value => {
 
-                // copy data, supaya yang asli tidak berubah waktu dimanipulasi
-                textJudul.push(value.judul);
-                textBuku.push(value.deskripsi);
+                if (value.productPrice < 100000 && iPromoMurah <= 12) {
+                    jsonPromoMurah(value);
+                    iPromoMurah++;
+                }
+                
+                if (value.productCategory === "Teknologi" && iTeknologi <= 12) {
+                    $('.promote .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+                    iTeknologi++;
+                }
 
-                // ubah menjadi format rupiah
-                let harga = generateRupiah(value.harga);
+                if (value.productCategory === "Kartun" && iKartun <= 12) {
+                    $('.cartoon-music .cartoon .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+                    iKartun++;
+                }
 
-                // add buku ke dom
-                $('#promo-murah .items-buku-promo .row').append(`
-                    <div class="col-3 buku">
-                        <a href="">
-                            <div class="card-buku">
-                                <img src="../pictures/${value.picture}">
-                                <div class="card-body-buku">
-                                    <h5 class="judul-buku">${value.judul}</h5>
-                                    <p class="harga-buku">Rp ${harga}</p>
-                                    <p class="desk-buku">${value.deskripsi}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>    
-                `);
+                if (value.productCategory === "Musik" && iMusik <= 12) {
+                    $('.cartoon-music .music .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+                    iMusik++;
+                }
+
+
+                if (value.productCountry === "Indonesia" && iIndonesia <= 12) {
+                    $('.indonesian .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+                    iIndonesia++;
+                }
+                
             });
         }
 

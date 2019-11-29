@@ -35,9 +35,9 @@ const header = `
 
                             <div class="list-opt">
                                 <a href="">Buku Indonesia</a>
-                                <a href="">Kartun</a>
+                                <a href="">Pendidikan</a>
                                 <a href="">Teknologi</a>
-                                <a href="">Komik</a>
+                                <a href="">Kartun</a>
                                 <a href="">Musik</a>
                                 <a href="">Horror</a>
                                 <a href="">Novel</a>
@@ -166,13 +166,13 @@ const header = `
                         <li>Buku Indonesia</li>
                     </a>
                     <a href="">
-                        <li>Kartun</li>
+                        <li>Pendidikan</li>
                     </a>
                     <a href="">
                         <li>Teknologi</li>
                     </a>
                     <a href="">
-                        <li>Komik</li>
+                        <li>Kartun</li>
                     </a>
                     <a href="">
                         <li>Musik</li>
@@ -200,3 +200,4 @@ const header = `
 `
 
 $('#header').html(header);
+

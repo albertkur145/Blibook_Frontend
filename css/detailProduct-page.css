@@ -723,6 +723,7 @@
 
     #detail-product .bottom .right .ket-buku p.harga {
         color: #1A9980;
+        font-weight: 500;
         font-size: 0.75rem;
     }
 

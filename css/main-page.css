@@ -35,9 +35,9 @@
     }
 
 
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
         display: none;
-    }
+    } */
 
 
     .content .slider-container .slides-items {
@@ -176,7 +176,7 @@
 
 
     #promo-murah .items-buku-promo .buku .card-buku .card-body-buku h5.judul-buku {
-        color: #444;
+        color: #333;
         font-weight: 400;
         font-size: 1.125rem;
     }
@@ -184,7 +184,7 @@
 
     #promo-murah .items-buku-promo .buku .card-buku .card-body-buku p.harga-buku {
         color: #1A9980;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1rem;
     }
 

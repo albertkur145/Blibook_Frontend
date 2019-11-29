@@ -100,7 +100,7 @@ function responsiveSize() {
 }
 
 
-// window ready
+// ready execute
 responsiveSize();
 $(window).resize(responsiveSize);
 

@@ -1,10 +1,10 @@
 
 
 // variable global
-const deskripsiBuku = $('#detail-product .bottom .left .deskripsi p.desk').text();
-const readMore = $('#detail-product .bottom .left .deskripsi p.read-more');
-const deskBuku = $('#detail-product .bottom .left .deskripsi p.desk');
-let statusBaca = 0;
+let deskripsiBuku;
+let readMore;
+let deskBuku;
+let statusBaca;
 
 // read more
 function bacaSelengkapnya() {
@@ -128,8 +128,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '7rem');
-        $('img', imgBukuTop).css('height', '10.75rem');
+        $('img', imgBukuTop).css('width', '6.9375rem');
+        $('img', imgBukuTop).css('height', '10.375rem');
 
     } else if (width < 340) {
 
@@ -167,8 +167,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '7.5rem');
-        $('img', imgBukuTop).css('height', '11.25rem');
+        $('img', imgBukuTop).css('width', '7rem');
+        $('img', imgBukuTop).css('height', '10.5rem');
 
     } else if (width < 360) {
 
@@ -206,8 +206,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '7.75rem');
-        $('img', imgBukuTop).css('height', '11.75rem');
+        $('img', imgBukuTop).css('width', '7.25rem');
+        $('img', imgBukuTop).css('height', '10.625rem');
 
     } else if (width < 380) {
 
@@ -245,8 +245,8 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku);
 
         // manipulasi css
-        $('img', imgBukuTop).css('width', '8rem');
-        $('img', imgBukuTop).css('height', '11.75rem');
+        $('img', imgBukuTop).css('width', '7.5rem');
+        $('img', imgBukuTop).css('height', '10.75rem');
 
     } else if (width < 400) {
 
@@ -482,17 +482,77 @@ function responsiveSize() {
             deskBuku.html(deskripsiBuku.substring(0, 1225) + '...');
         else
             deskBuku.html(deskripsiBuku);
-
+        
         // manipulasi css
         $('img', imgBukuTop).css('width', '14.25rem');
-        $('img', imgBukuTop).css('height', '20.75rem');
+        $('img', imgBukuTop).css('height', '21rem');
         $('img', imgBukuBottom).css('width', '6.5rem');
         $('img', imgBukuBottom).css('height', '9.25rem');
-
     }
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    let harga = angka.toString();                           // misal : 75250330
+
+    let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+    let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+    let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                            // match return array, test return boolean, /g semua match
+    let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+    rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+    return rupiah;
+}
+
+
 // document ready
-responsiveSize();
+$(document).ready(() => {
+    
+    let id = localStorage.getItem("id-buku");
+    const topLeft = $('#detail-product .top .left');
+    const ketBuku = $('#detail-product .top .left .ket-buku');
+    const bottom = $('#detail-product .bottom');
+
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+            
+            response.forEach(value => {
+                
+                // cari produk yang diklik user
+                if (value.productId == id) {
+                    let harga = generateRupiah(value.productPrice)
+
+                    $('.image-buku', topLeft).html(`<img src="../pictures/${value.productPhotoLink}">`);
+                    $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
+                    $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
+                    $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
+                    $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
+                    $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
+                    $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
+                    $('.value-harga', ketBuku).html(`<p class="harga">Rp ${harga}</p>`);
+                    $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);
+                    $('.right .image-buku', bottom).html(`<img src="../pictures/${value.productPhotoLink}">`);
+                    $('.right .ket-buku p.judul-buku').html(`${value.productName}`);
+                    $('.right .ket-buku p.harga').html(`Rp ${harga}`);
+                }
+
+            });
+
+        }
+    }).then(() => {
+        deskripsiBuku = $('#detail-product .bottom .left .deskripsi p.desk').text();
+        readMore = $('#detail-product .bottom .left .deskripsi p.read-more');
+        deskBuku = $('#detail-product .bottom .left .deskripsi p.desk');
+        statusBaca = 0;
+    }).then(() => {
+        responsiveSize();
+    });
+});
+
 $(window).resize(responsiveSize);

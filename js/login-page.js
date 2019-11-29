@@ -40,11 +40,10 @@ function responsiveSize() {
         
         // manipulasi css
         left.css('display', 'block');
-
     }
 }
 
 
-// document ready
+// ready execute
 responsiveSize();
 $(window).resize(responsiveSize);

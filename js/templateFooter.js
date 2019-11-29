@@ -38,3 +38,4 @@ const footer = `
 `;
 
 $('#footer').html(footer);
+
