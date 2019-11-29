@@ -72,7 +72,6 @@ function responsiveSize() {
     const imgBuku = $('.img-buku', detailBuku);
     const deskBuku = $('.desk-buku', detailBuku);
 
-
     if (width < 320) {
 
         // manipulasi column
@@ -318,10 +317,69 @@ function generateRupiah(angka) {
 }
 
 
+// get data bag
+function getDataBag(response) {
+    const bag = $('#produk .left .buku');
+
+    response.forEach((value) => {
+
+        let harga = generateRupiah(value.productPrice);
+
+        bag.append(`
+            <div class="row">
+
+                <!-- checkbox -->
+                <div class="col-1 checkbox-pilih">
+                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productId}" data-harga="${value.productPrice}">
+                    <span class="checkbox"></span>
+                </div>
+                <!-- checkbox -->
+
+                <!-- desk -->
+                <div class="col-11 detail-buku">
+                    <div class="row">
+
+                        <!-- image -->
+                        <div class="col-3 img-buku">
+                            <img src="../pictures/${value.productPhotoLink}">
+                        </div>
+                        <!-- image -->
+                        
+                        <!-- desk buku -->
+                        <div class="col-9 desk-buku">
+                            <p class="judul">${value.productName}</p>
+                            <p class="author">Penulis : ${value.productAuthor}</p>
+                            <p class="bahasa">Bahasa ${value.productLanguage}</p>
+                            <p class="harga">Rp. ${harga}</p>
+
+                            <div class="row">
+
+                                <div class="col-6 jumlah">
+                                    <p>Jumlah : 1</p>
+                                </div>
+
+                                <div class="col-6 aksi text-right">
+                                    <a href=""><i class="fas fa-heart"></i></a>
+                                    <a href=""><i class="fas fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- desk buku -->
+
+                    </div>
+                </div>
+                <!-- desk -->
+
+            </div>
+
+            <hr>
+        `);
+    });
+}
+
+
 // document ready
 $(document).ready(() => {
-
-    const bag = $('#produk .left .buku');
 
     $.ajax({
         url: "../json/bag.json",
@@ -329,67 +387,13 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function(response) {
-
-            response.forEach((value, key) => {
-
-                let harga = generateRupiah(value.productPrice);
-
-                bag.append(`
-                    <div class="row">
-
-                        <!-- checkbox -->
-                        <div class="col-1 checkbox-pilih">
-                            <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productId}" data-harga="${value.productPrice}">
-                            <span class="checkbox"></span>
-                        </div>
-                        <!-- checkbox -->
-
-                        <!-- desk -->
-                        <div class="col-11 detail-buku">
-                            <div class="row">
-
-                                <!-- image -->
-                                <div class="col-3 img-buku">
-                                    <img src="../pictures/${value.productPhotoLink}">
-                                </div>
-                                <!-- image -->
-                                
-                                <!-- desk buku -->
-                                <div class="col-9 desk-buku">
-                                    <p class="judul">${value.productName}</p>
-                                    <p class="author">Penulis : ${value.productAuthor}</p>
-                                    <p class="bahasa">Bahasa ${value.productLanguage}</p>
-                                    <p class="harga">Rp ${harga}</p>
-
-                                    <div class="row">
-
-                                        <div class="col-6 jumlah">
-                                            <p>Jumlah : 1</p>
-                                        </div>
-
-                                        <div class="col-6 aksi text-right">
-                                            <a href=""><i class="fas fa-heart"></i></a>
-                                            <a href=""><i class="fas fa-trash"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- desk buku -->
-
-                            </div>
-                        </div>
-                        <!-- desk -->
-
-                    </div>
-
-                    <hr>
-                `);
-            });
-            
+            getDataBag(response);
         }
+        
     }).then(() => {
         responsiveSize();
     });
-
+    
 });
 
 $(window).resize(responsiveSize);

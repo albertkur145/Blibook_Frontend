@@ -1116,7 +1116,7 @@ function jsonPromoMurah(value) {
                     <img src="../pictures/${value.productPhotoLink}">
                     <div class="card-body-buku">
                         <h5 class="judul-buku">${value.productName}</h5>
-                        <p class="harga-buku">Rp ${harga}</p>
+                        <p class="harga-buku">Rp. ${harga}</p>
                         <p class="desk-buku">${value.productDescription}</p>
                     </div>
                 </div>
@@ -1126,14 +1126,56 @@ function jsonPromoMurah(value) {
 }
 
 
-// document ready
-$(document).ready(() => {
-
+// get all buku
+function getAllBuku(response) {
     let iTeknologi = 1;
     let iKartun = 1;
     let iMusik = 1;
     let iIndonesia = 1;
     let iPromoMurah = 1;
+
+    response.forEach(value => {
+
+        if (value.productPrice < 100000 && iPromoMurah <= 12) {
+            jsonPromoMurah(value);
+            iPromoMurah++;
+        }
+
+        if (value.productCategory === "Teknologi" && iTeknologi <= 12) {
+            $('.promote .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+            iTeknologi++;
+        }
+
+        if (value.productCategory === "Kartun" && iKartun <= 12) {
+            $('.cartoon-music .cartoon .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+            iKartun++;
+        }
+
+        if (value.productCategory === "Musik" && iMusik <= 12) {
+            $('.cartoon-music .music .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+            iMusik++;
+        }
+
+
+        if (value.productCountry === "Indonesia" && iIndonesia <= 12) {
+            $('.indonesian .slider-container .slides-items').append(`
+                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                    `);
+            iIndonesia++;
+        }
+
+    });
+}
+
+
+// document ready
+$(document).ready(() => {
 
     // get api buku
     $.ajax({
@@ -1142,44 +1184,7 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function (response) {
-
-            response.forEach(value => {
-
-                if (value.productPrice < 100000 && iPromoMurah <= 12) {
-                    jsonPromoMurah(value);
-                    iPromoMurah++;
-                }
-                
-                if (value.productCategory === "Teknologi" && iTeknologi <= 12) {
-                    $('.promote .slider-container .slides-items').append(`
-                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
-                    `);
-                    iTeknologi++;
-                }
-
-                if (value.productCategory === "Kartun" && iKartun <= 12) {
-                    $('.cartoon-music .cartoon .slider-container .slides-items').append(`
-                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
-                    `);
-                    iKartun++;
-                }
-
-                if (value.productCategory === "Musik" && iMusik <= 12) {
-                    $('.cartoon-music .music .slider-container .slides-items').append(`
-                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
-                    `);
-                    iMusik++;
-                }
-
-
-                if (value.productCountry === "Indonesia" && iIndonesia <= 12) {
-                    $('.indonesian .slider-container .slides-items').append(`
-                        <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
-                    `);
-                    iIndonesia++;
-                }
-                
-            });
+            getAllBuku(response);
         }
 
     }).then(() => {

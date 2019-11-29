@@ -511,44 +511,50 @@ function generateRupiah(angka) {
 }
 
 
-// document ready
-$(document).ready(() => {
-    
+// get buku detail
+function getBukuDetail(response) {
     let id = localStorage.getItem("id-buku");
     const topLeft = $('#detail-product .top .left');
     const ketBuku = $('#detail-product .top .left .ket-buku');
     const bottom = $('#detail-product .bottom');
 
+    response.forEach(value => {
+
+        // cari produk yang diklik user
+        if (value.productId == id) {
+            let harga = generateRupiah(value.productPrice)
+
+            $('.image-buku', topLeft).html(`<img src="../pictures/${value.productPhotoLink}">`);
+            $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
+            $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
+            $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
+            $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
+            $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
+            $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
+            $('.value-harga', ketBuku).html(`<p class="harga">Rp. ${harga}</p>`);
+            $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);
+            $('.right .image-buku', bottom).html(`<img src="../pictures/${value.productPhotoLink}">`);
+            $('.right .ket-buku p.judul-buku').html(`${value.productName}`);
+            $('.right .ket-buku p.harga').html(`Rp. ${harga}`);
+        }
+
+    });
+}
+
+
+// document ready
+$(document).ready(() => {
+    
+    // get detail buku
     $.ajax({
         url: "../json/buku.json",
         type: "get",
         dataType: "json",
 
         success: function(response) {
-            
-            response.forEach(value => {
-                
-                // cari produk yang diklik user
-                if (value.productId == id) {
-                    let harga = generateRupiah(value.productPrice)
-
-                    $('.image-buku', topLeft).html(`<img src="../pictures/${value.productPhotoLink}">`);
-                    $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
-                    $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
-                    $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
-                    $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
-                    $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
-                    $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
-                    $('.value-harga', ketBuku).html(`<p class="harga">Rp ${harga}</p>`);
-                    $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);
-                    $('.right .image-buku', bottom).html(`<img src="../pictures/${value.productPhotoLink}">`);
-                    $('.right .ket-buku p.judul-buku').html(`${value.productName}`);
-                    $('.right .ket-buku p.harga').html(`Rp ${harga}`);
-                }
-
-            });
-
+            getBukuDetail(response);
         }
+        
     }).then(() => {
         deskripsiBuku = $('#detail-product .bottom .left .deskripsi p.desk').text();
         readMore = $('#detail-product .bottom .left .deskripsi p.read-more');

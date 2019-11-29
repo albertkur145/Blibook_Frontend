@@ -84,7 +84,6 @@
         margin-top: 1rem;
         padding: 0.75rem 1rem;
         box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
-        color: #666;
     }
 
 
@@ -96,12 +95,30 @@
     #content .left .pesanan .desk-buku p.judul {
         padding-top: 0.75rem;
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 400;
+        color: #333;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+        margin-top: -0.5rem;
+        font-weight: 400;
+        color: #454545;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.875rem;
+        margin-top: -0.5rem;
+        font-weight: 400;
+        color: #666;
     }
 
 
     #content .left .pesanan .desk-buku p.harga {
         color: #1A9980;
+        font-weight: 500;
         font-size: 0.9375rem;
     }
 
@@ -123,7 +140,8 @@
 
     #content .left .pesanan .desk-buku p.jumlah {
         font-size: 0.875rem;
-        font-weight: 300;
+        font-weight: 400;
+        color: #444;
         margin-bottom: 0;
     }
 
@@ -285,13 +303,23 @@
 
     #content .left .pesanan .img-buku img {
         width: 5rem;
-        height: 8.125rem;
+        height: 7.75rem;
     }
 
 
     #content .left .pesanan .desk-buku p.judul {
         padding-top: 0;
         font-size: 1rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.8125rem;
     }
 
 
@@ -312,7 +340,7 @@
 
 
     #content .left .pesanan .desk-buku p.jumlah {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
     }
 
 
@@ -458,8 +486,17 @@
     }
 
 
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 1rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.9375rem;
+    }
+
+
     #content .left .pesanan .desk-buku p.harga {
-        margin-top: 1rem;
         font-size: 1rem;        
     }
 
@@ -477,8 +514,8 @@
 
 
     #content .left .pesanan .desk-buku p.jumlah {
-        margin-top: 1.75rem;
-        font-size: 1rem;
+        margin-top: 1.5rem;
+        font-size: 0.9375rem;
     }
 
 
@@ -614,18 +651,27 @@
 
 
     #content .left .pesanan .img-buku img {
-        width: 5.9375rem;
-        height: 8.75rem;
+        width: 6.5rem;
+        height: 9.625rem;
     }
 
 
     #content .left .pesanan .desk-buku p.judul {
-        font-size: 1rem;
+        font-size: 1.0625rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.8125rem;
     }
 
 
     #content .left .pesanan .desk-buku p.harga {
-        margin-top: 1rem;
         font-size: 0.875rem;
     }
 
@@ -792,13 +838,22 @@
 
 
     #content .left .pesanan .desk-buku p.judul {
-        font-size: 1.4375rem;
+        font-size: 1.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.875rem;
     }
 
 
     #content .left .pesanan .desk-buku p.harga {
-        margin-top: 1.5rem;
-        font-size: 1.25rem;
+        font-size: 0.9375rem;
     }
 
 
@@ -816,7 +871,7 @@
 
     #content .left .pesanan .desk-buku p.jumlah {
         margin-top: 1.5rem;
-        font-size: 1.125rem;
+        font-size: 0.875rem;
     }
 
 
