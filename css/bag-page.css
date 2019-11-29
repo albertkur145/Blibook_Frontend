@@ -183,6 +183,12 @@
     }
 
 
+    #produk .left .buku .detail-buku .desk-buku p.bahasa {
+        color: #666;
+        font-size: 0.8125rem;
+    }
+
+
     #produk .left .buku .detail-buku .desk-buku p.harga {
         font-weight: 500;
         color: #FF6B00;
@@ -313,6 +319,11 @@
 
     #produk .left .buku .detail-buku .desk-buku p.author {
         font-size: 0.8125rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.bahasa {
+        font-size: 0.75rem;
     }
 
 
@@ -479,6 +490,12 @@
     }
 
 
+    #produk .left .buku .detail-buku .desk-buku p.bahasa {
+        margin-top: -0.5rem;
+        font-size: 0.8125rem;
+    }
+
+
     #produk .left .buku .detail-buku .desk-buku p.harga {
         font-weight: 500;
         color: #FF6B00;
@@ -641,6 +658,11 @@
     }
 
 
+    #produk .left .buku .detail-buku .desk-buku p.bahasa {
+        font-size: 0.8125rem;
+    }
+
+
     #produk .left .buku .detail-buku .desk-buku p.harga span {
         padding: 0.125rem 0.25rem;
         margin-left: 0.5rem;
@@ -781,6 +803,11 @@
 
     #produk .left .buku .detail-buku .desk-buku p.author {
         font-size: 1rem;
+    }
+
+
+    #produk .left .buku .detail-buku .desk-buku p.bahasa {
+        font-size: 0.9375rem;
     }
 
 
