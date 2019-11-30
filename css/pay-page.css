@@ -60,7 +60,7 @@
         margin-top: 1rem;
         padding: 0.75rem 1rem 0rem;
         box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
-        color: #666;
+        color: #333;
     }
 
 
@@ -287,7 +287,6 @@
 
     #content .left .biodata .values p.value {
         font-size: 0.8125rem;
-        font-weight: 300;
     }
 
 

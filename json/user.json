@@ -1,0 +1,10 @@
+[
+    {
+        "userId": 1,
+        "userEmail": "albert.kurniawan145@gmail.com",
+        "userName": "Albert Kurniawan",
+        "userPhone": "081392290882",
+        "userPassword": "123",
+        "userPasswordConfirmation": "123"
+    }
+]

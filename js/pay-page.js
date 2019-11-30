@@ -246,12 +246,28 @@ function generateRupiah(angka) {
 }
 
 
+// get user detail
+function getUser(response) {
+    response.forEach(value => {
+        $('#content .left .biodata .values').html(`
+            <p class="value">${value.userName}</p>
+            <p class="value">${value.userEmail}</p>
+            <p class="value">${value.userPhone}</p>
+        `);
+    });
+}
+
+
 // get pay user
 function getPayUser(response) {
     let pesanan = $('#content .left .pesanan');
+    let subTotal = 0;
 
     response.forEach(value => {
         let harga = generateRupiah(value.productPrice);
+        subTotal += value.productPrice;
+
+        // list pesanan
         pesanan.append(`
             <div class="row">
                             
@@ -276,12 +292,30 @@ function getPayUser(response) {
             <hr>
         `);
     });
+
+
+    // rincian pembayaran
+    let pajak = subTotal * 0.1;
+    let totalPembayaran = pajak + subTotal;
+
+    let tempSubTotal = generateRupiah(subTotal);
+    let tempPajak = generateRupiah(pajak);
+    let tempTotalBayar = generateRupiah(totalPembayaran);
+    
+    $('#content .right .rincian-bayar .values').html(`
+        <p class="txt-bayar">Rp. ${tempSubTotal}</p>
+        <p class="txt-bayar">${response.length}</p>
+        <p class="txt-bayar">Rp. ${tempPajak}</p>
+        <hr>
+        <p class="value-pembayaran">Rp. ${tempTotalBayar}</p>
+    `);
 }
 
 
 // document ready
 $(document).ready(() => {
 
+    // get pay
     $.ajax({
         url: "../json/pay.json",
         type: "get",
@@ -291,6 +325,19 @@ $(document).ready(() => {
             getPayUser(response);
         }
         
+    }).then(() => {
+
+        // get user
+        $.ajax({
+            url: "../json/user.json",
+            type: "get",
+            dataType: "json",
+
+            success: function(response) {
+                getUser(response);
+            }
+        });
+
     }).then(() => {
         responsiveSize();
     }); 
