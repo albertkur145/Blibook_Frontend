@@ -4,6 +4,10 @@
         "userEmail": "albert.kurniawan145@gmail.com",
         "userName": "Albert Kurniawan",
         "userPhone": "081392290882",
+        "userTanggal": "25",
+        "userBulan": "9",
+        "userTahun": "1999",
+        "userGender": "Pria",
         "userPassword": "123",
         "userPasswordConfirmation": "123"
     }

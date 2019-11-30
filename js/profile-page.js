@@ -59,7 +59,6 @@ function responsiveSize() {
             optTTL.addClass('col-3');
             optTTL.removeClass('col-12');
         }
-        
     }
 }
 
@@ -72,7 +71,6 @@ const tanggal = $('#tanggal', form);
 const bulan = $('#bulan', form);
 const tahun = $('#tahun', form);
 const nomor = $('#nomor', form);
-const regexEmail = /^[a-zA-Z0-9._-]+@[a-z]{5,5}.[a-z]{2,3}$/;
 const regexHP = /^08[0-9]{8,10}$/;
 
 
@@ -81,7 +79,7 @@ function validationForm() {
     let bln = $('option:selected', bulan).val();
     let thn = $('option:selected', tahun).val();
 
-    if (nama.val().length != 0 && regexEmail.test(email.val()) && regexHP.test(nomor.val()) && !(tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12))) {
+    if (nama.val().length != 0 && regexHP.test(nomor.val()) && !(tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12))) {
         if (tgl > 28 && bln == 2) {
             if (tgl != 29 || thn % 4 != 0) {
                 $('small#error-ttl').css('display', 'block');
@@ -95,9 +93,6 @@ function validationForm() {
 
     if (nama.val().length == 0)
         $('small#error-nama').css('display', 'block');
-
-    if (!regexEmail.test(email.val())) 
-        $('small#error-email').css('display', 'block');
 
     if (!regexHP.test(nomor.val())) 
         $('small#error-nomor').css('display', 'block');
@@ -123,13 +118,6 @@ function keyUpNama () {
         $('small#error-nama', form).css('display', 'none');
 }
 
-function keyUpEmail () {
-    if (regexEmail.test(email.val()) == 0)
-        $('small#error-email', form).css('display', 'block');
-    else
-        $('small#error-email', form).css('display', 'none');
-}
-
 function keyUpNomor () {
     if (regexHP.test(nomor.val()) == 0)
         $('small#error-nomor', form).css('display', 'block');
@@ -150,8 +138,35 @@ tahun.focusout(() => {
 });
 
 
+// get user detail
+function getUserDetail(response) {
+    let gender = $('#content .right .rbody input[type="radio"]');
+
+    response.forEach(value => {
+        nama.val(value.userName);
+        email.val(value.userEmail);
+        nomor.val(0);
+    });
+}
+
+
 // document ready
-appendTTL();
-borderTab();
-responsiveSize();
+$(document).ready(() => {
+    
+    $.ajax({
+        url: "../json/user.json",
+        type: "get",
+        dataType: "json",
+        
+        success: function(response) {
+            getUserDetail(response);
+        }
+    }).then(() => {
+        appendTTL();
+        borderTab();
+        responsiveSize();
+    });
+    
+});
+
 $(window).resize(responsiveSize);
