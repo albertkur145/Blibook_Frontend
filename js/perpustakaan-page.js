@@ -94,12 +94,40 @@ function responsiveSize() {
             buku.addClass('col-3');
             buku.removeClass('col-12');
         }
-
     }
 }
 
 
+// get library user
+function getLibraryUser(response) {
+    response.forEach(value => {
+        $('#content .right .rbody .mybooks .row').append(`
+            <div class="col-3 buku">
+                <a href="bacaPdf-page.html">
+                    <img src="../pictures/${value.productPhotoLink}">
+                </a>
+            </div>
+        `);
+    });
+}
+
+
 // document ready
-borderTab();
-responsiveSize();
+$(document).ready(() => {
+    $.ajax({
+        url: "../json/library.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+            getLibraryUser(response);
+        }
+
+    }).then(() => {
+        borderTab();
+        responsiveSize();
+    });
+    
+}); 
+
 $(window).resize(responsiveSize);
