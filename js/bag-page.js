@@ -320,61 +320,69 @@ function generateRupiah(angka) {
 // get data bag
 function getDataBag(response) {
     const bag = $('#produk .left .buku');
+    
+    if (response.length > 0) {
+        $('#produk .isEmpty').css('display', 'none');
+        $('#produk .notEmpty').css('display', 'flex');
 
-    response.forEach((value) => {
+        response.forEach((value) => {
 
-        let harga = generateRupiah(value.productPrice);
+            let harga = generateRupiah(value.productPrice);
+            
+            bag.append(`
+                <div class="row">
 
-        bag.append(`
-            <div class="row">
+                    <!-- checkbox -->
+                    <div class="col-1 checkbox-pilih">
+                        <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productId}" data-harga="${value.productPrice}">
+                        <span class="checkbox"></span>
+                    </div>
+                    <!-- checkbox -->
 
-                <!-- checkbox -->
-                <div class="col-1 checkbox-pilih">
-                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productId}" data-harga="${value.productPrice}">
-                    <span class="checkbox"></span>
-                </div>
-                <!-- checkbox -->
+                    <!-- desk -->
+                    <div class="col-11 detail-buku">
+                        <div class="row">
 
-                <!-- desk -->
-                <div class="col-11 detail-buku">
-                    <div class="row">
+                            <!-- image -->
+                            <div class="col-3 img-buku">
+                                <img src="../pictures/${value.productPhotoLink}">
+                            </div>
+                            <!-- image -->
+                            
+                            <!-- desk buku -->
+                            <div class="col-9 desk-buku">
+                                <p class="judul">${value.productName}</p>
+                                <p class="author">Penulis : ${value.productAuthor}</p>
+                                <p class="bahasa">Bahasa ${value.productLanguage}</p>
+                                <p class="harga">Rp. ${harga}</p>
 
-                        <!-- image -->
-                        <div class="col-3 img-buku">
-                            <img src="../pictures/${value.productPhotoLink}">
-                        </div>
-                        <!-- image -->
-                        
-                        <!-- desk buku -->
-                        <div class="col-9 desk-buku">
-                            <p class="judul">${value.productName}</p>
-                            <p class="author">Penulis : ${value.productAuthor}</p>
-                            <p class="bahasa">Bahasa ${value.productLanguage}</p>
-                            <p class="harga">Rp. ${harga}</p>
+                                <div class="row">
 
-                            <div class="row">
+                                    <div class="col-6 jumlah">
+                                        <p>Jumlah : 1</p>
+                                    </div>
 
-                                <div class="col-6 jumlah">
-                                    <p>Jumlah : 1</p>
-                                </div>
-
-                                <div class="col-6 aksi text-right">
-                                    <a href=""><i class="fas fa-heart"></i></a>
-                                    <a href=""><i class="fas fa-trash"></i></a>
+                                    <div class="col-6 aksi text-right">
+                                        <a href=""><i class="fas fa-heart"></i></a>
+                                        <a href=""><i class="fas fa-trash"></i></a>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- desk buku -->
+
                         </div>
-                        <!-- desk buku -->
-
                     </div>
+                    <!-- desk -->
+
                 </div>
-                <!-- desk -->
 
-            </div>
-
-            <hr>
-        `);
-    });
+                <hr>
+            `);
+        });
+    } else {
+        $('#produk .isEmpty').css('display', 'block');
+        $('#produk .notEmpty').css('display', 'none');
+    }
 }
 
 

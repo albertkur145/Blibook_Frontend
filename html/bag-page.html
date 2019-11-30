@@ -31,7 +31,7 @@
     <div id="produk" class="position-relative margin-content">
         <div class="bg-hover"></div>
         <div class="container">
-            <div class="row">
+            <div class="row notEmpty">
 
                 <!-- left -->
                 <div class="col-8 left">
@@ -55,7 +55,7 @@
 
                             <!-- hapus semua -->
                             <div class="col-5 hapus-semua text-right">
-                                <a href="#"><i class="far fa-trash-alt"></i> Hapus Semua</a>
+                                <a href="#" data-toggle="modal" data-target="#confirmDeleteAll"><i class="far fa-trash-alt"></i> Hapus Semua</a>
                             </div>
                             <!-- hapus semua -->
 
@@ -120,6 +120,40 @@
                 <!-- right -->
 
             </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="confirmDeleteAll" role="dialog" style="z-index: 1500">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="fas fa-exclamation-triangle"></i> Peringatan</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Semua buku dalam Bag akan terhapus.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+
+            <!-- jika bag kosong -->
+            <div class="row isEmpty text-center">
+                <div class="col-12">
+                    <img src="https://www.static-src.com/frontend/retail/static/img/empty-shopping-bag.4194439.png">
+                    <p class="txt-sepi">Lho, Kok Sepi?</p>
+                    <p class="txt-saran">Ayo cari buku kesukaanmu di Blibuku.com</p>
+                    <a href="main-page.html" class="btn-main">Cari Buku</a>
+                </div>
+            </div>
+            <!-- jika bag kosong -->
+
         </div>
     </div>
     <!-- produk -->
