@@ -1,21 +1,10 @@
 
 
-// ambil data json
-const buku = $('#content .right .rbody .wishlist');
-let judulBuku = $('.desk-buku p.judul', buku)
-let deskBuku = $('.desk-buku p.deskripsi', buku);
+// variable global
+let judulBuku;
+let deskBuku;
 let textJudul = [];
 let textDeskripsi = [];
-
-
-// copy data
-$.each(judulBuku, (key, value) => {
-    textJudul.push(value.innerHTML);
-});
-
-$.each(deskBuku, (key, value) => {
-    textDeskripsi.push(value.innerHTML);
-});
 
 
 // mark side tab
@@ -57,8 +46,8 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 73) {
-                let temp = textDeskripsi[i].substring(0, 73) + "...";
+            if (textDeskripsi[i].length > 167) {
+                let temp = textDeskripsi[i].substring(0, 167) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
@@ -68,7 +57,6 @@ function responsiveSize() {
         $('img', image).css('height', '100%');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width < 305) {
 
@@ -93,8 +81,8 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 83) {
-                let temp = textDeskripsi[i].substring(0, 83) + "...";
+            if (textDeskripsi[i].length > 192) {
+                let temp = textDeskripsi[i].substring(0, 192) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
@@ -104,7 +92,6 @@ function responsiveSize() {
         $('img', image).css('height', '100%');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width < 345) {
 
@@ -128,12 +115,18 @@ function responsiveSize() {
             }
         }
 
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 37) {
+                let temp = textDeskripsi[i].substring(0, 37) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
         // manipulasi css
         $('img', image).css('width', '7.5rem');
-        $('img', image).css('height', '11.25rem');
+        $('img', image).css('height', '10.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.375rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.375rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'none');
         
     } else if (width < 385) {
 
@@ -157,12 +150,18 @@ function responsiveSize() {
             }
         }
 
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 67) {
+                let temp = textDeskripsi[i].substring(0, 67) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
         // manipulasi css
         $('img', image).css('width', '7.5rem');
-        $('img', image).css('height', '11.25rem');
+        $('img', image).css('height', '10.625rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'none');
 
     } else if (width < 405) {
 
@@ -187,18 +186,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 27) {
-                let temp = textDeskripsi[i].substring(0, 27) + "...";
+            if (textDeskripsi[i].length > 45) {
+                let temp = textDeskripsi[i].substring(0, 45) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
         $('img', image).css('width', '8.125rem');
-        $('img', image).css('height', '13.125rem');
+        $('img', image).css('height', '10.9375rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
     
     } else if (width < 425) {
 
@@ -223,15 +221,15 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 47) {
-                let temp = textDeskripsi[i].substring(0, 47) + "...";
+            if (textDeskripsi[i].length > 52) {
+                let temp = textDeskripsi[i].substring(0, 52) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
         $('img', image).css('width', '8.125rem');
-        $('img', image).css('height', '13.125rem');
+        $('img', image).css('height', '11rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
         $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
@@ -259,18 +257,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 54) {
-                let temp = textDeskripsi[i].substring(0, 54) + "...";
+            if (textDeskripsi[i].length > 57) {
+                let temp = textDeskripsi[i].substring(0, 57) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
         $('img', image).css('width', '8.125rem');
-        $('img', image).css('height', '13.125rem');
+        $('img', image).css('height', '11rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.5rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.5rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
         
     } else if (width < 465) {
 
@@ -303,10 +300,9 @@ function responsiveSize() {
 
         // manipulasi css
         $('img', image).css('width', '8.125rem');
-        $('img', image).css('height', '13.125rem');
+        $('img', image).css('height', '11.125rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.5rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.5rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width < 520) {
 
@@ -330,12 +326,18 @@ function responsiveSize() {
             }
         }
 
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 47) {
+                let temp = textDeskripsi[i].substring(0, 47) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
         // manipulasi css
         $('img', image).css('width', '7.5rem');
-        $('img', image).css('height', '11.875rem');
+        $('img', image).css('height', '10.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.25rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.25rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'none');
 
     } else if (width < 753) {
 
@@ -359,12 +361,18 @@ function responsiveSize() {
             }
         }
 
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 82) {
+                let temp = textDeskripsi[i].substring(0, 82) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
         // manipulasi css
         $('img', image).css('width', '7.5rem');
-        $('img', image).css('height', '11.875rem');
+        $('img', image).css('height', '10.6875rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.25rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.25rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'none');
 
     } else if (width < 945) {
 
@@ -389,18 +397,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 82) {
-                let temp = textDeskripsi[i].substring(0, 82) + "...";
+            if (textDeskripsi[i].length > 102) {
+                let temp = textDeskripsi[i].substring(0, 102) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
         $('img', image).css('width', '9.375rem');
-        $('img', image).css('height', '14.375rem');
+        $('img', image).css('height', '13.25rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.25rem');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.25rem');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width < 1185) {
 
@@ -425,18 +432,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 117) {
-                let temp = textDeskripsi[i].substring(0, 117) + "...";
+            if (textDeskripsi[i].length > 112) {
+                let temp = textDeskripsi[i].substring(0, 112) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
         $('img', image).css('width', '10rem');
-        $('img', image).css('height', '15.625rem');
+        $('img', image).css('height', '13.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width >= 1185) {
 
@@ -461,24 +467,107 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 142) {
-                let temp = textDeskripsi[i].substring(0, 142) + "...";
+            if (textDeskripsi[i].length > 232) {
+                let temp = textDeskripsi[i].substring(0, 232) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
         
         // manipulasi css
         $('img', image).css('width', '11.25rem');
-        $('img', image).css('height', '15.9375rem');
+        $('img', image).css('height', '15.625rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
         $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0');
-        $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
-
     }
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    if (angka != 0) {
+        let harga = angka.toString();                           // misal : 75250330
+
+        let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+        let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+        let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                                // match return array, test return boolean, /g semua match
+        let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+        rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+        return rupiah;
+    }
+
+    return 0;
+}
+
+
+// saat klik direct ke detail product page
+function sendID(data) {
+    localStorage.setItem("id-buku", $(data).attr("data-id"));
+}
+
+
+// get wishlist user
+function getWishlistUser(response) {
+
+    response.forEach(value => {
+        let harga = generateRupiah(value.productPrice);
+        textJudul.push(value.productName);
+        textDeskripsi.push(value.productDescription);
+            
+        $('#content .right .rbody .wishlist').append(`
+            <div class="row">
+                <!-- image -->
+                <div class="col-3 image-buku">
+                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><img src="../pictures/${value.productPhotoLink}"></a>
+                </div>
+                <!-- image -->
+                
+                <!-- desk -->
+                <div class="col-6 desk-buku">
+                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><p class="judul">${value.productName}</p></a>
+                    <p class="deskripsi">${value.productDescription}</p>
+                    <p class="harga">Rp. ${harga}</p>
+                    <a href="" class="hapus">Hapus</a>
+                </div>
+                <!-- desk -->
+
+                <!-- button beli -->
+                <div class="col-3 button-beli">
+                    <a href="bag-page.html">Beli</a>
+                </div>
+                <!-- button beli -->
+            </div>
+
+            <hr>
+        `);
+    });
+    
+}
+
+
 // document ready
-borderTab();
-responsiveSize();
+$(document).ready(() => {
+
+    $.ajax({
+        url: "../json/wishlist.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+            getWishlistUser(response);
+        }
+        
+    }).then(() => {
+        const buku = $('#content .right .rbody .wishlist');
+        judulBuku = $('.desk-buku p.judul', buku);
+        deskBuku = $('.desk-buku p.deskripsi', buku);
+    }).then(() => {
+        borderTab();
+        responsiveSize();
+    });
+
+    
+})
+
 $(window).resize(responsiveSize);

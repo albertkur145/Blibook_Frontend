@@ -298,6 +298,14 @@ function responsiveSize() {
 }
 
 
+// function hapus semua bag
+function hapusSemua(btn) {
+    $('#produk .isEmpty').css('display', 'block');
+    $('#produk .notEmpty').css('display', 'none');
+    $(btn).attr("data-dismiss", "modal");
+}
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0) {
