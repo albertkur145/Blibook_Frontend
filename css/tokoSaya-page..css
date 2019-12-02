@@ -82,6 +82,7 @@
 
     #content .right .rbody .penjualan .buku .desk-buku p.harga {
         color: #FF6B00;
+        font-weight: 500;
         font-size: 0.8125rem;
         margin-top: -0.25rem;
     }
@@ -164,7 +165,7 @@
 
 
     #content .right .rbody .penjualan .buku hr {
-        border: 0.03125rem solid #410095;
+        border: 0.03125rem solid #003686;
     }
 
 
@@ -239,7 +240,7 @@
 
     #content .right .rbody .penjualan .buku .desk-buku p.harga {
         font-size: 0.75rem;
-        margin-top: -0.5rem;
+        margin-top: -0.125rem;
     }
 
 
@@ -342,10 +343,15 @@
     }
 
 
+    #content .right .rbody .penjualan .buku .desk-buku p.deskripsi {
+        margin-top: -0.4375rem;
+    }
+
+
     #content .right .rbody .penjualan .buku .desk-buku p.harga {
         font-size: 0.875rem;
         margin-right: 1.5rem;
-        margin-top: -0.75rem;
+        margin-top: -0.5rem;
     }
 
 
@@ -453,6 +459,7 @@
 
     #content .right .rbody .penjualan .buku .desk-buku p.deskripsi {
         font-size: 0.875rem;
+        margin-top: 0;
     }
 
 
@@ -618,7 +625,7 @@
 
 
     #content .right .rbody .penjualan .buku .button-detail {
-        padding-top: 7rem;
+        padding-top: 5rem;
     }
 
 

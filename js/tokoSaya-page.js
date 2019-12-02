@@ -1,21 +1,10 @@
 
 
-// ambil data json
-const buku = $('#content .right .rbody .penjualan .buku');
-let judulBuku = $('.desk-buku p.judul', buku);
-let deskBuku = $('.desk-buku p.deskripsi', buku);
+// variable global
+let judulBuku;
+let deskBuku;
 let textJudul = [];
 let textDeskripsi = [];
-
-
-// copy data
-$.each(judulBuku, (key, value) => {
-    textJudul.push(value.innerHTML);
-});
-
-$.each(deskBuku, (key, value) => {
-    textDeskripsi.push(value.innerHTML);
-});
 
 
 // mark side tab
@@ -142,39 +131,6 @@ function responsiveSize() {
 
         // batasan length string
         for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length > 19) {
-                let temp = textJudul[i].substring(0, 19) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        // manipulasi css
-        $('img', image).css('width', '5.625rem');
-        $('img', image).css('height', '8.4375rem');
-        $('p.deskripsi', desk).css('display', 'none');
-
-    } else if (width < 355) {
-
-        // manipulasi column
-        if (image.hasClass('col-3')) {
-            image.addClass('col-4');
-            image.removeClass('col-3');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-7');
-        } else if (image.hasClass('col-12')) {
-            image.addClass('col-4');
-            image.removeClass('col-12');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-12');
-
-            btnDetail.addClass('col-2');
-            btnDetail.removeClass('col-12');
-        }
-
-        // batasan length string
-        for (let i = 0; i < textJudul.length; i++) {
             if (textJudul[i].length > 12) {
                 let temp = textJudul[i].substring(0, 12) + "...";
                 judulBuku[i].innerHTML = temp;
@@ -182,58 +138,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 29) {
-                let temp = textDeskripsi[i].substring(0, 29) + "...";
+            if (textDeskripsi[i].length > 12) {
+                let temp = textDeskripsi[i].substring(0, 12) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
-        $('img', image).css('width', '6.25rem');
-        $('img', image).css('height', '10.0625rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '5.5rem');
+        $('img', image).css('height', '8.125rem');
 
-    } else if (width < 365) {
-
-        // manipulasi column
-        if (image.hasClass('col-3')) {
-            image.addClass('col-4');
-            image.removeClass('col-3');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-7');
-        } else if (image.hasClass('col-12')) {
-            image.addClass('col-4');
-            image.removeClass('col-12');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-12');
-
-            btnDetail.addClass('col-2');
-            btnDetail.removeClass('col-12');
-        }
-
-        // batasan length string
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length > 13) {
-                let temp = textJudul[i].substring(0, 13) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 32) {
-                let temp = textDeskripsi[i].substring(0, 32) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-        // manipulasi css
-        $('img', image).css('width', '6.375rem');
-        $('img', image).css('height', '10.125rem');
-        $('p.deskripsi', desk).css('display', 'block');
-
-    } else if (width < 385) {
+    } else if (width < 355) {
 
         // manipulasi column
         if (image.hasClass('col-3')) {
@@ -269,12 +184,11 @@ function responsiveSize() {
         }
 
         // manipulasi css
-        $('img', image).css('width', '6.375rem');
-        $('img', image).css('height', '10.125rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '6.125rem');
+        $('img', image).css('height', '9.25rem');
 
-    } else if (width < 405) { 
-    
+    } else if (width < 365) {
+
         // manipulasi column
         if (image.hasClass('col-3')) {
             image.addClass('col-4');
@@ -302,98 +216,95 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 67) {
-                let temp = textDeskripsi[i].substring(0, 67) + "...";
+            if (textDeskripsi[i].length > 32) {
+                let temp = textDeskripsi[i].substring(0, 32) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
-        $('img', image).css('width', '7.125rem');
-        $('img', image).css('height', '11.25rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '6.25rem');
+        $('img', image).css('height', '9.3125rem');
+
+    } else if (width < 385) {
+
+        // manipulasi column
+        if (image.hasClass('col-3')) {
+            image.addClass('col-4');
+            image.removeClass('col-3');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-7');
+        } else if (image.hasClass('col-12')) {
+            image.addClass('col-4');
+            image.removeClass('col-12');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-12');
+
+            btnDetail.addClass('col-2');
+            btnDetail.removeClass('col-12');
+        }
+
+        // batasan length string
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 16) {
+                let temp = textJudul[i].substring(0, 16) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 37) {
+                let temp = textDeskripsi[i].substring(0, 37) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        $('img', image).css('width', '6.3125rem');
+        $('img', image).css('height', '9.5rem');
+
+    } else if (width < 405) { 
+    
+        // manipulasi column
+        if (image.hasClass('col-3')) {
+            image.addClass('col-4');
+            image.removeClass('col-3');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-7');
+        } else if (image.hasClass('col-12')) {
+            image.addClass('col-4');
+            image.removeClass('col-12');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-12');
+
+            btnDetail.addClass('col-2');
+            btnDetail.removeClass('col-12');
+        }
+
+        // batasan length string
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 17) {
+                let temp = textJudul[i].substring(0, 17) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 57) {
+                let temp = textDeskripsi[i].substring(0, 57) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        $('img', image).css('width', '7rem');
+        $('img', image).css('height', '10.625rem');
 
     } else if (width < 425) {
-
-        // manipulasi column
-        if (image.hasClass('col-3')) {
-            image.addClass('col-4');
-            image.removeClass('col-3');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-7');
-        } else if (image.hasClass('col-12')) {
-            image.addClass('col-4');
-            image.removeClass('col-12');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-12');
-
-            btnDetail.addClass('col-2');
-            btnDetail.removeClass('col-12');
-        }
-
-        // batasan length string
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length > 17) {
-                let temp = textJudul[i].substring(0, 17) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 72) {
-                let temp = textDeskripsi[i].substring(0, 72) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-        // manipulasi css
-        $('img', image).css('width', '7.125rem');
-        $('img', image).css('height', '11.25rem');
-        $('p.deskripsi', desk).css('display', 'block');
-
-    } else if (width < 436) {
-
-        // manipulasi column
-        if (image.hasClass('col-3')) {
-            image.addClass('col-4');
-            image.removeClass('col-3');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-7');
-        } else if (image.hasClass('col-12')) {
-            image.addClass('col-4');
-            image.removeClass('col-12');
-
-            desk.addClass('col-6');
-            desk.removeClass('col-12');
-
-            btnDetail.addClass('col-2');
-            btnDetail.removeClass('col-12');
-        }
-
-        // batasan length string
-        for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length > 17) {
-                let temp = textJudul[i].substring(0, 17) + "...";
-                judulBuku[i].innerHTML = temp;
-            }
-        }
-
-        for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 97) {
-                let temp = textDeskripsi[i].substring(0, 97) + "...";
-                deskBuku[i].innerHTML = temp;
-            }
-        }
-
-        // manipulasi css
-        $('img', image).css('width', '7.75rem');
-        $('img', image).css('height', '12.4375rem');
-        $('p.deskripsi', desk).css('display', 'block');
-
-    } else if (width < 465) {
 
         // manipulasi column
         if (image.hasClass('col-3')) {
@@ -422,18 +333,17 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 103) {
-                let temp = textDeskripsi[i].substring(0, 103) + "...";
+            if (textDeskripsi[i].length > 62) {
+                let temp = textDeskripsi[i].substring(0, 62) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
-        $('img', image).css('width', '8rem');
-        $('img', image).css('height', '12.5rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '7.0625rem');
+        $('img', image).css('height', '10.5rem');
 
-    } else if (width < 520) {
+    } else if (width < 436) {
 
         // manipulasi column
         if (image.hasClass('col-3')) {
@@ -461,12 +371,18 @@ function responsiveSize() {
             }
         }
 
-        // manipulasi css
-        $('img', image).css('width', '6.125rem');
-        $('img', image).css('height', '10rem');
-        $('p.deskripsi', desk).css('display', 'none');
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 72) {
+                let temp = textDeskripsi[i].substring(0, 72) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
 
-    } else if (width < 753) {
+        // manipulasi css
+        $('img', image).css('width', '7.375rem');
+        $('img', image).css('height', '10.625rem');
+
+    } else if (width < 465) {
 
         // manipulasi column
         if (image.hasClass('col-3')) {
@@ -494,10 +410,94 @@ function responsiveSize() {
             }
         }
 
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 107) {
+                let temp = textDeskripsi[i].substring(0, 107) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        $('img', image).css('width', '8rem');
+        $('img', image).css('height', '11.75rem');
+
+    } else if (width < 520) {
+
+        // manipulasi column
+        if (image.hasClass('col-3')) {
+            image.addClass('col-4');
+            image.removeClass('col-3');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-7');
+        } else if (image.hasClass('col-12')) {
+            image.addClass('col-4');
+            image.removeClass('col-12');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-12');
+
+            btnDetail.addClass('col-2');
+            btnDetail.removeClass('col-12');
+        }
+
+        // batasan length string
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 12) {
+                let temp = textJudul[i].substring(0, 12) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 30) {
+                let temp = textDeskripsi[i].substring(0, 30) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
+        // manipulasi css
+        $('img', image).css('width', '5.875rem');
+        $('img', image).css('height', '8.75rem');
+
+    } else if (width < 753) {
+
+        // manipulasi column
+        if (image.hasClass('col-3')) {
+            image.addClass('col-4');
+            image.removeClass('col-3');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-7');
+        } else if (image.hasClass('col-12')) {
+            image.addClass('col-4');
+            image.removeClass('col-12');
+
+            desk.addClass('col-6');
+            desk.removeClass('col-12');
+
+            btnDetail.addClass('col-2');
+            btnDetail.removeClass('col-12');
+        }
+
+        // batasan length string
+        for (let i = 0; i < textJudul.length; i++) {
+            if (textJudul[i].length > 13) {
+                let temp = textJudul[i].substring(0, 13) + "...";
+                judulBuku[i].innerHTML = temp;
+            }
+        }
+
+        for (let i = 0; i < textDeskripsi.length; i++) {
+            if (textDeskripsi[i].length > 54) {
+                let temp = textDeskripsi[i].substring(0, 54) + "...";
+                deskBuku[i].innerHTML = temp;
+            }
+        }
+
         // manipulasi css
         $('img', image).css('width', '6.5rem');
         $('img', image).css('height', '10rem');
-        $('p.deskripsi', desk).css('display', 'none');
 
     } else if (width < 945) {
 
@@ -528,16 +528,15 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 123) {
-                let temp = textDeskripsi[i].substring(0, 123) + "...";
+            if (textDeskripsi[i].length > 157) {
+                let temp = textDeskripsi[i].substring(0, 157) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
-        $('img', image).css('width', '9.375rem');
-        $('img', image).css('height', '14.375rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '9.5rem');
+        $('img', image).css('height', '14.125rem');
 
     } else if (width < 1185) {
         
@@ -575,9 +574,8 @@ function responsiveSize() {
         }
 
         // manipuilasi css
-        $('img', image).css('width', '10rem');
-        $('img', image).css('height', '15.75rem');
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '9.5rem');
+        $('img', image).css('height', '14rem');
 
     } else if (width >= 1185) {
 
@@ -608,21 +606,113 @@ function responsiveSize() {
         }
 
         for (let i = 0; i < textDeskripsi.length; i++) {
-            if (textDeskripsi[i].length > 233) {
-                let temp = textDeskripsi[i].substring(0, 233) + "...";
+            if (textDeskripsi[i].length > 302) {
+                let temp = textDeskripsi[i].substring(0, 302) + "...";
                 deskBuku[i].innerHTML = temp;
             }
         }
 
         // manipulasi css
-        $('img', image).css('width', '11rem');
-        $('img', image).css('height', '15.9375rem');    
-        $('p.deskripsi', desk).css('display', 'block');
+        $('img', image).css('width', '10.75rem');
+        $('img', image).css('height', '15.25rem');    
     }
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    if (angka != 0) {
+        let harga = angka.toString();                           // misal : 75250330
+
+        let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+        let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+        let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                                // match return array, test return boolean, /g semua match
+        let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+        rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+        return rupiah;
+    }
+
+    return 0;
+}
+
+
+// saat klik direct ke detail product page
+function sendID(data) {
+    localStorage.setItem("id-buku", $(data).attr("data-id"));
+}
+
+
+// get toko user
+function getToko(response) {
+    response.forEach(value => {
+        $('#content .right .rbody .biodata-toko p.nama-toko').html(`${value.nama}`);
+        $('#content .right .rbody .biodata-toko p.alamat-toko').html(`${value.alamat}, ${value.kota}, ${value.provinsi}`);
+        
+        value.buku.forEach(obj => {
+            textJudul.push(obj.productName);
+            textDeskripsi.push(obj.productDescription);
+
+            let harga = generateRupiah(obj.productPrice);
+
+            $('#content .right .rbody .penjualan .buku').append(`
+                <div class="row">
+
+                    <!-- image -->
+                    <div class="col-3 image-buku">
+                        <a href="detailProduct-page.html" data-id="${obj.productId}" onclick="sendID(this)"><img src="../pictures/${obj.productPhotoLink}" ></a>
+                    </div>
+                    <!-- image -->
+
+                    <!-- desk -->
+                    <div class="col-7 desk-buku">
+                        <a href="detailProduct-page.html" onclick="sendID(this)" data-id="${obj.productId}"><p class="judul">${obj.productName}</p></a>
+                        <p class="deskripsi">${obj.productDescription}</p>
+                        <p class="harga">Rp. ${harga}</p>
+                        <a href="" class="hapus">Hapus</a>
+                        <a href="updateBuku-page.html" class="edit">Edit</a>
+                    </div>
+                    <!-- desk -->
+
+                    <!-- button detail -->
+                    <div class="col-2 button-detail">
+                        <a href="detailProduct-page.html" data-id="${obj.productId}" onclick="sendID(this)"><i class="fas fa-eye"></i></a>
+                        <p class="tooltip-text"><span>Lihat Buku</span></p>
+                    </div>
+                    <!-- button detail -->
+
+                </div>
+                <hr>
+            `)
+        });
+    });
+}
+
+
 // document ready
-borderTab();
-responsiveSize();
+$(document).ready(() => {
+
+    $.ajax({
+        url: "../json/toko.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+            getToko(response);
+        }
+    }).then(() => {
+
+        const buku = $('#content .right .rbody .penjualan .buku');
+        judulBuku = $('.desk-buku p.judul', buku);
+        deskBuku = $('.desk-buku p.deskripsi', buku);
+
+    }).then(() => {
+        borderTab();
+        responsiveSize();
+    });
+
+    
+});
+
 $(window).resize(responsiveSize);
