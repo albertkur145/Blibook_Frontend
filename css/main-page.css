@@ -35,11 +35,6 @@
     }
 
 
-    /* ::-webkit-scrollbar {
-        display: none;
-    } */
-
-
     .content .slider-container .slides-items {
         width: 100.5625rem;     
         transition: margin 0.625s ease-in-out;
@@ -110,7 +105,7 @@
 
     /* promo murah */
     #promo-murah {
-        padding: 2rem 0 1rem;
+        padding-top: 2rem;
         margin: 0;
     }
 
@@ -217,6 +212,32 @@
     /* promo murah */
 
 
+    /* lihat semua */
+    .lihat-semua {
+        text-align: center;
+        padding: 1rem 0 1.5rem;
+    }
+
+
+    .lihat-semua span {
+        cursor: pointer;
+        font-size: 1.4375rem;
+        color: #555;
+        transition: .2s background-color ease-out;
+    }
+
+
+    .lihat-semua span:hover {
+        color: #333;
+    }
+
+
+    .lihat-semua span img {
+        width: 30%;
+    }
+    /* lihat semua */
+
+
 /* berlaku untuk width window < 320px */
 
 
@@ -312,7 +333,7 @@
 
     /* promo murah */
     #promo-murah {
-        padding: 2.25rem 0 1.25rem;
+        padding-top: 2.25rem;
     }
 
 
@@ -382,6 +403,24 @@
         margin-top: -0.5rem;
     }
     /* promo murah */
+
+
+
+    /* lihat semua */
+    .lihat-semua {
+        padding: 0.875rem 0 2rem;
+    }
+
+
+    .lihat-semua span {
+        font-size: 1.5rem;
+    }
+
+
+    .lihat-semua span img {
+        width: 21%;
+    }
+    /* lihat semua */
 
 
 }
@@ -476,7 +515,7 @@
 
     /* promo murah */
     #promo-murah {
-        padding: 2.5rem 0 1.5rem;
+        padding-top: 2.5rem;
     }
 
 
@@ -544,6 +583,22 @@
     }
     /* promo murah */
 
+
+    /* lihat semua */
+    .lihat-semua {
+        padding: 0.5rem 0 2.25rem;
+    }
+
+
+    .lihat-semua span {
+        font-size: 1.625rem;
+    }
+
+
+    .lihat-semua span img {
+        width: 13%;
+    }
+    /* lihat semua */
 
 }
 
@@ -646,7 +701,7 @@
 
     /* promo murah */
     #promo-murah {
-        padding: 2.75rem 0 1.75rem;
+        padding-top: 2.75rem;
     }
 
 
@@ -716,6 +771,24 @@
     /* promo murah */
 
 
+
+    /* lihat semua */
+    .lihat-semua {
+        padding: 0.75rem 0 2.5rem;
+    }
+
+
+    .lihat-semua span {
+        font-size: 1.75rem;
+    }
+
+
+    .lihat-semua span img {
+        width: 11%;
+    }
+    /* lihat semua */
+
+    
 }
 
 /* berlaku untuk width window (768px - 959px) */
@@ -806,7 +879,7 @@
 
     /* promo murah */
     #promo-murah {
-        padding: 3rem 0 2rem;
+        padding-top: 3rem;
     }
 
 
@@ -872,6 +945,24 @@
         font-size: 0.8125rem;
     }
     /* promo murah */
+
+
+
+     /* lihat semua */
+    .lihat-semua {
+        padding: 1rem 0 2.75rem;
+    }
+
+
+    .lihat-semua span {
+        font-size: 1.9375rem;
+    }
+
+
+    .lihat-semua span img {
+        width: 8%;
+    }
+    /* lihat semua */
 
 
 }

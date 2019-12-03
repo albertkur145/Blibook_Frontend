@@ -223,16 +223,17 @@
 
 
     #detail-product .btn-fixed-bottom button {
-        padding: 1rem 0;
+        padding: 0.9375rem 0;
         border: 0;
         text-transform: uppercase;
         color: #FFF;
-        font-size: 1rem;
+        font-size: 0.9375rem;
     }
 
 
     #detail-product .btn-fixed-bottom button.beli {
         width: 77%;
+        font-weight: 500;
         background-color: #FF8717;
     }
 
@@ -384,7 +385,7 @@
 
 
     #detail-product .btn-fixed-bottom button {
-        font-size: 1.0625rem;
+        font-size: 1rem;
     }
 
 
@@ -538,7 +539,7 @@
 
 
     #detail-product .btn-fixed-bottom button {
-        font-size: 1.125rem;
+        font-size: 1.0625rem;
     }
 
 
