@@ -1,21 +1,10 @@
 
 
 // variabel global
-const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
-let judulBuku = $('h5.judul-buku', buku);
-let deskBuku = $('p.desk-buku', buku);
+let judulBuku;
+let deskBuku;
 let textJudul = [];
 let textBuku = [];
-
-
-// copy text, agar value asli tidak berubah
-$.each(judulBuku, (key, value) => {
-    textJudul.push(value.innerHTML);
-});
-
-$.each(deskBuku, (key, value) => {
-    textBuku.push(value.innerHTML);
-});
 
 
 // responsive - resize window
@@ -169,8 +158,8 @@ function responsiveSize() {
 
         // batasan length judul/desk
         for (let i = 0; i < textJudul.length; i++) {
-            if (textJudul[i].length >= 9) {
-                let temp = textJudul[i].substring(0, 9) + "...";
+            if (textJudul[i].length >= 7) {
+                let temp = textJudul[i].substring(0, 7) + "...";
                 judulBuku[i].innerHTML = temp;
             }
         }
@@ -636,6 +625,94 @@ function responsiveSize() {
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    if (angka != 0) {
+        let harga = angka.toString();                           // misal : 75250330
+
+        let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+        let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+        let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                                // match return array, test return boolean, /g semua match
+        let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+        rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+        return rupiah;
+    }
+
+    return 0;
+}
+
+
+// saat klik direct ke detail product page
+function sendID(data) {
+    localStorage.setItem("id-buku", $(data).attr("data-id"));
+}
+
+
+// tambah buku tertentu (salah satunya : buku dibawah 100K)
+function tambahBukuTertentu(value) {
+
+    // copy data, supaya yang asli tidak berubah waktu dimanipulasi
+    textJudul.push(value.productName);
+    textBuku.push(value.productDescription);
+
+    // ubah menjadi format rupiah
+    let harga = generateRupiah(value.productPrice);
+
+    // add buku ke dom
+    $('#promo-murah .items-buku-promo .row').append(`
+        <div class="col-3 buku">
+            <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)">
+                <div class="card-buku">
+                    <img src="../pictures/${value.productPhotoLink}">
+                    <div class="card-body-buku">
+                        <h5 class="judul-buku">${value.productName}</h5>
+                        <p class="harga-buku">Rp. ${harga}</p>
+                        <p class="desk-buku">${value.productDescription}</p>
+                    </div>
+                </div>
+            </a>
+        </div>    
+    `);
+}
+
+
 // document ready
-responsiveSize();
+$(document).ready(() => {
+    let kategori = localStorage.getItem('kategori');
+
+    // ganti judul kategori
+    $('#promo-murah .header h2').html(kategori);
+
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+
+            // ambil data
+            response.forEach(value => {
+
+                // jika buku indonesia
+                if (value.productCountry === kategori)
+                    tambahBukuTertentu(value);
+
+                // jika tidak, cari yang sesuai kategori
+                else if (value.productCategory === kategori) 
+                    tambahBukuTertentu(value);
+            });
+        }
+
+    }).then(() => {
+        const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
+        judulBuku = $('h5.judul-buku', buku);
+        deskBuku = $('p.desk-buku', buku);
+    }).then(() => {
+        responsiveSize();
+    });
+    
+});
+
 $(window).resize(responsiveSize);

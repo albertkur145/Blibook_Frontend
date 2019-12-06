@@ -162,31 +162,31 @@ const header = `
 
                 <!-- kategori buku -->
                 <ul class="kategori">
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Indonesia')">
                         <li>Buku Indonesia</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Pendidikan')">
                         <li>Pendidikan</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Teknologi')">
                         <li>Teknologi</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Kartun')">
                         <li>Kartun</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Musik')">
                         <li>Musik</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Horror')">
                         <li>Horror</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Novel')">
                         <li>Novel</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Bisnis')">
                         <li>Bisnis</li>
                     </a>
-                    <a href="">
+                    <a href="search-page.html" onclick="sendKategori('Kesehatan')">
                         <li>Kesehatan</li>
                     </a>
                 </ul>

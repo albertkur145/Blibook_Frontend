@@ -24,39 +24,61 @@ const tahunTerbit = $('#content .right .rbody #tahun');
 const negara = $('#content .right .rbody #negara');
 const bahasa = $('#content .right .rbody #bahasa');
 const hargaBuku = $('#content .right .rbody #harga');
-const diskonBuku = $('#content .right .rbody #diskon');
-const hargaSetelahDiskon = $('#content .right .rbody #harga-diskon');
+// const diskonBuku = $('#content .right .rbody #diskon');
+// const hargaSetelahDiskon = $('#content .right .rbody #harga-diskon');
 const deskripsiBuku = $('#content .right .rbody #deskripsi');
 const uploadGambar = $('#content .right .rbody #gambar');
 const uploadPDF = $('#content .right .rbody #pdf');
 
-const extensionsImg = ["jpg", "jpeg", "png", "bmp"];
+const extensionsImg = ["jpg", "jpeg", "png"];
 const regexNumber = /^[0-9]+$/;
 
 function validationForm() {
     if (judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && 
         $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 &&
-        bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && regexNumber.test(diskonBuku.val()) && 
-        diskonBuku.val() <= 100 && deskripsiBuku.val().length >= 24) {
+        bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) {
+
+            // validasi buku pdf
             if (uploadPDF.val().length > 0) {
                 if (uploadPDF[0].files[0].size > 20000000)
                     $('small#error-size-pdf').css('display', 'block');
                 else {
                     let pdf = uploadPDF.val().split(".");
-                    pdf = pdf[pdf.length - 1].toLowerCase();
+                    let tempPdf = pdf[pdf.length - 1].toLowerCase();
 
-                    if (pdf == 'pdf') {
+                    if (tempPdf == 'pdf') {
+
+                        // validasi cover buku
                         if (uploadGambar.val().length > 0) {
 
                             if (uploadGambar[0].files[0].size > 2000000)
                                 $('small#error-size-pdf').css('display', 'block');
                             else {
-                                let temp = uploadGambar.val().split(".");
-                                temp = temp[temp.length - 1].toLowerCase();
+                                let image = uploadGambar.val().split(".");
+                                let tempImage = image[image.length - 1].toLowerCase();
 
                                 for (let i = 0; i < extensionsImg.length; i++) {
-                                    if (temp == extensionsImg[i])
-                                        return true;
+                                    if (tempImage == extensionsImg[i]) {
+
+                                        // setelah semua valid, request api
+                                        let Buku = {
+                                            "judul": judulBuku.val(),
+                                            "penulis": penulisBuku.val(),
+                                            "jumlahHalaman": jumlahHalaman.val(),
+                                            "tahun": $('option:selected', tahunTerbit).val(),
+                                            "negara": $('option:selected', negara).val(),
+                                            "bahasa": bahasa.val(),
+                                            "harga": hargaBuku.val(),
+                                            "deskripsi": deskripsiBuku.val(),
+                                            "cover": image[0].split("\\")[2] + "." + tempImage,
+                                            "pdf": pdf[0].split("\\")[2] + "." + tempPdf
+                                        }
+
+                                        console.log(Buku);
+                                        // window.location.href = "http://127.0.0.1:8010/html/tokoSaya-page.html";
+
+                                    }
+                                    
                                 }
 
                                 $('small#error-gambar').css('display', 'block');
@@ -91,19 +113,17 @@ function validationForm() {
     if (!regexNumber.test(hargaBuku.val()))
         $('small#error-harga').css('display', 'block');
 
-    if (!regexNumber.test(diskonBuku.val()) || diskonBuku.val() > 100)
-        $('small#error-diskon').css('display', 'block');
+    // if (!regexNumber.test(diskonBuku.val()) || diskonBuku.val() > 100)
+    //     $('small#error-diskon').css('display', 'block');
 
-    if (deskripsiBuku.val().length < 24)
+    if (deskripsiBuku.val().length < 36)
         $('small#error-deskripsi').css('display', 'block');
 
-    if (uploadGambar.val().length == 0)
-        $('small#error-gambar').css('display', 'block');        
+    if (uploadGambar.val().length == 0) 
+        $('small#error-gambar').css('display', 'block');
 
     if (uploadPDF.val().length == 0)
         $('small#error-pdf').css('display', 'block');   
-
-    return false;
 }
 
 function keyUpJudulBuku () {
@@ -151,35 +171,35 @@ function keyUpBahasa() {
 function keyUpHargaBuku () {
     if (!regexNumber.test(hargaBuku.val())) {
         $('small#error-harga').css('display', 'block');
-        hargaSetelahDiskon.val('');
+        // hargaSetelahDiskon.val('');
     }
     else {
         $('small#error-harga').css('display', 'none');
 
-        if (regexNumber.test(diskonBuku.val()) && diskonBuku.val() <= 100) {
-            let totalHarga = hargaBuku.val() - (hargaBuku.val() * diskonBuku.val() / 100);
-            hargaSetelahDiskon.val(totalHarga);
-        }
+        // if (regexNumber.test(diskonBuku.val()) && diskonBuku.val() <= 100) {
+        //     let totalHarga = hargaBuku.val() - (hargaBuku.val() * diskonBuku.val() / 100);
+        //     hargaSetelahDiskon.val(totalHarga);
+        // }
     }
 }
 
-function keyUpDiskonBuku () {
-    if (!regexNumber.test(diskonBuku.val()) || diskonBuku.val() > 100) {
-        $('small#error-diskon').css('display', 'block');
-        hargaSetelahDiskon.val('');
-    }
-    else {
-        $('small#error-diskon').css('display', 'none');
+// function keyUpDiskonBuku () {
+//     if (!regexNumber.test(diskonBuku.val()) || diskonBuku.val() > 100) {
+//         $('small#error-diskon').css('display', 'block');
+//         hargaSetelahDiskon.val('');
+//     }
+//     else {
+//         $('small#error-diskon').css('display', 'none');
 
-        if (regexNumber.test(hargaBuku.val())) {
-            let totalHarga = hargaBuku.val() - (hargaBuku.val() * diskonBuku.val() / 100);
-            hargaSetelahDiskon.val(totalHarga);
-        }
-    }
-}
+//         if (regexNumber.test(hargaBuku.val())) {
+//             let totalHarga = hargaBuku.val() - (hargaBuku.val() * diskonBuku.val() / 100);
+//             hargaSetelahDiskon.val(totalHarga);
+//         }
+//     }
+// }
 
 function keyUpDeskripsiBuku () {
-    if (deskripsiBuku.val().length < 24)
+    if (deskripsiBuku.val().length < 36)
         $('small#error-deskripsi').css('display', 'block');
     else
         $('small#error-deskripsi').css('display', 'none');
@@ -198,5 +218,7 @@ uploadPDF.focusout(() => {
 
 
 // document ready
-borderTab();
-appendTahunTerbit();
+$(document).ready(() => {
+    borderTab();
+    appendTahunTerbit();
+});

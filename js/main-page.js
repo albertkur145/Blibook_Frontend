@@ -1098,8 +1098,8 @@ function generateRupiah(angka) {
 }
 
 
-// harga dibawah 100K
-function jsonPromoMurah(value) {
+// tambah buku tertentu (salah satunya : buku dibawah 100K)
+function tambahBukuTertentu(value) {
 
     // copy data, supaya yang asli tidak berubah waktu dimanipulasi
     textJudul.push(value.productName);
@@ -1148,7 +1148,7 @@ function getAllPromote() {
             
             // append mulai dari index 12 (karena index 0-11 sudah tertampil)
             for (let i = 12; i < buku.length; i++) {
-                jsonPromoMurah(buku[i]);
+                tambahBukuTertentu(buku[i]);
             }
 
             // setelah berhasil, hapus loading
@@ -1175,7 +1175,7 @@ function getAllBuku(response) {
     response.forEach(value => {
 
         if (value.productPrice < 100000 && iPromoMurah <= 12) {
-            jsonPromoMurah(value);
+            tambahBukuTertentu(value);
             iPromoMurah++;
         }
 

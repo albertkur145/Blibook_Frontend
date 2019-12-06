@@ -141,9 +141,9 @@
 
     #promo-murah .header hr {
         display: block;
-        top: -0.25rem;
+        top: -0.125rem;
+        width: 50%;
         right: 0;
-        width: 12%;
     }
 
 
@@ -234,8 +234,8 @@
 
 
     #promo-murah .header hr {
-        top: -0.125rem;
-        width: 40%;
+        top: 0rem;
+        width: 66%;
     }
 
 
@@ -325,8 +325,8 @@
 
 
     #promo-murah .header hr {
-        top: 0.0625rem;
-        width: 50%;
+        top: 0.1875rem;
+        width: 72%;
     }
 
 
@@ -417,7 +417,8 @@
 
 
     #promo-murah .header hr {
-        width: 62%;
+        top: 0.25rem;
+        width: 78%;
     }
 
 

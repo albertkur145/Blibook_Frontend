@@ -73,8 +73,6 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
-                        <form action="" method="post">
-
                             <!-- judul buku -->
                             <div class="form-row">
                                 <div class="form-group col-12">
@@ -351,30 +349,30 @@
                             <!-- harga -->
 
                             <!-- diskon -->
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-12">
                                     <label for="diskon">Diskon (dalam persen) <span>*</span></label>
                                     <input type="number" id="diskon" class="form-control" autocomplete="off"
                                     onkeyup="keyUpDiskonBuku()">
                                     <small id="error-diskon" class="form-text text-muted">Diskon tidak valid (0-100).</small>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- diskon -->
 
                             <!-- harga setelah diskon -->
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-12">
                                     <label for="harga-diskon">Harga setelah diskon</label>
                                     <input type="number" id="harga-diskon" class="form-control" disabled>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- harga setelah diskon -->
 
                             <!-- deskripsi buku -->
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi buku <span>*</span></label>
                                 <textarea class="form-control" id="deskripsi" rows="5" onkeydown="keyUpDeskripsiBuku()"></textarea>
-                                <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 24 karakter.</small>
+                                <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 36 karakter.</small>
                             </div>
                             <!-- deskripsi buku -->
 
@@ -382,7 +380,7 @@
                             <div class="form-group">
                                 <label for="gambar">Upload Cover Buku <span>*</span></label>
                                 <input type="file" class="form-control-file" id="gambar" accept="image/*">
-                                <small id="error-gambar" class="form-text text-muted">Extension gambar tidak valid (jpg/jpeg/png/bmp).</small>
+                                <small id="error-gambar" class="form-text text-muted">Extension gambar tidak valid (jpg/jpeg/png).</small>
                                 <small id="error-size-gambar" class="form-text text-muted">Ukuran gambar (max: 2MB)</small>
                             </div>
                             <!-- upload gambar -->
@@ -398,8 +396,6 @@
                             <!-- upload buku -->
 
                             <button type="submit" class="btn-simpan" onclick="return validationForm()">Jual Buku</button>
-
-                        </form>
                         <!-- form jual buku -->
 
                     </div>
@@ -427,9 +423,9 @@
     <script src="../js/templateHeader.js"></script>
     <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
     <script src="../js/jualBuku-page.js"></script>
-    <script src="../js/footer.js"></script>
 </body>
 
 </html>
