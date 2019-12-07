@@ -34,15 +34,15 @@ const header = `
                             <div class="arrow text-right"><span></span></div>
 
                             <div class="list-opt">
-                                <a href="">Buku Indonesia</a>
-                                <a href="">Pendidikan</a>
-                                <a href="">Teknologi</a>
-                                <a href="">Kartun</a>
-                                <a href="">Musik</a>
-                                <a href="">Horror</a>
-                                <a href="">Novel</a>
-                                <a href="">Bisnis</a>
-                                <a href="">Kesehatan</a>
+                                <a href="search-page.html" onclick="sendKategori('Indonesia')">Buku Indonesia</a>
+                                <a href="search-page.html" onclick="sendKategori('Pendidikan')">Pendidikan</a>
+                                <a href="search-page.html" onclick="sendKategori('Teknologi')">Teknologi</a>
+                                <a href="search-page.html" onclick="sendKategori('Kartun')">Kartun</a>
+                                <a href="search-page.html" onclick="sendKategori('Musik')">Musik</a>
+                                <a href="search-page.html" onclick="sendKategori('Horror')">Horror</a>
+                                <a href="search-page.html" onclick="sendKategori('Novel')">Novel</a>
+                                <a href="search-page.html" onclick="sendKategori('Bisnis')">Bisnis</a>
+                                <a href="search-page.html" onclick="sendKategori('Kesehatan')">Kesehatan</a>
                             </div>
                         </div>
                         <!-- kategori -->

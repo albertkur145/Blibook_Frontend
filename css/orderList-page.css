@@ -1,0 +1,748 @@
+
+
+/* berlaku untuk width window < 320px */
+
+
+    /* content */
+    #content {
+        margin: 2rem 0;
+        font-family: 'Roboto';
+    }
+
+
+    #content .left h2, 
+    #content .right h2 {
+        font-size: 1.0625rem;
+        font-weight: 400;
+        color: #444;
+    }
+
+
+    #content .left .biodata {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem 0rem;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+        color: #333;
+    }
+
+
+    #content .left .biodata .key p.title {
+        display: none;
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 0.8125rem;
+        font-weight: 300;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .left .pesanan {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 100%;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        padding-top: 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #333;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+        margin-top: -0.5rem;
+        font-weight: 400;
+        color: #454545;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.875rem;
+        margin-top: -0.5rem;
+        font-weight: 400;
+        color: #666;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        color: #1A9980;
+        font-weight: 500;
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        color: #DD4200;
+        border: 0.0625rem solid #DD4200;
+        margin-left: 0.25rem;
+        padding: 0.1875rem 0.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        text-decoration: line-through;
+        font-size: 0.8125rem;
+        margin-top: -0.5rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #444;
+        margin-bottom: 0;
+    }
+
+
+    #content .right {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .right .rincian-bayar {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+    }
+
+
+    #content .right .rincian-bayar p.txt-bayar {
+        font-size: 0.625rem;
+        color: #444;
+    }
+
+
+    #content .right .rincian-bayar .key p.title-pembayaran,
+    #content .right .rincian-bayar .values p.value-pembayaran {
+        font-size: 0.675rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+
+    #content hr {
+        border: 0.03125rem solid rgba(0, 0, 0, 0.2);
+    }
+
+
+    #content .right .konfirmasi {
+        margin-top: 0.5rem;
+        padding: 0.75rem 1rem 0;
+        box-shadow: 0rem 0rem 0.3125rem rgba(0, 0, 0, 0.2);
+    }
+
+
+    #content .right .konfirmasi .message p {
+        font-size: 0.625rem;
+        color: #7B7B7B;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button {
+        font-size: 0.5625rem;
+        width: 100%;
+        height: 60%;
+        border: none;
+        background-color: #FF8A00;
+        color: #FFF;
+        border-radius: 0.25rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: background-color .2s ease-in-out;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button:hover {
+        background-color: #FF9416;
+    }
+    /* content */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* content */
+    #content {
+        margin: 2rem 0;
+    }
+
+
+    #content .left h2, #content .right h2 {
+        font-size: 1rem;
+    }
+
+
+    #content .left .biodata {
+        padding: 0.75rem 0.75rem 0rem;
+    }
+
+
+    #content .left .biodata .key p.title {
+        display: block;
+        font-size: 0.8125rem;
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2rem;
+    }
+
+
+    #content .left .pesanan {
+        padding: 0.75rem;
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 5rem;
+        height: 7.75rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        padding-top: 0;
+        font-size: 1rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        padding: 0.1875rem 0.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        font-size: 0.8125rem;
+        margin-top: -0.5rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right {
+        margin-top: 2rem;
+    }
+
+
+    #content .right .rincian-bayar {
+        margin-top: 1rem;
+        padding: 0.75rem;
+    }
+
+
+    #content .right .rincian-bayar p.txt-bayar {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .rincian-bayar .key p.title-pembayaran,
+    #content .right .rincian-bayar .values p.value-pembayaran {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .right .konfirmasi {
+        margin-top: 0.75rem;
+        padding: 0.75rem 0.75rem 0;
+    }
+
+
+    #content .right .konfirmasi .message p {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button {
+        font-size: 0.8125rem;
+        width: 100%;
+        height: 65%;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* content */
+    #content {
+        margin: 2.5rem 0;
+    }
+
+
+    #content .left h2, #content .right h2 {
+        font-size: 1.375rem;
+    }
+
+
+    #content .left .biodata {
+        margin-top: 0.875rem;
+        padding: 0.875rem 1.5rem 0.125rem;
+    }
+
+
+    #content .left .biodata .key p.title {
+        font-size: 1rem;
+        padding: 0.078125rem 0;         
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 1.125rem;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .left .pesanan {
+        margin-top: 0.875rem;
+        padding: 0.875rem 1.5rem;
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 7.5rem;
+        height: 11.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        font-size: 1.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 1rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        font-size: 1rem;        
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        margin-left: 0.5rem;
+        padding: 0.25rem 0.3125rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        font-size: 0.875rem;
+        margin-top: -0.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        margin-top: 1.5rem;
+        font-size: 0.9375rem;
+    }
+
+
+    #content .right {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .right .rincian-bayar {
+        margin-top: 0.875rem;
+        padding: 0.875rem 1.5rem;        
+    }
+
+
+    #content .right .rincian-bayar p.txt-bayar {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .right .rincian-bayar .key p.title-pembayaran,
+    #content .right .rincian-bayar .values p.value-pembayaran {
+        font-size: 1rem;
+    }
+
+
+    #content .right .konfirmasi {
+        margin-top: 1rem;
+        padding: 0.875rem 1.5rem 0.125rem;
+    }
+
+
+    #content .right .konfirmasi .message p {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button {
+        font-size: 0.875rem;
+        width: 80%;
+        height: 70%;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* content */
+    #content {
+        margin: 3rem 0;
+    }
+
+
+    #content .left h2, #content .right h2 {
+        font-size: 1.25rem;
+    }
+
+
+    #content .left .biodata {
+        margin-top: 0.75rem;
+        padding: 0.75rem 1.25rem 0rem;
+    }
+
+
+    #content .left .biodata .key p.title {
+        font-size: 0.8125rem;
+        padding: 0.0859375rem 0;
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2.25rem;
+    }
+
+
+    #content .left .pesanan {
+        margin-top: 0.75rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 6.5rem;
+        height: 9.625rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        font-size: 1.0625rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        padding: 0.1875rem 0.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        font-size: 0.75rem;
+        margin-top: -0.5rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        margin-top: 1rem;
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right {
+        margin-top: 0;
+    }
+
+
+    #content .right .rincian-bayar {
+        margin-top: 0.75rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+
+    #content .right .rincian-bayar p.txt-bayar {
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .rincian-bayar .key p.title-pembayaran,
+    #content .right .rincian-bayar .values p.value-pembayaran {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .konfirmasi {
+        margin-top: 0.875rem;
+        padding: 0.75rem 1.25rem 0rem;
+    }
+
+
+    #content .right .konfirmasi .message p {
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button {
+        font-size: 0.6875rem;
+        width: 100%;
+        height: 50%;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+    
+    /* content */
+    #content {
+        margin: 3.5rem 0;
+    }
+
+
+    #content .left, #content .right {
+        padding: 0.5rem 1.5rem;
+    }
+
+
+    #content .left h2, #content .right h2 {
+        font-size: 1.375rem;
+    }
+
+
+    #content .left .biodata {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem 0.25rem;
+    }
+
+
+    #content .left .biodata .key p.title {
+        font-size: 1rem;
+        padding: 0.078125rem 0;
+    }
+
+
+    #content .left .biodata .values p.value {
+        font-size: 1.125rem;
+    }
+
+
+    #content .left .txt-pesanan {
+        margin-top: 2.5rem;
+    }
+
+
+    #content .left .pesanan {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+
+    #content .left .pesanan .img-buku img {
+        width: 7.1875rem;
+        height: 10.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.judul {
+        font-size: 1.25rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.penulis {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.bahasa {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.harga span {
+        margin-left: 0.5rem;
+        padding: 0.25rem 0.3125rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.diskon {
+        font-size: 0.9375rem;
+        margin-top: -0.625rem;
+    }
+
+
+    #content .left .pesanan .desk-buku p.jumlah {
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rincian-bayar {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+
+    #content .right .rincian-bayar p.txt-bayar {
+        font-size: 0.9375rem;
+    }
+
+
+    #content .right .rincian-bayar .key p.title-pembayaran,
+    #content .right .rincian-bayar .values p.value-pembayaran {
+        font-size: 1.0625rem;
+    }
+
+
+    #content .right .konfirmasi {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem 0.25rem;
+    }
+
+
+    #content .right .konfirmasi .message p {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .konfirmasi .btn-konfirmasi button {
+        font-size: 0.875rem;
+        width: 100%;
+        height: 65%;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window >= 960px */
+

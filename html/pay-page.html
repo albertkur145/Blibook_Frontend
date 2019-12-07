@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
+    <link rel="stylesheet" href="../css/order-pay.css">
     <link rel="stylesheet" href="../css/pay-page.css">
 
     <title>Pembayaran | Blibuku.com</title>
 </head>
 
 <body>
-    
+
     <!-- background body -->
     <div class="backgroundAll"></div>
     <!-- background body -->
@@ -33,9 +34,9 @@
                 <i class="fas fa-book-open"></i> blibuku.com
             </a>
 
-            <h2 class="judul">Konfirmasi Pesanan</h2>
+            <h2 class="judul">Pembayaran</h2>
 
-        </div>  
+        </div>
     </div>
     <!-- akhir header -->
 
@@ -43,50 +44,90 @@
     <!-- content -->
     <div id="content">
         <div class="container">
-
             <div class="row">
 
                 <!-- left -->
                 <div class="col-7 left">
+                    
+                    <!-- metode pembayaran -->
+                    <div class="metode-pembayaran bg-white">
+                        
+                        <h2 class="judul">Pilih Metode Pembayaran</h2>
 
-                    <!-- judul -->
-                    <h2><i class="fas fa-id-card"></i> Data diri</h2>
-                    <!-- judul -->
+                        <!-- list metode -->
+                        <div class="list-metode">
+                            <div class="row">
 
-                    <!-- isi biodata -->
-                    <div class="biodata bg-white">
-                        <div class="row">
+                                <div class="col">
+                                    <div class="mg-top">
+                                        <input id="bca" type="radio" name="metode">
+                                        <label for="bca"><img src="../icons/bca.png"></label>
+                                    </div>
 
-                            <!-- title -->
-                            <div class="col-4 key">
-                                <p class="title">Nama</p>
-                                <p class="title">Email</p>
-                                <p class="title">Telp</p>
+                                    <div class="mg-top">
+                                        <input id="bni" type="radio" name="metode">
+                                        <label for="bni"><img src="../icons/bni.png"></label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="mandiri" type="radio" name="metode">
+                                        <label for="mandiri"><img src="../icons/mandiri.png"></label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="bri" type="radio" name="metode">
+                                        <label for="bri"><img src="../icons/bri.png"></label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="btpn" type="radio" name="metode">
+                                        <label for="btpn"><img src="../icons/btpn.png"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="mg-top">
+                                        <input id="kredit" type="radio" name="metode">
+                                        <label for="kredit">Kartu Kredit</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="debit" type="radio" name="metode">
+                                        <label for="debit">Kartu Debit</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="cod" type="radio" name="metode" checked>
+                                        <label for="cod">Bayar Di Tempat (COD)</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="e-banking" type="radio" name="metode">
+                                        <label for="e-banking">Internet Banking</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="indomaret" type="radio" name="metode">
+                                        <label for="indomaret">Indomaret</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="alfamart" type="radio" name="metode">
+                                        <label for="alfamart">Alfamart</label>
+                                    </div>
+
+                                    <div class="mg-top">
+                                        <input id="e-money" type="radio" name="metode">
+                                        <label for="e-money">Uang Elektronik</label>
+                                    </div>
+                                </div>
+
                             </div>
-                            <!-- title -->
-
-                            <!-- value -->
-                            <div class="col-8 values">
-                                <!-- manipulate from js api -->
-                            </div>
-                            <!-- value -->
-
                         </div>
-                    </div>
-                    <!-- isi biodata -->
-
-                    <!-- judul -->
-                    <h2 class="txt-pesanan"><i class="fas fa-cart-plus"></i> Pesanan</h2>
-                    <!-- judul -->
-
-                    <!-- pesanan -->
-                    <div class="pesanan bg-white">
-
-                        <hr>
-                        <!-- append from js get api -->
+                        <!-- list metode -->
 
                     </div>
-                    <!-- pesanan -->
+                    <!-- metode pembayaran -->
 
                 </div>
                 <!-- left -->
@@ -94,53 +135,13 @@
                 <!-- right -->
                 <div class="col-5 right">
 
-                    <!-- judul -->
-                    <h2><i class="fas fa-cash-register"></i> Rincian Pembayaran</h2>
-                    <!-- judul -->
+                    <!-- ringkasan pemesanan -->
+                    <div class="ringkasan-pemesanan bg-white">
 
-                    <!-- rincian pembayaran -->
-                    <div class="rincian-bayar bg-white">
-                        <div class="row">
+                        <h2 class="judul">Ringkasan Pemesanan</h2>
 
-                            <!-- title -->
-                            <div class="col-8 key">
-                                <p class="txt-bayar">Sub Total Pembayaran</p>
-                                <p class="txt-bayar">Jumlah Beli</p>
-                                <p class="txt-bayar">Pajak (10%)</p>
-                                <hr>
-                                <p class="title-pembayaran">Total Pembayaran</p>
-                            </div>
-                            <!-- title -->
-                            
-                            <!-- value -->
-                            <div class="col-4 values text-right">
-                                <!-- manipulate from js api -->
-                            </div>
-                            <!-- value -->
-
-                        </div>
                     </div>
-                    <!-- rincian pembayaran -->
-
-                    <!-- konfirmasi -->
-                    <div class="konfirmasi bg-white">
-                        <div class="row">
-
-                            <!-- message -->
-                            <div class="col-7 message">
-                                <p>Cek kembali pesanan sebelum melakukan konfirmasi.</p>
-                            </div>
-                            <!-- message -->
-
-                            <!-- button konfirmasi -->
-                            <div class="col-5 btn-konfirmasi text-right">
-                                <a href="main-page.html"><button>Konfirmasi</button></a>
-                            </div>
-                            <!-- button konfirmasi -->
-
-                        </div>
-                    </div>
-                    <!-- konfirmasi -->
+                    <!-- ringkasan pemesanan -->
 
                 </div>
                 <!-- right -->
@@ -149,6 +150,7 @@
         </div>
     </div>
     <!-- akhir content -->
+
 
 
     <!-- footer -->
@@ -162,9 +164,6 @@
         </div>
     </div>
     <!-- akhir footer -->
-
-
-
 
 
 
