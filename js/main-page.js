@@ -1131,7 +1131,7 @@ function getAllPromote() {
     let buku = [];
 
     // ubah tanda panah bawah menjadi loading
-    $('.lihat-semua span').html(`<img src="../gif/loading.jpg">`);
+    $('.lihat-semua span').html(`<img src="../gif/flip.gif">`);
 
     $.ajax({
         url: "../json/buku.json",

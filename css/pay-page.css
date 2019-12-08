@@ -5,22 +5,371 @@
 
     /* content */
     #content {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         font-family: 'Roboto';
     }
 
 
     #content .left .metode-pembayaran,
     #content .right .ringkasan-pemesanan {
-        margin-top: 1rem;
         padding: 0.75rem 1rem;
         border: 0.0625rem solid #CCC;
         color: #333;
+    }
+
+
+    #content .right .ringkasan-pemesanan {
+        margin-top: 0.625rem;
+    }
+
+
+    #content .left .metode-pembayaran h2.judul,
+    #content .right .ringkasan-pemesanan h2.judul {
+        font-size: 0.875rem;
+        color: #333;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode {
+        padding: 0 0.625rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode div.mg-top {
+        margin-top: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode input {
+        margin-right: 0.625rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode label {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: #333;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode img {
+        width: 4.25rem;
+        height: 2.125rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian {
+        margin-top: 1.25rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian p.txt-bayar {
+        font-size: 0.6875rem;
+        color: #444;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian .key p.title-pembayaran,
+    #content .right .ringkasan-pemesanan .rincian .values p.value-pembayaran {
+        font-size: 0.75rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar {
+        border-radius: 0.5rem;
+        border: 0;
+        color: #FFF;
+        font-weight: 500;
+        background-color: #FF8A00;
+        width: 100%;
+        transition: background-color .2s ease-in-out;
+        padding: 0.5rem 0;
+        font-size: 0.6875rem;
+        margin-top: 0.625rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar:hover {
+        background-color: #FF9416;
     }
     /* content */
 
 
 /* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* content */
+    #content {
+        margin: 2rem 0;
+    }
+
+
+    #content .left .metode-pembayaran,
+    #content .right .ringkasan-pemesanan {
+        padding: 0.75rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan {
+        margin-top: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran h2.judul,
+    #content .right .ringkasan-pemesanan h2.judul {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode {
+        padding: 0 0.625rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode div.mg-top {
+        margin-top: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode input {
+        margin-right: 0.625rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode label {
+        font-size: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode img {
+        width: 4rem;
+        height: 2rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian {
+        margin-top: 1rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian p.txt-bayar {
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian .key p.title-pembayaran,
+    #content .right .ringkasan-pemesanan .rincian .values p.value-pembayaran {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar {
+        padding: 0.625rem 0;
+        font-size: 0.8125rem;
+        margin-top: 0.625rem;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* content */
+    #content {
+        margin: 2.5rem 0;
+    }
+
+
+    #content .left .metode-pembayaran,
+    #content .right .ringkasan-pemesanan {
+        padding: 1rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan {
+        margin-top: 1rem;
+    }
+
+
+    #content .left .metode-pembayaran h2.judul,
+    #content .right .ringkasan-pemesanan h2.judul {
+        font-size: 1rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode {
+        padding: 0 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode div.mg-top {
+        margin-top: 1rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode input {
+        margin-right: 0.5rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode label {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode img {
+        width: 4.5rem;
+        height: 2.25rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian {
+        margin-top: 1.25rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian p.txt-bayar {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian .key p.title-pembayaran,
+    #content .right .ringkasan-pemesanan .rincian .values p.value-pembayaran {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* content */
+    #content {
+        margin: 3rem 0;
+    }
+
+
+    #content .left .metode-pembayaran{
+        padding: 0.75rem 1.25rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan {
+        margin-top: 0;
+        padding: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran h2.judul,
+    #content .right .ringkasan-pemesanan h2.judul {
+        font-size: 1.0625rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode {
+        padding: 0 0.875rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode div.mg-top {
+        margin-top: 1.25rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode input {
+        margin-right: 0.75rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode label {
+        font-size: 0.875rem;
+    }
+
+
+    #content .left .metode-pembayaran .list-metode img {
+        width: 5rem;
+        height: 2.5rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian {
+        margin-top: 1.5rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian p.txt-bayar {
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar {
+        margin-top: 0.25rem;
+    }
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
 
 
 
@@ -48,6 +397,11 @@
     }
 
 
+    #content .right .ringkasan-pemesanan {
+        padding: 1rem;
+    }
+
+
     #content .left .metode-pembayaran h2.judul,
     #content .right .ringkasan-pemesanan h2.judul {
         font-size: 1.25rem;
@@ -71,13 +425,35 @@
 
     #content .left .metode-pembayaran .list-metode label {
         font-size: 1.0625rem;
-        font-weight: 500;
     }
 
 
     #content .left .metode-pembayaran .list-metode img {
         width: 6rem;
         height: 3rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian {
+        margin-top: 1.75rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .rincian p.txt-bayar {
+        font-size: 0.9375rem;
+    }
+
+    
+    #content .right .ringkasan-pemesanan .rincian .key p.title-pembayaran,
+    #content .right .ringkasan-pemesanan .rincian .values p.value-pembayaran {
+        font-size: 1.0625rem;
+    }
+
+
+    #content .right .ringkasan-pemesanan .btn-bayar {
+        padding: 0.625rem 0;
+        font-size: 1rem;
+        margin-top: 0.5rem;
     }
     /* content */
 

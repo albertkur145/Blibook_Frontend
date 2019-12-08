@@ -58,7 +58,7 @@
                         <div class="list-metode">
                             <div class="row">
 
-                                <div class="col">
+                                <div class="col-6">
                                     <div class="mg-top">
                                         <input id="bca" type="radio" name="metode">
                                         <label for="bca"><img src="../icons/bca.png"></label>
@@ -75,17 +75,12 @@
                                     </div>
 
                                     <div class="mg-top">
-                                        <input id="bri" type="radio" name="metode">
-                                        <label for="bri"><img src="../icons/bri.png"></label>
-                                    </div>
-
-                                    <div class="mg-top">
                                         <input id="btpn" type="radio" name="metode">
                                         <label for="btpn"><img src="../icons/btpn.png"></label>
                                     </div>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-6">
                                     <div class="mg-top">
                                         <input id="kredit" type="radio" name="metode">
                                         <label for="kredit">Kartu Kredit</label>
@@ -94,11 +89,6 @@
                                     <div class="mg-top">
                                         <input id="debit" type="radio" name="metode">
                                         <label for="debit">Kartu Debit</label>
-                                    </div>
-
-                                    <div class="mg-top">
-                                        <input id="cod" type="radio" name="metode" checked>
-                                        <label for="cod">Bayar Di Tempat (COD)</label>
                                     </div>
 
                                     <div class="mg-top">
@@ -114,11 +104,6 @@
                                     <div class="mg-top">
                                         <input id="alfamart" type="radio" name="metode">
                                         <label for="alfamart">Alfamart</label>
-                                    </div>
-
-                                    <div class="mg-top">
-                                        <input id="e-money" type="radio" name="metode">
-                                        <label for="e-money">Uang Elektronik</label>
                                     </div>
                                 </div>
 
@@ -139,7 +124,34 @@
                     <div class="ringkasan-pemesanan bg-white">
 
                         <h2 class="judul">Ringkasan Pemesanan</h2>
+                        
+                        <!-- rincian -->
+                        <div class="row rincian">
 
+                            <!-- title -->
+                            <div class="col-8 key">
+                                <p class="txt-bayar">Sub Total Pembayaran</p>
+                                <p class="txt-bayar">Jumlah Beli</p>
+                                <p class="txt-bayar">Pajak (10%)</p>
+                                <hr>
+                                <p class="title-pembayaran">Total Pembayaran</p>
+                            </div>
+                            <!-- title -->
+
+                            <!-- value -->
+                            <div class="col-4 values text-right">
+                                <p class="txt-bayar">Rp. 120.500</p>
+                                <p class="txt-bayar">2</p>
+                                <p class="txt-bayar">Rp. 12.050</p>
+                                <hr>
+                                <p class="value-pembayaran">Rp. 132.550</p>
+                            </div>
+                            <!-- value -->
+
+                        </div>
+                        <!-- rincian -->
+
+                        <a href="main-page.html"><button class="btn-bayar">Bayar</button></a>
                     </div>
                     <!-- ringkasan pemesanan -->
 
