@@ -143,7 +143,7 @@
                                     <!-- button -->
                                     <div class="col-12">
                                         <a href="bag-page.html"><button class="btn-beli">beli sekarang</button></a>
-                                        <a href="wishlist-page.html"><button class="btn-bag"><i class="fas fa-plus-circle"></i> wishlist</button></a>
+                                        <button class="btn-bag" onclick="addWishlist()"><i class="fas fa-plus-circle"></i> wishlist</button>
                                     </div>
                                     <!-- button -->
 
@@ -216,7 +216,7 @@
                                 <p class="harga"><!-- manipulate from js api --></p>
 
                                 <a href="bag-page.html"><button class="btn-beli">beli sekarang</button></a>
-                                <a href="wishlist-page.html"><button class="btn-bag"><i class="fas fa-plus-circle"></i> wishlist</button></a>
+                                <button class="btn-bag"><i class="fas fa-plus-circle"></i> wishlist</button>
                             </div>
                             <!-- ket buku -->
 
@@ -231,13 +231,33 @@
             <!-- button fixed bottom -->
             <div class="btn-fixed-bottom">
                 <a href="bag-page.html"><button class="beli">beli sekarang</button></a>
-                <a href="wishlist-page.html"><button class="wishlist"><i class="fas fa-heart"></i></button></a>
+                <button class="wishlist" onclick="addWishlist()"><i class="fas fa-heart"></i></button>
             </div>
             <!-- button fixed bottom -->
 
         </div>
     </div>
     <!-- detail product -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
+
+
+    <!-- dialog oke -->
+    <div class="dialog-oke">
+        <div class="pesan">
+            Buku berhasil ditambahkan ke wishlist
+            <div class="text-right">
+                <button class="btn-accept" onclick="hideDialog()">Oke</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog oke -->
+
 
 
     <!-- footer from templating -->

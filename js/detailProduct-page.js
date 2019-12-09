@@ -492,6 +492,41 @@ function responsiveSize() {
 }
 
 
+// add to wishlist
+function addWishlist() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function(response) {
+            console.log('Sukses Post');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke').css('display', 'flex');
+        $('.dialog-oke').css('display', 'flex');
+
+    });
+
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+}
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0) {
