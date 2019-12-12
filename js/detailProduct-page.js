@@ -579,7 +579,7 @@ function getBukuDetail(response) {
 
 // document ready
 $(document).ready(() => {
-    
+
     // get detail buku
     $.ajax({
         url: "../json/buku.json",

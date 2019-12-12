@@ -1,3 +1,5 @@
+
+
 /* khusus desktop window < 320px */
     
 
@@ -8,22 +10,21 @@
         right: 0;
         bottom: 0;
         padding: 1.25rem;
-        background-color: #1F589C;
+        background-color: #0064FF;
         font-family: 'Arial';
-        color: #DDD;
+        color: #EEE;
         text-align: center;
     }
 
 
 
     #footer .col-footer {
-        margin-bottom: 4.375rem;
+        display: none;
     }
 
 
-
-    #footer .col-footer:nth-child(4) {
-        margin-bottom: 0;
+    #footer .mobile-display {
+        display: block;
     }
 
 
@@ -101,6 +102,7 @@
 
     /* footer */
     #footer .col-footer {
+        display: block;
         margin: 1rem 0;
     }
 

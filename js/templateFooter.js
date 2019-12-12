@@ -11,17 +11,17 @@ const footer = `
                     <p><a href="aturan-page.html">Aturan penggunaan</a></p>
                 </div>
 
-                <div class="col-3 col-footer">
+                <div class="col-3 col-footer mobile-display">
                     <h2 class="mb-3">CUSTOMER CARE</h2>
                     <p>Buka 24 jam setiap hari</p>
                     <p><i class="fas fa-tty"></i> 0804 1 871 871</p>
-                    <p><i class="fas fa-envelope"></i> customer.care@blibli.com</p>
+                    <p><i class="fas fa-envelope"></i> customer.care@blibuku.com</p>
                 </div>
 
                 <div class="col-3 col-footer">
                     <h2 class="mb-3">BLIBUKU FAMILY</h2>
-                    <img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"><br>
-                    <img src="../icons/tiketcom.png" width="150px" height="40px">
+                    <a href="https://www.blibli.com" target="_blank"><img src="../icons/bliblicom.png" width="150px" height="50px" class="mb-3"></a><br>
+                    <a href="https://www.tiket.com" target="_blank"><img src="../icons/tiketcom.png" width="150px" height="40px"></a>
                 </div>
 
                 <div class="col-3 col-footer">

@@ -54,7 +54,7 @@
 
 
     .nav-blibuku {
-        background-image: linear-gradient(to bottom, #0066FF, #1D77FF);
+        background-image: linear-gradient(to bottom, #0064FF, #2D7FFF);
     }
 
 
@@ -231,7 +231,7 @@
     /* sub navbar */
     .sub-navbar {
         display: none;
-        background-color: #1D77FF;
+        background-color: #2D7FFF;
         box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
         padding: 0.625rem 0;
     }

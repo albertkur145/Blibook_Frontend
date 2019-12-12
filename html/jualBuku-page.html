@@ -73,6 +73,28 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
+                            <!-- kategori -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="kategori">Kategori <span>*</span></label>
+
+                                    <select id="kategori" class="form-control">
+                                        <option value="">-- PILIH KATEGORI --</option>
+                                        <option value="Pendidikan">Pendidikan</option>
+                                        <option value="Teknologi">Teknologi</option>
+                                        <option value="Kartun">Kartun</option>
+                                        <option value="Musik">Musik</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Novel">Novel</option>
+                                        <option value="Bisnis">Bisnis</option>
+                                        <option value="Kesehatan">Kesehatan</option>
+                                    </select>
+                                    
+                                    <small id="error-kategori" class="form-text text-muted">Kategori harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- kategori -->
+
                             <!-- judul buku -->
                             <div class="form-row">
                                 <div class="form-group col-12">
@@ -395,7 +417,7 @@
                             </div>
                             <!-- upload buku -->
 
-                            <button type="submit" class="btn-simpan" onclick="return validationForm()">Jual Buku</button>
+                            <button class="btn-simpan" onclick="return validationForm()">Jual Buku</button>
                         <!-- form jual buku -->
 
                     </div>

@@ -2,7 +2,7 @@
 
 // append tahun terbit
 function appendTahunTerbit() {
-    for (let i = 1950; i <= 2019; i++) {
+    for (let i = 2019; i >= 1950; i--) {
         $('#content .right .rbody select#tahun').append(`
             <option value="${i}">${i}</option>
         `);
@@ -17,6 +17,7 @@ function borderTab() {
 
 
 // validation form
+const kategori = $('#content .right .rbody #kategori');
 const judulBuku = $('#content .right .rbody #judul');
 const penulisBuku = $('#content .right .rbody #penulis');
 const jumlahHalaman = $('#content .right .rbody #halaman');
@@ -33,64 +34,131 @@ const uploadPDF = $('#content .right .rbody #pdf');
 const extensionsImg = ["jpg", "jpeg", "png"];
 const regexNumber = /^[0-9]+$/;
 
-function validationForm() {
-    if (judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && 
-        $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 &&
-        bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) {
 
-            // validasi buku pdf
-            if (uploadPDF.val().length > 0) {
-                if (uploadPDF[0].files[0].size > 20000000)
-                    $('small#error-size-pdf').css('display', 'block');
-                else {
-                    let pdf = uploadPDF.val().split(".");
-                    let tempPdf = pdf[pdf.length - 1].toLowerCase();
+// validation all input
+function validationAllInput() {
+    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
+        return 1;
 
-                    if (tempPdf == 'pdf') {
+    return 0;
+}
 
-                        // validasi cover buku
-                        if (uploadGambar.val().length > 0) {
 
-                            if (uploadGambar[0].files[0].size > 2000000)
-                                $('small#error-size-pdf').css('display', 'block');
-                            else {
-                                let image = uploadGambar.val().split(".");
-                                let tempImage = image[image.length - 1].toLowerCase();
+// validation PDF
+function validationPDF() {
 
-                                for (let i = 0; i < extensionsImg.length; i++) {
-                                    if (tempImage == extensionsImg[i]) {
+    // cek upload file
+    if (uploadPDF.val().length > 0) {
 
-                                        // setelah semua valid, request api
-                                        let Buku = {
-                                            "judul": judulBuku.val(),
-                                            "penulis": penulisBuku.val(),
-                                            "jumlahHalaman": jumlahHalaman.val(),
-                                            "tahun": $('option:selected', tahunTerbit).val(),
-                                            "negara": $('option:selected', negara).val(),
-                                            "bahasa": bahasa.val(),
-                                            "harga": hargaBuku.val(),
-                                            "deskripsi": deskripsiBuku.val(),
-                                            "cover": image[0].split("\\")[2] + "." + tempImage,
-                                            "pdf": pdf[0].split("\\")[2] + "." + tempPdf
-                                        }
+        // cek maksimal size
+        if (uploadPDF[0].files[0].size > 20000000) {
+            $('small#error-size-pdf').css('display', 'block');
+            return 0;
+        } else {
 
-                                        console.log(Buku);
-                                        // window.location.href = "http://127.0.0.1:8010/html/tokoSaya-page.html";
+            // cek ektension .pdf
+            let pdf = uploadPDF.val().split(".");
+            let tempPdf = pdf[pdf.length - 1].toLowerCase();
 
-                                    }
-                                    
-                                }
+            // ekstension valid
+            if (tempPdf == 'pdf')
+                return 1;
 
-                                $('small#error-gambar').css('display', 'block');
-                            }
+            // ekstension tidak valid
+            $('small#error-pdf').css('display', 'block'); 
+        }
+    }
 
-                        }
-                    } else 
-                        $('small#error-pdf').css('display', 'block');
+    // tidak upload file / ekstension tidak valid
+    return 0;
+}
+
+
+// validation image (jpg, jpeg, png)
+function validationImage() {
+    if (uploadGambar.val().length > 0) {
+
+        // cek maksimal size
+        if (uploadGambar[0].files[0].size > 2000000) {
+            $('small#error-size-gambar').css('display', 'block');
+            return 0;
+        } else {
+
+            // cek ektension image (jpg, jpeg, png)
+            let image = uploadGambar.val().split(".");
+            let tempImage = image[image.length - 1].toLowerCase();
+
+            for (let i = 0; i < extensionsImg.length; i++) {
+                if (tempImage == extensionsImg[i]) {
+                    return 1;                             // ektension valid
                 }
             }
-        }
 
+            // ektension tidak valid
+            $('small#error-gambar').css('display', 'block'); 
+        }
+    }
+
+    // tidak upload file / ektension tidak valid
+    return 0;
+}
+
+
+// validation form
+function validationForm() {
+
+    if (validationAllInput()) { // validasi setiap input/select option
+
+        if (validationImage()) { // validasi cover buku
+
+            if (validationPDF()) { // validasi pdf
+                
+                // setelah semua valid, post buku
+                let Buku = {
+                    "productName": judulBuku.val(),
+                    "productAuthor": penulisBuku.val(),
+                    "productIsbn": null,
+                    "productSku": null,
+                    "productCountry": $('option:selected', negara).val(),
+                    "productPrice": hargaBuku.val(),
+                    "productDescription": deskripsiBuku.val(),
+                    "productLength": jumlahHalaman.val(),
+                    "productReleaseYear": $('option:selected', tahunTerbit).val(),
+                    "productLanguage": bahasa.val(),
+                    "productVariant": null,
+                    "productPhotoLink": null,
+                    "productItemLink": null,
+                }
+
+                // pakai FormData sesuai postman
+                let params = new FormData();
+                params.append('item', uploadPDF[0].files[0]);
+                params.append('photo', uploadGambar[0].files[0]);
+                params.append('product', JSON.stringify(Buku));
+
+                // req api
+                $.ajax({
+                    url: `http://localhost:8025/blibook/api/products?shop=1&category=${$('option:selected', kategori).val()}`,
+                    type: "post",
+                    dataType: "json",
+                    processData: false,    // default kirim object/string, form mengandung file
+                    contentType: false,    // default x-www-form-urlencoded
+
+                    data: params,
+
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+
+                // window.location.href = "http://127.0.0.1:8010/html/tokoSaya-page.html";
+            }
+        }
+    }
+
+
+    if ($('option:selected', kategori).val().length == 0)
+        $('small#error-kategori').css('display', 'block');
 
     if (judulBuku.val().length == 0)
         $('small#error-judul').css('display', 'block');
@@ -125,6 +193,13 @@ function validationForm() {
     if (uploadPDF.val().length == 0)
         $('small#error-pdf').css('display', 'block');   
 }
+
+kategori.focusout(() => {
+    if ($('option:selected', kategori).val().length == 0)
+        $('small#error-kategori').css('display', 'block');
+    else
+        $('small#error-kategori').css('display', 'none');
+});
 
 function keyUpJudulBuku () {
     if (judulBuku.val().length == 0)
