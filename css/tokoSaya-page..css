@@ -65,7 +65,7 @@
         text-decoration: none;
     }
 
-
+    
     #content .right .rbody .penjualan .buku .desk-buku p.judul {
         color: #444;
         font-size: 1.25rem;
@@ -105,31 +105,32 @@
     }
 
     
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus,
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus,
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         display: inline-block;
         text-decoration: underline;
+        cursor: pointer;
         font-size: 0.75rem;
         margin-right: 0.5rem;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus {
         color: #F90000;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         color: #0057FF;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus:hover {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus:hover {
         color: #D30140;
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.edit:hover {
+    #content .right .rbody .penjualan .buku .desk-buku span.edit:hover {
         color: #1D6AFF;
     }
 
@@ -255,8 +256,8 @@
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus,
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus,
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         margin-top: -0.25rem;
         font-size: 0.75rem;
     }
@@ -368,8 +369,8 @@
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus,
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus,
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         font-size: 0.75rem;
         margin-top: -0.25rem;
     }
@@ -483,8 +484,8 @@
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus,
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus,
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         font-size: 0.8125rem;
         margin-top: 0;
     }
@@ -618,8 +619,8 @@
     }
 
 
-    #content .right .rbody .penjualan .buku .desk-buku a.hapus,
-    #content .right .rbody .penjualan .buku .desk-buku a.edit {
+    #content .right .rbody .penjualan .buku .desk-buku span.hapus,
+    #content .right .rbody .penjualan .buku .desk-buku span.edit {
         font-size: 0.875rem;
     }
 

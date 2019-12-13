@@ -67,7 +67,6 @@ function responsiveSize() {
     const left = $('#produk .left');
     const right = $('#produk .right');
     const txtPilih = $('.pilih-semua .text-pilih', left);
-    const hapusSemua = $('.pilih-semua .hapus-semua', left);
     const detailBuku = $('.buku .detail-buku', left);
     const imgBuku = $('.img-buku', detailBuku);
     const deskBuku = $('.desk-buku', detailBuku);
@@ -80,13 +79,6 @@ function responsiveSize() {
             left.removeClass('col-8');
             right.addClass('col-12');
             right.removeClass('col-4');
-        }
-
-        if (txtPilih.hasClass('col-6')) {
-            txtPilih.addClass('col-10');
-            txtPilih.removeClass('col-6');
-
-            hapusSemua.removeClass('col-5');
         }
 
         if (detailBuku.hasClass('col-11')) {
@@ -126,13 +118,6 @@ function responsiveSize() {
             right.removeClass('col-4');
         }
 
-        if (txtPilih.hasClass('col-6')) {
-            txtPilih.addClass('col-10');
-            txtPilih.removeClass('col-6');
-
-            hapusSemua.removeClass('col-5');
-        }
-
         if (detailBuku.hasClass('col-11')) {
             detailBuku.addClass('col-10');
             detailBuku.removeClass('col-11');
@@ -168,13 +153,6 @@ function responsiveSize() {
             left.removeClass('col-8'); 
             right.addClass('col-12');
             right.removeClass('col-4');
-        }
-
-        if (txtPilih.hasClass('col-10')) {
-            txtPilih.addClass('col-6');
-            txtPilih.removeClass('col-10');
-
-            hapusSemua.addClass('col-5');
         }
 
         if (detailBuku.hasClass('col-10')) {
@@ -215,13 +193,6 @@ function responsiveSize() {
             right.removeClass('col-12');
         }
 
-        if (txtPilih.hasClass('col-10')) {
-            txtPilih.addClass('col-6');
-            txtPilih.removeClass('col-10');
-
-            hapusSemua.addClass('col-5');
-        }
-
         if (detailBuku.hasClass('col-10')) {
             detailBuku.addClass('col-11');
             detailBuku.removeClass('col-10');
@@ -260,13 +231,6 @@ function responsiveSize() {
             right.removeClass('col-12');
         }
 
-        if (txtPilih.hasClass('col-10')) {
-            txtPilih.addClass('col-6');
-            txtPilih.removeClass('col-10');
-
-            hapusSemua.addClass('col-5');
-        }
-
         if (detailBuku.hasClass('col-10')) {
             detailBuku.addClass('col-11');
             detailBuku.removeClass('col-10');
@@ -298,11 +262,65 @@ function responsiveSize() {
 }
 
 
-// function hapus semua bag
-function hapusSemua(btn) {
-    $('#produk .isEmpty').css('display', 'block');
-    $('#produk .notEmpty').css('display', 'none');
-    $(btn).attr("data-dismiss", "modal");
+// hapus buku
+function hapusBuku() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // delete data
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            console.log('Sukses Post');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html("Buku berhasil dihapus dari bag");
+        $('.dialog-oke').css('display', 'flex');
+
+    });
+}
+
+
+// add to wishlist
+function addWishlist() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            console.log('Sukses Post');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html("Buku berhasil ditambahkan ke wishlist");
+        $('.dialog-oke').css('display', 'flex');
+
+    });
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
 }
 
 
@@ -371,8 +389,8 @@ function getDataBag(response) {
                                     </div>
 
                                     <div class="col-6 aksi text-right">
-                                        <a href=""><i class="fas fa-heart"></i></a>
-                                        <a href=""><i class="fas fa-trash"></i></a>
+                                        <span onclick="addWishlist()"><i class="fas fa-heart"></i></span>
+                                        <span onclick="hapusBuku()"><i class="fas fa-trash"></i></span>
                                     </div>
                                 </div>
                             </div>

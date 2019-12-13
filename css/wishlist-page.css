@@ -60,15 +60,16 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus {
+    #content .right .rbody .wishlist .desk-buku span.hapus {
         display: inline-block;
         text-decoration: underline;
+        cursor: pointer;
         color: #F90000;
         font-size: 0.6875rem;
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus:hover {
+    #content .right .rbody .wishlist .desk-buku span.hapus:hover {
         color: #D30140;
     }
 
@@ -154,7 +155,7 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus {
+    #content .right .rbody .wishlist .desk-buku span.hapus {
         font-size: 0.6875rem;
     }
 
@@ -230,7 +231,7 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus {
+    #content .right .rbody .wishlist .desk-buku span.hapus {
         font-size: 0.6875rem;
     }
 
@@ -305,7 +306,7 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus {
+    #content .right .rbody .wishlist .desk-buku span.hapus {
         font-size: 0.75rem;
     }
 
@@ -375,7 +376,7 @@
     }
 
 
-    #content .right .rbody .wishlist .desk-buku a.hapus {
+    #content .right .rbody .wishlist .desk-buku span.hapus {
         font-size: 0.875rem;
     }
 

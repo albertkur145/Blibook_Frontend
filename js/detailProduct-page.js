@@ -514,8 +514,6 @@ function addWishlist() {
 
         // tampilkan pesan dialog
         $('.dialog-oke').css('display', 'flex');
-        $('.dialog-oke').css('display', 'flex');
-
     });
 
 }

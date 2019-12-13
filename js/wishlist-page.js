@@ -56,7 +56,7 @@ function responsiveSize() {
         $('img', image).css('width', '100%');
         $('img', image).css('height', '100%');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '0rem');
 
     } else if (width < 305) {
 
@@ -91,7 +91,7 @@ function responsiveSize() {
         $('img', image).css('width', '100%');
         $('img', image).css('height', '100%');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '0rem');
 
     } else if (width < 345) {
 
@@ -126,7 +126,7 @@ function responsiveSize() {
         $('img', image).css('width', '7.5rem');
         $('img', image).css('height', '10.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.375rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.375rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3.375rem');
         
     } else if (width < 385) {
 
@@ -161,7 +161,7 @@ function responsiveSize() {
         $('img', image).css('width', '7.5rem');
         $('img', image).css('height', '10.625rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3rem');
 
     } else if (width < 405) {
 
@@ -196,7 +196,7 @@ function responsiveSize() {
         $('img', image).css('width', '8.125rem');
         $('img', image).css('height', '10.9375rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3rem');
     
     } else if (width < 425) {
 
@@ -231,7 +231,7 @@ function responsiveSize() {
         $('img', image).css('width', '8.125rem');
         $('img', image).css('height', '11rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3rem');
         $('#content .right .rbody .wishlist .desk-buku p.deskripsi').css('display', 'block');
 
     } else if (width < 436) {
@@ -267,7 +267,7 @@ function responsiveSize() {
         $('img', image).css('width', '8.125rem');
         $('img', image).css('height', '11rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.5rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.5rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '2.5rem');
         
     } else if (width < 465) {
 
@@ -302,7 +302,7 @@ function responsiveSize() {
         $('img', image).css('width', '8.125rem');
         $('img', image).css('height', '11.125rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.5rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.5rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '2.5rem');
 
     } else if (width < 520) {
 
@@ -337,7 +337,7 @@ function responsiveSize() {
         $('img', image).css('width', '7.5rem');
         $('img', image).css('height', '10.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.25rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.25rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3.25rem');
 
     } else if (width < 753) {
 
@@ -372,7 +372,7 @@ function responsiveSize() {
         $('img', image).css('width', '7.5rem');
         $('img', image).css('height', '10.6875rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 3.25rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '3.25rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '3.25rem');
         // $('#content .right .rbody .wishlist .desk-buku .deskripsi').css('display', 'none');
 
     } else if (width < 945) {
@@ -408,7 +408,7 @@ function responsiveSize() {
         $('img', image).css('width', '9.375rem');
         $('img', image).css('height', '13.25rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0 0.125rem 2.25rem');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '2.25rem');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '2.25rem');
 
     } else if (width < 1185) {
 
@@ -443,7 +443,7 @@ function responsiveSize() {
         $('img', image).css('width', '10rem');
         $('img', image).css('height', '13.5rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '0');
 
     } else if (width >= 1185) {
 
@@ -478,8 +478,41 @@ function responsiveSize() {
         $('img', image).css('width', '11.25rem');
         $('img', image).css('height', '15.625rem');
         $('#content .right .rbody .wishlist .desk-buku p').css('padding', '0.125rem 0');
-        $('#content .right .rbody .wishlist .desk-buku a.hapus').css('paddingLeft', '0');
+        $('#content .right .rbody .wishlist .desk-buku span.hapus').css('paddingLeft', '0');
     }
+}
+
+
+// hapus buku
+function hapusBuku() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            console.log('Sukses Delete');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke').css('display', 'flex');
+    });
+
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
 }
 
 
@@ -529,7 +562,7 @@ function getWishlistUser(response) {
                     <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><p class="judul">${value.productName}</p></a>
                     <p class="deskripsi">${value.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
-                    <a href="" class="hapus">Hapus</a>
+                    <span class="hapus" onclick="hapusBuku()">Hapus</span>
                 </div>
                 <!-- desk -->
 

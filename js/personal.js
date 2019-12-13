@@ -66,11 +66,8 @@ function responsiveSize() {
 }
 
 
-// document ready
-$(document).ready(() => {
-    responsiveSize();
-});
-
+// ready execute
+responsiveSize();
 $(window).resize(responsiveSize);
 
 

@@ -619,6 +619,45 @@ function responsiveSize() {
 }
 
 
+// direct ke update buku
+function directUpdateBuku() {
+    window.location.href = "../html/updateBuku-page.html";
+}
+
+
+// hapus buku
+function hapusBuku() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            console.log('Sukses Delete');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke').css('display', 'flex');
+    });
+
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+}
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0) {
@@ -670,8 +709,8 @@ function getToko(response) {
                         <a href="detailProduct-page.html" onclick="sendID(this)" data-id="${obj.productId}"><p class="judul">${obj.productName}</p></a>
                         <p class="deskripsi">${obj.productDescription}</p>
                         <p class="harga">Rp. ${harga}</p>
-                        <a href="" class="hapus">Hapus</a>
-                        <a href="updateBuku-page.html" class="edit">Edit</a>
+                        <span class="hapus" onclick="hapusBuku()">Hapus</span>
+                        <span class="edit" onclick="directUpdateBuku()">Edit</span>
                     </div>
                     <!-- desk -->
 

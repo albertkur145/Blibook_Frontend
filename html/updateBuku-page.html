@@ -87,7 +87,27 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
-                        <form action="" method="post">
+                            <!-- kategori -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="kategori">Kategori <span>*</span></label>
+
+                                    <select id="kategori" class="form-control">
+                                        <option value="">-- PILIH KATEGORI --</option>
+                                        <option value="Pendidikan">Pendidikan</option>
+                                        <option value="Teknologi">Teknologi</option>
+                                        <option value="Kartun">Kartun</option>
+                                        <option value="Musik">Musik</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Novel">Novel</option>
+                                        <option value="Bisnis">Bisnis</option>
+                                        <option value="Kesehatan">Kesehatan</option>
+                                    </select>
+
+                                    <small id="error-kategori" class="form-text text-muted">Kategori harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- kategori -->
 
                             <!-- judul buku -->
                             <div class="form-row">
@@ -110,6 +130,17 @@
                                 </div>
                             </div>
                             <!-- penulis -->
+
+                            <!-- ISBN -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="isbn">ISBN <span>*</span></label>
+                                    <input type="number" id="isbn" class="form-control" autocomplete="off"
+                                        onkeyup="keyUpISBN()">
+                                    <small id="error-isbn" class="form-text text-muted">ISBN harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- ISBN -->
 
                             <!-- jumlah halaman -->
                             <div class="form-row">
@@ -367,7 +398,7 @@
                             <!-- harga -->
 
                             <!-- diskon -->
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-12">
                                     <label for="diskon">Diskon (dalam persen) <span>*</span></label>
                                     <input type="number" id="diskon" class="form-control" autocomplete="off"
@@ -375,16 +406,16 @@
                                     <small id="error-diskon" class="form-text text-muted">Diskon tidak valid
                                         (0-100).</small>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- diskon -->
 
                             <!-- harga setelah diskon -->
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-12">
                                     <label for="harga-diskon">Harga setelah diskon</label>
                                     <input type="number" id="harga-diskon" class="form-control" disabled>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- harga setelah diskon -->
 
                             <!-- deskripsi buku -->
@@ -392,7 +423,7 @@
                                 <label for="deskripsi">Deskripsi buku <span>*</span></label>
                                 <textarea class="form-control" id="deskripsi" rows="5"
                                     onkeydown="keyUpDeskripsiBuku()"></textarea>
-                                <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 24
+                                <small id="error-deskripsi" class="form-text text-muted">Panjang deskripsi minimal 36
                                     karakter.</small>
                             </div>
                             <!-- deskripsi buku -->
@@ -419,9 +450,7 @@
                             </div>
                             <!-- upload buku -->
 
-                            <button type="submit" class="btn-simpan" onclick="return validationForm()">Update Buku</button>
-
-                        </form>
+                            <button class="btn-simpan" onclick="return validationForm()">Update Buku</button>
                         <!-- form jual buku -->
 
                     </div>
@@ -449,9 +478,9 @@
     <script src="../js/templateHeader.js"></script>
     <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
     <script src="../js/jualBuku-page.js"></script>
-    <script src="../js/footer.js"></script>
 </body>
 
 </html>

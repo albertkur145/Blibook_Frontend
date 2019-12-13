@@ -83,24 +83,24 @@
 
 
     #detail-product .top .left .ket-buku button.btn-beli {
-        background-color: #FF8717;
+        background-color: #0377FF;
         transition: background-color .2s ease-in-out;
     }
 
 
     #detail-product .top .left .ket-buku button.btn-bag {
-        background-color: #FF2876;
+        background-color: #FF1268;
         transition: background-color .2s ease-in-out;
     }
 
 
     #detail-product .top .left .ket-buku button.btn-beli:hover {
-        background-color: #FF8F28;
+        background-color: #1F86FF;
     }
 
 
     #detail-product .top .left .ket-buku button.btn-bag:hover {
-        background-color: #FF347D;
+        background-color: #FF2574;
     }
 
 
@@ -191,24 +191,24 @@
 
 
     #detail-product .bottom .right button.btn-beli {
-        background-color: #FF8717;
+        background-color: #0377FF;
         transition: background-color .2s ease-in-out;
     }
 
 
     #detail-product .bottom .right button.btn-bag {
-        background-color: #FF2876;
+        background-color: #FF1268;
         transition: background-color .2s ease-in-out;
     }
 
 
     #detail-product .bottom .right button.btn-beli:hover {
-        background-color: #FF8F28;
+        background-color: #1F86FF;
     }
 
 
     #detail-product .bottom .right button.btn-bag:hover {
-        background-color: #FF347D;
+        background-color: #FF2574;
     }
 
 
@@ -234,106 +234,26 @@
     #detail-product .btn-fixed-bottom button.beli {
         width: 77%;
         font-weight: 500;
-        background-color: #FF8717;
+        background-color: #0377FF;
     }
 
 
     #detail-product .btn-fixed-bottom button.wishlist {
         width: 23%;
-        background-color: #FF2876;
+        background-color: #FF1268;
         margin-left: -0.25rem;
     }
 
 
     #detail-product .btn-fixed-bottom button.beli:hover {
-        background-color: #FF8F28;
+        background-color: #1F86FF;
     }
 
 
     #detail-product .btn-fixed-bottom button.bag:hover {
-        background-color: #FF347D;
+        background-color: #FF2574;
     }
     /* detail product */
-
-
-    /* loading */
-    .loading {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 1500;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-
-
-    .loading img {
-        width: 70%;
-    }
-    /* loading */
-
-
-    /* dialog oke */
-    .dialog-oke {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 1500;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-
-    .dialog-oke .pesan {
-        background-color: #FFF;
-        border-radius: 1rem;
-        font-weight: 500;
-        color: #333;
-        font-size: 0.75rem;
-        padding: 0.75rem 1rem;
-        animation: translateDialog 0.5s ease-out;
-    }
-
-
-    .dialog-oke .pesan .btn-accept {
-        border: 0;
-        padding: 0.5rem 0.875rem;
-        border-radius: 0.5rem;
-        color: #FFF;
-        font-weight: 500;
-        font-size: 0.6875rem;
-        margin-top: 0.625rem;
-        background-color: #1B84FF;
-        transition: background-color .2s ease-out;
-    }
-
-
-    .dialog-oke .pesan .btn-accept:hover {
-        background-color: #117EFF;
-    }
-
-
-    @keyframes translateDialog {
-        0% {
-            transform: translateY(-2.5rem);
-            opacity: 0;
-        }
-
-
-        100% {
-            transform: translateY(0rem);
-            opacity: 1;
-        }
-    }
-    /* dialog oke */
 
 
 /* berlaku untuk width window < 320px */
@@ -478,28 +398,6 @@
         width: 19%;
     }
     /* detail product */
-
-
-    /* loading */
-    .loading img {
-        width: 55%;
-    }
-    /* loading */
-
-
-    /* dialog oke */
-    .dialog-oke .pesan {
-        font-size: 0.875rem;
-        padding: 1.0625rem 1.25rem;
-    }
-
-
-    .dialog-oke .pesan .btn-accept {
-        padding: 0.5rem 1.25rem;
-        font-size: 0.8125rem;
-        margin-top: 0.875rem;
-    }
-    /* dialog oke */
 
 
 }
@@ -655,28 +553,6 @@
         width: 16%;
     }
     /* detail product */
-
-
-    /* loading */
-    .loading img {
-        width: 45%;
-    }
-    /* loading */
-
-
-    /* dialog oke */
-    .dialog-oke .pesan {
-        font-size: 1.0625rem;
-        padding: 1.5rem 1.6875rem;
-    }
-
-
-    .dialog-oke .pesan .btn-accept {
-        padding: 0.5rem 1.5rem;
-        font-size: 0.9375rem;
-        margin-top: 0.8125rem;
-    }
-    /* dialog oke */
 
 
 }
@@ -875,28 +751,6 @@
     }
     /* detail product */
 
-
-    /* loading */
-    .loading img {
-        width: 40%;
-    }
-    /* loading */
-
-
-    /* dialog oke */
-    .dialog-oke .pesan {
-        font-size: 1.125rem;
-        padding: 1.5rem 1.75rem;
-    }
-
-
-    .dialog-oke .pesan .btn-accept {
-        padding: 0.5rem 1.75rem;
-        font-size: 1rem;
-        margin-top: 0.875rem;
-    }
-    /* dialog oke */
-
     
 }
 
@@ -1065,28 +919,6 @@
         font-size: 0.6875rem;
     }
     /* detail product */
-
-
-    /* loading */
-    .loading img {
-        width: 35%;
-    }
-    /* loading */
-
-
-    /* dialog oke */
-    .dialog-oke .pesan {
-        font-size: 1.25rem;
-        padding: 1.75rem 2rem;
-    }
-
-
-    .dialog-oke .pesan .btn-accept {
-        padding: 0.75rem 2rem;
-        font-size: 1.0625rem;
-        margin-top: 1rem;
-    }
-    /* dialog oke */
 
 
 }
