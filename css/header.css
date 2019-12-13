@@ -125,25 +125,39 @@
 
 
     .nav-blibuku .user {
-        font-weight: 500;
-        cursor: pointer;
+        display: block;
     }
 
 
-    .nav-blibuku .kategori {
+    .nav-blibuku .admin {
+        display: none;
+    }
+
+
+    .nav-blibuku .user,
+    .nav-blibuku .admin {
+        font-weight: 500;
+    }
+
+
+    .nav-blibuku .kategori,
+    .nav-blibuku .user,
+    .nav-blibuku .admin {
         cursor: pointer;
     }
 
 
     .nav-blibuku .user span,
-    .nav-blibuku .kategori span {
+    .nav-blibuku .kategori span,
+    .nav-blibuku .admin span {
         font-size: 0.8125rem;
         padding-left: 0.125rem;
     }
     
 
     .nav-blibuku .user:hover + .opt-user,
-    .nav-blibuku .kategori:hover + .opt-kategori {
+    .nav-blibuku .kategori:hover + .opt-kategori,
+    .nav-blibuku .admin:hover + .opt-admin {
         display: block;
         z-index: 999;
     }
@@ -155,7 +169,8 @@
 
 
     .nav-blibuku .opt-user,
-    .nav-blibuku .opt-kategori {
+    .nav-blibuku .opt-kategori,
+    .nav-blibuku .opt-admin {
         display: none;
         position: absolute;
         cursor: pointer;
@@ -166,7 +181,8 @@
     }
     
 
-    .nav-blibuku .opt-user {
+    .nav-blibuku .opt-user,
+    .nav-blibuku .opt-admin {
         top: 6.875rem
     }
 
@@ -177,14 +193,16 @@
 
 
     .nav-blibuku .opt-user:hover,
-    .nav-blibuku .opt-kategori:hover {
+    .nav-blibuku .opt-kategori:hover,
+    .nav-blibuku .opt-admin:hover {
         display: block;
         z-index: 999;
     }
 
 
     .nav-blibuku .opt-user .arrow span,
-    .nav-blibuku .opt-kategori .arrow span {
+    .nav-blibuku .opt-kategori .arrow span,
+    .nav-blibuku .opt-admin .arrow span {
         display: inline-block;
         background-color: #FFF;
         border-radius: 0rem 1rem 1rem 1rem;
@@ -196,7 +214,8 @@
 
 
     .nav-blibuku .opt-user .list-opt,
-    .nav-blibuku .opt-kategori .list-opt {
+    .nav-blibuku .opt-kategori .list-opt,
+    .nav-blibuku .opt-admin .list-opt {
         background-color: #FFF;
         border-radius: 0.375rem;
         padding: 0.5rem 0;
@@ -211,7 +230,8 @@
 
 
     .nav-blibuku .opt-user .list-opt a,
-    .nav-blibuku .opt-kategori .list-opt a {
+    .nav-blibuku .opt-kategori .list-opt a,
+    .nav-blibuku .opt-admin .list-opt a {
         text-decoration: none;
         display: block;
         color: #555;
@@ -221,7 +241,8 @@
 
 
     .nav-blibuku .opt-user .list-opt a:hover,
-    .nav-blibuku .opt-kategori .list-opt a:hover {
+    .nav-blibuku .opt-kategori .list-opt a:hover,
+    .nav-blibuku .opt-admin .list-opt a:hover {
         background-color: #F2F2F2;
     }
     /* navbar */
@@ -310,13 +331,15 @@
 
 
     .nav-blibuku .opt-user,
-    .nav-blibuku .opt-kategori {
+    .nav-blibuku .opt-kategori,
+    .nav-blibuku .opt-admin {
         width: 80%;
     }
 
 
     .nav-blibuku .opt-user .list-opt a,
-    .nav-blibuku .opt-kategori .list-opt a {
+    .nav-blibuku .opt-kategori .list-opt a,
+    .nav-blibuku .opt-admin .list-opt a {
         font-size: 0.875rem;
     }
     /* navbar */
@@ -369,13 +392,15 @@
 
 
     .nav-blibuku .opt-user,
-    .nav-blibuku .opt-kategori {
+    .nav-blibuku .opt-kategori,
+    .nav-blibuku .opt-admin {
         width: 47%;
     }
 
 
     .nav-blibuku .opt-user .list-opt a,
-    .nav-blibuku .opt-kategori .list-opt a {
+    .nav-blibuku .opt-kategori .list-opt a,
+    .nav-blibuku .opt-admin .list-opt a {
         font-size: 0.9375rem;
     }
     /* navbar */
@@ -418,13 +443,15 @@
     
 
     .nav-blibuku .opt-user,
-    .nav-blibuku .opt-kategori {
+    .nav-blibuku .opt-kategori,
+    .nav-blibuku .opt-admin {
         width: 35%;
     }
 
 
     .nav-blibuku .opt-user .list-opt a,
-    .nav-blibuku .opt-kategori .list-opt a {
+    .nav-blibuku .opt-kategori .list-opt a,
+    .nav-blibuku .opt-admin .list-opt a {
         font-size: 1rem;
     }
     /* navbar */
@@ -540,23 +567,27 @@
     }
 
 
-    .nav-blibuku .user {
+    .nav-blibuku .user,
+    .nav-blibuku .admin {
         margin-top: 0.203125rem;
     }
 
 
-    .nav-blibuku .user:hover + .opt-user {
+    .nav-blibuku .user:hover + .opt-user,
+    .nav-blibuku .admin:hover + .opt-admin {
         opacity: 1;
     }
 
 
-    .nav-blibuku .user span {
+    .nav-blibuku .user span,
+    .nav-blibuku .admin span {
         font-size: 0.875rem;
         padding-left: 0.25rem;
     }
 
 
-    .nav-blibuku .opt-user {
+    .nav-blibuku .opt-user,
+    .nav-blibuku .opt-admin {
         width: 85%;
         left: 1rem;
         top: 2.375rem;

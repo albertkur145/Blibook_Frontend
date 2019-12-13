@@ -13,6 +13,6 @@ function responsiveSize() {
 }
 
 // document ready
-borderTab();
-// responsiveSize();
-// $(window).resize(responsiveSize);
+$(document).ready(() => {
+    borderTab();
+});

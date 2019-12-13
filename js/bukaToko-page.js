@@ -318,6 +318,9 @@ function changeKota() {
 
 
 // document ready
-borderTab();
-changeKota();
+$(document).ready(() => {
+    borderTab();
+    changeKota();
+});
+
 

@@ -104,5 +104,8 @@ function keyUpKonfirmPassword () {
 
 
 // document ready
-responsiveSize();
+$(document).ready(() => {
+    responsiveSize();
+});
+
 $(window).resize(responsiveSize);

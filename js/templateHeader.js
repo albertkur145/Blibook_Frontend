@@ -141,6 +141,89 @@ const header = `
                         </div>
                         <!-- option / space user -->
 
+
+                        <!-- option / space admin -->
+                        <span class="nav-item nav-link admin" onclick="toggleOption('.opt-admin')"><i class="fas fa-user"></i> Hi, Admin <span><i class="fas fa-chevron-down"></i></span></span>
+                        
+                        <div class="opt-admin">
+                            <div class="arrow text-right"><span></span></div>
+
+                            <div class="list-opt">
+                                <a href="adminProduct-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-user-circle"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Products
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="adminUsers-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Users
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="adminShops-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Shops
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="adminCategories-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-door-open"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Categories
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="adminWishlist-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Wishlist
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="main-page.html">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+
+                                        <div class="col-10">
+                                            Keluar
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- option / space admin -->
+
                     </div>
                 </div>
                 <!-- nav -->
@@ -200,4 +283,3 @@ const header = `
 `
 
 $('#header').html(header);
-

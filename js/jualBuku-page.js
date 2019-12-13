@@ -20,6 +20,7 @@ function borderTab() {
 const kategori = $('#content .right .rbody #kategori');
 const judulBuku = $('#content .right .rbody #judul');
 const penulisBuku = $('#content .right .rbody #penulis');
+const isbn = $('#content .right .rbody #isbn');
 const jumlahHalaman = $('#content .right .rbody #halaman');
 const tahunTerbit = $('#content .right .rbody #tahun');
 const negara = $('#content .right .rbody #negara');
@@ -37,7 +38,7 @@ const regexNumber = /^[0-9]+$/;
 
 // validation all input
 function validationAllInput() {
-    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
+    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(isbn.val()) && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
         return 1;
 
     return 0;
@@ -117,7 +118,7 @@ function validationForm() {
                 let Buku = {
                     "productName": judulBuku.val(),
                     "productAuthor": penulisBuku.val(),
-                    "productIsbn": null,
+                    "productIsbn": isbn.val(),
                     "productSku": null,
                     "productCountry": $('option:selected', negara).val(),
                     "productPrice": hargaBuku.val(),
@@ -213,6 +214,13 @@ function keyUpPenulisBuku () {
         $('small#error-penulis').css('display', 'block');
     else
         $('small#error-penulis').css('display', 'none');
+}
+
+function keyUpISBN() {
+    if (!regexNumber.test(isbn.val()))
+        $('small#error-isbn').css('display', 'block');
+    else
+        $('small#error-isbn').css('display', 'none');
 }
 
 function keyUpJumlahHalaman () {

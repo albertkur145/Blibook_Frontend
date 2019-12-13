@@ -35,6 +35,22 @@ $('.nav-blibuku .opt-user').hover(() => {
     $('.bg-hover').css('zIndex', '-999');
 });
 
+$('.nav-blibuku .admin').hover(() => {
+    $('.bg-hover').css('opacity', '1');
+    $('.bg-hover').css('zIndex', '900');
+}, () => {
+    $('.bg-hover').css('opacity', '0');
+    $('.bg-hover').css('zIndex', '-999');
+});
+
+$('.nav-blibuku .opt-admin').hover(() => {
+    $('.bg-hover').css('opacity', '1');
+    $('.bg-hover').css('zIndex', '900');
+}, () => {
+    $('.bg-hover').css('opacity', '0');
+    $('.bg-hover').css('zIndex', '-999');
+});
+
 $('.nav-blibuku .kategori').hover(() => {
     $('.bg-hover').css('opacity', '1');
     $('.bg-hover').css('zIndex', '900');
@@ -79,6 +95,11 @@ $('body').click(function (e) {
         if ($(e.target).attr('class') !== 'nav-item nav-link kategori') {
             $('.opt-kategori').removeClass('toggle-opt');
             $('.opt-kategori').css('display', 'none');
+        }
+
+        if ($(e.target).attr('class') !== 'nav-item nav-link admin') {
+            $('.opt-admin').removeClass('toggle-opt');
+            $('.opt-admin').css('display', 'none');
         }
     }
 });
