@@ -139,7 +139,7 @@ function validationForm() {
 
                 // req api
                 $.ajax({
-                    url: `http://localhost:8025/blibook/api/products?shop=1&category=${$('option:selected', kategori).val()}`,
+                    url: `${base_url}products?shop=1&category=${$('option:selected', kategori).val()}`,
                     type: "post",
                     dataType: "json",
                     processData: false,    // default kirim object/string, form mengandung file
@@ -166,6 +166,9 @@ function validationForm() {
     
     if (penulisBuku.val().length == 0)
         $('small#error-penulis').css('display', 'block');
+
+    if (isbn.val().length == 0)
+        $('small#error-isbn').css('display', 'block');
 
     if (!regexNumber.test(jumlahHalaman.val()))
         $('small#error-halaman').css('display', 'block');
