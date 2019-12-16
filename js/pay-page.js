@@ -135,6 +135,41 @@ function responsiveSize() {
 }
 
 
+// user pay
+function confirmPay() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: "../json/buku.json",
+        type: "get",
+        dataType: "json",
+
+        success: function (response) {
+            console.log('Sukses Post');
+        }
+    }).then(() => {
+
+        // hilangkan loading
+        $('.loading').css('display', 'none');
+
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html("Sukses! Menunggu konfirmasi penjual");
+        $('.dialog-oke').css('display', 'flex');
+
+    });
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/main-page.html`;
+}
+
+
 // document ready
 $(document).ready(() => {
     responsiveSize();

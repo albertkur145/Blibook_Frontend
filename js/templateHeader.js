@@ -34,15 +34,16 @@ const header = `
                             <div class="arrow text-right"><span></span></div>
 
                             <div class="list-opt">
-                                <a href="search-page.html" onclick="sendKategori('Indonesia')">Buku Indonesia</a>
-                                <a href="search-page.html" onclick="sendKategori('Pendidikan')">Pendidikan</a>
-                                <a href="search-page.html" onclick="sendKategori('Teknologi')">Teknologi</a>
-                                <a href="search-page.html" onclick="sendKategori('Kartun')">Kartun</a>
-                                <a href="search-page.html" onclick="sendKategori('Musik')">Musik</a>
-                                <a href="search-page.html" onclick="sendKategori('Horror')">Horror</a>
-                                <a href="search-page.html" onclick="sendKategori('Novel')">Novel</a>
-                                <a href="search-page.html" onclick="sendKategori('Bisnis')">Bisnis</a>
-                                <a href="search-page.html" onclick="sendKategori('Kesehatan')">Kesehatan</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('All')">Lihat Semua Buku</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Indonesia')">Buku Indonesia</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Pendidikan')">Pendidikan</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Teknologi')">Teknologi</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Kartun')">Kartun</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Musik')">Musik</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Horror')">Horror</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Novel')">Novel</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Bisnis')">Bisnis</a>
+                                <a href="javascript:void(0)" onclick="sendKategori('Kesehatan')">Kesehatan</a>
                             </div>
                         </div>
                         <!-- kategori -->
@@ -245,31 +246,34 @@ const header = `
 
                 <!-- kategori buku -->
                 <ul class="kategori">
-                    <a href="search-page.html" onclick="sendKategori('Indonesia')">
+                    <a href="javascript:void(0)" onclick="sendKategori('All')">
+                        <li>Lihat Semua Buku</li>
+                    </a>
+                    <a href="javascript:void(0)" onclick="sendKategori('Indonesia')">
                         <li>Buku Indonesia</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Pendidikan')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Pendidikan')">
                         <li>Pendidikan</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Teknologi')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Teknologi')">
                         <li>Teknologi</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Kartun')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Kartun')">
                         <li>Kartun</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Musik')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Musik')">
                         <li>Musik</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Horror')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Horror')">
                         <li>Horror</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Novel')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Novel')">
                         <li>Novel</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Bisnis')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Bisnis')">
                         <li>Bisnis</li>
                     </a>
-                    <a href="search-page.html" onclick="sendKategori('Kesehatan')">
+                    <a href="javascript:void(0)" onclick="sendKategori('Kesehatan')">
                         <li>Kesehatan</li>
                     </a>
                 </ul>

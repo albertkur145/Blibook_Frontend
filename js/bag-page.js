@@ -5,6 +5,32 @@ let jumlahBeli = [];
 let totalHarga = 0;    
 
 
+// button beli enable/disable
+function enableButtonBeli(jumlahBeli) {
+    const btnBeli = $('#produk .right .detail-pembelian button.btn-beli');
+
+    if (jumlahBeli > 0) {
+        btnBeli.css('backgroundColor', '#FF8A00');
+        btnBeli.css('cursor', 'pointer');
+
+        btnBeli.hover(() => {
+            btnBeli.css('backgroundColor', '#FF9416');
+        }, () => {
+            btnBeli.css('backgroundColor', '#FF8A00');
+        });
+    } else {
+        btnBeli.css('backgroundColor', '#ACACAC');
+        btnBeli.css('cursor', 'not-allowed');
+
+        btnBeli.hover(() => {
+            btnBeli.css('backgroundColor', '#A8A8A8');
+        }, () => {
+            btnBeli.css('backgroundColor', '#ACACAC');
+        });
+    }
+}
+
+
 // check all (pilih semua)
 function checkAll() {
     let checkboxAll = $(`input[type="checkbox"]`);
@@ -19,7 +45,6 @@ function checkAll() {
                 jumlahBeli.push($(value).attr('data-id'));
                 totalHarga += parseInt($(value).attr('data-harga'));
             }
-                
         });
     } else {
         $.each(checkboxAll, (key, value) => {
@@ -29,11 +54,12 @@ function checkAll() {
         });
     }
 
-
     // manipulasi dom
     let temp = generateRupiah(totalHarga);
     $('#produk .right .detail-pembelian button.btn-beli').html(`Beli (${jumlahBeli.length})`);
     $('#produk .right .detail-pembelian .total-harga').html(`<p>Rp. ${temp}</p>`);
+
+    enableButtonBeli(jumlahBeli.length);
 }
 
 
@@ -52,11 +78,20 @@ function checkOne() {
         }
     });
     
-    
     // manipulasi dom
     let temp = generateRupiah(totalHarga);
     $('#produk .right .detail-pembelian button.btn-beli').html(`Beli (${jumlahBeli.length})`);
-    $('#produk .right .detail-pembelian .total-harga').html(`<p>Rp. ${temp}</p>`);   
+    $('#produk .right .detail-pembelian .total-harga').html(`<p>Rp. ${temp}</p>`);
+
+    enableButtonBeli(jumlahBeli.length);
+}
+
+
+// beli buku
+function beliBuku() {
+    if (jumlahBeli.length > 0) {
+        window.location.href = `${site_url}html/orderList-page.html`;
+    } 
 }
 
 
@@ -66,7 +101,6 @@ function responsiveSize() {
 
     const left = $('#produk .left');
     const right = $('#produk .right');
-    const txtPilih = $('.pilih-semua .text-pilih', left);
     const detailBuku = $('.buku .detail-buku', left);
     const imgBuku = $('.img-buku', detailBuku);
     const deskBuku = $('.desk-buku', detailBuku);

@@ -681,9 +681,12 @@ function tambahBukuTertentu(value) {
 // document ready
 $(document).ready(() => {
     let kategori = localStorage.getItem('kategori');
+    let judulKategori = "";
 
-    // ganti judul kategori
-    $('#promo-murah .header h2').html(kategori);
+    kategori === "All" ? judulKategori = "Semua Buku" :
+    kategori === "Indonesia" ? judulKategori = "Buku Indonesia" : judulKategori = kategori;
+
+    $('#promo-murah .header h2').html(judulKategori);
 
     $.ajax({
         url: "../json/buku.json",
@@ -695,8 +698,12 @@ $(document).ready(() => {
             // ambil data
             response.forEach(value => {
 
+                // jika semua buku
+                if (kategori === "All") 
+                    tambahBukuTertentu(value);
+                
                 // jika buku indonesia
-                if (value.productCountry === kategori)
+                else if (value.productCountry === kategori) 
                     tambahBukuTertentu(value);
 
                 // jika tidak, cari yang sesuai kategori

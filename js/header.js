@@ -124,6 +124,7 @@ function responsiveSize() {
 // saat klik kategori tertentu
 function sendKategori(kategori) {
     localStorage.setItem("kategori", kategori);
+    window.location.href = `${site_url}html/search-page.html`;
 }
 
 
