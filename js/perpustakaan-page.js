@@ -103,7 +103,7 @@ function getLibraryUser(response) {
     response.forEach(value => {
         $('#content .right .rbody .mybooks .row').append(`
             <div class="col-3 buku">
-                <a href="bacaPdf-page.html">
+                <a href="bacaPdf-page.html" target="_blank">
                     <img src="../pictures/${value.productPhotoLink}">
                 </a>
             </div>
