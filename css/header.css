@@ -637,33 +637,31 @@
     .nav-blibuku .nav-item {
         margin-right: 0.625rem;        
         padding: 0.3125rem 1.25rem !important;
-        border-radius: 1.25rem;
+        border-radius: 0.25rem;
     }
 
 
     .nav-blibuku .masuk {
-        background-color: #5F32DC;
-        border: 0.125rem solid #501EDC;
         font-weight: 500;
+        margin-top: 0.25rem;
     }
 
 
     .nav-blibuku .masuk:hover {
-        background-color: #FFF;
-        color: #6F4AD7 !important;
-        text-decoration: none;
+        color: #003261 !important;
     }
 
 
     .nav-blibuku .daftar {
-        border: 0.125rem solid #501EDC;
+        margin-top: 0.125rem;
+        border: 0.125rem solid #005BAE;
+        font-weight: 500;
+
     }
 
 
     .nav-blibuku .daftar:hover {
-        background-color: #5F32DC;
-        color: white !important;
-        text-decoration: none;
+        color: #003261 !important;
     }
 
 

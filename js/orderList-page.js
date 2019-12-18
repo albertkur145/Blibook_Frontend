@@ -315,6 +315,13 @@ function getPayUser(response) {
 // document ready
 $(document).ready(() => {
 
+    let checklist = JSON.parse(localStorage.getItem('bag'));
+
+    if(checklist === null) {
+        window.location.href = `${site_url}html/main-page.html`;
+    }
+    
+
     // get pay
     $.ajax({
         url: "../json/pay.json",

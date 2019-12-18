@@ -64,13 +64,14 @@ function responsiveSize() {
 
 
 // validasi form
-const form = $('#content .right .rbody form');
+const form = $('#content .right .rbody .form');
 const nama = $('#nama', form);
 const email = $('#email', form);
 const tanggal = $('#tanggal', form);
 const bulan = $('#bulan', form);
 const tahun = $('#tahun', form);
 const nomor = $('#nomor', form);
+const gender = $('input:radio[name=gender]');
 const regexHP = /^08[0-9]{8,10}$/;
 
 
@@ -105,8 +106,6 @@ function validationForm() {
         else
             $('small#error-ttl').css('display', 'block');
     }
-        
-
 
     return false;
 }
@@ -140,31 +139,43 @@ tahun.focusout(() => {
 
 // get user detail
 function getUserDetail(response) {
-    let gender = $('#content .right .rbody input[type="radio"]');
+    let ttl = response.userBirthdate.split('-');
 
-    response.forEach(value => {
-        nama.val(value.userName);
-        email.val(value.userEmail);
-        nomor.val(0);
-    });
+    // set value profile
+    nama.val(response.userName);
+    email.val(response.userEmail);
+    tanggal.val(ttl[0]);
+    bulan.val(ttl[1]);
+    tahun.val(ttl[2]);
+    nomor.val(response.userPhone);
+    gender.val([response.userGender]);
 }
 
 
 // document ready
 $(document).ready(() => {
     
+    appendTTL();
+    borderTab();
+    responsiveSize();
+
+    // req api -> utk set value form
     $.ajax({
-        url: "../json/user.json",
+        url: `${base_url}users`,
         type: "get",
         dataType: "json",
+        data: {
+            id: "1"
+        },
         
         success: function(response) {
             getUserDetail(response);
+        },
+
+        error: function (req) {
+            console.log("Error");
         }
-    }).then(() => {
-        appendTTL();
-        borderTab();
-        responsiveSize();
+
     });
     
 });

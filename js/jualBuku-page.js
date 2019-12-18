@@ -16,6 +16,12 @@ function borderTab() {
 }
 
 
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+}
+
+
 // validation form
 const kategori = $('#content .right .rbody #kategori');
 const judulBuku = $('#content .right .rbody #judul');
@@ -114,6 +120,9 @@ function validationForm() {
 
             if (validationPDF()) { // validasi pdf
                 
+                // tampilkan loading
+                $('.loading').css('display', 'flex');
+
                 // setelah semua valid, post buku
                 let Buku = {
                     "productName": judulBuku.val(),
@@ -136,10 +145,12 @@ function validationForm() {
                 params.append('item', uploadPDF[0].files[0]);
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
+                params.append('category', $('option:selected', kategori).val());
+                params.append('shop', '1');
 
                 // req api
                 $.ajax({
-                    url: `${base_url}products?shop=1&category=${$('option:selected', kategori).val()}`,
+                    url: `${base_url}products`,
                     type: "post",
                     dataType: "json",
                     processData: false,    // default kirim object/string, form mengandung file
@@ -147,12 +158,25 @@ function validationForm() {
 
                     data: params,
 
-                    success: function (response) {
-                        console.log(response);
+                    success: function () {
+                        // hilangkan loading
+                        $('.loading').css('display', 'none');
+
+                        // redirect ke toko -> utk lihat buku yang baru di jual
+                        window.location.href = `${site_url}/html/tokoSaya-page.html`;
+                    },
+
+                    error: function() {
+                        // hilangkan loading
+                        $('.loading').css('display', 'none');
+
+                        // tampilkan pesan dialog
+                        $('.dialog-oke .pesan span').html("Koneksi Error! Silahkan coba kembali");
+                        $('.dialog-oke').css('display', 'flex');
                     }
                 });
 
-                // window.location.href = "http://127.0.0.1:8010/html/tokoSaya-page.html";
+                
             }
         }
     }

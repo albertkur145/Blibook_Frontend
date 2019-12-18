@@ -646,6 +646,7 @@ function hapusBuku() {
         $('.loading').css('display', 'none');
 
         // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
         $('.dialog-oke').css('display', 'flex');
     });
 
@@ -684,47 +685,50 @@ function sendID(data) {
 
 
 // get toko user
-function getToko(response) {
+function getShop(response) {
+    const toko = $('#content .right .rbody .biodata-toko');
+    $('p.nama-toko', toko).html(response.shopName);
+    $('p.alamat-toko', toko).html(`${response.shopAddress}, ${response.shopCity}, ${response.shopProvince}`);
+}
+
+
+// get buku yg ada di toko user
+function getBuku(response) {
     response.forEach(value => {
-        $('#content .right .rbody .biodata-toko p.nama-toko').html(`${value.nama}`);
-        $('#content .right .rbody .biodata-toko p.alamat-toko').html(`${value.alamat}, ${value.kota}, ${value.provinsi}`);
-        
-        value.buku.forEach(obj => {
-            textJudul.push(obj.productName);
-            textDeskripsi.push(obj.productDescription);
+        textJudul.push(value.productName);
+        textDeskripsi.push(value.productDescription);
 
-            let harga = generateRupiah(obj.productPrice);
+        let harga = generateRupiah(value.productPrice);
 
-            $('#content .right .rbody .penjualan .buku').append(`
-                <div class="row">
+        $('#content .right .rbody .penjualan .buku').append(`
+            <div class="row">
 
-                    <!-- image -->
-                    <div class="col-3 image-buku">
-                        <a href="detailProduct-page.html" data-id="${obj.productId}" onclick="sendID(this)"><img src="../pictures/${obj.productPhotoLink}" ></a>
-                    </div>
-                    <!-- image -->
-
-                    <!-- desk -->
-                    <div class="col-7 desk-buku">
-                        <a href="detailProduct-page.html" onclick="sendID(this)" data-id="${obj.productId}"><p class="judul">${obj.productName}</p></a>
-                        <p class="deskripsi">${obj.productDescription}</p>
-                        <p class="harga">Rp. ${harga}</p>
-                        <span class="hapus" onclick="hapusBuku()">Hapus</span>
-                        <span class="edit" onclick="directUpdateBuku()">Edit</span>
-                    </div>
-                    <!-- desk -->
-
-                    <!-- button detail -->
-                    <div class="col-2 button-detail">
-                        <a href="detailProduct-page.html" data-id="${obj.productId}" onclick="sendID(this)"><i class="fas fa-eye"></i></a>
-                        <p class="tooltip-text"><span>Lihat Buku</span></p>
-                    </div>
-                    <!-- button detail -->
-
+                <!-- image -->
+                <div class="col-3 image-buku">
+                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><img src="${value.productPhotoLink}"></a>
                 </div>
-                <hr>
-            `)
-        });
+                <!-- image -->
+
+                <!-- desk -->
+                <div class="col-7 desk-buku">
+                    <a href="detailProduct-page.html" onclick="sendID(this)" data-id="${value.productId}"><p class="judul">${value.productName}</p></a>
+                    <p class="deskripsi">${value.productDescription}</p>
+                    <p class="harga">Rp. ${harga}</p>
+                    <span class="hapus" onclick="hapusBuku()">Hapus</span>
+                    <span class="edit" onclick="directUpdateBuku()">Edit</span>
+                </div>
+                <!-- desk -->
+
+                <!-- button detail -->
+                <div class="col-2 button-detail">
+                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><i class="fas fa-eye"></i></a>
+                    <p class="tooltip-text"><span>Lihat Buku</span></p>
+                </div>
+                <!-- button detail -->
+
+            </div>
+            <hr>
+        `);
     });
 }
 
@@ -732,25 +736,73 @@ function getToko(response) {
 // document ready
 $(document).ready(() => {
 
+    borderTab();
+    
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // get toko user
     $.ajax({
-        url: "../json/toko.json",
+        url: `http://192.168.43.138:8025/blibook/api/shops`,
         type: "get",
         dataType: "json",
 
+        data: {
+            id: "1"
+        },
+        
         success: function(response) {
-            getToko(response);
+            getShop(response);
+        },
+
+        error: function() {
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            $('.dialog-oke .pesan span').html('Koneksi Error! Silahkan coba kembali');
+            $('.dialog-oke').css('display', 'flex');
         }
+        
     }).then(() => {
 
-        const buku = $('#content .right .rbody .penjualan .buku');
-        judulBuku = $('.desk-buku p.judul', buku);
-        deskBuku = $('.desk-buku p.deskripsi', buku);
+        // get buku yang dijual di toko user
+        $.ajax({
+            url: `${base_url}products/shop`,
+            type: "get",
+            dataType: "json",
+            data: {
+                shopId: "1"
+            },
 
-    }).then(() => {
-        borderTab();
-        responsiveSize();
+            success: function(response) {
+                if (response.length === 0)
+                    $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
+                else
+                    getBuku(response);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+            },
+
+            error: function() {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html('Koneksi Error! Silahkan coba kembali');
+                $('.dialog-oke').css('display', 'flex');
+            }
+
+        }).then(() => {
+            const buku = $('#content .right .rbody .penjualan .buku');
+            judulBuku = $('.desk-buku p.judul', buku);
+            deskBuku = $('.desk-buku p.deskripsi', buku);
+        }).then(() =>{
+            responsiveSize();
+        });
+
     });
-
     
 });
 

@@ -24,8 +24,6 @@ const header = `
                 <div class="collapse navbar-collapse" id="nav-header">
                     <div class="navbar-nav ml-auto position-relative">
                         <a class="nav-item nav-link bag" href="bag-page.html"><i class="fas fa-shopping-bag"></i> Bag</a>
-                        <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
-                        <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
 
                         <!-- kategori -->
                         <span class="nav-item nav-link kategori" onclick="toggleOption('.opt-kategori')"><i class="fas fa-bars"></i> Kategori <span><i class="fas fa-chevron-down"></i></span></span>
@@ -49,7 +47,7 @@ const header = `
                         <!-- kategori -->
 
                         <!-- option / space user -->
-                        <span class="nav-item nav-link user" onclick="toggleOption('.opt-user')"><i class="fas fa-user"></i> Hi, Albert Kurniawan <span><i class="fas fa-chevron-down"></i></span></span>
+                        <span class="nav-item nav-link user" onclick="toggleOption('.opt-user')"><i class="fas fa-user"></i> Hi, Default <span><i class="fas fa-chevron-down"></i></span></span>
                         
                         <div class="opt-user">
                             <div class="arrow text-right"><span></span></div>
@@ -224,6 +222,9 @@ const header = `
                             </div>
                         </div>
                         <!-- option / space admin -->
+
+                        <a class="nav-item nav-link masuk" href="login-page.html">Masuk</a>
+                        <a class="nav-item nav-link daftar" href="daftar-page.html">Daftar</a>
 
                     </div>
                 </div>

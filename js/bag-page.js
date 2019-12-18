@@ -90,6 +90,7 @@ function checkOne() {
 // beli buku
 function beliBuku() {
     if (jumlahBeli.length > 0) {
+        localStorage.setItem('bag', JSON.stringify(jumlahBeli));
         window.location.href = `${site_url}html/orderList-page.html`;
     } 
 }

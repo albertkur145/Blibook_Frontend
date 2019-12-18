@@ -1,3 +1,5 @@
+
+
 /* berlaku untuk width window < 320px */
 
 
@@ -35,7 +37,7 @@
     }
 
 
-    #content .right form {
+    #content .right .form {
         color: #333;
         font-weight: 300;
         width: 100%;
@@ -43,23 +45,23 @@
     }
 
 
-    #content .right form input {
+    #content .right .form input {
         font-size: 0.75rem;
     }
 
 
-    #content .right form small {
+    #content .right .form small {
         color: #DA0000 !important;
     }
 
 
-    #content .right form input:focus {
+    #content .right .form input:focus {
         border: 0.0625rem solid #A8C5FF;
         box-shadow: 0rem 0rem 0.25rem 0.09375rem #A8C5FF;
     }
 
 
-    #content .right form .btn-right {
+    #content .right .form .btn-right {
         width: 100%;
         font-weight: 500;
         color: #FFF;
@@ -68,7 +70,7 @@
     }
 
 
-    #content .right form .btn-right:hover {
+    #content .right .form .btn-right:hover {
         background-color: #FF9416;
     }
     /* content */
@@ -106,17 +108,17 @@
     }
 
 
-    #content .right form {
+    #content .right .form {
         font-size: 0.875rem;
     }
 
 
-    #content .right form input {
+    #content .right .form input {
         font-size: 0.8125rem;
     }
 
 
-    #content .right form .btn-right {
+    #content .right .form .btn-right {
         font-size: 0.9375rem;
     }
     /* content */
@@ -192,17 +194,17 @@
     }
 
 
-    #content .right form {
+    #content .right .form {
         font-size: 0.9375rem;
     }
 
 
-    #content .right form input {
+    #content .right .form input {
         font-size: 0.875rem;
     }
 
 
-    #content .right form .btn-right {
+    #content .right .form .btn-right {
         font-size: 0.875rem;
     }
     /* content */
@@ -263,17 +265,17 @@
     }
 
 
-    #content .right form {
+    #content .right .form {
         font-size: 1rem;
     }
 
 
-    #content .right form input {
+    #content .right .form input {
         font-size: 0.9375rem;
     }
 
 
-    #content .right form .btn-right {
+    #content .right .form .btn-right {
         font-size: 1rem;
     }
     /* content */
@@ -340,12 +342,12 @@
     }
 
 
-    #content .right form {
+    #content .right .form {
         width: 85%;
     }
 
 
-    #content .right form .btn-right {
+    #content .right .form .btn-right {
         font-size: 1.125rem;
     }
     /* content */

@@ -1,18 +1,19 @@
 
 
 // variabel global
-const optUser = $('.nav-blibuku .user');
-let namaUser = optUser.text();
+let optUser;
+let namaUser;
     
 
 // batasan length string nama
 function constraintNama() {
     let tempNama;
-    if (namaUser.length > 13) 
-        tempNama = namaUser.substring(0, 13) + "... ";
+
+    if (namaUser.length > 8) 
+        tempNama = namaUser.substring(0, 8) + "... ";
 
     optUser.html(`
-        <i class = "fas fa-user"></i> ${tempNama}
+        <i class = "fas fa-user"></i> Hi, ${tempNama}
         <span><i class="fas fa-chevron-down"></i></span>
     `);
 }
@@ -111,7 +112,7 @@ function responsiveSize() {
 
     if (width < 945) {
         optUser.html(`
-            <i class = "fas fa-user"></i> ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
+            <i class="fas fa-user"></i> Hi, ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
         `);
     }
     
@@ -129,6 +130,31 @@ function sendKategori(kategori) {
 
 
 // ready execute
-responsiveSize();
+$.ajax({
+    url: `${base_url}users`,
+    type: 'get',
+    dataType: 'json',
+    
+    data: {
+        id: '1'
+    },
+
+    success: function(response) {
+        optUser = $('.nav-blibuku .user');
+        namaUser = response.userName;
+    },
+
+}).then(() => {
+    let width = $(window).width();
+
+    if (width < 945) {
+        optUser.html(`
+            <i class="fas fa-user"></i> Hi, ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
+        `);
+    } else if (width >= 945) 
+        constraintNama();
+    
+});
+
 $(window).resize(responsiveSize);
 

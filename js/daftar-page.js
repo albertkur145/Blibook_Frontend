@@ -45,7 +45,7 @@ function responsiveSize() {
 
 
 // validasi form
-const form = $('#content .right form');
+const form = $('#content .right .form');
 const nama = $('#nama', form);
 const email = $('#email', form);
 const password = $('#password', form);
@@ -55,8 +55,8 @@ const regex = /^[a-zA-Z0-9._-]+@[a-z]{5,5}.[a-z]{2,3}$/;
 
 function validationForm () {
     if (nama.val().length != 0 && password.val().length != 0 && 
-        password.val() == konfirmPassword.val() && regex.test(email.test())) {
-        return true;
+        password.val() == konfirmPassword.val() && regex.test(email.val())) {
+        // berhasil
     }
 
     if (nama.val().length == 0) 
@@ -70,8 +70,6 @@ function validationForm () {
 
     if (password.val() != konfirmPassword.val()) 
         $('small#error-konfirm-password').css('display', 'block');
-
-    return false;
 }
 
 function keyUpNama () {
