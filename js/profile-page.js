@@ -9,9 +9,15 @@ function appendTTL() {
     }
 
     for (let i = 1; i <= 31; i++) {
-        $('#content .right .rbody select#tanggal').append(`
-            <option value="${i}">${i}</option>
-        `);
+        if(i <= 9) {
+            $('#content .right .rbody select#tanggal').append(`
+                <option value="0${i}">${i}</option>
+            `);
+        } else {
+            $('#content .right .rbody select#tanggal').append(`
+                <option value="${i}">${i}</option>
+            `);
+        }
     }
 }
 
@@ -165,7 +171,7 @@ $(document).ready(() => {
         type: "get",
         dataType: "json",
         data: {
-            id: "1"
+            id: "4"
         },
         
         success: function(response) {

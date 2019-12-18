@@ -743,12 +743,12 @@ $(document).ready(() => {
 
     // get toko user
     $.ajax({
-        url: `http://192.168.43.138:8025/blibook/api/shops`,
+        url: `${base_url}shops`,
         type: "get",
         dataType: "json",
 
         data: {
-            id: "1"
+            id: "4"
         },
         
         success: function(response) {
@@ -772,7 +772,7 @@ $(document).ready(() => {
             type: "get",
             dataType: "json",
             data: {
-                shopId: "1"
+                shopId: "4"
             },
 
             success: function(response) {

@@ -650,14 +650,14 @@ function sendID(data) {
 }
 
 
-// tambah buku tertentu (salah satunya : buku dibawah 100K)
+// tambah buku tertentu
 function tambahBukuTertentu(value) {
 
     // copy data, supaya yang asli tidak berubah waktu dimanipulasi
     textJudul.push(value.productName);
     textBuku.push(value.productDescription);
 
-    // ubah menjadi format rupiah
+    // ubah price menjadi format rupiah
     let harga = generateRupiah(value.productPrice);
 
     // add buku ke dom
@@ -665,7 +665,7 @@ function tambahBukuTertentu(value) {
         <div class="col-3 buku">
             <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)">
                 <div class="card-buku">
-                    <img src="../pictures/${value.productPhotoLink}">
+                    <img src="${value.productPhotoLink}">
                     <div class="card-body-buku">
                         <h5 class="judul-buku">${value.productName}</h5>
                         <p class="harga-buku">Rp. ${harga}</p>
@@ -680,35 +680,32 @@ function tambahBukuTertentu(value) {
 
 // document ready
 $(document).ready(() => {
+
+    // ambil kategori sesuai klik
     let kategori = localStorage.getItem('kategori');
     let judulKategori = "";
 
+    // tetapkan judul kategori
     kategori === "All" ? judulKategori = "Semua Buku" :
     kategori === "Indonesia" ? judulKategori = "Buku Indonesia" : judulKategori = kategori;
 
+    // ubah judul kategori
     $('#promo-murah .header h2').html(judulKategori);
 
+    // get data req api
     $.ajax({
-        url: "../json/buku.json",
+        url: `${base_url}products/category`,
         type: "get",
         dataType: "json",
 
+        data: {
+            name: kategori
+        },
+
         success: function(response) {
-
-            // ambil data
+            console.log(response);
             response.forEach(value => {
-
-                // jika semua buku
-                if (kategori === "All") 
-                    tambahBukuTertentu(value);
-                
-                // jika buku indonesia
-                else if (value.productCountry === kategori) 
-                    tambahBukuTertentu(value);
-
-                // jika tidak, cari yang sesuai kategori
-                else if (value.productCategory === kategori) 
-                    tambahBukuTertentu(value);
+                tambahBukuTertentu(value);    // append data
             });
         }
 

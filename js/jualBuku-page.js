@@ -86,7 +86,7 @@ function validationImage() {
     if (uploadGambar.val().length > 0) {
 
         // cek maksimal size
-        if (uploadGambar[0].files[0].size > 2000000) {
+        if (uploadGambar[0].files[0].size > 4000000) {
             $('small#error-size-gambar').css('display', 'block');
             return 0;
         } else {
@@ -146,7 +146,7 @@ function validationForm() {
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
-                params.append('shop', '1');
+                params.append('shop', '4');
 
                 // req api
                 $.ajax({

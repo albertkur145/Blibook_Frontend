@@ -11,6 +11,8 @@ function constraintNama() {
 
     if (namaUser.length > 8) 
         tempNama = namaUser.substring(0, 8) + "... ";
+    else
+        tempNama = namaUser;
 
     optUser.html(`
         <i class = "fas fa-user"></i> Hi, ${tempNama}
@@ -136,7 +138,7 @@ $.ajax({
     dataType: 'json',
     
     data: {
-        id: '1'
+        id: '4'
     },
 
     success: function(response) {
