@@ -10,5 +10,17 @@
         "userGender": "Pria",
         "userPassword": "123",
         "userPasswordConfirmation": "123"
+    },
+    {
+        "userId": 1,
+        "userEmail": "renzsekur@gmail.com",
+        "userName": "Renz Revin",
+        "userPhone": "081277548542",
+        "userTanggal": "25",
+        "userBulan": "9",
+        "userTahun": "1999",
+        "userGender": "Pria",
+        "userPassword": "123",
+        "userPasswordConfirmation": "123"
     }
 ]

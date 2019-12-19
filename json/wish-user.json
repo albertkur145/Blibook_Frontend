@@ -1,0 +1,26 @@
+[
+    {
+        "user": "Albert K",
+        "buku": "Perahu Kertas",
+        "toko": "Indo Books",
+        "harga": 97500
+    },
+    {
+        "user": "Renz Vin",
+        "buku": "Hantu Jalang",
+        "toko": "Mt Hany",
+        "harga": 37400
+    },
+    {
+        "user": "Denny Rizal",
+        "buku": "One Piece Vol 17",
+        "toko": "Anime Lovers",
+        "harga": 75850
+    },
+    {
+        "user": "Kimberly K",
+        "buku": "Jack Sparrow",
+        "toko": "Gramedia",
+        "harga": 127000
+    }
+]

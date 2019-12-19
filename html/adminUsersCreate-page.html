@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/personal.css">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminProductCreate.css">
     <link rel="stylesheet" href="../css/footer.css">
 
     <title>Admin</title>
@@ -76,32 +76,62 @@
 
                     <!-- head -->
                     <div class="head">
-                        <h2 class="title">Wishlist</h2>
-                        <a href="adminWishlistCreate-page.html"><button type="button" class="btn btn-primary">Create</button></a>
+                        <h2 class="title"><span>Users /</span> Create</h2>
                     </div>
                     <!-- head -->
 
                     <!-- rbody -->
                     <div class="rbody">
 
-                        <table class="table table-responsive table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>User</th>
-                                    <th>Buku</th>
-                                    <th>Toko</th>
-                                    <th>Harga</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+                        <!-- form jual buku -->
 
-                            <tbody>
+                        <!-- nama lengkap -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" id="nama" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- nama lengkap -->
 
-                                <!-- append from js api -->
+                        <!-- email -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- email -->
 
-                            </tbody>
-                        </table>
+                        <!-- ttl -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="ttl">TTL</label>
+                                <input type="text" id="ttl" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- ttl -->
+
+                        <!-- no hp -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="nohp">No. Handphone</label>
+                                <input type="number" id="nohp" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- no hp -->
+
+                        <!-- jenis-kelamin -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="jenis-kelamin">Jenis Kelamin</label>
+                                <input type="text" id="jenis-kelamin" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- jenis-kelamin -->
+
+                        <button class="btn-simpan">Simpan</button>
+                        <!-- form jual buku -->
 
                     </div>
                     <!-- rbody -->
@@ -114,7 +144,6 @@
     </div>
     <!-- akhir content -->
 
-    <a href="adminWishlistCreate-page.html"><button type="button" class="btn btn-primary fix">Create</button></a>
 
     <!-- footer from templating -->
     <div id="footer"></div>
@@ -131,7 +160,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
-    <script src="../js/adminwishlist.js"></script>
+    <script src="../js/adminUsers.js"></script>
 </body>
 
 </html>

@@ -146,7 +146,7 @@ function validationForm() {
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
-                params.append('shop', '4');
+                params.append('shop', '5');
 
                 // req api
                 $.ajax({

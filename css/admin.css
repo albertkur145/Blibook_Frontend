@@ -1,0 +1,43 @@
+
+
+button.fix {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 6.5%;
+    z-index: 1;
+}
+
+
+#content .right .head button {
+    display: none;
+}
+
+
+#content .right .rbody table .cursor-cross,
+#content .right .rbody table .cursor-edit {
+    cursor: pointer;
+}
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+    #content .right .head button {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 1rem;
+    }
+
+
+    button.fix {
+        display: none;
+    }
+
+}
+
+/* berlaku untuk width window >= 960px */
+

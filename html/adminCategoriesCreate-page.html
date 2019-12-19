@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/personal.css">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminProductCreate.css">
     <link rel="stylesheet" href="../css/footer.css">
 
     <title>Admin</title>
@@ -76,32 +76,23 @@
 
                     <!-- head -->
                     <div class="head">
-                        <h2 class="title">Wishlist</h2>
-                        <a href="adminWishlistCreate-page.html"><button type="button" class="btn btn-primary">Create</button></a>
+                        <h2 class="title"><span>Categories /</span> Create</h2>
                     </div>
                     <!-- head -->
 
                     <!-- rbody -->
                     <div class="rbody">
 
-                        <table class="table table-responsive table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>User</th>
-                                    <th>Buku</th>
-                                    <th>Toko</th>
-                                    <th>Harga</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+                        <!-- kategori -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="kategori">Kategori</label>
+                                <input type="text" id="kategori" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- kategori -->
 
-                            <tbody>
-
-                                <!-- append from js api -->
-
-                            </tbody>
-                        </table>
+                        <button class="btn-simpan">Simpan</button>
 
                     </div>
                     <!-- rbody -->
@@ -114,7 +105,6 @@
     </div>
     <!-- akhir content -->
 
-    <a href="adminWishlistCreate-page.html"><button type="button" class="btn btn-primary fix">Create</button></a>
 
     <!-- footer from templating -->
     <div id="footer"></div>
@@ -131,7 +121,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
-    <script src="../js/adminwishlist.js"></script>
+    <script src="../js/adminCategories.js"></script>
 </body>
 
 </html>

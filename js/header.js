@@ -138,7 +138,7 @@ $.ajax({
     dataType: 'json',
     
     data: {
-        id: '4'
+        id: '1'
     },
 
     success: function(response) {

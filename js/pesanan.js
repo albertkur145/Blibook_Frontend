@@ -12,7 +12,7 @@ function konfirmasiPesanan() {
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    // post data ke wishlist
+    // post data
     $.ajax({
         url: "../json/buku.json",
         type: "get",

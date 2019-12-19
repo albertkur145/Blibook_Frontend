@@ -1,0 +1,256 @@
+/* berlaku untuk width window < 320px */
+
+
+    /* content */
+    #content .right .head h2.title span {
+        color: #AAA;
+        font-weight: 400;
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .rbody label {
+        font-size: 0.8125rem;
+        font-weight: 500;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        font-size: 0.8125rem;
+        color: #000;
+    }
+
+
+    #content .right .rbody input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+
+
+    #content .right .rbody input:focus,
+    #content .right .rbody select:focus,
+    #content .right .rbody textarea:focus {
+        border: 0.0625rem solid #A8C5FF;
+        box-shadow: 0rem 0rem 0.25rem 0.09375rem #A8C5FF;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        width: 100%;
+    }
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.5rem 1.375rem;
+        margin-top: 1.25rem;
+        font-size: 0.8125rem;
+        border-radius: 0.3125rem;
+        display: block;
+        border: 0;
+        background-color: #FF8A00;
+        color: #FFF;
+        font-weight: 500;
+        transition: background-color .2s;
+    }
+
+
+    #content .right .rbody button.btn-simpan:hover {
+        background-color: #FF9416;
+    }
+    /* content */
+
+
+/* berlaku untuk width window < 320px */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (320px - 479px) */
+
+@media (min-width: 320px) {
+
+
+    /* content */
+    #content .right .head h2.title span {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody label {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.5rem 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (320px - 479px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (480px - 767px) */
+
+@media (min-width: 480px) {
+
+
+    /* content */
+    #content .right .head h2.title span {
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .rbody label {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        font-size: 0.8125rem;
+    }
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.5625rem 1.4375rem;
+        margin-top: 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (480px - 767px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window (768px - 959px) */
+
+@media (min-width: 768px) {
+
+
+    /* content */
+    #content .right .head h2.title span {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody label {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        font-size: 0.875rem;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select {
+        width: 90%;
+    }
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.6875rem 1.6875rem;
+        margin-top: 1.5rem;
+        font-size: 0.8125rem;
+    }
+
+    /* content */
+
+
+}
+
+/* berlaku untuk width window (768px - 959px) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* berlaku untuk width window >= 960px */
+
+@media (min-width: 960px) {
+
+
+    /* content */
+    #content .right .head h2.title span {
+        font-size: 1rem;
+    }
+
+
+    #content .right .rbody input,
+    #content .right .rbody select,
+    #content .right .rbody textarea {
+        width: 65%;
+    }
+
+
+    #content .right .rbody button.btn-simpan {
+        padding: 0.75rem 1.75rem;
+        margin-top: 1.75rem;
+        font-size: 0.9375rem;
+    }
+
+    /* content */
+
+
+}
+
+/* berlaku untuk width window >= 960px */

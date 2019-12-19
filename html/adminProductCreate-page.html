@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../icons/logo blibuku.png">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/adminProductCreate.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>Admin</title>
+</head>
+
+<body>
+
+    <!-- header from templating -->
+    <div id="header"></div>
+    <!-- header from templating -->
+
+
+    <!-- content -->
+    <div id="content" class="margin-content">
+        <div class="bg-hover"></div>
+        <div class="container">
+            <div class="row">
+
+                <!-- left -->
+                <div class="col-3 left">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="nama-user">admin</h2>
+                        <p class="as">Signature Member</p>
+                    </div>
+                    <!-- head -->
+
+                    <!-- tab -->
+                    <div class="tab">
+                        <a href="adminProduct-page.html">
+                            <p class="products-tab">Products</p>
+                        </a>
+                        <a href="adminUsers-page.html">
+                            <p class="users-tab ">Users</p>
+                        </a>
+                        <a href="adminShops-page.html">
+                            <p class="shops-tab">Shops</p>
+                        </a>
+                        <a href="adminCategories-page.html">
+                            <p class="categories-tab">Categories</p>
+                        </a>
+                        <a href="adminWishlist-page.html">
+                            <p class="wishlist-tab">Wishlist</p>
+                        </a>
+                        <a href="main-page.html">
+                            <p class="keluar-tab">Keluar</p>
+                        </a>
+                    </div>
+                    <!-- tab -->
+
+                </div>
+                <!-- left -->
+
+
+                <!-- right -->
+                <div class="col-9 right">
+
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="title"><span>Products /</span> Create</h2>
+                    </div>
+                    <!-- head -->
+
+                    <!-- rbody -->
+                    <div class="rbody">
+
+                        <!-- form jual buku -->
+                        <!-- kategori -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="kategori">Kategori</label>
+
+                                <select id="kategori" class="form-control">
+                                    <option value="">-- PILIH KATEGORI --</option>
+                                    <option value="Pendidikan">Pendidikan</option>
+                                    <option value="Teknologi">Teknologi</option>
+                                    <option value="Kartun">Kartun</option>
+                                    <option value="Musik">Musik</option>
+                                    <option value="Horror">Horror</option>
+                                    <option value="Novel">Novel</option>
+                                    <option value="Bisnis">Bisnis</option>
+                                    <option value="Kesehatan">Kesehatan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- kategori -->
+
+                        <!-- judul buku -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="judul">Judul buku</label>
+                                <input type="text" id="judul" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- judul buku -->
+
+                        <!-- penulis -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="penulis">Penulis</label>
+                                <input type="text" id="penulis" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- penulis -->
+
+                        <!-- ISBN -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="isbn">ISBN</label>
+                                <input type="number" id="isbn" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- ISBN -->
+
+                        <!-- jumlah halaman -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="halaman">Jumlah halaman</label>
+                                <input type="number" id="halaman" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- jumlah halaman -->
+
+                        <!-- tahun -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="tahun">Tahun</label>
+                                <input type="text" id="tahun" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- tahun -->
+
+                        <!-- negara -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="negara">Negara</label>
+                                <input type="text" id="negara" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- negara -->
+
+                        <!-- bahasa -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="bahasa">Bahasa</label>
+                                <input type="text" id="bahasa" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- bahasa -->
+
+                        <!-- harga -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="harga">Harga</label>
+                                <input type="number" id="harga" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- harga -->
+
+                        <!-- deskripsi buku -->
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi buku</label>
+                            <textarea class="form-control" id="deskripsi" rows="5"></textarea>
+                        </div>
+                        <!-- deskripsi buku -->
+
+                        <!-- upload gambar -->
+                        <div class="form-group">
+                            <label for="gambar">Upload Cover Buku</label>
+                            <input type="file" class="form-control-file" id="gambar" accept="image/*">
+                        </div>
+                        <!-- upload gambar -->
+
+                        <!-- upload buku -->
+                        <div class="form-group">
+                            <label for="pdf">Upload Buku (PDF)</label>
+                            <input type="file" class="form-control-file" id="pdf" accept="application/pdf">
+                        </div>
+                        <!-- upload buku -->
+
+                        <button class="btn-simpan" onclick="return validationForm()">Simpan</button>
+                        <!-- form jual buku -->
+
+                    </div>
+                    <!-- rbody -->
+
+                </div>
+                <!-- right -->
+
+            </div>
+        </div>
+    </div>
+    <!-- akhir content -->
+
+
+    <!-- footer from templating -->
+    <div id="footer"></div>
+    <!-- footer from templating -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/templateHeader.js"></script>
+    <script src="../js/templateFooter.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/personal.js"></script>
+    <script src="../js/adminProduct.js"></script>
+</body>
+
+</html>
