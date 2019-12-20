@@ -1073,12 +1073,6 @@ function sliderKiri(kode) {
 }
 
 
-// saat klik direct ke detail product page
-function sendID(data) {
-    localStorage.setItem("id-buku", $(data).attr("data-id"));
-}   
-
-
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0) {
@@ -1111,7 +1105,7 @@ function tambahBukuTertentu(value) {
     // add buku ke dom
     $('#promo-murah .items-buku-promo .row').append(`
         <div class="col-3 buku">
-            <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)">
+            <a href="detailProduct-page.html?${value.productId}">
                 <div class="card-buku">
                     <img src="../pictures/${value.productPhotoLink}">
                     <div class="card-body-buku">
@@ -1181,21 +1175,21 @@ function getAllBuku(response) {
 
         if (value.productCategory === "Teknologi" && iTeknologi <= 12) {
             $('.promote .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
             `);
             iTeknologi++;
         }
 
         if (value.productCategory === "Kartun" && iKartun <= 12) {
             $('.cartoon-music .cartoon .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
             `);
             iKartun++;
         }
 
         if (value.productCategory === "Musik" && iMusik <= 12) {
             $('.cartoon-music .music .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
             `);
             iMusik++;
         }
@@ -1203,7 +1197,7 @@ function getAllBuku(response) {
 
         if (value.productCountry === "Indonesia" && iIndonesia <= 12) {
             $('.indonesian .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html"><img src="../pictures/${value.productPhotoLink}" class="prod-hover" data-id="${value.productId}" onclick="sendID(this)"></a>
+                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
             `);
             iIndonesia++;
         }
@@ -1215,6 +1209,9 @@ function getAllBuku(response) {
 // document ready
 $(document).ready(() => {
 
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     // get api buku
     $.ajax({
         url: "../json/buku.json",
@@ -1223,6 +1220,9 @@ $(document).ready(() => {
 
         success: function (response) {
             getAllBuku(response);
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
 
     }).then(() => {

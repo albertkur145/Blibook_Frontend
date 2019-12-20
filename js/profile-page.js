@@ -161,6 +161,9 @@ function getUserDetail(response) {
 // document ready
 $(document).ready(() => {
     
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     appendTTL();
     borderTab();
     responsiveSize();
@@ -176,10 +179,9 @@ $(document).ready(() => {
         
         success: function(response) {
             getUserDetail(response);
-        },
 
-        error: function (req) {
-            console.log("Error");
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
 
     });

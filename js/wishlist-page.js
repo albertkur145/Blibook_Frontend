@@ -535,12 +535,6 @@ function generateRupiah(angka) {
 }
 
 
-// saat klik direct ke detail product page
-function sendID(data) {
-    localStorage.setItem("id-buku", $(data).attr("data-id"));
-}
-
-
 // get wishlist user
 function getWishlistUser(response) {
 
@@ -553,13 +547,13 @@ function getWishlistUser(response) {
             <div class="row">
                 <!-- image -->
                 <div class="col-3 image-buku">
-                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><img src="../pictures/${value.productPhotoLink}"></a>
+                    <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}"></a>
                 </div>
                 <!-- image -->
                 
                 <!-- desk -->
                 <div class="col-6 desk-buku">
-                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><p class="judul">${value.productName}</p></a>
+                    <a href="detailProduct-page.html?${value.productId}"><p class="judul">${value.productName}</p></a>
                     <p class="deskripsi">${value.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
                     <span class="hapus" onclick="hapusBuku()">Hapus</span>
@@ -583,6 +577,9 @@ function getWishlistUser(response) {
 // document ready
 $(document).ready(() => {
 
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     $.ajax({
         url: "../json/wishlist.json",
         type: "get",
@@ -590,6 +587,9 @@ $(document).ready(() => {
 
         success: function(response) {
             getWishlistUser(response);
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
         
     }).then(() => {

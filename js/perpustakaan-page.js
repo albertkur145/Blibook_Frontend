@@ -114,6 +114,10 @@ function getLibraryUser(response) {
 
 // document ready
 $(document).ready(() => {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     $.ajax({
         url: "../json/library.json",
         type: "get",
@@ -121,6 +125,9 @@ $(document).ready(() => {
 
         success: function(response) {
             getLibraryUser(response);
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
 
     }).then(() => {

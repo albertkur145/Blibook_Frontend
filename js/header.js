@@ -5,6 +5,14 @@ let optUser;
 let namaUser;
     
 
+// search buku
+function searchBuku() {
+    let keyword = $('.form input').val();
+    window.location.href = `${site_url}html/search-page.html?search=${keyword}`;
+} 
+
+
+
 // batasan length string nama
 function constraintNama() {
     let tempNama;
@@ -126,8 +134,7 @@ function responsiveSize() {
 
 // saat klik kategori tertentu
 function sendKategori(kategori) {
-    localStorage.setItem("kategori", kategori);
-    window.location.href = `${site_url}html/search-page.html`;
+    window.location.href = `${site_url}html/search-page.html?kategori=${kategori}`;
 }
 
 

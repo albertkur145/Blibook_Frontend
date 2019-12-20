@@ -79,6 +79,8 @@ function appendOrder(value, index) {
 // document ready
 $(document).ready(() => {
     
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
 
     $.ajax({
         url: "../json/pesanan.json",
@@ -88,6 +90,9 @@ $(document).ready(() => {
         success: function(response) {
             response.forEach((value, index) => {
                 appendOrder(value, index);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
             });
         }
         

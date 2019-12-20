@@ -230,11 +230,14 @@ const header = `
                 </div>
                 <!-- nav -->
 
-                <form action="" method="post">
-                    <input type="text" name="keyword" class="search" autocomplete="off"
-                        placeholder="Cari buku Anda disini....">
-                    <button type="submit" name="cari-btn" class="cari-btn">Cari</button>
-                </form>
+                
+                <!-- form search -->
+                <div class="form">
+                    <input type="text" class="search" autocomplete="off" placeholder="Cari buku Anda disini....">
+                    <button class="cari-btn" onclick="searchBuku()">Cari</button>
+                </div>
+                <!-- form search -->
+
             </div>
         </nav>
         <!-- akhir navbar -->

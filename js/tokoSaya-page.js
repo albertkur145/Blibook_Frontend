@@ -705,13 +705,13 @@ function getBuku(response) {
 
                 <!-- image -->
                 <div class="col-3 image-buku">
-                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><img src="${value.productPhotoLink}"></a>
+                    <a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}"></a>
                 </div>
                 <!-- image -->
 
                 <!-- desk -->
                 <div class="col-7 desk-buku">
-                    <a href="detailProduct-page.html" onclick="sendID(this)" data-id="${value.productId}"><p class="judul">${value.productName}</p></a>
+                    <a href="detailProduct-page.html?${value.productId}"><p class="judul">${value.productName}</p></a>
                     <p class="deskripsi">${value.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
                     <span class="hapus" onclick="hapusBuku()">Hapus</span>
@@ -721,7 +721,7 @@ function getBuku(response) {
 
                 <!-- button detail -->
                 <div class="col-2 button-detail">
-                    <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)"><i class="fas fa-eye"></i></a>
+                    <a href="detailProduct-page.html?${value.productId}"><i class="fas fa-eye"></i></a>
                     <p class="tooltip-text"><span>Lihat Buku</span></p>
                 </div>
                 <!-- button detail -->
@@ -736,10 +736,10 @@ function getBuku(response) {
 // document ready
 $(document).ready(() => {
 
-    borderTab();
-    
     // tampilkan loading
     $('.loading').css('display', 'flex');
+
+    borderTab();
 
     // get toko user
     $.ajax({
@@ -753,15 +753,6 @@ $(document).ready(() => {
         
         success: function(response) {
             getShop(response);
-        },
-
-        error: function() {
-            // hilangkan loading
-            $('.loading').css('display', 'none');
-
-            // tampilkan pesan dialog
-            $('.dialog-oke .pesan span').html('Koneksi Error! Silahkan coba kembali');
-            $('.dialog-oke').css('display', 'flex');
         }
         
     }).then(() => {
@@ -776,6 +767,8 @@ $(document).ready(() => {
             },
 
             success: function(response) {
+
+                // cek apakah toko kosong atau tidak
                 if (response.length === 0)
                     $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
                 else
@@ -783,15 +776,6 @@ $(document).ready(() => {
 
                 // hilangkan loading
                 $('.loading').css('display', 'none');
-            },
-
-            error: function() {
-                // hilangkan loading
-                $('.loading').css('display', 'none');
-
-                // tampilkan pesan dialog
-                $('.dialog-oke .pesan span').html('Koneksi Error! Silahkan coba kembali');
-                $('.dialog-oke').css('display', 'flex');
             }
 
         }).then(() => {

@@ -546,7 +546,7 @@ function generateRupiah(angka) {
 
 // get buku detail
 function getBukuDetail(response) {
-    let id = localStorage.getItem("id-buku");
+    let id = window.location.search.substring(1);
     const topLeft = $('#detail-product .top .left');
     const ketBuku = $('#detail-product .top .left .ket-buku');
     const bottom = $('#detail-product .bottom');
@@ -578,6 +578,9 @@ function getBukuDetail(response) {
 // document ready
 $(document).ready(() => {
 
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     // get detail buku
     $.ajax({
         url: "../json/buku.json",
@@ -586,6 +589,9 @@ $(document).ready(() => {
 
         success: function(response) {
             getBukuDetail(response);
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
         
     }).then(() => {

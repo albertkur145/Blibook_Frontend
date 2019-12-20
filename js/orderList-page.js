@@ -315,6 +315,9 @@ function getPayUser(response) {
 // document ready
 $(document).ready(() => {
 
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
     let checklist = JSON.parse(localStorage.getItem('bag'));
 
     if(checklist === null) {
@@ -342,6 +345,9 @@ $(document).ready(() => {
 
             success: function(response) {
                 getUser(response);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
             }
         });
 

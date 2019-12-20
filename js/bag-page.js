@@ -450,6 +450,10 @@ function getDataBag(response) {
 // document ready
 $(document).ready(() => {
 
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // get data bag
     $.ajax({
         url: "../json/bag.json",
         type: "get",
@@ -457,6 +461,9 @@ $(document).ready(() => {
 
         success: function(response) {
             getDataBag(response);
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
         
     }).then(() => {

@@ -70,7 +70,7 @@
     }
 
 
-    .nav-blibuku form {
+    .nav-blibuku .form {
         width: 100%;
     }
 
@@ -680,7 +680,7 @@
     }
 
 
-    .nav-blibuku form {
+    .nav-blibuku .form {
         width: 0;
     }
 

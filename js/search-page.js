@@ -644,12 +644,6 @@ function generateRupiah(angka) {
 }
 
 
-// saat klik direct ke detail product page
-function sendID(data) {
-    localStorage.setItem("id-buku", $(data).attr("data-id"));
-}
-
-
 // tambah buku tertentu
 function tambahBukuTertentu(value) {
 
@@ -663,7 +657,7 @@ function tambahBukuTertentu(value) {
     // add buku ke dom
     $('#promo-murah .items-buku-promo .row').append(`
         <div class="col-3 buku">
-            <a href="detailProduct-page.html" data-id="${value.productId}" onclick="sendID(this)">
+            <a href="detailProduct-page.html?${value.productId}">
                 <div class="card-buku">
                     <img src="${value.productPhotoLink}">
                     <div class="card-body-buku">
@@ -681,32 +675,54 @@ function tambahBukuTertentu(value) {
 // document ready
 $(document).ready(() => {
 
-    // ambil kategori sesuai klik
-    let kategori = localStorage.getItem('kategori');
-    let judulKategori = "";
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
 
-    // tetapkan judul kategori
-    kategori === "All" ? judulKategori = "Semua Buku" :
-    kategori === "Indonesia" ? judulKategori = "Buku Indonesia" : judulKategori = kategori;
+    let url;
+    let params;
 
-    // ubah judul kategori
-    $('#promo-murah .header h2').html(judulKategori);
+    // ambil keyword sesuai klik (kategori/search)
+    let keyword = window.location.search.substring(1).split('=');
+    let judulKeyword = "";
 
-    // get data req api
+    // tetapkan judul keyword
+    keyword[1] === "All" ? judulKeyword = "Semua Buku" :
+    keyword[1] === "Indonesia" ? judulKeyword = "Buku Indonesia" : judulKeyword = keyword[1];
+
+    // ubah judul keyword
+    $('#promo-murah .header h2').html(judulKeyword);
+
+    // tetapkan base url dan params (kategori/search)
+    if (keyword[0] === "kategori") {
+        url = `${base_url}products/category`;
+        params = {
+            name: keyword[1]
+        };
+    } else if (keyword[0] === "search") {
+        url = `${base_url}products/search`;
+        params = {
+            key: keyword[1]
+        };
+    }
+        
+
+    // get data
     $.ajax({
-        url: `${base_url}products/category`,
+        url: url,
         type: "get",
         dataType: "json",
 
-        data: {
-            name: kategori
-        },
+        data: params,
 
         success: function(response) {
-            console.log(response);
-            response.forEach(value => {
-                tambahBukuTertentu(value);    // append data
-            });
+            if (response.length > 0) {
+                response.forEach(value => {
+                    tambahBukuTertentu(value); // append data
+                });
+            } 
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
 
     }).then(() => {
@@ -715,7 +731,7 @@ $(document).ready(() => {
         deskBuku = $('p.desk-buku', buku);
     }).then(() => {
         responsiveSize();
-    });
+    });;
     
 });
 
