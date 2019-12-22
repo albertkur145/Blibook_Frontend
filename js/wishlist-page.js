@@ -586,7 +586,10 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function(response) {
-            getWishlistUser(response);
+            if (response.length === 0) 
+                $('#content .right .rbody .wishlist .isEmpty').css('display', 'block');
+            else
+                getWishlistUser(response);
 
             // hilangkan loading
             $('.loading').css('display', 'none');

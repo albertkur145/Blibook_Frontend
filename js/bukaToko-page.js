@@ -317,8 +317,34 @@ function changeKota() {
 }
 
 
+// set form toko
+function setForm(response) {
+    namaToko.val(response.shopName);
+    alamatToko.val(response.shopAddress);
+    selectProvinsi.val(response.shopProvince);
+    changeKota();
+    selectKota.val(response.shopCity);
+}
+
+
 // document ready
 $(document).ready(() => {
+    $.ajax({
+        url: 'http://localhost:8025/blibook/api/shops',
+        type: 'get',
+        dataType: 'json',
+
+        data: {
+            id: '1',
+        },
+
+        success: function(response) {
+            if (response) {
+                setForm(response);
+            } 
+        }
+    });
+
     borderTab();
     changeKota();
 });

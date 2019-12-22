@@ -748,7 +748,7 @@ $(document).ready(() => {
         dataType: "json",
 
         data: {
-            id: "5"
+            id: "1"
         },
         
         success: function(response) {
