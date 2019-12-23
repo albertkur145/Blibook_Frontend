@@ -88,12 +88,16 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function(response) {
-            response.forEach((value, index) => {
-                appendOrder(value, index);
+            if (response.length === 0)
+                $('#content .right .rbody .isEmpty').css('display', 'block');
+            else {
+                response.forEach((value, index) => {
+                    appendOrder(value, index);
+                });
+            }
 
-                // hilangkan loading
-                $('.loading').css('display', 'none');
-            });
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
         
     }).then(() => {

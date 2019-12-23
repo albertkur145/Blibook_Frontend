@@ -124,7 +124,10 @@ $(document).ready(() => {
         dataType: "json",
 
         success: function(response) {
-            getLibraryUser(response);
+            if (response.length === 0)
+                $('#content .right .rbody .isEmpty').css('display', 'block');
+            else
+                getLibraryUser(response);
 
             // hilangkan loading
             $('.loading').css('display', 'none');

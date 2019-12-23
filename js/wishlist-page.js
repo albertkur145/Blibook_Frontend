@@ -587,7 +587,7 @@ $(document).ready(() => {
 
         success: function(response) {
             if (response.length === 0) 
-                $('#content .right .rbody .wishlist .isEmpty').css('display', 'block');
+                $('#content .right .rbody .isEmpty').css('display', 'block');
             else
                 getWishlistUser(response);
 

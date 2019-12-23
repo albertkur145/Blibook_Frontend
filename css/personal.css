@@ -91,6 +91,34 @@
     #content .right .rbody {
         margin-top: 0.75rem;
     }
+
+
+    #content .right .rbody .isEmpty {
+        display: none;
+        padding: 1.25rem;
+        border: 0.0625rem dashed #FF007A;
+        text-align: center;
+    }
+
+
+    #content .right .rbody .isEmpty img {
+        width: 10%;
+    }
+
+
+    #content .right .rbody .isEmpty p.message {
+        display: inline-block;
+        color: #FF007A;
+        font-weight: 500;
+        font-size: 0.8125rem;
+        margin: 0.25rem 0 0;
+    }
+
+
+    #content .right .rbody .isEmpty p.message a {
+        color: #FF007A;
+        text-decoration: underline;
+    }
     /* content */
 
 
@@ -153,6 +181,22 @@
 
     #content .right .rbody {
         margin-top: 1rem;
+    }
+
+
+    #content .right .rbody .isEmpty {
+        padding: 1rem;
+    }
+
+
+    #content .right .rbody .isEmpty img {
+        width: 7%;
+    }
+
+
+    #content .right .rbody .isEmpty p.message {
+        font-size: 0.8125rem;
+        margin: 0 0.25rem 0;
     }
     /* content */
 
@@ -238,6 +282,22 @@
     #content .right .rbody {
         margin-top: 1.125rem;
     }
+
+
+    #content .right .rbody .isEmpty {
+        padding: 0.75rem;
+    }
+
+
+    #content .right .rbody .isEmpty img {
+        width: 8%;
+    }
+
+
+    #content .right .rbody .isEmpty p.message {
+        font-size: 0.875rem;
+        margin: 0.5rem 0 0;
+    }
     /* content */
 
 
@@ -307,6 +367,22 @@
 
     #content .right .rbody {
         margin-top: 1.375rem;
+    }
+
+
+    #content .right .rbody .isEmpty {
+        padding: 1.5rem;
+    }
+
+
+    #content .right .rbody .isEmpty img {
+        width: 5%;
+    }
+
+
+    #content .right .rbody .isEmpty p.message {
+        font-size: 0.9375rem;
+        margin: 0 0.25rem 0;
     }
     /* content */
 
@@ -382,6 +458,22 @@
 
     #content .right .rbody {
         margin-top: 1.5rem;
+    }
+
+
+    #content .right .rbody .isEmpty {
+        padding: 1.25rem;
+    }
+
+
+    #content .right .rbody .isEmpty img {
+        width: 4%;
+    }
+
+
+    #content .right .rbody .isEmpty p.message {
+        font-size: 1rem;
+        margin: 0 0.5rem 0;
     }
     /* content */
 

@@ -97,34 +97,6 @@
     #content .right .rbody .wishlist .button-beli a:hover {
         background-color: #FC2673;
     }
-
-
-    #content .right .rbody .wishlist .isEmpty {
-        display: none;
-        padding: 1.25rem;
-        border: 0.0625rem dashed #FF007A;
-        text-align: center;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty img {
-        width: 10%;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message {
-        display: inline-block;
-        color: #FF007A;
-        font-weight: 500;
-        font-size: 0.8125rem;
-        margin: 0.25rem 0 0;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message a {
-        color: #FF007A;
-        text-decoration: underline;
-    }
     /* content */
 
 
@@ -199,22 +171,6 @@
         padding: 0.625rem 1rem;
         font-size: 0.75rem;
     }
-
-
-    #content .right .rbody .wishlist .isEmpty {
-        padding: 1rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty img {
-        width: 7%;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message {
-        font-size: 0.8125rem;
-        margin: 0 0.25rem 0;
-    }
     /* content */
 
 
@@ -288,22 +244,6 @@
     #content .right .rbody .wishlist .button-beli a {
         padding: 0.625rem 0.9375rem;
         font-size: 0.6875rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty {
-        padding: 0.75rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty img {
-        width: 8%;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message {
-        font-size: 0.875rem;
-        margin: 0.5rem 0 0;
     }
     /* content */
 
@@ -380,22 +320,6 @@
         padding: 0.6875rem 2rem;
         font-size: 0.75rem;
     }
-
-
-    #content .right .rbody .wishlist .isEmpty {
-        padding: 1.5rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty img {
-        width: 5%;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message {
-        font-size: 0.9375rem;
-        margin: 0 0.25rem 0;
-    }
     /* content */
 
 
@@ -466,22 +390,6 @@
     #content .right .rbody .wishlist .button-beli a {
         padding: 0.875rem 3rem;
         font-size: 0.875rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty {
-        padding: 1.25rem;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty img {
-        width: 4%;
-    }
-
-
-    #content .right .rbody .wishlist .isEmpty p.message {
-        font-size: 1rem;
-        margin: 0 0.5rem 0;
     }
     /* content */
 
