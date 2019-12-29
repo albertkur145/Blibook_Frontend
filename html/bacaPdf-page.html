@@ -18,96 +18,25 @@
     <link rel="stylesheet" href="../css/footer.css">
 
     <title>Baca Buku | Blibuku.com</title>
+
+    <style>
+        .hidePopup {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4.5rem;
+            height: 4.5rem;
+            background-color: white;
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
 
-    <object data="http://192.168.43.138:8010/Project/blibook.backend/src/main/resources/uploads/productItem/40.pdf#toolbar=0" type="application/pdf" id="obj-pdf">
+    <iframe id="obj-pdf" src="http://docs.google.com/gview?url=http://www.africau.edu/images/default/sample.pdf&embedded=true"></iframe>
+    <div class="hidePopup"></div>
 
-        <!-- header from templating -->
-        <div id="header"></div>
-        <!-- header from templating -->
-
-
-        <!-- content -->
-        <div id="content" class="margin-content">
-            <div class="bg-hover"></div>
-            <div class="container">
-                <div class="row">
-
-                    <!-- left -->
-                    <div class="col-3 left">
-
-                        <!-- head -->
-                        <div class="head">
-                            <h2 class="nama-user">Albert Kurniawan</h2>
-                            <p class="as">Signature Member</p>
-                        </div>
-                        <!-- head -->
-
-                        <!-- tab -->
-                        <div class="tab">
-                            <a href="profile-page.html">
-                                <p class="profile-tab">Profile</p>
-                            </a>
-                            <a href="wishlist-page.html">
-                                <p class="wishlist-tab ">Wishlist</p>
-                            </a>
-                            <a href="perpusatakaan-page.html">
-                                <p class="perpustakaan-tab">Perpustakaan</p>
-                            </a>
-                            <a href="bukaToko-page.html">
-                                <p class="buka-toko-tab">Buka Toko</p>
-                            </a>
-                            <a href="tokoSaya-page.html">
-                                <p class="toko-saya-tab">Toko Saya</p>
-                            </a>
-                            <a href="pesanan-page.html">
-                                <p class="pesanan-tab">Pesanan Masuk</p>
-                            </a>
-                            <a href="main-page.html">
-                                <p class="keluar-tab">Keluar</p>
-                            </a>
-                        </div>
-                        <!-- tab -->
-
-                    </div>
-                    <!-- left -->
-
-
-                    <!-- right -->
-                    <div class="col-9 right">
-
-                        <!-- head -->
-                        <div class="head">
-                            <h2 class="title">Baca Buku</h2>
-                        </div>
-                        <!-- head -->
-
-                        <!-- rbody -->
-                        <div class="rbody">
-                            <p>Yahh sayang sekali :(. Web Browser kamu belum mendukung membaca buku secara online.</p>
-                            <p>Daripada kamu sedih, yuk download aja bukunya <a href="http://192.168.43.138:8010/Project/blibook.backend/src/main/resources/uploads/productItem/33.pdf">disini.</a> dan nikmati membaca buku secara offline bersama <a href="tentang-page.html">blibuku.com</a></p>
-                            <!-- https://docs.google.com/gview?embedded=true&url -->
-                        </div>
-                        <!-- rbody -->
-
-                    </div>
-                    <!-- right -->
-
-                </div>
-            </div>
-        </div>
-        <!-- akhir content -->
-
-
-        <!-- footer from templating -->
-        <div id="footer"></div>
-        <!-- footer from templating -->
-        
-    </object>
-
-    
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

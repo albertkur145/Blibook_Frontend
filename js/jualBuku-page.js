@@ -146,7 +146,9 @@ function validationForm() {
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
-                params.append('shop', '5');
+                params.append('shop', '13');
+
+                let idPdf;
 
                 // req api
                 $.ajax({
@@ -158,12 +160,8 @@ function validationForm() {
 
                     data: params,
 
-                    success: function () {
-                        // hilangkan loading
-                        $('.loading').css('display', 'none');
-
-                        // redirect ke toko -> utk lihat buku yang baru di jual
-                        window.location.href = `${site_url}/html/tokoSaya-page.html`;
+                    success: function (response) {
+                        idPdf = response.productId;
                     },
 
                     error: function() {
@@ -174,9 +172,35 @@ function validationForm() {
                         $('.dialog-oke .pesan span').html("Koneksi Error! Silahkan coba kembali");
                         $('.dialog-oke').css('display', 'flex');
                     }
-                });
+                }).then(() => {
 
-                
+                    // move file pdf ke server domainesia
+                    let filePdf = new FormData();
+                    filePdf.append('idPdf', idPdf);
+                    filePdf.append('pdf', uploadPDF[0].files[0]);
+
+                    $.ajax({
+                        url: 'https://yafaifoods.tech/buku/upload.php',
+                        type: 'post',
+                        processData: false, // default kirim object/string, form mengandung file
+                        contentType: false, // default x-www-form-urlencoded
+
+                        data: filePdf,
+
+                        success: function (response) {
+                            // hilangkan loading
+                            $('.loading').css('display', 'none');
+
+                            // redirect ke toko -> utk lihat buku yang baru di jual
+                            window.location.href = `${site_url}html/tokoSaya-page.html`;
+                        },
+
+                        error: function() {
+                            console.log('Error');
+                        }
+                    });
+
+                });
             }
         }
     }
