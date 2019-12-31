@@ -9,11 +9,11 @@ function borderTab() {
 // document ready
 $(document).ready(() => {
     // let id = window.location.search.substring(1);
-    let id = 88;
+    let id = 97;
 
     $('#obj-pdf').css('height', $(window).height());
     $('#obj-pdf').css('width', $(window).width());
-    $('#obj-pdf').attr('src', `http://docs.google.com/gview?url=https://yafaifoods.tech/buku/pdf/${id}.pdf&embedded=true`)
+    $('#obj-pdf').attr('src', `http://docs.google.com/gview?url=https://yafaifoods.tech/buku/pdf/${id}.pdf&embedded=true`);
     
     borderTab();
 });

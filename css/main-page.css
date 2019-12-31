@@ -44,7 +44,7 @@
     .content .slider-container .slides-items img {
         width: 8rem;
         height: 13rem;
-        margin-right: 0.125rem;  
+        margin-right: 0.375rem;  
     }
 
 
@@ -95,11 +95,11 @@
 
 
 
-    /* cartoon music */
-    .cartoon-music .music {
+    /* cartoon novel */
+    .cartoon-novel .novel {
         margin-top: 2rem;
     }
-    /* cartoon music */
+    /* cartoon novel */
 
 
 
@@ -282,7 +282,6 @@
     .content .slider-container .slides-items img {
         width: 8.75rem;
         height: 14.25rem;
-        margin-right: 0.125rem;
     }
 
 
@@ -305,21 +304,21 @@
 
 
 
-    /* cartoon music */
-    .cartoon-music .cartoon .header hr {
+    /* cartoon novel */
+    .cartoon-novel .cartoon .header hr {
         width: 63%;
     }
 
 
-    .cartoon-music .music .header hr {
+    .cartoon-novel .novel .header hr {
         width: 70%;
     }
 
 
-    .cartoon-music .music {
+    .cartoon-novel .novel {
         margin-top: 2.25rem;
     }
-    /* cartoon music */
+    /* cartoon novel */
 
 
 
@@ -488,21 +487,21 @@
 
 
 
-    /* cartoon music */
-    .cartoon-music .cartoon .header hr {
+    /* cartoon novel */
+    .cartoon-novel .cartoon .header hr {
         width: 67%;
     }
 
 
-    .cartoon-music .music .header hr {
+    .cartoon-novel .novel .header hr {
         width: 72%;
     }
 
 
-    .cartoon-music .music {
+    .cartoon-novel .novel {
         margin-top: 2.5rem;
     }
-    /* cartoon music */
+    /* cartoon novel */
 
 
 
@@ -649,7 +648,7 @@
     .content .slider-container .slides-items img {
         width: 10.375rem;
         height: 16.5rem;
-        margin-right: 0.25rem;
+        margin-right: 0.4375rem;
     }
 
 
@@ -673,21 +672,21 @@
 
 
 
-    /* cartoon music */
-    .cartoon-music .cartoon .header hr {
+    /* cartoon novel */
+    .cartoon-novel .cartoon .header hr {
         width: 53%;
     }
 
 
-    .cartoon-music .music .header hr {
+    .cartoon-novel .novel .header hr {
         width: 58%;
     }
 
 
-    .cartoon-music .music {
+    .cartoon-novel .novel {
         margin-top: 0;
     }
-    /* cartoon music */
+    /* cartoon novel */
 
 
 
@@ -833,7 +832,7 @@
     .content .slider-container .slides-items img {
         width: 11.25rem;            
         height: 17.5rem;           
-        margin-right: 0.125rem;    
+        margin-right: 0.375rem;    
     }
 
 
@@ -856,16 +855,16 @@
 
 
 
-    /* cartoon music */
-    .cartoon-music .cartoon .header hr {
+    /* cartoon novel */
+    .cartoon-novel .cartoon .header hr {
         width: 65%;
     }
 
 
-    .cartoon-music .music .header hr {
+    .cartoon-novel .novel .header hr {
         width: 70%;
     }
-    /* cartoon music */
+    /* cartoon novel */
 
 
 

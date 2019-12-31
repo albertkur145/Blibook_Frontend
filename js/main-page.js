@@ -4,7 +4,7 @@
 let xPromote = 0;
 let xIndonesian = 0;
 let xCartoon = 0;
-let xMusic = 0;
+let xNovel = 0;
 
 let judulBuku;
 let deskBuku;
@@ -18,8 +18,8 @@ function responsiveSize() {
 
     const buku = $('#promo-murah .items-buku-promo .buku');
     const img = $('#promo-murah .items-buku-promo .buku .card-buku img');
-    const cartoon = $('.cartoon-music .cartoon');
-    const music = $('.cartoon-music .music');
+    const cartoon = $('.cartoon-novel .cartoon');
+    const novel = $('.cartoon-novel .novel');
 
 
     if (width < 250) {
@@ -29,8 +29,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -69,8 +69,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -109,8 +109,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -149,8 +149,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -189,8 +189,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -229,8 +229,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -269,8 +269,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -309,8 +309,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -349,8 +349,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -389,8 +389,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -429,8 +429,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -469,8 +469,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -509,8 +509,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -549,8 +549,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -589,8 +589,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -629,8 +629,8 @@ function responsiveSize() {
             cartoon.addClass('col-12');
             cartoon.removeClass('col-6');
 
-            music.addClass('col-12');
-            music.removeClass('col-6');
+            novel.addClass('col-12');
+            novel.removeClass('col-6');
         }
 
         if (buku.hasClass('col-3')) {
@@ -669,8 +669,8 @@ function responsiveSize() {
             cartoon.addClass('col-6');
             cartoon.removeClass('col-12');
 
-            music.addClass('col-6');
-            music.removeClass('col-12');
+            novel.addClass('col-6');
+            novel.removeClass('col-12');
         }
 
         if (buku.hasClass('col-3')) {
@@ -709,8 +709,8 @@ function responsiveSize() {
             cartoon.addClass('col-6');
             cartoon.removeClass('col-12');
 
-            music.addClass('col-6');
-            music.removeClass('col-12');
+            novel.addClass('col-6');
+            novel.removeClass('col-12');
         }
 
         if (buku.hasClass('col-4')) {
@@ -749,8 +749,8 @@ function responsiveSize() {
             cartoon.addClass('col-6');
             cartoon.removeClass('col-12');
 
-            music.addClass('col-6');
-            music.removeClass('col-12');
+            novel.addClass('col-6');
+            novel.removeClass('col-12');
         }
 
         if (buku.hasClass('col-4')) {
@@ -893,39 +893,39 @@ function sliderKanan(kode) {
         // manipulasi margin slider
         slides.css('marginLeft', `-${xCartoon}rem`);
 
-    } else if (kode === 'music') {
+    } else if (kode === 'novel') {
         if (widthGlobal < 280)
-            xMusic >= 92.125 ? xMusic = 0 : xMusic += 8.375;
+            xNovel >= 92.125 ? xNovel = 0 : xNovel += 8.375;
 
         else if (widthGlobal < 300)
-            xMusic >= 83.75 ? xMusic = 0 : xMusic += 8.375;
+            xNovel >= 83.75 ? xNovel = 0 : xNovel += 8.375;
 
         else if (widthGlobal < 325)
-            xMusic >= 91.25 ? xMusic = 0 : xMusic += 9.125;
+            xNovel >= 91.25 ? xNovel = 0 : xNovel += 9.125;
 
         else if (widthGlobal < 440)
-            xMusic >= 91.25 ? xMusic = 0 : xMusic += 9.125;
+            xNovel >= 91.25 ? xNovel = 0 : xNovel += 9.125;
 
         else if (widthGlobal < 465)
-            xMusic >= 82.125 ? xMusic = 0 : xMusic += 9.125;
+            xNovel >= 82.125 ? xNovel = 0 : xNovel += 9.125;
 
         else if (widthGlobal < 510)
-            xMusic >= 106.875 ? xMusic = 0 : xMusic += 10.6875;
+            xNovel >= 106.875 ? xNovel = 0 : xNovel += 10.6875;
 
         else if (widthGlobal < 753)
-            xMusic >= 96.1875 ? xMusic = 0 : xMusic += 10.6875;
+            xNovel >= 96.1875 ? xNovel = 0 : xNovel += 10.6875;
 
         else if (widthGlobal < 945)
-            xMusic >= 108.75 ? xMusic = 0 : xMusic += 10.875;
+            xNovel >= 108.75 ? xNovel = 0 : xNovel += 10.875;
 
         else if (widthGlobal < 1185)
-            xMusic >= 116.25 ? xMusic = 0 : xMusic += 11.625;
+            xNovel >= 116.25 ? xNovel = 0 : xNovel += 11.625;
 
         else if (widthGlobal >= 1185)
-            xMusic >= 104.625 ? xMusic = 0 : xMusic += 11.625;
+            xNovel >= 104.625 ? xNovel = 0 : xNovel += 11.625;
 
         // manipulasi margin slider
-        slides.css('marginLeft', `-${xMusic}rem`);
+        slides.css('marginLeft', `-${xNovel}rem`);
     }
 }
 
@@ -1035,39 +1035,39 @@ function sliderKiri(kode) {
         // manipulasi margin slider
         slides.css('marginLeft', `-${xCartoon}rem`);
 
-    } else if (kode === 'music') {
+    } else if (kode === 'novel') {
         if (widthGlobal < 280)
-            xMusic <= 0 ? xMusic = 92.125 : xMusic -= 8.375;
+            xNovel <= 0 ? xNovel = 92.125 : xNovel -= 8.375;
 
         else if (widthGlobal < 300)
-            xMusic <= 0 ? xMusic = 83.75 : xMusic -= 8.375;
+            xNovel <= 0 ? xNovel = 83.75 : xNovel -= 8.375;
 
         else if (widthGlobal < 325)
-            xMusic <= 0 ? xMusic = 91.25 : xMusic -= 9.125;
+            xNovel <= 0 ? xNovel = 91.25 : xNovel -= 9.125;
 
         else if (widthGlobal < 440)
-            xMusic <= 0 ? xMusic = 91.25 : xMusic -= 9.125;
+            xNovel <= 0 ? xNovel = 91.25 : xNovel -= 9.125;
 
         else if (widthGlobal < 465)
-            xMusic <= 0 ? xMusic = 82.125 : xMusic -= 9.125;
+            xNovel <= 0 ? xNovel = 82.125 : xNovel -= 9.125;
 
         else if (widthGlobal < 510)
-            xMusic <= 0 ? xMusic = 106.875 : xMusic -= 10.6875;
+            xNovel <= 0 ? xNovel = 106.875 : xNovel -= 10.6875;
 
         else if (widthGlobal < 753)
-            xMusic <= 0 ? xMusic = 96.1875 : xMusic -= 10.6875;
+            xNovel <= 0 ? xNovel = 96.1875 : xNovel -= 10.6875;
 
         else if (widthGlobal < 945)
-            xMusic <= 0 ? xMusic = 108.75 : xMusic -= 10.875;
+            xNovel <= 0 ? xNovel = 108.75 : xNovel -= 10.875;
 
         else if (widthGlobal < 1185)
-            xMusic <= 0 ? xMusic = 116.25 : xMusic -= 11.625;
+            xNovel <= 0 ? xNovel = 116.25 : xNovel -= 11.625;
 
         else if (widthGlobal >= 1185)
-            xMusic <= 0 ? xMusic = 104.625 : xMusic -= 11.625;
+            xNovel <= 0 ? xNovel = 104.625 : xNovel -= 11.625;
 
         // manipulasi margin slider
-        slides.css('marginLeft', `-${xMusic}rem`);
+        slides.css('marginLeft', `-${xNovel}rem`);
 
     }
 }
@@ -1107,7 +1107,7 @@ function tambahBukuTertentu(value) {
         <div class="col-3 buku">
             <a href="detailProduct-page.html?${value.productId}">
                 <div class="card-buku">
-                    <img src="../pictures/${value.productPhotoLink}">
+                    <img src="${value.productPhotoLink}">
                     <div class="card-body-buku">
                         <h5 class="judul-buku">${value.productName}</h5>
                         <p class="harga-buku">Rp. ${harga}</p>
@@ -1122,27 +1122,24 @@ function tambahBukuTertentu(value) {
 
 // get all promote
 function getAllPromote() {
-    let buku = [];
 
     // ubah tanda panah bawah menjadi loading
     $('.lihat-semua span').html(`<img src="../gif/flip.gif">`);
 
     $.ajax({
-        url: "../json/buku.json",
+        url: `${base_url}products/search/price`,
         type: "get",
         dataType: "json",
 
-        success: function(response) {
+        data: {
+            lessThan: 100000
+        },
 
-            // copy data buku < Rp. 100.000
-            response.forEach(value => {
-                if (value.productPrice < 100000)
-                    buku.push(value);
-            });
+        success: function(response) {
             
             // append mulai dari index 12 (karena index 0-11 sudah tertampil)
-            for (let i = 12; i < buku.length; i++) {
-                tambahBukuTertentu(buku[i]);
+            for (let i = 12; i < response.length; i++) {
+                tambahBukuTertentu(response[i]);
             }
 
             // setelah berhasil, hapus loading
@@ -1158,53 +1155,6 @@ function getAllPromote() {
     });
 }
 
-// get all buku
-function getAllBuku(response) {
-    let iTeknologi = 1;
-    let iKartun = 1;
-    let iMusik = 1;
-    let iIndonesia = 1;
-    let iPromoMurah = 1;
-
-    response.forEach(value => {
-
-        if (value.productPrice < 100000 && iPromoMurah <= 12) {
-            tambahBukuTertentu(value);
-            iPromoMurah++;
-        }
-
-        if (value.productCategory === "Teknologi" && iTeknologi <= 12) {
-            $('.promote .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
-            `);
-            iTeknologi++;
-        }
-
-        if (value.productCategory === "Kartun" && iKartun <= 12) {
-            $('.cartoon-music .cartoon .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
-            `);
-            iKartun++;
-        }
-
-        if (value.productCategory === "Musik" && iMusik <= 12) {
-            $('.cartoon-music .music .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
-            `);
-            iMusik++;
-        }
-
-
-        if (value.productCountry === "Indonesia" && iIndonesia <= 12) {
-            $('.indonesian .slider-container .slides-items').append(`
-                <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}" class="prod-hover"></a>
-            `);
-            iIndonesia++;
-        }
-
-    });
-}
-
 
 // document ready
 $(document).ready(() => {
@@ -1212,25 +1162,131 @@ $(document).ready(() => {
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    // get api buku
+    // get api buku (percintaan)
     $.ajax({
-        url: "../json/buku.json",
+        url: `${base_url}products/category`,
         type: "get",
         dataType: "json",
 
+        data: {
+            name: 'Percintaan'
+        },
+
         success: function (response) {
-            getAllBuku(response);
+            let iPercintaan = 1;
 
-            // hilangkan loading
-            $('.loading').css('display', 'none');
+            response.forEach(value => {
+                if (iPercintaan <= 12) {
+                    $('.promote .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                    iPercintaan++;
+                }
+            });
         }
+    }).then(() => {
 
-    }).then(() => {
-        const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
-        judulBuku = $('h5.judul-buku', buku);
-        deskBuku = $('p.desk-buku', buku);
-    }).then(() => {
-        responsiveSize();
+        // get api buku (kartun)
+        $.ajax({
+            url: `${base_url}products/category`,
+            type: "get",
+            dataType: "json",
+
+            data: {
+                name: 'Kartun'
+            },
+
+            success: function (response) {
+                let iKartun = 1;
+
+                response.forEach(value => {
+                    if (iKartun <= 12) {
+                        $('.cartoon-novel .cartoon .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                        iKartun++;
+                    }   
+                });
+                
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+            }
+
+        }).then(() => {
+
+            // get api buku (novel)
+            $.ajax({
+                url: `${base_url}products/category`,
+                type: "get",
+                dataType: "json",
+
+                data: {
+                    name: 'Novel'
+                },
+
+                success: function (response) {
+                    let iNovel = 1;
+
+                    response.forEach(value => {
+                        if (iNovel <= 12) {
+                            $('.cartoon-novel .novel .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                            iNovel++;
+                        }
+                    });
+                }
+            });
+        }).then(() => {
+
+            // get api buku (indonesia)
+            $.ajax({
+                url: `${base_url}products/country`,
+                type: "get",
+                dataType: "json",
+
+                data: {
+                    country: 'Indonesia'
+                },
+
+                success: function (response) {
+                    let iIndonesia = 1;
+
+                    response.forEach(value => {
+                        if (iIndonesia <= 12) {
+                            $('.indonesian .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                            iIndonesia++;
+                        }
+                    });
+                }
+
+            })
+            
+        }).then(() => {
+
+            // get api buku (dibawah 100K)
+            $.ajax({
+                url: `${base_url}products/search/price`,
+                type: "get",
+                dataType: "json",
+
+                data: {
+                    lessThan: 100000
+                },
+
+                success: function (response) {
+                    let iPromoMurah = 1;
+                    response.forEach(value => {
+                        if (iPromoMurah <= 12) {
+                            tambahBukuTertentu(value);
+                            iPromoMurah++;
+                        }
+                    });
+                }
+            }).then(() => {
+                const buku = $('#promo-murah .items-buku-promo .buku .card-buku');
+                judulBuku = $('h5.judul-buku', buku);
+                deskBuku = $('p.desk-buku', buku)
+            }).then(() => {
+                responsiveSize();
+            });
+        });
+
     });
     
 });

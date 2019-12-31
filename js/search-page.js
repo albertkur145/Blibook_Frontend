@@ -692,12 +692,19 @@ $(document).ready(() => {
     // ubah judul keyword
     $('#promo-murah .header h2').html(judulKeyword);
 
-    // tetapkan base url dan params (kategori/search)
+    // tetapkan base url dan params (kategori/search/all/indonesian)
     if (keyword[0] === "kategori") {
-        url = `${base_url}products/category`;
-        params = {
-            name: keyword[1]
-        };
+        if (keyword[1] === "All" || keyword[1] === "Indonesia") {
+            url = `${base_url}admin/products`;
+        }
+
+        else {
+            url = `${base_url}products/category`;
+            params = {
+                name: keyword[1]
+            };
+        }
+        
     } else if (keyword[0] === "search") {
         url = `${base_url}products/search`;
         params = {
@@ -716,9 +723,18 @@ $(document).ready(() => {
 
         success: function(response) {
             if (response.length > 0) {
-                response.forEach(value => {
-                    tambahBukuTertentu(value); // append data
-                });
+                
+                // cek indonesian atau bukan
+                if (keyword[1] === "Indonesia") {
+                    response.forEach(value => {
+                        if (value.productLanguage === "Indonesia")
+                            tambahBukuTertentu(value); // append data
+                    });
+                } else {
+                    response.forEach(value => {
+                        tambahBukuTertentu(value); // append data
+                    });
+                }
             } 
 
             // hilangkan loading

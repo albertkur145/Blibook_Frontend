@@ -492,30 +492,58 @@ function responsiveSize() {
 }
 
 
-// add to wishlist
-function addWishlist() {
+// add to bag
+function addBag() {
+    let id = window.location.search.substring(1);
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     // post data ke wishlist
     $.ajax({
-        url: "../json/buku.json",
-        type: "get",
+        url: `${base_url}carts/addProduct`,
+        type: "post",
         dataType: "json",
 
-        success: function(response) {
-            console.log('Sukses Post');
+        data: {
+            userId: 1,
+            productId: id
+        },
+
+        success: function () {
+            window.location.href = `${site_url}html/bag-page.html`;
         }
-    }).then(() => {
-
-        // hilangkan loading
-        $('.loading').css('display', 'none');
-
-        // tampilkan pesan dialog
-        $('.dialog-oke').css('display', 'flex');
     });
+}
 
+
+// add to wishlist
+function addWishlist() {
+
+    let id = window.location.search.substring(1);
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // post data ke wishlist
+    $.ajax({
+        url: `${base_url}wishlists/addProduct`,
+        type: "post",
+        dataType: "json",
+
+        data: {
+            userId: 1,
+            productId: id
+        },
+
+        success: function() {
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            $('.dialog-oke').css('display', 'flex');
+        }
+    });
 }
 
 
@@ -545,47 +573,53 @@ function generateRupiah(angka) {
 
 
 // get buku detail
-function getBukuDetail(response) {
-    let id = window.location.search.substring(1);
+function getBukuDetail(value) {
     const topLeft = $('#detail-product .top .left');
+    const topRight = $('#detail-product .top .right');
     const ketBuku = $('#detail-product .top .left .ket-buku');
     const bottom = $('#detail-product .bottom');
 
-    response.forEach(value => {
+    // cari produk yang diklik user
+    let harga = generateRupiah(value.productPrice)
 
-        // cari produk yang diklik user
-        if (value.productId == id) {
-            let harga = generateRupiah(value.productPrice)
+    $('.image-buku', topLeft).html(`<img src="${value.productPhotoLink}">`);
+    $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
+    $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
+    $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
+    $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
+    $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
+    $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
+    $('.value-harga', ketBuku).html(`<p class="harga">Rp. ${harga}</p>`);
+    $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);
+    // $('.right .image-buku', bottom).html(`<img src="../pictures/${value.productPhotoLink}">`);
+    // $('.right .ket-buku p.judul-buku').html(`${value.productName}`);
+    // $('.right .ket-buku p.harga').html(`Rp. ${harga}`);
 
-            $('.image-buku', topLeft).html(`<img src="../pictures/${value.productPhotoLink}">`);
-            $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
-            $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
-            $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
-            $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
-            $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
-            $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
-            $('.value-harga', ketBuku).html(`<p class="harga">Rp. ${harga}</p>`);
-            $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);
-            $('.right .image-buku', bottom).html(`<img src="../pictures/${value.productPhotoLink}">`);
-            $('.right .ket-buku p.judul-buku').html(`${value.productName}`);
-            $('.right .ket-buku p.harga').html(`Rp. ${harga}`);
-        }
-
-    });
+    $('.box-toko').html(`
+        <h2 class="nama-toko">${value.shopName}</h2>
+        <p>${value.shopAddress}</p>
+        <p>${value.shopCity}, ${value.shopProvince}</p>
+    `);
 }
 
 
 // document ready
 $(document).ready(() => {
 
+    let id = window.location.search.substring(1);
+
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     // get detail buku
     $.ajax({
-        url: "../json/buku.json",
+        url: `${base_url}products`,
         type: "get",
         dataType: "json",
+        
+        data: {
+            id: id
+        },
 
         success: function(response) {
             getBukuDetail(response);
