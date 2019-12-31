@@ -1,5 +1,12 @@
 
 
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/main-page.html`;
+}
+
+
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
@@ -56,7 +63,53 @@ const regex = /^[a-zA-Z0-9._-]+@[a-z]{5,5}.[a-z]{2,3}$/;
 function validationForm () {
     if (nama.val().length != 0 && password.val().length != 0 && 
         password.val() == konfirmPassword.val() && regex.test(email.val())) {
-        // berhasil
+
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
+
+        let user = {
+            'userEmail': email.val(),
+            'userName': nama.val(),
+            'userPassword': password.val(),
+            'userPasswordConfirmation': konfirmPassword.val(),
+            'userBirthdate': '01-01-2019',
+            'userHandphone': '0',
+            'userGender': 'pria'
+        };
+
+        let params = new FormData();
+        params.append('user', JSON.stringify(user));
+
+        $.ajax({
+            url: `${base_url}users/register`,
+            type: 'post',
+            dataType: 'json',
+            processData: false, // default kirim object, form mengandung string
+            contentType: false, // default x-www-form-urlencoded
+
+            data: params,
+
+            success: function(response) {
+
+                let pesan = '';
+
+                if (response.status === 200) {
+                    pesan = "Selamat! Berhasil daftar akun baru";
+                } else if (response.status === 400)
+                    pesan = "Koneksi Error! Silahkan coba kembali";
+                else if (response.status === 500)
+                    $('small#error-email-already').css('display', 'block');
+
+                if (response.status === 200 || response.status === 400) {
+                    // tampilkan dialog
+                    $('.dialog-oke .pesan span').html(pesan);
+                    $('.dialog-oke').css('display', 'flex');
+                }
+                
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+            }
+        });
     }
 
     if (nama.val().length == 0) 
@@ -80,6 +133,8 @@ function keyUpNama () {
 }
 
 function keyUpEmail () {
+    $('small#error-email-already').css('display', 'none');
+
     if (!regex.test(email.val()))
         $('small#error-email').css('display', 'block');
     else

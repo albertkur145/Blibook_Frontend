@@ -64,6 +64,7 @@
                             <input type="text" class="form-control" id="email" placeholder="Masukkan email" autocomplete="off"
                             onkeyup="keyUpEmail()">
                             <small id="error-email" class="form-text text-muted">Email tidak valid.</small>
+                            <small id="error-email-already" class="form-text text-muted">Email ini sudah terdaftar.</small>
                         </div>
 
                         <div class="form-group">
@@ -79,7 +80,7 @@
                             <small id="error-konfirm-password" class="form-text text-muted">Password tidak sama.</small>
                         </div>
 
-                        <button class="btn btn-right mt-3" onclick="return validationForm()">Daftar</button>
+                        <button class="btn btn-right mt-3" onclick="validationForm()">Daftar</button>
                     </div>
                     <!-- form -->
 
@@ -90,6 +91,25 @@
         </div>
     </div>
     <!-- akhir content -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
+
+
+    <!-- dialog oke -->
+    <div class="dialog-oke">
+        <div class="pesan">
+            <span>Pesan Default</span>
+            <div class="text-right">
+                <button class="btn-accept" onclick="hideDialog()">Oke</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog oke -->
 
 
     <!-- footer from templating -->

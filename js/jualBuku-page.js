@@ -155,7 +155,7 @@ function validationForm() {
                     url: `${base_url}products`,
                     type: "post",
                     dataType: "json",
-                    processData: false,    // default kirim object/string, form mengandung file
+                    processData: false,    // default kirim object, form mengandung file & string
                     contentType: false,    // default x-www-form-urlencoded
 
                     data: params,
