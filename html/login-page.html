@@ -63,7 +63,7 @@
                             <input type="password" class="form-control" id="password" placeholder="Masukkan password" autocomplete="off">
                         </div>
 
-                        <button class="btn btn-right mt-3">Masuk</button>
+                        <button class="btn btn-right mt-3" onclick="validateLogin()">Masuk</button>
                     </div>
                     <!-- form -->
                 </div>
@@ -73,6 +73,25 @@
         </div>
     </div>
     <!-- akhir content -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
+
+
+    <!-- dialog oke -->
+    <div class="dialog-oke">
+        <div class="pesan">
+            <span>Pesan Default</span>
+            <div class="text-right">
+                <button class="btn-accept" onclick="hideDialog()">Oke</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog oke -->
 
 
     <!-- footer from templating -->

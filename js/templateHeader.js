@@ -123,7 +123,7 @@ const header = `
                                     </div>
                                 </a>
 
-                                <a href="main-page.html">
+                                <a href="main-page.html" onclick="logout()">
                                     <div class="row">
                                         <div class="col-1">
                                             <i class="fas fa-external-link-alt"></i>
@@ -206,7 +206,7 @@ const header = `
                                     </div>
                                 </a>
 
-                                <a href="main-page.html">
+                                <a href="main-page.html" onclick="logout()">
                                     <div class="row">
                                         <div class="col-1">
                                             <i class="fas fa-external-link-alt"></i>

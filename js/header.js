@@ -120,15 +120,17 @@ $('body').click(function (e) {
 function responsiveSize() {
     let width = $(window).width();
 
-    if (width < 945) {
+    if (width < 945 && User != null && session < 8) {
         optUser.html(`
             <i class="fas fa-user"></i> Hi, ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
         `);
     }
     
-    else if (width >= 945) {
+    else if (width >= 945 && User != null && session < 8) {
         constraintNama();
     }
+
+    
 }
 
 
@@ -138,32 +140,37 @@ function sendKategori(kategori) {
 }
 
 
+// logout
+function logout() {
+    localStorage.removeItem('dataUser');
+    localStorage.removeItem('loginTime');
+}
+
+
 // ready execute
-$.ajax({
-    url: `${base_url}users`,
-    type: 'get',
-    dataType: 'json',
-    
-    data: {
-        id: '13'
-    },
+const User = JSON.parse(localStorage.getItem('dataUser'));
+const loginTime = localStorage.getItem('loginTime');
+let session = null;
 
-    success: function(response) {
+if (loginTime != null) {
+    session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
+
+    if (User != null && session < 8) {
         optUser = $('.nav-blibuku .user');
-        namaUser = response.userName;
-    },
+        namaUser = User.userName;
 
-}).then(() => {
-    let width = $(window).width();
+        $('.nav-blibuku .masuk').css('display', 'none');
+        $('.nav-blibuku .daftar').css('display', 'none');
+        $('.nav-blibuku .user').css('display', 'block');
+    } else {
+        logout();
+        $('.nav-blibuku .masuk').css('display', 'block');
+        $('.nav-blibuku .daftar').css('display', 'block');
+        $('.nav-blibuku .user').css('display', 'none');
+    }
+}
+console.log(User);
 
-    if (width < 945) {
-        optUser.html(`
-            <i class="fas fa-user"></i> Hi, ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
-        `);
-    } else if (width >= 945) 
-        constraintNama();
-    
-});
-
+responsiveSize();
 $(window).resize(responsiveSize);
 

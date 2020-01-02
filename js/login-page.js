@@ -1,5 +1,11 @@
 
 
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+}
+
+
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
@@ -41,6 +47,50 @@ function responsiveSize() {
         // manipulasi css
         left.css('display', 'block');
     }
+}
+
+
+function validateLogin() {
+    
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // ambil value form
+    const form = $('#content .right .form');
+    const email = $('#email', form).val();
+    const password = $('#password', form).val();
+
+    // taruh di parameter api
+    let params = new FormData();
+    params.append('email', email);
+    params.append('password', password);
+
+    // request api post login
+    $.ajax({
+        url: `${base_url}users/login`,
+        type: 'post',
+        dataType: 'json',
+        processData: false, // default kirim object, form mengandung string
+        contentType: false, // default x-www-form-urlencoded
+
+        data: params,
+
+        success: function(response) {
+            if (response.status === 200) {
+                let time = new Date();
+                localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
+                localStorage.setItem('loginTime', time.getTime());
+                window.location.href = `${site_url}html/main-page.html`;
+            } else {
+                // tampilkan dialog
+                $('.dialog-oke .pesan span').html("Email / password kamu salah!");
+                $('.dialog-oke').css('display', 'flex');
+            }
+            
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+        }
+    });
 }
 
 

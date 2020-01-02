@@ -76,6 +76,87 @@
     /* content */
 
 
+    /* loading */
+    .loading {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 1500;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+
+    .loading img {
+        width: 70%;
+    }
+
+    /* loading */
+
+
+    /* dialog oke */
+    .dialog-oke {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 1500;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+
+    .dialog-oke .pesan {
+        background-color: #FFF;
+        border-radius: 0.25rem;
+        font-weight: 500;
+        color: #333;
+        font-size: 0.75rem;
+        padding: 0.75rem 1rem;
+        animation: translateDialog 0.5s ease-out;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        border: 0;
+        padding: 0.5rem 0.875rem;
+        border-radius: 0.5rem;
+        color: #FFF;
+        font-weight: 500;
+        font-size: 0.6875rem;
+        margin-top: 0.625rem;
+        background-color: #1B84FF;
+        transition: background-color .2s ease-out;
+    }
+
+
+    .dialog-oke .pesan .btn-accept:hover {
+        background-color: #117EFF;
+    }
+
+
+    @keyframes translateDialog {
+        0% {
+            transform: translateY(-2.5rem);
+            opacity: 0;
+        }
+
+
+        100% {
+            transform: translateY(0rem);
+            opacity: 1;
+        }
+    }
+    /* dialog oke */
+
+
 /* berlaku untuk width window < 320px */
 
 
@@ -122,6 +203,28 @@
         font-size: 0.9375rem;
     }
     /* content */
+
+
+    /* loading */
+    .loading img {
+        width: 55%;
+    }
+    /* loading */
+
+
+    /* dialog oke */
+    .dialog-oke .pesan {
+        font-size: 0.875rem;
+        padding: 1.0625rem 1.25rem;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8125rem;
+        margin-top: 0.875rem;
+    }
+    /* dialog oke */
 
 
 }
@@ -210,6 +313,28 @@
     /* content */
 
 
+    /* loading */
+    .loading img {
+        width: 45%;
+    }
+    /* loading */
+
+
+    /* dialog oke */
+    .dialog-oke .pesan {
+        font-size: 1.0625rem;
+        padding: 1.5rem 1.6875rem;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9375rem;
+        margin-top: 0.8125rem;
+    }
+    /* dialog oke */
+
+
 }
 
 /* berlaku untuk width window (480px - 767px) */
@@ -279,6 +404,28 @@
         font-size: 1rem;
     }
     /* content */
+
+
+    /* loading */
+    .loading img {
+        width: 40%;
+    }
+    /* loading */
+
+
+    /* dialog oke */
+    .dialog-oke .pesan {
+        font-size: 1.125rem;
+        padding: 1.5rem 1.75rem;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        padding: 0.5rem 1.75rem;
+        font-size: 1rem;
+        margin-top: 0.875rem;
+    }
+    /* dialog oke */
 
 
 }
@@ -351,6 +498,28 @@
         font-size: 1.125rem;
     }
     /* content */
+
+
+    /* loading */
+    .loading img {
+        width: 35%;
+    }
+    /* loading */
+
+
+    /* dialog oke */
+    .dialog-oke .pesan {
+        font-size: 1.25rem;
+        padding: 1.75rem 2rem;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        padding: 0.75rem 2rem;
+        font-size: 1.0625rem;
+        margin-top: 1rem;
+    }
+    /* dialog oke */
 
 
 }
