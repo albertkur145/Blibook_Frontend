@@ -484,27 +484,33 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku() {
+function hapusBuku(data) {
+
+    let params = new FormData();
+    params.append('cartId', $(data).attr('data-id'));
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     // post data ke wishlist
     $.ajax({
-        url: "../json/buku.json",
-        type: "get",
+        url: `${base_url}wishlists/delete`,
+        type: "delete",
         dataType: "json",
+        processData: false, // default kirim object, form mengandung string
+        contentType: false, // default x-www-form-urlencoded
 
-        success: function (response) {
-            console.log('Sukses Delete');
+        data: params,
+
+        success: function () {
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            $('.dialog-oke').css('display', 'flex');
+
         }
-    }).then(() => {
-
-        // hilangkan loading
-        $('.loading').css('display', 'none');
-
-        // tampilkan pesan dialog
-        $('.dialog-oke').css('display', 'flex');
     });
 
 }
@@ -513,6 +519,7 @@ function hapusBuku() {
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/wishlist-page.html`;
 }
 
 
@@ -535,28 +542,28 @@ function generateRupiah(angka) {
 }
 
 
-// get wishlist user
-function getWishlistUser(response) {
+// set wishlist user di DOM
+function setWishlist(response) {
 
     response.forEach(value => {
-        let harga = generateRupiah(value.productPrice);
-        textJudul.push(value.productName);
-        textDeskripsi.push(value.productDescription);
+        let harga = generateRupiah(value.product.productPrice);
+        textJudul.push(value.product.productName);
+        textDeskripsi.push(value.product.productDescription);
             
         $('#content .right .rbody .wishlist').append(`
             <div class="row">
                 <!-- image -->
                 <div class="col-3 image-buku">
-                    <a href="detailProduct-page.html?${value.productId}"><img src="../pictures/${value.productPhotoLink}"></a>
+                    <a href="detailProduct-page.html?${value.product.productId}"><img src="${value.product.productPhotoLink}"></a>
                 </div>
                 <!-- image -->
                 
                 <!-- desk -->
                 <div class="col-6 desk-buku">
-                    <a href="detailProduct-page.html?${value.productId}"><p class="judul">${value.productName}</p></a>
-                    <p class="deskripsi">${value.productDescription}</p>
+                    <a href="detailProduct-page.html?${value.product.productId}"><p class="judul">${value.product.productName}</p></a>
+                    <p class="deskripsi">${value.product.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
-                    <span class="hapus" onclick="hapusBuku()">Hapus</span>
+                    <span class="hapus" onclick="hapusBuku(this)" data-id="${value.cartId}">Hapus</span>
                 </div>
                 <!-- desk -->
 
@@ -574,27 +581,31 @@ function getWishlistUser(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get wishlist user
+function getWishlistUser() {
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     $.ajax({
-        url: "../json/wishlist.json",
+        url: `${base_url}wishlists/user`,
         type: "get",
         dataType: "json",
 
-        success: function(response) {
-            if (response.length === 0) 
+        data: {
+            userId: User.userId
+        },
+
+        success: function (response) {
+            if (response.data.length === 0)
                 $('#content .right .rbody .isEmpty').css('display', 'block');
             else
-                getWishlistUser(response);
+                setWishlist(response.data);
 
             // hilangkan loading
             $('.loading').css('display', 'none');
         }
-        
+
     }).then(() => {
         const buku = $('#content .right .rbody .wishlist');
         judulBuku = $('.desk-buku p.judul', buku);
@@ -603,7 +614,16 @@ $(document).ready(() => {
         borderTab();
         responsiveSize();
     });
+}
 
+
+// document ready
+$(document).ready(() => {
+
+    if (checkSesi()) 
+        getWishlistUser();
+    else
+        window.history.back();
     
 })
 
