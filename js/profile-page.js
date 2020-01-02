@@ -69,6 +69,52 @@ function responsiveSize() {
 }
 
 
+// update user
+function updateUser() {
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    let tgl = $('option:selected', tanggal).val();
+    let bln = $('option:selected', bulan).val();
+    let thn = $('option:selected', tahun).val();
+    let gdr = $('input:radio[name=gender]:checked').val();
+
+    let Data = {
+        "userId": User.userId,
+        "userEmail": email.val(),
+        "userName": nama.val(),
+        "userBirthdate": `${tgl}-${bln}-${thn}`,
+        "userHandphone": nomor.val(),
+        "userGender": gdr
+    };
+
+    let params = new FormData();
+    params.append('user', JSON.stringify(Data));
+
+
+    $.ajax({
+        url: `${base_url}users/update`,
+        type: 'post',
+        dataType: 'json',
+        processData: false, // default kirim object, form mengandung file & string
+        contentType: false, // default x-www-form-urlencoded
+
+        data: params,
+
+        success: function(response) {
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // update localstorage dan User
+            localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
+            User = JSON.parse(localStorage.getItem('dataUser'));
+
+            getUserDetail(User);
+        }
+    });
+}
+
+
 // validasi form
 const form = $('#content .right .rbody .form');
 const nama = $('#nama', form);
@@ -88,15 +134,13 @@ function validationForm() {
 
     if (nama.val().length != 0 && regexHP.test(nomor.val()) && !(tgl == 31 && !(bln == 1 || bln == 3 || bln == 5 || bln == 7 || bln == 8 || bln == 10 || bln == 12))) {
         if (tgl > 28 && bln == 2) {
-            if (tgl != 29 || thn % 4 != 0) {
+            if (tgl != 29 || thn % 4 != 0)
                 $('small#error-ttl').css('display', 'block');
-                return false;
-            }
-        }
-
-        return true;
+            else 
+                updateUser();
+        } else
+            updateUser();
     }
-        
 
     if (nama.val().length == 0)
         $('small#error-nama').css('display', 'block');
@@ -112,8 +156,6 @@ function validationForm() {
         else
             $('small#error-ttl').css('display', 'block');
     }
-
-    return false;
 }
 
 function keyUpNama () {
@@ -153,38 +195,21 @@ function getUserDetail(response) {
     tanggal.val(ttl[0]);
     bulan.val(ttl[1]);
     tahun.val(ttl[2]);
-    nomor.val(response.userPhone);
+    nomor.val(response.userHandphone);
     gender.val([response.userGender]);
 }
 
 
 // document ready
 $(document).ready(() => {
-    
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
-
     appendTTL();
     borderTab();
     responsiveSize();
 
-    // req api -> utk set value form
-    $.ajax({
-        url: `${base_url}users`,
-        type: "get",
-        dataType: "json",
-        data: {
-            id: "1"
-        },
-        
-        success: function(response) {
-            getUserDetail(response);
-
-            // hilangkan loading
-            $('.loading').css('display', 'none');
-        }
-
-    });
+    if (checkSesi()) 
+        getUserDetail(User);
+    else 
+        window.history.back();
     
 });
 

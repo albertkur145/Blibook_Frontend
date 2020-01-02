@@ -147,30 +147,38 @@ function logout() {
 }
 
 
+// cek session
+function checkSesi() {
+    if (loginTime != null) {
+        session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
+
+        if (User != null && session < 8) {
+            optUser = $('.nav-blibuku .user');
+            namaUser = User.userName;
+
+            $('.nav-blibuku .masuk').css('display', 'none');
+            $('.nav-blibuku .daftar').css('display', 'none');
+            $('.nav-blibuku .user').css('display', 'block');
+
+            return 1;
+        } else {
+            logout();
+            $('.nav-blibuku .masuk').css('display', 'block');
+            $('.nav-blibuku .daftar').css('display', 'block');
+            $('.nav-blibuku .user').css('display', 'none');
+
+            return 0;
+        }
+    }
+}
+
+
 // ready execute
-const User = JSON.parse(localStorage.getItem('dataUser'));
+let User = JSON.parse(localStorage.getItem('dataUser'));
 const loginTime = localStorage.getItem('loginTime');
 let session = null;
 
-if (loginTime != null) {
-    session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
-
-    if (User != null && session < 8) {
-        optUser = $('.nav-blibuku .user');
-        namaUser = User.userName;
-
-        $('.nav-blibuku .masuk').css('display', 'none');
-        $('.nav-blibuku .daftar').css('display', 'none');
-        $('.nav-blibuku .user').css('display', 'block');
-    } else {
-        logout();
-        $('.nav-blibuku .masuk').css('display', 'block');
-        $('.nav-blibuku .daftar').css('display', 'block');
-        $('.nav-blibuku .user').css('display', 'none');
-    }
-}
-console.log(User);
-
+checkSesi();
 responsiveSize();
 $(window).resize(responsiveSize);
 

@@ -330,7 +330,7 @@ function setForm(response) {
 // document ready
 $(document).ready(() => {
     $.ajax({
-        url: 'http://localhost:8025/blibook/api/shops',
+        url: `${base_url}shops`,
         type: 'get',
         dataType: 'json',
 
