@@ -484,35 +484,76 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku(data) {
+function hapusBuku(e) {
 
-    let params = new FormData();
-    params.append('cartId', $(data).attr('data-id'));
+    if (checkSesi()) {
+        let params = new FormData();
+        params.append('cartId', $(e).attr('data-id'));
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
 
-    // post data ke wishlist
-    $.ajax({
-        url: `${base_url}wishlists/delete`,
-        type: "delete",
-        dataType: "json",
-        processData: false, // default kirim object, form mengandung string
-        contentType: false, // default x-www-form-urlencoded
+        // hapus buku dari wishlist
+        $.ajax({
+            url: `${base_url}wishlists/carts/delete`,
+            type: "delete",
+            dataType: "json",
+            processData: false, // default kirim object, form mengandung string
+            contentType: false, // default x-www-form-urlencoded
 
-        data: params,
+            data: params,
 
-        success: function () {
+            success: function () {
 
-            // hilangkan loading
-            $('.loading').css('display', 'none');
+                // hilangkan loading
+                $('.loading').css('display', 'none');
 
-            // tampilkan pesan dialog
-            $('.dialog-oke').css('display', 'flex');
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari wishlist');
+                $('.dialog-oke').css('display', 'flex');
 
-        }
-    });
+            }
+        });
+    } else {
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
+        $('.dialog-oke').css('display', 'flex');
+    }
 
+}
+
+
+// add to bag
+function addBag(e) {
+    if (checkSesi()) {
+
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
+
+        let id = $(e).attr('data-id');
+
+        // post data ke bag
+        $.ajax({
+            url: `${base_url}carts/addProduct`,
+            type: "post",
+            dataType: "json",
+
+            data: {
+                userId: User.userId,
+                productId: id
+            },
+
+            success: function () {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+                window.location.href = `${site_url}html/bag-page.html`;
+            }
+        });
+    } else {
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
+        $('.dialog-oke').css('display', 'flex');
+    }
 }
 
 
@@ -569,7 +610,7 @@ function setWishlist(response) {
 
                 <!-- button beli -->
                 <div class="col-3 button-beli">
-                    <a href="bag-page.html">Beli</a>
+                    <a href="javascript:void(0)" onclick="addBag(this)" data-id="${value.product.productId}">Beli</a>
                 </div>
                 <!-- button beli -->
             </div>

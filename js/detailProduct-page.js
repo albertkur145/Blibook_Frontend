@@ -494,56 +494,71 @@ function responsiveSize() {
 
 // add to bag
 function addBag() {
-    let id = window.location.search.substring(1);
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+    if (checkSesi()) {
+        let id = window.location.search.substring(1);
 
-    // post data ke wishlist
-    $.ajax({
-        url: `${base_url}carts/addProduct`,
-        type: "post",
-        dataType: "json",
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
 
-        data: {
-            userId: 1,
-            productId: id
-        },
+        // post data ke bag
+        $.ajax({
+            url: `${base_url}carts/addProduct`,
+            type: "post",
+            dataType: "json",
 
-        success: function () {
-            window.location.href = `${site_url}html/bag-page.html`;
-        }
-    });
+            data: {
+                userId: User.userId,
+                productId: id
+            },
+
+            success: function () {
+                window.location.href = `${site_url}html/bag-page.html`;
+            }
+        });
+    } else {
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
+        $('.dialog-oke').css('display', 'flex');
+    }
 }
 
 
 // add to wishlist
 function addWishlist() {
 
-    let id = window.location.search.substring(1);
+    if (checkSesi()) {
+        let id = window.location.search.substring(1);
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
 
-    // post data ke wishlist
-    $.ajax({
-        url: `${base_url}wishlists/addProduct`,
-        type: "post",
-        dataType: "json",
+        // post buku ke wishlist
+        $.ajax({
+            url: `${base_url}wishlists/addProduct`,
+            type: "post",
+            dataType: "json",
 
-        data: {
-            userId: 1,
-            productId: id
-        },
+            data: {
+                userId: User.userId,
+                productId: id
+            },
 
-        success: function() {
-            // hilangkan loading
-            $('.loading').css('display', 'none');
+            success: function() {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
 
-            // tampilkan pesan dialog
-            $('.dialog-oke').css('display', 'flex');
-        }
-    });
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html('Buku berhasil ditambahkan ke wishlist');
+                $('.dialog-oke').css('display', 'flex');
+            }
+        });
+    } else {
+        // tampilkan pesan dialog
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
+        $('.dialog-oke').css('display', 'flex');
+    }
+
 }
 
 
@@ -572,8 +587,8 @@ function generateRupiah(angka) {
 }
 
 
-// get buku detail
-function getBukuDetail(value) {
+// set buku detail ke dom
+function setBukuDetail(value) {
     const topLeft = $('#detail-product .top .left');
     const topRight = $('#detail-product .top .right');
     const ketBuku = $('#detail-product .top .left .ket-buku');
@@ -603,9 +618,8 @@ function getBukuDetail(value) {
 }
 
 
-// document ready
-$(document).ready(() => {
-
+// get detail buku
+function getDetailBuku() {
     let id = window.location.search.substring(1);
 
     // tampilkan loading
@@ -616,18 +630,18 @@ $(document).ready(() => {
         url: `${base_url}products`,
         type: "get",
         dataType: "json",
-        
+
         data: {
             id: id
         },
 
-        success: function(response) {
-            getBukuDetail(response);
+        success: function (response) {
+            setBukuDetail(response);
 
             // hilangkan loading
             $('.loading').css('display', 'none');
         }
-        
+
     }).then(() => {
         deskripsiBuku = $('#detail-product .bottom .left .deskripsi p.desk').text();
         readMore = $('#detail-product .bottom .left .deskripsi p.read-more');
@@ -636,6 +650,12 @@ $(document).ready(() => {
     }).then(() => {
         responsiveSize();
     });
+}
+
+
+// document ready
+$(document).ready(() => {
+    getDetailBuku();
 });
 
 $(window).resize(responsiveSize);

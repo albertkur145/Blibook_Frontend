@@ -298,58 +298,69 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku() {
+function hapusBuku(e) {
+    if (checkSesi()) {
+        $('.loading').css('display', 'flex');   // tampilkan loading
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+        let params = new FormData();
+        params.append('cartId', $(e).attr('data-id'));
 
-    // delete data
-    $.ajax({
-        url: "../json/buku.json",
-        type: "get",
-        dataType: "json",
+        // hapus buku dari bag
+        $.ajax({
+            url: `${base_url}wishlists/carts/delete`,
+            type: "delete",
+            dataType: "json",
+            processData: false, // default kirim object, form mengandung string
+            contentType: false, // default x-www-form-urlencoded
 
-        success: function (response) {
-            console.log('Sukses Post');
-        }
-    }).then(() => {
+            data: params,
 
-        // hilangkan loading
-        $('.loading').css('display', 'none');
-
+            success: function () {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+                window.location.href = `${site_url}html/bag-page.html`;
+            }
+        });
+    } else {
         // tampilkan pesan dialog
-        $('.dialog-oke .pesan span').html("Buku berhasil dihapus dari bag");
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
-
-    });
+    }
 }
 
 
 // add to wishlist
-function addWishlist() {
+function addWishlist(e) {
+    if (checkSesi()) {
+        $('.loading').css('display', 'flex');   // tampilkan loading
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+        let id = $(e).attr('data-id');
 
-    // post data ke wishlist
-    $.ajax({
-        url: "../json/buku.json",
-        type: "get",
-        dataType: "json",
+        // post buku ke wishlist
+        $.ajax({
+            url: `${base_url}wishlists/addProduct`,
+            type: "post",
+            dataType: "json",
 
-        success: function (response) {
-            console.log('Sukses Post');
-        }
-    }).then(() => {
+            data: {
+                userId: User.userId,
+                productId: id
+            },
 
-        // hilangkan loading
-        $('.loading').css('display', 'none');
+            success: function () {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
 
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html('Buku berhasil ditambahkan ke wishlist');
+                $('.dialog-oke').css('display', 'flex');
+            }
+        });
+    } else {
         // tampilkan pesan dialog
-        $('.dialog-oke .pesan span').html("Buku berhasil ditambahkan ke wishlist");
+        $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
-
-    });
+    }
 }
 
 
@@ -378,20 +389,20 @@ function generateRupiah(angka) {
 }
 
 
-// get data bag
-function getDataBag(response) {
+// set data bag
+function setDataBag(response) {
     const bag = $('#produk .left .buku');
     
     response.forEach((value) => {
 
-        let harga = generateRupiah(value.productPrice);
+        let harga = generateRupiah(value.product.productPrice);
         
         bag.append(`
             <div class="row">
 
                 <!-- checkbox -->
                 <div class="col-1 checkbox-pilih">
-                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productId}" data-harga="${value.productPrice}">
+                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.product.productId}" data-harga="${value.product.productPrice}">
                     <span class="checkbox"></span>
                 </div>
                 <!-- checkbox -->
@@ -402,15 +413,15 @@ function getDataBag(response) {
 
                         <!-- image -->
                         <div class="col-3 img-buku">
-                            <img src="../pictures/${value.productPhotoLink}">
+                            <img src="${value.product.productPhotoLink}">
                         </div>
                         <!-- image -->
                         
                         <!-- desk buku -->
                         <div class="col-9 desk-buku">
-                            <p class="judul">${value.productName}</p>
-                            <p class="author">Penulis : ${value.productAuthor}</p>
-                            <p class="bahasa">Bahasa ${value.productLanguage}</p>
+                            <p class="judul">${value.product.productName}</p>
+                            <p class="author">Penulis : ${value.product.productAuthor}</p>
+                            <p class="bahasa">Bahasa ${value.product.productLanguage}</p>
                             <p class="harga">Rp. ${harga}</p>
 
                             <div class="row">
@@ -420,8 +431,8 @@ function getDataBag(response) {
                                 </div>
 
                                 <div class="col-6 aksi text-right">
-                                    <span onclick="addWishlist()"><i class="fas fa-heart"></i></span>
-                                    <span onclick="hapusBuku()"><i class="fas fa-trash"></i></span>
+                                    <span onclick="addWishlist(this)" data-id="${value.product.productId}"><i class="fas fa-heart"></i></span>
+                                    <span onclick="hapusBuku(this)" data-id="${value.cartId}"><i class="fas fa-trash"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -439,36 +450,49 @@ function getDataBag(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get data bag
+function getDataBag() {
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    // get data bag
     $.ajax({
-        url: "../json/bag.json",
+        url: `${base_url}carts/user`,
         type: "get",
         dataType: "json",
 
-        success: function(response) {
-            if (response.length === 0) {
+        data: {
+            userId: User.userId
+        },
+
+        success: function (response) {
+            if (response.data.length === 0) {
                 $('#produk .isEmpty').css('display', 'block');
                 $('#produk .notEmpty').css('display', 'none');
             } else {
                 $('#produk .isEmpty').css('display', 'none');
                 $('#produk .notEmpty').css('display', 'flex');
-                getDataBag(response);
+                setDataBag(response.data);
             }
 
             // hilangkan loading
             $('.loading').css('display', 'none');
         }
-        
+
     }).then(() => {
         responsiveSize();
     });
-    
+}
+
+
+// document ready
+$(document).ready(() => {
+
+    if (checkSesi())
+        getDataBag();
+    else
+        window.location.href = `${site_url}html/login-page.html`;
+
 });
 
 $(window).resize(responsiveSize);
