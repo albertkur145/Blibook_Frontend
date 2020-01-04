@@ -114,6 +114,9 @@ function validationImage() {
 // validation form
 function validationForm() {
 
+    if (!checkSesi())
+        window.location.href = `${site_url}html/login-page.html`;
+
     if (validationAllInput()) { // validasi setiap input/select option
 
         if (validationImage()) { // validasi cover buku
@@ -146,7 +149,7 @@ function validationForm() {
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
-                params.append('shop', '13');
+                params.append('shop', window.location.search.substring(1));
 
                 let idPdf;
 
@@ -162,15 +165,6 @@ function validationForm() {
 
                     success: function (response) {
                         idPdf = response.productId;
-                    },
-
-                    error: function() {
-                        // hilangkan loading
-                        $('.loading').css('display', 'none');
-
-                        // tampilkan pesan dialog
-                        $('.dialog-oke .pesan span').html("Koneksi Error! Silahkan coba kembali");
-                        $('.dialog-oke').css('display', 'flex');
                     }
                 }).then(() => {
 
@@ -353,6 +347,10 @@ uploadPDF.focusout(() => {
 
 // document ready
 $(document).ready(() => {
+    
+    if (!checkSesi())
+        window.location.href = `${site_url}html/login-page.html`;
+
     borderTab();
     appendTahunTerbit();
 });

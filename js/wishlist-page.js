@@ -664,7 +664,7 @@ $(document).ready(() => {
     if (checkSesi()) 
         getWishlistUser();
     else
-        window.history.back();
+        window.location.href = `${site_url}html/login-page.html`;
     
 })
 

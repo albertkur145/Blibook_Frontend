@@ -96,7 +96,7 @@ function updateUser() {
         url: `${base_url}users/update`,
         type: 'post',
         dataType: 'json',
-        processData: false, // default kirim object, form mengandung file & string
+        processData: false, // default kirim object, form mengandung string
         contentType: false, // default x-www-form-urlencoded
 
         data: params,
@@ -209,8 +209,7 @@ $(document).ready(() => {
     if (checkSesi()) 
         getUserDetail(User);
     else 
-        window.history.back();
-    
+        window.location.href = `${site_url}html/login-page.html`;
 });
 
 $(window).resize(responsiveSize);

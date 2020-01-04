@@ -1,6 +1,7 @@
 
 
 // variable global
+let toko;
 let judulBuku;
 let deskBuku;
 let textJudul = [];
@@ -10,6 +11,12 @@ let textDeskripsi = [];
 // mark side tab
 function borderTab() {
     $('#content .left .tab .toko-saya-tab').addClass('is-active');
+}
+
+
+// direct ke jual buku page
+function directJualBukuPage() {
+    window.location.href = `${site_url}html/jualBuku-page.html?${toko.shopId}`;
 }
 
 
@@ -684,16 +691,16 @@ function sendID(data) {
 }
 
 
-// get toko user
-function getShop(response) {
+// set toko user
+function setShop(response) {
     const toko = $('#content .right .rbody .biodata-toko');
     $('p.nama-toko', toko).html(response.shopName);
     $('p.alamat-toko', toko).html(`${response.shopAddress}, ${response.shopCity}, ${response.shopProvince}`);
 }
 
 
-// get buku yg ada di toko user
-function getBuku(response) {
+// set buku yg ada di toko user
+function setBuku(response) {
     response.forEach(value => {
         textJudul.push(value.productName);
         textDeskripsi.push(value.productDescription);
@@ -733,46 +740,49 @@ function getBuku(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get toko user
+function getShop() {
+    $('.loading').css('display', 'flex'); // tampilkan loading
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
-
-    borderTab();
-
-    // get toko user
     $.ajax({
-        url: `${base_url}shops`,
-        type: "get",
-        dataType: "json",
+        url: `${base_url}shops/user`,
+        type: 'get',
+        dataType: 'json',
 
         data: {
-            id: "13"
+            userId: User.userId
         },
-        
-        success: function(response) {
-            getShop(response);
+
+        success: function (response) {
+            if (response.status === 400) {
+                $('#content .right .rbody .isEmpty').css('display', 'block');
+                $('#content .right .rbody .biodata-toko').css('display', 'none');
+                $('#content .right .rbody .penjualan').css('display', 'none');
+            } else if (response.status === 200) {
+                toko = response.data[0];
+                setShop(toko);
+            }
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
-        
     }).then(() => {
 
-        // get buku yang dijual di toko user
         $.ajax({
             url: `${base_url}products/shop`,
             type: "get",
             dataType: "json",
             data: {
-                shopId: "13"
+                shopId: toko.shopId
             },
 
-            success: function(response) {
+            success: function (response) {
 
                 // cek apakah toko kosong atau tidak
                 if (response.length === 0)
                     $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
                 else
-                    getBuku(response);
+                    setBuku(response);
 
                 // hilangkan loading
                 $('.loading').css('display', 'none');
@@ -782,12 +792,22 @@ $(document).ready(() => {
             const buku = $('#content .right .rbody .penjualan .buku');
             judulBuku = $('.desk-buku p.judul', buku);
             deskBuku = $('.desk-buku p.deskripsi', buku);
-        }).then(() =>{
+        }).then(() => {
             responsiveSize();
         });
-
     });
-    
+}
+
+
+// document ready
+$(document).ready(() => {
+
+    if (checkSesi())
+        getShop();
+    else
+        window.location.href = `${site_url}html/login-page.html`;
+
+    borderTab();
 });
 
 $(window).resize(responsiveSize);

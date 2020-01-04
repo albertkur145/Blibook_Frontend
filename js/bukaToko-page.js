@@ -1,8 +1,96 @@
 
 
+// variabel global
+let toko;
+let validCreate = 1;
+
+
 // mark side tab
 function borderTab() {
     $('#content .left .tab .buka-toko-tab').addClass('is-active');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+}
+
+
+// create shop
+function createShop(shop) {
+
+    if (checkSesi()) {
+        $('.loading').css('display', 'flex');     // tampilkan loading
+
+        let params = new FormData();
+        params.append('shop', JSON.stringify(shop));
+        params.append('userId', User.userId);
+
+        $.ajax({
+            url: `${base_url}shops/register`,
+            type: 'post',
+            dataType: 'json',
+            processData: false, // default kirim object, form mengandung string
+            contentType: false, // default x-www-form-urlencoded
+
+            data: params,
+
+            success: function(response) {
+                if (response.status === 200) {
+                    $('.loading').css('display', 'none');      // hilangkan loading
+
+                    // tampilkan pesan dialog
+                    $('.dialog-oke .pesan span').html('Selamat! Berhasil membuat toko baru');
+                    $('.dialog-oke').css('display', 'flex');
+
+                    toko = response.data[0];
+                    setForm(toko);
+                    validCreate = 0;
+                }
+            }
+        });
+
+    } else
+        window.location.href = `${site_url}html/login-page.html`;
+}
+
+
+// update shop
+function updateShop(shop) {
+
+    if (checkSesi()) {
+        $('.loading').css('display', 'flex'); // tampilkan loading
+
+        shop.shopId = toko.shopId;
+
+        let params = new FormData();
+        params.append('shop', JSON.stringify(shop));
+
+        $.ajax({
+            url: `${base_url}shops/update`,
+            type: 'post',
+            dataType: 'json',
+            processData: false, // default kirim object, form mengandung string
+            contentType: false, // default x-www-form-urlencoded
+
+            data: params,
+
+            success: function (response) {
+                if (response.status === 200) {
+                    $('.loading').css('display', 'none'); // hilangkan loading
+
+                    // tampilkan pesan dialog
+                    $('.dialog-oke .pesan span').html('Berhasil memperbaharui data toko');
+                    $('.dialog-oke').css('display', 'flex');
+
+                    toko = response.data[0];
+                    setForm(toko);
+                }
+            }
+        });
+    } else
+        window.location.href = `${site_url}html/login-page.html`;
 }
 
 
@@ -13,8 +101,19 @@ const selectProvinsi = $('#content .right .rbody #provinsi');
 const selectKota = $('#content .right .rbody #kota');
 
 function validationForm() {
-    if (namaToko.val().length != 0 && alamatToko.val().length != 0 && $('option:selected', selectProvinsi).val().length != 0)
-        return true;
+    if (namaToko.val().length != 0 && alamatToko.val().length != 0 && $('option:selected', selectProvinsi).val().length != 0) {
+        Shop = {
+            "shopName": namaToko.val(),
+            "shopAddress": alamatToko.val(),
+            "shopCity": $('option:selected', selectKota).val(),
+            "shopProvince": $('option:selected', selectProvinsi).val()
+        };
+
+        if (validCreate)
+            createShop(Shop);
+        else 
+            updateShop(Shop);
+    }
 
     if (namaToko.val().length == 0)
         $('small#error-nama').css('display', 'block');     
@@ -24,8 +123,6 @@ function validationForm() {
 
     if ($('option:selected', selectProvinsi).val().length == 0)
         $('small#error-provinsi').css('display', 'block');
-
-    return false;
 }
 
 function keyUpNamaToko () {
@@ -327,23 +424,38 @@ function setForm(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get data shop, for first time visit
+function getShop() {
+    $('.loading').css('display', 'flex');     // tampilkan loading
+
     $.ajax({
-        url: `${base_url}shops`,
+        url: `${base_url}shops/user`,
         type: 'get',
         dataType: 'json',
 
         data: {
-            id: '10',
+            userId: User.userId
         },
 
-        success: function(response) {
-            if (response) {
-                setForm(response);
-            } 
+        success: function (response) {
+            if (response.status === 200) {
+                toko = response.data[0];
+                setForm(toko);
+                validCreate = 0;
+            }
+
+            $('.loading').css('display', 'none');   // hilangkan loading
         }
     });
+}
+
+
+// document ready
+$(document).ready(() => {
+    if (checkSesi())
+        getShop();
+    else
+        window.location.href = `${site_url}html/login-page.html`;
 
     borderTab();
     changeKota();
