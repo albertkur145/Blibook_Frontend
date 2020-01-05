@@ -351,6 +351,9 @@ $(document).ready(() => {
     if (!checkSesi())
         window.location.href = `${site_url}html/login-page.html`;
 
+    if (window.location.search.substring(1) === '') 
+        window.location.href = `${site_url}html/tokoSaya-page.html`;
+
     borderTab();
     appendTahunTerbit();
 });

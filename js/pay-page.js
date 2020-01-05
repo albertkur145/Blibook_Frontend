@@ -1,5 +1,12 @@
 
 
+// variabel global
+let User = JSON.parse(localStorage.getItem('dataUser'));
+const loginTime = localStorage.getItem('loginTime');
+let session = null;
+
+let pay;
+
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
@@ -141,25 +148,45 @@ function confirmPay() {
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    // post data ke wishlist
-    $.ajax({
-        url: "../json/buku.json",
-        type: "get",
-        dataType: "json",
+    // post payment
+    pay.forEach(value => {
+        $.ajax({
+            url: `${base_url}orders/pay`,
+            type: "post",
+            dataType: "json",
 
-        success: function (response) {
-            console.log('Sukses Post');
-        }
-    }).then(() => {
+            data: {
+                orderId: value
+            },
 
-        // hilangkan loading
-        $('.loading').css('display', 'none');
+            success: function () {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
 
-        // tampilkan pesan dialog
-        $('.dialog-oke .pesan span').html("Sukses! Menunggu konfirmasi penjual");
-        $('.dialog-oke').css('display', 'flex');
-
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html("Sukses! Menunggu konfirmasi penjual");
+                $('.dialog-oke').css('display', 'flex');
+            }
+        });
     });
+}
+
+
+// set rincian pembayaran
+function setRincianBayar() {
+    let dataBayar = JSON.parse(localStorage.getItem("data-bayar"));
+
+    let tempSubtotal = generateRupiah(dataBayar.subTotal);
+    let tempPajak = generateRupiah(dataBayar.pajak);
+    let tempTotalPembayaran = generateRupiah(dataBayar.totalPembayaran);
+
+    $('#content .right .ringkasan-pemesanan .rincian .values').html(`
+        <p class="txt-bayar">Rp. ${tempSubtotal}</p>
+        <p class="txt-bayar">${dataBayar.jumlahBeli}</p>
+        <p class="txt-bayar">Rp. ${tempPajak}</p>
+        <hr>
+        <p class="value-pembayaran">Rp. ${tempTotalPembayaran}</p>
+    `);
 }
 
 
@@ -170,8 +197,63 @@ function hideDialog() {
 }
 
 
+// generate format rupiah
+function generateRupiah(angka) {
+    if (angka != 0) {
+        let harga = angka.toString();                           // misal : 75250330
+
+        let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
+        let rupiah = harga.substring(0, sisa);                  // substring untuk dapat angka depan, hasil : 75
+        let belakang = harga.substring(sisa).match(/\d{3}/g);   // substring untuk dapat angka belakang, hasil : [250, 330]
+                                                                // match return array, test return boolean, /g semua match
+        let penghubung = sisa ? '.' : '';                       // jika ada sisa, maka penghubungnya adalah .
+        rupiah += penghubung + belakang.join('.');              // 75 += . + 250.330   HASIL : 75.250.330
+
+        return rupiah;
+    }
+
+    return 0;
+}
+
+
+// cek session
+function checkSesi() {
+    if (loginTime != null) {
+        session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
+
+        if (User != null && session < 8) {
+            optUser = $('.nav-blibuku .user');
+            namaUser = User.userName;
+
+            $('.nav-blibuku .masuk').css('display', 'none');
+            $('.nav-blibuku .daftar').css('display', 'none');
+            $('.nav-blibuku .user').css('display', 'block');
+
+            return 1;
+        } else {
+            logout();
+            $('.nav-blibuku .masuk').css('display', 'block');
+            $('.nav-blibuku .daftar').css('display', 'block');
+            $('.nav-blibuku .user').css('display', 'none');
+
+            return 0;
+        }
+    }
+}
+
+
 // document ready
 $(document).ready(() => {
+    pay = JSON.parse(localStorage.getItem('pay'));
+
+    if (checkSesi()) {
+        if (pay === null)
+            window.location.href = `${site_url}html/orderList-page.html`;
+        else 
+            setRincianBayar();
+    } else
+        window.location.href = `${site_url}html/login-page.html`;
+
     responsiveSize();
 });
 

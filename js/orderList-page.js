@@ -1,5 +1,18 @@
 
 
+// variabel global
+let User = JSON.parse(localStorage.getItem('dataUser'));
+const loginTime = localStorage.getItem('loginTime');
+let session = null;
+
+let bag;
+let pay = [];
+
+let subTotal = 0;
+let pajak = 0;
+let totalPembayaran = 0;
+
+
 // responsive - resize window
 function responsiveSize() {
     let width = $(window).width();
@@ -227,6 +240,58 @@ function responsiveSize() {
 }
 
 
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    data = {
+        "subTotal": subTotal,
+        "jumlahBeli": bag.length,
+        "pajak": pajak,
+        "totalPembayaran": totalPembayaran
+    };
+
+    localStorage.setItem("pay", JSON.stringify(pay));
+    localStorage.setItem("data-bayar", JSON.stringify(data));
+
+    window.location.href = `${site_url}html/pay-page.html`;
+}
+
+
+// konfirmasi pesanan redirect ke pay
+function konfirmasiPesanan() {
+
+    if (!checkSesi()) 
+        window.location.href = `${site_url}html/login-page.html`;
+    else {
+        // post initiate order
+        bag.forEach(value => {
+            $('.loading').css('display', 'flex');    // tampilkan loading
+
+            $.ajax({
+                url: `${base_url}orders/initiate`,
+                type: "post",
+                dataType: "json",
+
+                data: {
+                    "userId": User.userId,
+                    "productId": value
+                },
+
+                success: function (response) {
+                    pay.push(response.data[0].orderId);
+                    $('.loading').css('display', 'none');   // hilangkan loading
+
+                    // tampilkan pesan dialog
+                    $('.dialog-oke .pesan span').html('Pesanan berhasil dikonfirmasi');
+                    $('.dialog-oke').css('display', 'flex');
+                }
+            });
+        });
+    }
+}
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0) {
@@ -246,65 +311,63 @@ function generateRupiah(angka) {
 }
 
 
-// get user detail
-function getUser(response) {
-    response.forEach(value => {
-        $('#content .left .biodata .values').html(`
-            <p class="value">${value.userName}</p>
-            <p class="value">${value.userEmail}</p>
-            <p class="value">${value.userPhone}</p>
-        `);
-    });
+// set user detail
+function setUser(response) {
+    $('#content .left .biodata .values').html(`
+        <p class="value">${response.userName}</p>
+        <p class="value">${response.userEmail}</p>
+        <p class="value">${response.userPhone}</p>
+    `);
 }
 
 
-// get pay user
-function getPayUser(response) {
+// set pay user
+function setPayUser(response) {
     let pesanan = $('#content .left .pesanan');
-    let subTotal = 0;
+    let harga = generateRupiah(response.productPrice);
+    subTotal += response.productPrice;
 
-    response.forEach(value => {
-        let harga = generateRupiah(value.productPrice);
-        subTotal += value.productPrice;
-
-        // list pesanan
-        pesanan.append(`
-            <div class="row">
-                            
-                <!-- image -->
-                <div class="col-4 img-buku">
-                    <img src="../pictures/${value.productPhotoLink}">
-                </div>
-                <!-- image -->
-
-                <!-- deskripsi -->
-                <div class="col-8 desk-buku">
-                    <p class="judul">${value.productName}</p>
-                    <p class="penulis">Penulis : ${value.productAuthor}</p>
-                    <p class="bahasa">Bahasa ${value.productLanguage}</p>
-                    <p class="harga">Rp. ${harga}</p>
-                    <p class="jumlah">Jumlah : 1</p>
-                </div>
-                <!-- deskripsi -->
-                
+    // list pesanan
+    pesanan.append(`
+        <div class="row">
+                        
+            <!-- image -->
+            <div class="col-4 img-buku">
+                <img src="${response.productPhotoLink}">
             </div>
+            <!-- image -->
+
+            <!-- deskripsi -->
+            <div class="col-8 desk-buku">
+                <p class="judul">${response.productName}</p>
+                <p class="penulis">Penulis : ${response.productAuthor}</p>
+                <p class="bahasa">Bahasa ${response.productLanguage}</p>
+                <p class="harga">Rp. ${harga}</p>
+                <p class="jumlah">Jumlah : 1</p>
+            </div>
+            <!-- deskripsi -->
             
-            <hr>
-        `);
-    });
+        </div>
+        
+        <hr>
+    `);
+
+    setPembayaranUser();
+}
 
 
-    // rincian pembayaran
-    let pajak = subTotal * 0.1;
-    let totalPembayaran = pajak + subTotal;
-
+// set rincian pembayaran
+function setPembayaranUser() {
+    pajak = subTotal * 0.1;
+    totalPembayaran = pajak + subTotal;
+    
     let tempSubTotal = generateRupiah(subTotal);
     let tempPajak = generateRupiah(pajak);
     let tempTotalBayar = generateRupiah(totalPembayaran);
-    
+
     $('#content .right .rincian-bayar .values').html(`
         <p class="txt-bayar">Rp. ${tempSubTotal}</p>
-        <p class="txt-bayar">${response.length}</p>
+        <p class="txt-bayar">${bag.length}</p>
         <p class="txt-bayar">Rp. ${tempPajak}</p>
         <hr>
         <p class="value-pembayaran">Rp. ${tempTotalBayar}</p>
@@ -312,49 +375,94 @@ function getPayUser(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get pay user
+function getPayUser() {
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    let checklist = JSON.parse(localStorage.getItem('bag'));
-
-    if(checklist === null) {
-        window.location.href = `${site_url}html/main-page.html`;
-    }
-    
-
-    // get pay
+    // get user
     $.ajax({
-        url: "../json/pay.json",
+        url: `${base_url}users`,
         type: "get",
         dataType: "json",
+        
+        data: {
+            id: User.userId
+        },
 
-        success: function(response) {
-            getPayUser(response);
+        success: function (response) {
+            setUser(response);
         }
         
     }).then(() => {
 
-        // get user
-        $.ajax({
-            url: "../json/user.json",
-            type: "get",
-            dataType: "json",
+        // get buku yang ingin dibeli
+        bag.forEach(value => {
+            $.ajax({
+                url: `${base_url}products`,
+                type: "get",
+                dataType: "json",
 
-            success: function(response) {
-                getUser(response);
+                data: {
+                    id: value
+                },
 
-                // hilangkan loading
-                $('.loading').css('display', 'none');
-            }
+                success: function (response) {
+                    setPayUser(response);
+
+                    // hilangkan loading
+                    $('.loading').css('display', 'none');
+                }
+
+            });
         });
-
+    
     }).then(() => {
         responsiveSize();
-    }); 
-    
+    });
+}
+
+
+// cek session
+function checkSesi() {
+    if (loginTime != null) {
+        session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
+
+        if (User != null && session < 8) {
+            optUser = $('.nav-blibuku .user');
+            namaUser = User.userName;
+
+            $('.nav-blibuku .masuk').css('display', 'none');
+            $('.nav-blibuku .daftar').css('display', 'none');
+            $('.nav-blibuku .user').css('display', 'block');
+
+            return 1;
+        } else {
+            logout();
+            $('.nav-blibuku .masuk').css('display', 'block');
+            $('.nav-blibuku .daftar').css('display', 'block');
+            $('.nav-blibuku .user').css('display', 'none');
+
+            return 0;
+        }
+    }
+}
+
+
+// document ready
+$(document).ready(() => {
+
+    bag = JSON.parse(localStorage.getItem('bag'));
+
+    if (checkSesi()) {  
+        if (bag === null) 
+            window.location.href = `${site_url}html/bag-page.html`;
+        else
+            getPayUser();
+    } else
+        window.location.href = `${site_url}html/login-page.html`;
+
 });
 
 $(window).resize(responsiveSize);

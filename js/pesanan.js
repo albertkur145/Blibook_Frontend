@@ -7,27 +7,26 @@ function borderTab() {
 
 
 // konfirmasi pesanan
-function konfirmasiPesanan() {
+function konfirmasiPesanan(e) {
+
+    let idOrder = $(e).attr('data-orderid');
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     // post data
     $.ajax({
-        url: "../json/buku.json",
-        type: "get",
+        url: `${base_url}orders/confirm?id=${idOrder}`,
+        type: "put",
         dataType: "json",
 
-        success: function (response) {
-            console.log('Sukses Post');
+        success: function () {
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            $('.dialog-oke').css('display', 'flex');
         }
-    }).then(() => {
-
-        // hilangkan loading
-        $('.loading').css('display', 'none');
-
-        // tampilkan pesan dialog
-        $('.dialog-oke').css('display', 'flex');
     });
 
 }
@@ -36,6 +35,7 @@ function konfirmasiPesanan() {
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/pesanan-page.html`;
 }
 
 
@@ -61,48 +61,86 @@ function generateRupiah(angka) {
 // append request order user
 function appendOrder(value, index) {
     const isiTable = $('#content .right .rbody .pesanan table tbody');
-    let harga = generateRupiah(value.productPrice);
+    let harga = generateRupiah(value.product.productPrice);
 
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>${value.userName}</td>
-            <td>${value.userPhone}</td>
-            <td>${value.productName}</td>
+            <td>${value.user.userName}</td>
+            <td>${value.user.userHandphone}</td>
+            <td>${value.product.productName}</td>
             <td>Rp. ${harga}</td>
-            <td onclick="konfirmasiPesanan()"><h5><i class="fas fa-check-circle text-primary mr-3 cursor-accept"></i></h5></td>
+            <td onclick="konfirmasiPesanan(this)" data-orderid=${value.orderId}><h5><i class="fas fa-check-circle text-primary mr-3 cursor-accept"></i></h5></td>
         </tr>
     `);
+}
+
+
+// get pesanan shop
+function getOrderShop() {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // get shop by user dahulu, untuk tau id shop nya
+    $.ajax({
+        url: `${base_url}shops/user`,
+        type: 'get',
+        dataType: 'json',
+
+        data: {
+            userId: User.userId
+        },
+
+        success: function(response) {
+            return response;
+        }
+    }).then(res => {
+
+        if (res.status === 200) {
+            // setelah itu baru get order by id shop
+            $.ajax({
+                url: `${base_url}orders/confirm-order/shop`,
+                type: "get",
+                dataType: "json",
+
+                data: {
+                    id: res.data[0].shopId
+                },
+
+                success: function (response) {
+                    if (response.data === null) {
+                        $('#content .right .rbody .isEmpty').css('display', 'block');
+                        $('#content .right .rbody .isEmpty p.message').html('Pesanan masih kosong :(');
+                    } else {
+                        response.data.forEach((value, index) => {
+                            appendOrder(value, index);
+                        });
+                    }
+
+                    // hilangkan loading
+                    $('.loading').css('display', 'none');
+                }
+            });
+        } else {
+            $('#content .right .rbody .isEmpty').css('display', 'block');
+            $('#content .right .rbody .isEmpty p.message').html(`Yah, saat ini kamu belum memiliki toko <a href=${site_url}html/bukaToko-page.html>disini</a>`);
+            $('.loading').css('display', 'none');  // hilangkan loading
+        }
+    });
+    
 }
 
 
 // document ready
 $(document).ready(() => {
     
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+    if (checkSesi()) {
+        getOrderShop();
+    } else
+        window.location.href = `${site_url}html/login-page.html`;
 
-    $.ajax({
-        url: "../json/pesanan.json",
-        type: "get",
-        dataType: "json",
-
-        success: function(response) {
-            if (response.length === 0)
-                $('#content .right .rbody .isEmpty').css('display', 'block');
-            else {
-                response.forEach((value, index) => {
-                    appendOrder(value, index);
-                });
-            }
-
-            // hilangkan loading
-            $('.loading').css('display', 'none');
-        }
-        
-    }).then(() => {
-        borderTab();
-    });
+    borderTab();
 
 });
 
