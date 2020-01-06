@@ -628,7 +628,7 @@ function responsiveSize() {
 
 // direct ke update buku
 function directUpdateBuku() {
-    window.location.href = "../html/updateBuku-page.html";
+    window.location.href = `${site_url}html/updateBuku-page.html`;
 }
 
 
@@ -682,12 +682,6 @@ function generateRupiah(angka) {
     }
 
     return 0;
-}
-
-
-// saat klik direct ke detail product page
-function sendID(data) {
-    localStorage.setItem("id-buku", $(data).attr("data-id"));
 }
 
 

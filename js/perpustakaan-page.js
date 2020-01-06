@@ -98,13 +98,13 @@ function responsiveSize() {
 }
 
 
-// get library user
-function getLibraryUser(response) {
+// set library user
+function setLibraryUser(response) {
     response.forEach(value => {
         $('#content .right .rbody .mybooks .row').append(`
             <div class="col-3 buku">
                 <a href="bacaPdf-page.html?${value.productId}" target="_blank">
-                    <img src="../pictures/${value.productPhotoLink}">
+                    <img src="${value.productPhotoLink}">
                 </a>
             </div>
         `);
@@ -112,31 +112,46 @@ function getLibraryUser(response) {
 }
 
 
-// document ready
-$(document).ready(() => {
+// get library user
+function getLibraryUser() {
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     $.ajax({
-        url: "../json/library.json",
+        url: `${base_url}library/user`,
         type: "get",
         dataType: "json",
 
-        success: function(response) {
+        data: {
+            id: User.userId
+        },
+
+        success: function (response) {
             if (response.length === 0)
                 $('#content .right .rbody .isEmpty').css('display', 'block');
             else
-                getLibraryUser(response);
+                setLibraryUser(response);
 
             // hilangkan loading
             $('.loading').css('display', 'none');
         }
 
     }).then(() => {
-        borderTab();
         responsiveSize();
     });
+}
+
+
+// document ready
+$(document).ready(() => {
+
+    if (checkSesi())
+        getLibraryUser();
+    else
+        window.location.href = `${site_url}html/login-page.html`;
+
+    borderTab();
     
 }); 
 

@@ -8,8 +8,7 @@ function borderTab() {
 
 // document ready
 $(document).ready(() => {
-    // let id = window.location.search.substring(1);
-    let id = 97;
+    let id = window.location.search.substring(1);
 
     $('#obj-pdf').css('height', $(window).height());
     $('#obj-pdf').css('width', $(window).width());
