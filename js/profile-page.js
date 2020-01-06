@@ -2,7 +2,7 @@
 
 // append tanggal dan tahun lahir
 function appendTTL() {
-    for (let i = 1950; i <= 2019; i++) {
+    for (let i = 1950; i <= 2020; i++) {
         $('#content .right .rbody select#tahun').append(`
             <option value="${i}">${i}</option>
         `);
@@ -94,7 +94,7 @@ function updateUser() {
 
     $.ajax({
         url: `${base_url}users/update`,
-        type: 'post',
+        type: 'put',
         dataType: 'json',
         processData: false, // default kirim object, form mengandung string
         contentType: false, // default x-www-form-urlencoded
@@ -109,7 +109,7 @@ function updateUser() {
             localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
             User = JSON.parse(localStorage.getItem('dataUser'));
 
-            getUserDetail(User);
+            window.location.href = `${site_url}html/profile-page.html`;
         }
     });
 }

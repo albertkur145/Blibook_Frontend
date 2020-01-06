@@ -222,20 +222,9 @@ function checkSesi() {
         session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
 
         if (User != null && session < 8) {
-            optUser = $('.nav-blibuku .user');
-            namaUser = User.userName;
-
-            $('.nav-blibuku .masuk').css('display', 'none');
-            $('.nav-blibuku .daftar').css('display', 'none');
-            $('.nav-blibuku .user').css('display', 'block');
-
             return 1;
         } else {
             logout();
-            $('.nav-blibuku .masuk').css('display', 'block');
-            $('.nav-blibuku .daftar').css('display', 'block');
-            $('.nav-blibuku .user').css('display', 'none');
-
             return 0;
         }
     }

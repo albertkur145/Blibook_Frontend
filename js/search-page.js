@@ -694,8 +694,15 @@ $(document).ready(() => {
 
     // tetapkan base url dan params (kategori/search/all/indonesian)
     if (keyword[0] === "kategori") {
-        if (keyword[1] === "All" || keyword[1] === "Indonesia") {
+        if (keyword[1] === "All") {
             url = `${base_url}admin/products`;
+        }
+
+        else if (keyword[1] === "Indonesia") {
+            url = `${base_url}products/country`;
+            params = {
+                country: 'Indonesia'
+            };
         }
 
         else {
@@ -723,19 +730,16 @@ $(document).ready(() => {
 
         success: function(response) {
             if (response.length > 0) {
-                
-                // cek indonesian atau bukan
-                if (keyword[1] === "Indonesia") {
-                    response.forEach(value => {
-                        if (value.productLanguage === "Indonesia")
-                            tambahBukuTertentu(value); // append data
-                    });
-                } else {
-                    response.forEach(value => {
-                        tambahBukuTertentu(value); // append data
-                    });
-                }
-            } 
+                response.forEach(value => {
+                    tambahBukuTertentu(value); // append data
+                }); 
+            } else {
+                $('#promo-murah .items-buku-promo .row').html(`
+                    <div class="col">
+                        <p class="text-info">Buku tidak ditemukan</p>
+                    </div>
+                `);
+            }
 
             // hilangkan loading
             $('.loading').css('display', 'none');

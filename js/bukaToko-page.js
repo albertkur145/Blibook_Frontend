@@ -69,7 +69,7 @@ function updateShop(shop) {
 
         $.ajax({
             url: `${base_url}shops/update`,
-            type: 'post',
+            type: 'put',
             dataType: 'json',
             processData: false, // default kirim object, form mengandung string
             contentType: false, // default x-www-form-urlencoded
@@ -404,7 +404,7 @@ function changeKota() {
             <option value="Tebingtinggi">Tebingtinggi</option>
         `);
 
-    } else if (option == "Yogyakarta") {
+    } else if (option == "DIY") {
 
         selectKota.html(`
             <option value="Yogyakarta">Yogyakarta</option>

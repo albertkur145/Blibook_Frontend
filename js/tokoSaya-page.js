@@ -16,7 +16,13 @@ function borderTab() {
 
 // direct ke jual buku page
 function directJualBukuPage() {
-    window.location.href = `${site_url}html/jualBuku-page.html?${toko.shopId}`;
+    window.location.href = `${site_url}html/jualBuku-page.html?shop=${toko.shopId}`;
+}
+
+
+// direct ke update buku
+function directUpdateBuku(id) {
+    window.location.href = `${site_url}html/jualBuku-page.html?update=${id}`;
 }
 
 
@@ -626,35 +632,41 @@ function responsiveSize() {
 }
 
 
-// direct ke update buku
-function directUpdateBuku() {
-    window.location.href = `${site_url}html/updateBuku-page.html`;
-}
-
-
 // hapus buku
-function hapusBuku() {
+function hapusBuku(e) {
+
+    let id = $(e).attr('data-id');
+
+    let params = new FormData();
+    params.append('id', id);
 
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
     // post data ke wishlist
     $.ajax({
-        url: "../json/buku.json",
-        type: "get",
+        url: `${base_url}products/delete`,
+        type: "delete",
         dataType: "json",
+        processData: false, // default kirim object/string, form mengandung file
+        contentType: false, // default x-www-form-urlencoded
+
+        data: params,
 
         success: function (response) {
-            console.log('Sukses Delete');
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            if (response.status === 200) {
+                $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
+                $('.dialog-oke').css('display', 'flex');
+            } else {
+                $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
+                $('.dialog-oke').css('display', 'flex');
+            }
         }
-    }).then(() => {
-
-        // hilangkan loading
-        $('.loading').css('display', 'none');
-
-        // tampilkan pesan dialog
-        $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
-        $('.dialog-oke').css('display', 'flex');
     });
 
 }
@@ -663,6 +675,7 @@ function hapusBuku() {
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/tokoSaya-page.html`;
 }
 
 
@@ -715,8 +728,8 @@ function setBuku(response) {
                     <a href="detailProduct-page.html?${value.productId}"><p class="judul">${value.productName}</p></a>
                     <p class="deskripsi">${value.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
-                    <span class="hapus" onclick="hapusBuku()">Hapus</span>
-                    <span class="edit" onclick="directUpdateBuku()">Edit</span>
+                    <span class="hapus" onclick="hapusBuku(this)" data-id="${value.productId}">Hapus</span>
+                    <span class="edit" onclick="directUpdateBuku(${value.productId})">Edit</span>
                 </div>
                 <!-- desk -->
 

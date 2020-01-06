@@ -120,13 +120,13 @@ $('body').click(function (e) {
 function responsiveSize() {
     let width = $(window).width();
 
-    if (width < 945 && User != null && session < 8) {
+    if (width < 945 && checkSesi()) {
         optUser.html(`
             <i class="fas fa-user"></i> Hi, ${namaUser} <span><i class="fas fa-chevron-down"></i></span>
         `);
     }
     
-    else if (width >= 945 && User != null && session < 8) {
+    else if (width >= 945 && checkSesi()) {
         constraintNama();
     }
 
@@ -153,20 +153,9 @@ function checkSesi() {
         session = (new Date().getTime() - loginTime) / 1000 / 60 / 60;
 
         if (User != null && session < 8) {
-            optUser = $('.nav-blibuku .user');
-            namaUser = User.userName;
-
-            $('.nav-blibuku .masuk').css('display', 'none');
-            $('.nav-blibuku .daftar').css('display', 'none');
-            $('.nav-blibuku .user').css('display', 'block');
-
             return 1;
         } else {
             logout();
-            $('.nav-blibuku .masuk').css('display', 'block');
-            $('.nav-blibuku .daftar').css('display', 'block');
-            $('.nav-blibuku .user').css('display', 'none');
-
             return 0;
         }
     }
@@ -178,7 +167,19 @@ let User = JSON.parse(localStorage.getItem('dataUser'));
 const loginTime = localStorage.getItem('loginTime');
 let session = null;
 
-checkSesi();
+if (checkSesi()) {
+    optUser = $('.nav-blibuku .user');
+    namaUser = User.userName;
+
+    $('.nav-blibuku .masuk').css('display', 'none');
+    $('.nav-blibuku .daftar').css('display', 'none');
+    $('.nav-blibuku .user').css('display', 'block');
+} else {
+    $('.nav-blibuku .masuk').css('display', 'block');
+    $('.nav-blibuku .daftar').css('display', 'block');
+    $('.nav-blibuku .user').css('display', 'none');
+}
+
 responsiveSize();
 $(window).resize(responsiveSize);
 

@@ -601,8 +601,8 @@ function setBukuDetail(value) {
     $('.judul', ketBuku).html(`<p>${value.productName}</p>`)
     $('.value-penulis', ketBuku).html(`<p class="value">${value.productAuthor}</p>`);
     $('.value-isbn', ketBuku).html(`<p class="value">${value.productIsbn}</p>`);
-    $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory}</p>`);
-    $('.value-tahun', ketBuku).html(`<p class="value">${value.productReleaseYear}</p>`);
+    $('.value-kategori', ketBuku).html(`<p class="value">${value.productCategory} / ${value.productReleaseYear}</p>`);
+    $('.value-halaman', ketBuku).html(`<p class="value">${value.productLength}</p>`);
     $('.value-bahasa', ketBuku).html(`<p class="value">${value.productLanguage}</p>`);
     $('.value-harga', ketBuku).html(`<p class="harga">Rp. ${harga}</p>`);
     $('.left .deskripsi .desk', bottom).html(`${value.productDescription}`);

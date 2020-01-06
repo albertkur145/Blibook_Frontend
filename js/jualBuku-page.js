@@ -1,8 +1,12 @@
 
 
+// variable global
+let kode;
+
+
 // append tahun terbit
 function appendTahunTerbit() {
-    for (let i = 2019; i >= 1950; i--) {
+    for (let i = 2020; i >= 1950; i--) {
         $('#content .right .rbody select#tahun').append(`
             <option value="${i}">${i}</option>
         `);
@@ -44,7 +48,7 @@ const regexNumber = /^[0-9]+$/;
 
 // validation all input
 function validationAllInput() {
-    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(isbn.val()) && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
+    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(isbn.val()) && isbn.val().length === 13 && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
         return 1;
 
     return 0;
@@ -126,7 +130,7 @@ function validationForm() {
                 // tampilkan loading
                 $('.loading').css('display', 'flex');
 
-                // setelah semua valid, post buku
+                // setelah semua valid, post/update buku
                 let Buku = {
                     "productName": judulBuku.val(),
                     "productAuthor": penulisBuku.val(),
@@ -143,58 +147,31 @@ function validationForm() {
                     "productItemLink": null,
                 }
 
-                // pakai FormData sesuai postman
+                // tetapkan url, tipe & params
+                let url, type;
                 let params = new FormData();
+
+                if (kode[0] === 'shop') {
+                    params.append('shop', kode[1]);
+
+                    url = `${base_url}products`;
+                    type = 'post';
+                } else if (kode[0] === 'update') {
+                    Buku.productId = kode[1];
+
+                    url = `${base_url}products/update`;
+                    type = 'put';
+                }
+
+                // pakai FormData sesuai postman
                 params.append('item', uploadPDF[0].files[0]);
                 params.append('photo', uploadGambar[0].files[0]);
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
-                params.append('shop', window.location.search.substring(1));
 
-                let idPdf;
+                
 
-                // req api
-                $.ajax({
-                    url: `${base_url}products`,
-                    type: "post",
-                    dataType: "json",
-                    processData: false,    // default kirim object, form mengandung file & string
-                    contentType: false,    // default x-www-form-urlencoded
-
-                    data: params,
-
-                    success: function (response) {
-                        idPdf = response.productId;
-                    }
-                }).then(() => {
-
-                    // move file pdf ke server domainesia
-                    let filePdf = new FormData();
-                    filePdf.append('idPdf', idPdf);
-                    filePdf.append('pdf', uploadPDF[0].files[0]);
-
-                    $.ajax({
-                        url: 'https://yafaifoods.tech/buku/upload.php',
-                        type: 'post',
-                        processData: false, // default kirim object/string, form mengandung file
-                        contentType: false, // default x-www-form-urlencoded
-
-                        data: filePdf,
-
-                        success: function (response) {
-                            // hilangkan loading
-                            $('.loading').css('display', 'none');
-
-                            // redirect ke toko -> utk lihat buku yang baru di jual
-                            window.location.href = `${site_url}html/tokoSaya-page.html`;
-                        },
-
-                        error: function() {
-                            console.log('Error');
-                        }
-                    });
-
-                });
+                requestAPI(params, url, type);
             }
         }
     }
@@ -209,7 +186,7 @@ function validationForm() {
     if (penulisBuku.val().length == 0)
         $('small#error-penulis').css('display', 'block');
 
-    if (isbn.val().length == 0)
+    if (isbn.val().length != 13)
         $('small#error-isbn').css('display', 'block');
 
     if (!regexNumber.test(jumlahHalaman.val()))
@@ -262,7 +239,7 @@ function keyUpPenulisBuku () {
 }
 
 function keyUpISBN() {
-    if (!regexNumber.test(isbn.val()))
+    if (!regexNumber.test(isbn.val()) || isbn.val().length != 13)
         $('small#error-isbn').css('display', 'block');
     else
         $('small#error-isbn').css('display', 'none');
@@ -345,6 +322,100 @@ uploadPDF.focusout(() => {
 });
 
 
+// function request api post/put
+function requestAPI(params, url, type) {
+    if (!checkSesi())
+        window.location.href = `${site_url}html/login-page.html`;
+    else {
+        let idPdf;
+
+        $.ajax({
+            url: url,
+            type: type,
+            dataType: "json",
+            processData: false, // default kirim object, form mengandung file & string
+            contentType: false, // default x-www-form-urlencoded
+
+            data: params,
+
+            success: function (response) {
+                idPdf = response.productId;
+            }
+        }).then(() => {
+
+            // move file pdf ke server domainesia
+            let filePdf = new FormData();
+            filePdf.append('idPdf', idPdf);
+            filePdf.append('pdf', uploadPDF[0].files[0]);
+
+            $.ajax({
+                url: 'https://yafaifoods.tech/buku/upload.php',
+                type: 'post',
+                processData: false, // default kirim object/string, form mengandung file
+                contentType: false, // default x-www-form-urlencoded
+
+                data: filePdf,
+
+                success: function (response) {
+                    // hilangkan loading
+                    $('.loading').css('display', 'none');
+
+                    // redirect ke toko -> utk lihat buku yang baru di jual
+                    window.location.href = `${site_url}html/tokoSaya-page.html`;
+                },
+
+                error: function () {
+                    console.log('Error');
+                }
+            });
+        });
+    }
+}
+
+
+// set form update
+function setFormUpdate(response) {
+    kategori.val(response.productCategory);
+    judulBuku.val(response.productName);
+    penulisBuku.val(response.productAuthor);
+    isbn.val(response.productIsbn);
+    jumlahHalaman.val(response.productLength);
+    tahunTerbit.val(response.productReleaseYear);
+    negara.val(response.productCountry);
+    bahasa.val(response.productLanguage);
+    hargaBuku.val(response.productPrice);
+    deskripsiBuku.val(response.productDescription);
+}
+
+
+// get detail buku
+function getDetailBuku() {
+    $.ajax({
+        url: `${base_url}products`,
+        type: 'get',
+        dataType: 'json',
+
+        data: {
+            id: kode[1]
+        },
+
+        success: function(response) {
+            setFormUpdate(response);
+        }
+    });
+}
+
+
+// manipulasi judul
+function manipulateJudul() {
+    let judul = kode[0] === 'shop' ? '<span>Toko Saya /</span> Jual Buku' :
+        kode[0] === 'update' ? '<span>Toko Saya /</span> Update Buku' :
+        '<span>Toko Saya /</span> Default';
+
+    $('#content .right .head h2.title').html(judul);
+}
+
+
 // document ready
 $(document).ready(() => {
     
@@ -353,6 +424,13 @@ $(document).ready(() => {
 
     if (window.location.search.substring(1) === '') 
         window.location.href = `${site_url}html/tokoSaya-page.html`;
+
+    // get kode, mau update / create
+    kode = window.location.search.substring(1).split("=");
+    manipulateJudul();
+    
+    if (kode[0] === 'update')
+        getDetailBuku();
 
     borderTab();
     appendTahunTerbit();
