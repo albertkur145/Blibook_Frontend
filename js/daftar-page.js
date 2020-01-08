@@ -79,6 +79,8 @@ function validationForm () {
 
         let params = new FormData();
         params.append('user', JSON.stringify(user));
+        params.append('role', 2);
+        params.append('status', 1);
 
         $.ajax({
             url: `${base_url}users/register`,

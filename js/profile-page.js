@@ -90,7 +90,8 @@ function updateUser() {
 
     let params = new FormData();
     params.append('user', JSON.stringify(Data));
-
+    params.append('role', 2);
+    params.append('status', 1);
 
     $.ajax({
         url: `${base_url}users/update`,

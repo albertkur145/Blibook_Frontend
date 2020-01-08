@@ -84,6 +84,15 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
+                        <!-- id toko -->
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="toko">ID Toko</label>
+                                <input type="number" id="toko" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <!-- id toko -->
+
                         <!-- kategori -->
                         <div class="form-row">
                             <div class="form-group col-12">
@@ -94,11 +103,9 @@
                                     <option value="Pendidikan">Pendidikan</option>
                                     <option value="Teknologi">Teknologi</option>
                                     <option value="Kartun">Kartun</option>
-                                    <option value="Musik">Musik</option>
-                                    <option value="Horror">Horror</option>
                                     <option value="Novel">Novel</option>
                                     <option value="Bisnis">Bisnis</option>
-                                    <option value="Kesehatan">Kesehatan</option>
+                                    <option value="Percintaan">Percintaan</option>
                                 </select>
                             </div>
                         </div>
@@ -144,7 +151,7 @@
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="tahun">Tahun</label>
-                                <input type="text" id="tahun" class="form-control" autocomplete="off">
+                                <input type="number" id="tahun" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <!-- tahun -->
@@ -197,7 +204,7 @@
                         </div>
                         <!-- upload buku -->
 
-                        <button class="btn-simpan" onclick="return validationForm()">Simpan</button>
+                        <button class="btn-simpan" onclick="postProduct()">Simpan</button>
                         <!-- form jual buku -->
 
                     </div>
@@ -210,6 +217,13 @@
         </div>
     </div>
     <!-- akhir content -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
 
 
     <!-- footer from templating -->
@@ -227,7 +241,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
-    <script src="../js/adminProduct.js"></script>
+    <script src="../js/adminProductCreate.js"></script>
 </body>
 
 </html>

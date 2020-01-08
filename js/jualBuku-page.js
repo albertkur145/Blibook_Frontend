@@ -169,8 +169,6 @@ function validationForm() {
                 params.append('product', JSON.stringify(Buku));
                 params.append('category', $('option:selected', kategori).val());
 
-                
-
                 requestAPI(params, url, type);
             }
         }

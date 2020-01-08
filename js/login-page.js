@@ -77,9 +77,13 @@ function validateLogin() {
 
         success: function(response) {
             if (response.status === 200) {
-                let time = new Date();
-                localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
-                localStorage.setItem('loginTime', time.getTime());
+                if (response.data[0].userEmail !== 'admin') {
+                    let time = new Date();
+                    localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
+                    localStorage.setItem('loginTime', time.getTime());
+                } else
+                    localStorage.setItem('dataAdmin', JSON.stringify(response.data[0]));
+
                 window.location.href = `${site_url}html/main-page.html`;
             } else {
                 // tampilkan dialog

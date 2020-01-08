@@ -32,14 +32,14 @@ const header = `
                             <div class="arrow text-right"><span></span></div>
 
                             <div class="list-opt">
-                                <a href="javascript:void(0)" onclick="sendKategori('All')">Lihat Semua Buku</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Indonesia')">Buku Indonesia</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Pendidikan')">Pendidikan</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Teknologi')">Teknologi</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Kartun')">Kartun</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Novel')">Novel</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Bisnis')">Bisnis</a>
-                                <a href="javascript:void(0)" onclick="sendKategori('Percintaan')">Percintaan</a>
+                                <a href="search-page.html?kategori=All">Lihat Semua Buku</a>
+                                <a href="search-page.html?kategori=Indonesia">Buku Indonesia</a>
+                                <a href="search-page.html?kategori=Pendidikan">Pendidikan</a>
+                                <a href="search-page.html?kategori=Teknologi">Teknologi</a>
+                                <a href="search-page.html?kategori=Kartun">Kartun</a>
+                                <a href="search-page.html?kategori=Novel">Novel</a>
+                                <a href="search-page.html?kategori=Bisnis">Bisnis</a>
+                                <a href="search-page.html?kategori=Percintaan">Percintaan</a>
                             </div>
                         </div>
                         <!-- kategori -->
@@ -248,28 +248,28 @@ const header = `
 
                 <!-- kategori buku -->
                 <ul class="kategori">
-                    <a href="javascript:void(0)" onclick="sendKategori('All')">
+                    <a href="search-page.html?kategori=All">
                         <li>Lihat Semua Buku</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Indonesia')">
+                    <a href="search-page.html?kategori=Indonesia">
                         <li>Buku Indonesia</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Pendidikan')">
+                    <a href="search-page.html?kategori=Pendidikan">
                         <li>Pendidikan</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Teknologi')">
+                    <a href="search-page.html?kategori=Teknologi">
                         <li>Teknologi</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Kartun')">
+                    <a href="search-page.html?kategori=Kartun">
                         <li>Kartun</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Novel')">
+                    <a href="search-page.html?kategori=Novel">
                         <li>Novel</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Bisnis')">
+                    <a href="search-page.html?kategori=Bisnis">
                         <li>Bisnis</li>
                     </a>
-                    <a href="javascript:void(0)" onclick="sendKategori('Percintaan')">
+                    <a href="search-page.html?kategori=Percintaan">
                         <li>Percintaan</li>
                     </a>
                 </ul>

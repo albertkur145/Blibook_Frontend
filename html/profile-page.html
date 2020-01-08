@@ -34,147 +34,130 @@
         <div class="container">
             <div class="row">
 
-                    <!-- left -->
-                    <div class="col-3 left">
+                <!-- left -->
+                <div class="col-3 left">
 
-                        <!-- head -->
-                        <div class="head">
-                            <h2 class="nama-user">Albert Kurniawan</h2>
-                            <p class="as">Signature Member</p>
-                        </div>
-                        <!-- head -->
+                    <!-- template personal -->
 
-                        <!-- tab -->
-                        <div class="tab">
-                        <a href="profile-page.html"><p class="profile-tab">Profile</p></a>
-                        <a href="wishlist-page.html"><p class="wishlist-tab ">Wishlist</p></a>
-                        <a href="perpusatakaan-page.html"><p class="perpustakaan-tab">Perpustakaan</p></a>
-                        <a href="bukaToko-page.html"><p class="buka-toko-tab">Buka Toko</p> </a>
-                        <a href="tokoSaya-page.html"><p class="toko-saya-tab">Toko Saya</p></a>
-                        <a href="pesanan-page.html"><p class="pesanan-tab">Pesanan Masuk</p></a>
-                        <a href="main-page.html"><p class="keluar-tab">Keluar</p></a>
-                        </div>
-                        <!-- tab -->
+                </div>
+                <!-- left -->
 
+
+                <!-- right -->
+                <div class="col-9 right">
+                    
+                    <!-- head -->
+                    <div class="head">
+                        <h2 class="title">Profile</h2>
                     </div>
-                    <!-- left -->
+                    <!-- head -->
 
-
-                    <!-- right -->
-                    <div class="col-9 right">
+                    <!-- rbody -->
+                    <div class="rbody">
                         
-                        <!-- head -->
-                        <div class="head">
-                            <h2 class="title">Profile</h2>
-                        </div>
-                        <!-- head -->
+                        <!-- form profile -->
+                        <div class="form">
 
-                        <!-- rbody -->
-                        <div class="rbody">
-                            
-                            <!-- form profile -->
-                            <div class="form">
-
-                                <!-- nama lengkap -->
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="nama">Nama Lengkap <span>*</span></label>
-                                        <input type="text" id="nama" class="form-control" autocomplete="off"
-                                        onkeyup="keyUpNama()">
-                                        <small id="error-nama" class="form-text text-muted">Nama lengkap harus diisi.</small>
-                                    </div>
+                            <!-- nama lengkap -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nama">Nama Lengkap <span>*</span></label>
+                                    <input type="text" id="nama" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpNama()">
+                                    <small id="error-nama" class="form-text text-muted">Nama lengkap harus diisi.</small>
                                 </div>
-                                <!-- nama lengkap -->
-
-                                <!-- email -->
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="email">Email <span>*</span></label>
-                                        <input type="text" id="email" class="form-control" autocomplete="off" disabled style="cursor:not-allowed">
-                                    </div>
-                                </div>
-                                <!-- email -->
-
-                                <!-- TTL -->
-                                <div class="form-row ttl">
-                                    <div class="form-group col-12 txt-ttl">
-                                        <label>Tanggal Lahir <span>*</span></label>
-                                    </div>
-
-                                    <div class="form-group col-3 opt-ttl">
-                                        <select id="tanggal" class="form-control">
-                                            <!-- tanggal lahir append js -->
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-3 opt-ttl">
-                                        <select id="bulan" class="form-control">
-                                            <option value="01">Januari</option>
-                                            <option value="02">Februari</option>
-                                            <option value="03">Maret</option>
-                                            <option value="04">April</option>
-                                            <option value="05">Mei</option>
-                                            <option value="06">Juni</option>
-                                            <option value="07">Juli</option>
-                                            <option value="08">Agustus</option>
-                                            <option value="09">September</option>
-                                            <option value="10">Oktober</option>
-                                            <option value="11">November</option>
-                                            <option value="12">Desember</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-3 opt-ttl">
-                                        <select id="tahun" class="form-control">
-                                            <!-- tahun lahir append js -->
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <small id="error-ttl" class="form-text text-muted">Format tanggal lahir tidak valid.</small>  
-                                    </div>
-                                </div>
-                                <!-- TTL -->
-
-
-
-                                <!-- nomor handphone -->
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="nomor">Nomor Handphone <span>*</span></label>
-                                        <input type="number" id="nomor" class="form-control" autocomplete="off"
-                                        onkeyup="keyUpNomor()">
-                                        <small id="error-nomor" class="form-text text-muted">Nomor handphone tidak valid.</small>
-                                    </div>
-                                </div>
-                                <!-- nomor handphone -->
-
-                                <!-- jenis kelamin -->
-                                <label style="display: block;">Jenis Kelamin <span>*</span></label>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="pria" value="pria" checked>
-                                    <label class="form-check-label" for="pria">Pria</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="wanita" value="wanita">
-                                    <label class="form-check-label" for="wanita">Wanita</label>
-                                </div>
-                                <!-- jenis kelamin -->
-
-                                <button type="submit" class="btn-simpan" onclick="validationForm();">Simpan</button>
-                            
                             </div>
-                            <!-- form profile -->
-                            
-                        </div>
-                        <!-- rbody -->
+                            <!-- nama lengkap -->
 
+                            <!-- email -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="email">Email <span>*</span></label>
+                                    <input type="text" id="email" class="form-control" autocomplete="off" disabled style="cursor:not-allowed">
+                                </div>
+                            </div>
+                            <!-- email -->
+
+                            <!-- TTL -->
+                            <div class="form-row ttl">
+                                <div class="form-group col-12 txt-ttl">
+                                    <label>Tanggal Lahir <span>*</span></label>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="tanggal" class="form-control">
+                                        <!-- tanggal lahir append js -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="bulan" class="form-control">
+                                        <option value="01">Januari</option>
+                                        <option value="02">Februari</option>
+                                        <option value="03">Maret</option>
+                                        <option value="04">April</option>
+                                        <option value="05">Mei</option>
+                                        <option value="06">Juni</option>
+                                        <option value="07">Juli</option>
+                                        <option value="08">Agustus</option>
+                                        <option value="09">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="tahun" class="form-control">
+                                        <!-- tahun lahir append js -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <small id="error-ttl" class="form-text text-muted">Format tanggal lahir tidak valid.</small>  
+                                </div>
+                            </div>
+                            <!-- TTL -->
+
+
+
+                            <!-- nomor handphone -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nomor">Nomor Handphone <span>*</span></label>
+                                    <input type="number" id="nomor" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpNomor()">
+                                    <small id="error-nomor" class="form-text text-muted">Nomor handphone tidak valid.</small>
+                                </div>
+                            </div>
+                            <!-- nomor handphone -->
+
+                            <!-- jenis kelamin -->
+                            <label style="display: block;">Jenis Kelamin <span>*</span></label>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="pria" value="pria" checked>
+                                <label class="form-check-label" for="pria">Pria</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="wanita" value="wanita">
+                                <label class="form-check-label" for="wanita">Wanita</label>
+                            </div>
+                            <!-- jenis kelamin -->
+
+                            <button class="btn-simpan" onclick="validationForm()">Simpan</button>
+                        
+                        </div>
+                        <!-- form profile -->
+                        
                     </div>
-                    <!-- right -->
+                    <!-- rbody -->
+
+                </div>
+                <!-- right -->
 
             </div>
         </div>
@@ -203,6 +186,7 @@
     <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/templatePersonal.js"></script>
     <script src="../js/personal.js"></script>
     <script src="../js/profile-page.js"></script>
 </body>

@@ -144,6 +144,7 @@ function sendKategori(kategori) {
 function logout() {
     localStorage.removeItem('dataUser');
     localStorage.removeItem('loginTime');
+    localStorage.removeItem('dataAdmin');
 }
 
 
@@ -163,22 +164,32 @@ function checkSesi() {
 
 
 // ready execute
+let Admin = JSON.parse(localStorage.getItem('dataAdmin'));
+
 let User = JSON.parse(localStorage.getItem('dataUser'));
 const loginTime = localStorage.getItem('loginTime');
 let session = null;
 
-if (checkSesi()) {
-    optUser = $('.nav-blibuku .user');
-    namaUser = User.userName;
 
+if (Admin != null) {
     $('.nav-blibuku .masuk').css('display', 'none');
     $('.nav-blibuku .daftar').css('display', 'none');
-    $('.nav-blibuku .user').css('display', 'block');
+    $('.nav-blibuku .admin').css('display', 'block');
 } else {
-    $('.nav-blibuku .masuk').css('display', 'block');
-    $('.nav-blibuku .daftar').css('display', 'block');
-    $('.nav-blibuku .user').css('display', 'none');
+    if (checkSesi()) {
+        optUser = $('.nav-blibuku .user');
+        namaUser = User.userName;
+
+        $('.nav-blibuku .masuk').css('display', 'none');
+        $('.nav-blibuku .daftar').css('display', 'none');
+        $('.nav-blibuku .user').css('display', 'block');
+    } else {
+        $('.nav-blibuku .masuk').css('display', 'block');
+        $('.nav-blibuku .daftar').css('display', 'block');
+        $('.nav-blibuku .user').css('display', 'none');
+    }
 }
+
 
 responsiveSize();
 $(window).resize(responsiveSize);

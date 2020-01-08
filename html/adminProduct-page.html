@@ -65,7 +65,7 @@
                     <!-- head -->
                     <div class="head">
                         <h2 class="title">Products</h2>
-                        <a href="adminProductCreate-page.html"><button type="button" class="btn btn-primary">Create</button></a>
+                        <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary">Create</button></a>
                     </div>
                     <!-- head -->
 
@@ -107,7 +107,28 @@
     </div>
     <!-- akhir content -->
 
-    <a href="adminProductCreate-page.html"><button type="button" class="btn btn-primary fix">Create</button></a>
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
+
+    <!-- dialog oke -->
+    <div class="dialog-oke">
+        <div class="pesan">
+            <span>Pesan Default</span>
+            <div class="text-right">
+                <button class="btn-accept" onclick="hideDialog()">Oke</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog oke -->
+
+
+    <!-- utk mobile -->
+    <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary fix">Create</button></a>
+    <!-- utk mobile -->
 
 
     <!-- footer from templating -->

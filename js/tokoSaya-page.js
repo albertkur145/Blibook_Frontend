@@ -643,7 +643,7 @@ function hapusBuku(e) {
     // tampilkan loading
     $('.loading').css('display', 'flex');
 
-    // post data ke wishlist
+    // hapus data req api
     $.ajax({
         url: `${base_url}products/delete`,
         type: "delete",

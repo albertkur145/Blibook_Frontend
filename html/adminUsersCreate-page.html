@@ -84,53 +84,89 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
+                        <div class="form">
 
-                        <!-- nama lengkap -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="nama">Nama Lengkap</label>
-                                <input type="text" id="nama" class="form-control" autocomplete="off">
+                            <!-- nama lengkap -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nama">Nama Lengkap</label>
+                                    <input type="text" id="nama" class="form-control" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <!-- nama lengkap -->
+                            <!-- nama lengkap -->
 
-                        <!-- email -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="email">Email</label>
-                                <input type="text" id="email" class="form-control" autocomplete="off">
+                            <!-- email -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" class="form-control" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <!-- email -->
+                            <!-- email -->
 
-                        <!-- ttl -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="ttl">TTL</label>
-                                <input type="text" id="ttl" class="form-control" autocomplete="off">
+                            <!-- password -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" class="form-control" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <!-- ttl -->
+                            <!-- password -->
 
-                        <!-- no hp -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="nohp">No. Handphone</label>
-                                <input type="number" id="nohp" class="form-control" autocomplete="off">
+                            <!-- ttl -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="ttl">TTL</label>
+                                    <input type="text" id="ttl" class="form-control" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <!-- no hp -->
+                            <!-- ttl -->
 
-                        <!-- jenis-kelamin -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="jenis-kelamin">Jenis Kelamin</label>
-                                <input type="text" id="jenis-kelamin" class="form-control" autocomplete="off">
+                            <!-- no hp -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nohp">No. Handphone</label>
+                                    <input type="number" id="nohp" class="form-control" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <!-- jenis-kelamin -->
+                            <!-- no hp -->
 
-                        <button class="btn-simpan">Simpan</button>
+                            <!-- jenis-kelamin -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="jenis-kelamin">Jenis Kelamin</label>
+                                    <input type="text" id="jenis-kelamin" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+                            <!-- jenis-kelamin -->
+
+                            <!-- role -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="role">Role</label>
+                                    <select id="role" class="form-control">
+                                        <option value="USER">USER</option>
+                                        <option value="ADMIN">ADMIN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- role -->
+
+                            <!-- status -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="status">Status</label>
+                                    <select id="status" class="form-control">
+                                        <option value="AVAILABLE">AVAILABLE</option>
+                                        <option value="BLOCKED">BLOCKED</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- status -->
+
+                            <button class="btn-simpan" onclick="postUser()">Simpan</button>
+
+                        </div>
                         <!-- form jual buku -->
 
                     </div>
@@ -143,6 +179,13 @@
         </div>
     </div>
     <!-- akhir content -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
 
 
     <!-- footer from templating -->
@@ -160,7 +203,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
-    <script src="../js/adminUsers.js"></script>
+    <script src="../js/adminUsersCreate.js"></script>
 </body>
 
 </html>

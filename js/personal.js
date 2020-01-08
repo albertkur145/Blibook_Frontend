@@ -67,6 +67,8 @@ function responsiveSize() {
 
 
 // ready execute
+if (User != null)
+    $('#content .left .head h2.nama-user').html(User.userName);
 responsiveSize();
 $(window).resize(responsiveSize);
 

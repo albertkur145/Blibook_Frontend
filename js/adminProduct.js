@@ -8,7 +8,7 @@ function borderTab() {
 
 // generate format rupiah
 function generateRupiah(angka) {
-    if (angka != 0) {
+    if (angka != 0 && angka != null) {
         let harga = angka.toString();                           // misal : 75250330
 
         let sisa = harga.length % 3;                            // cari sisa bagi length, hasil : 2
@@ -25,13 +25,59 @@ function generateRupiah(angka) {
 }
 
 
-function sendID() {
-    window.location.href = `${site_url}html/adminProductCreate-page.html`;
+// send id ke form update
+function sendID(e) {
+    window.location.href = `${site_url}html/adminProductCreate-page.html?update=${$(e).attr('data-id')}`;
 }
 
 
-// append product
-function appendProduct(value, index) {
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+    window.location.href = `${site_url}html/adminProduct-page.html`;
+}
+
+
+// delete buku
+function deleteBuku(e) {
+    let id = $(e).attr('data-id');
+
+    let params = new FormData();
+    params.append('id', id);
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // hapus data req api
+    $.ajax({
+        url: `${base_url}products/delete`,
+        type: "delete",
+        dataType: "json",
+        processData: false, // default kirim object/string, form mengandung file
+        contentType: false, // default x-www-form-urlencoded
+
+        data: params,
+
+        success: function (response) {
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
+
+            // tampilkan pesan dialog
+            if (response.status === 200) {
+                $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
+                $('.dialog-oke').css('display', 'flex');
+            } else {
+                $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
+                $('.dialog-oke').css('display', 'flex');
+            }
+        }
+    });
+}
+
+
+// append buku ke table
+function appendBuku(value, index) {
     const isiTable = $('#content .right .rbody table tbody');
     let harga = generateRupiah(value.productPrice);
 
@@ -46,26 +92,35 @@ function appendProduct(value, index) {
             <td>${value.productReleaseYear}</td>
             <td>${value.productLanguage}</td>
             <td>Rp. ${harga}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID()"></i> <i class="fas fa-times text-danger mr-3 cursor-cross"></i></h5></td>
+            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id="${value.productId}"></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="deleteBuku(this)" data-id="${value.productId}"></i></h5></td>
         </tr>
     `);
+}
+
+
+// get all buku
+function getAllBuku() {
+    $.ajax({
+        url: `${base_url}admin/products`,
+        type: 'get',
+        dataType: 'json',
+
+        success: function(response) {
+            response.forEach((value, index) => {
+                appendBuku(value, index);
+            });
+        }
+    });
 }
 
 
 // document ready
 $(document).ready(() => {
 
-    $.ajax({
-        url: '../json/buku.json',
-        type: 'get',
-        dataType: 'json',
-
-        success: function(response) {
-            response.forEach((value, index) => {
-                appendProduct(value, index);
-            });
-        }
-    });
+    if (Admin === null)
+        window.location.href = `${site_url}html/login-page.html`;
+    else
+        getAllBuku();
 
     borderTab();
 });
