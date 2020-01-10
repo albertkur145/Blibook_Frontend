@@ -196,13 +196,14 @@ function getUserDetail(response) {
     tanggal.val(ttl[0]);
     bulan.val(ttl[1]);
     tahun.val(ttl[2]);
-    nomor.val(response.userHandphone);
-    gender.val([response.userGender]);
+    nomor.val(response.userPhone);
+    gender.val([response.userGender]);;
 }
 
 
 // document ready
 $(document).ready(() => {
+
     appendTTL();
     borderTab();
     responsiveSize();

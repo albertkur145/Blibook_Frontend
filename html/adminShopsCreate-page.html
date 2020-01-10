@@ -125,12 +125,12 @@
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="kota">Kota</label>
-                                <input type="number" id="kota" class="form-control" autocomplete="off">
+                                <input type="text" id="kota" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <!-- kota -->
 
-                        <button class="btn-simpan">Simpan</button>
+                        <button class="btn-simpan" onclick="postShop()">Simpan</button>
                         <!-- form jual buku -->
 
                     </div>
@@ -143,6 +143,25 @@
         </div>
     </div>
     <!-- akhir content -->
+
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="../gif/circle.gif">
+    </div>
+    <!-- loading -->
+
+
+    <!-- dialog oke -->
+    <div class="dialog-oke">
+        <div class="pesan">
+            <span>Pesan Default</span>
+            <div class="text-right">
+                <button class="btn-accept" onclick="hideDialog()">Oke</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog oke -->
 
 
     <!-- footer from templating -->
@@ -160,7 +179,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/personal.js"></script>
-    <script src="../js/adminShops.js"></script>
+    <script src="../js/adminShopsCreate.js"></script>
 </body>
 
 </html>

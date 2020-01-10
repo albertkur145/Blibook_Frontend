@@ -93,6 +93,15 @@ function validateLogin() {
             
             // hilangkan loading
             $('.loading').css('display', 'none');
+        },
+
+        error: function() {
+            // tampilkan dialog
+            $('.dialog-oke .pesan span').html("Email / password kamu salah!");
+            $('.dialog-oke').css('display', 'flex');
+
+            // hilangkan loading
+            $('.loading').css('display', 'none');
         }
     });
 }

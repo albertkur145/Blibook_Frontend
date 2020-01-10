@@ -109,16 +109,16 @@ function getDetailUser() {
     $('.loading').css('display', 'flex'); // tampilkan loading
 
     $.ajax({
-        url: `${base_url}admin/users/detail`,
+        url: `${base_url}users`,
         type: 'get',
         dataType: 'json',
 
         data: {
-            userId: kode[1]
+            id: kode[1]
         },
 
         success: function(response) {
-            setForm(response.data[0]);
+            setForm(response);
             $('.loading').css('display', 'none'); // hilangkan loading
         }
     });

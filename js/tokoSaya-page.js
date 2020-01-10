@@ -761,13 +761,13 @@ function getShop() {
         },
 
         success: function (response) {
-            if (response.status === 400) {
+            if (response.status === 200) {
+                toko = response.data[0];
+                setShop(toko);
+            } else {
                 $('#content .right .rbody .isEmpty').css('display', 'block');
                 $('#content .right .rbody .biodata-toko').css('display', 'none');
                 $('#content .right .rbody .penjualan').css('display', 'none');
-            } else if (response.status === 200) {
-                toko = response.data[0];
-                setShop(toko);
             }
 
             // hilangkan loading

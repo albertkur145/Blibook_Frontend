@@ -6,8 +6,10 @@ function borderTab() {
 }
 
 
-function sendID() {
-    window.location.href = `${site_url}html/adminShopsCreate-page.html`;
+// send id shop
+function sendID(e) {
+    let id = $(e).attr('data-id');
+    window.location.href = `${site_url}html/adminShopsCreate-page.html?update=${id}`;
 }
 
 
@@ -18,31 +20,42 @@ function appendToko(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>Albert K</td>
-            <td>${value.nama}</td>
-            <td>${value.alamat}</td>
-            <td>${value.kota}</td>
-            <td>${value.provinsi}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID()"></i> <i class="fas fa-times text-danger mr-3 cursor-cross"></i></h5></td>
+            <td>${value.shopOwner}</td>
+            <td>${value.shopName}</td>
+            <td>${value.shopAddress}</td>
+            <td>${value.shopCity}</td>
+            <td>${value.shopProvince}</td>
+            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id=${value.shopId}></i> <i class="fas fa-times text-danger mr-3 cursor-cross"></i></h5></td>
         </tr>
     `);
+}
+
+
+// get all shops
+function getAllShops() {
+    $.ajax({
+        url: `${base_url}admin/shops`,
+        type: 'get',
+        dataType: 'json',
+
+        success: function (response) {
+            if (response.status === 200) {
+                response.data.forEach((value, index) => {
+                    appendToko(value, index);
+                });
+            }
+        }
+    });
 }
 
 
 // document ready
 $(document).ready(() => {
 
-    $.ajax({
-        url: '../json/toko.json',
-        type: 'get',
-        dataType: 'json',
-
-        success: function (response) {
-            response.forEach((value, index) => {
-                appendToko(value, index);
-            });
-        }
-    });
+    if (Admin === null)
+        window.location.href = `${site_url}html/login-page.html`;
+    else
+        getAllShops();
 
     borderTab();
 });
