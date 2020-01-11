@@ -1,5 +1,6 @@
 
 
+// variable global
 let kode;
 let success;
 
@@ -22,9 +23,9 @@ function hideDialog() {
 
 // manipulasi judul
 function manipulateJudul() {
-    let judul = kode[0] === 'create' ? '<span>Shops /</span> Create' :
-        kode[0] === 'update' ? '<span>Shops /</span> Update' :
-        '<span>Shops /</span> Default';
+    let judul = kode[0] === 'create' ? '<span>Toko /</span> Daftar' :
+        kode[0] === 'update' ? '<span>Toko /</span> Perbarui' :
+        '<span>Toko /</span> Default';
 
     $('#content .right .head h2.title').html(judul);
 }
@@ -45,7 +46,7 @@ function postShop() {
         'shopProvince': provinsi.val()
     };
 
-    let url, type, message;
+    let url, type;
     let params = new FormData();
 
     if (kode[0] === 'create') {
@@ -53,22 +54,20 @@ function postShop() {
 
         url = `${base_url}shops/register`;
         type = 'post';
-        message = 'Berhasil membuat toko baru';
     } else if (kode[0] === 'update') {
         Data.shopId = kode[1];
 
         url = `${base_url}shops/update`;
         type = 'put';
-        message = 'Berhasil perbarui data toko';
     }
 
     params.append('shop', JSON.stringify(Data));
-    requestAPI(params, url, type, message);
+    requestAPI(params, url, type);
 }
 
 
 // function request api post/put
-function requestAPI(params, url, type, message) {
+function requestAPI(params, url, type) {
     $('.loading').css('display', 'flex'); // tampilkan loading
 
     $.ajax({
@@ -83,18 +82,19 @@ function requestAPI(params, url, type, message) {
         success: function (response) {
             success = response.status; 
 
-            if (response.status === 200) {
-                $('.dialog-oke .pesan span').html(message);
-                $('.dialog-oke').css('display', 'flex');
-            } else if (response.status === 404) {
-                $('.dialog-oke .pesan span').html('Gagal! User tidak ditemukan');
-                $('.dialog-oke').css('display', 'flex');
-            } else if (response.status === 500) {
-                $('.dialog-oke .pesan span').html('Gagal! User sudah memiliki toko');
-                $('.dialog-oke').css('display', 'flex');
-            }
+            $('.loading').css('display', 'none');   // hilangkan loading
 
-            $('.loading').css('display', 'none'); // hilangkan loading
+            if (response.status === 200) {
+                if (type === 'post')
+                    $('.dialog-oke .pesan span').html('Berhasil daftar toko baru');
+                else
+                    $('.dialog-oke .pesan span').html('Berhasil perbarui data toko');
+            } else if (response.status === 404) 
+                $('.dialog-oke .pesan span').html('Gagal! User tidak ditemukan');
+            else if (response.status === 500) 
+                $('.dialog-oke .pesan span').html('Gagal! User sudah memiliki toko');
+
+            $('.dialog-oke').css('display', 'flex');
         }
     });
 }

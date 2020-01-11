@@ -6,6 +6,23 @@ let judulBuku;
 let deskBuku;
 let textJudul = [];
 let textDeskripsi = [];
+let success;
+
+
+
+// hide confirm
+function hideConfirm() {
+    $('.dialog-confirm').css('display', 'none');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/tokoSaya-page.html`;
+}
 
 
 // mark side tab
@@ -633,49 +650,52 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku(e) {
+function hapusBuku(id) {
+    hideConfirm();
 
-    let id = $(e).attr('data-id');
+    if (checkSesi()) {
+        let params = new FormData();
+        params.append('id', id);
 
-    let params = new FormData();
-    params.append('id', id);
+        // tampilkan loading
+        $('.loading').css('display', 'flex');
 
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
+        // hapus data req api
+        $.ajax({
+            url: `${base_url}products/delete`,
+            type: "delete",
+            dataType: "json",
+            processData: false, // default kirim object/string, form mengandung file
+            contentType: false, // default x-www-form-urlencoded
 
-    // hapus data req api
-    $.ajax({
-        url: `${base_url}products/delete`,
-        type: "delete",
-        dataType: "json",
-        processData: false, // default kirim object/string, form mengandung file
-        contentType: false, // default x-www-form-urlencoded
+            data: params,
 
-        data: params,
+            success: function (response) {
+                success = response.status;
 
-        success: function (response) {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
 
-            // hilangkan loading
-            $('.loading').css('display', 'none');
-
-            // tampilkan pesan dialog
-            if (response.status === 200) {
-                $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
-                $('.dialog-oke').css('display', 'flex');
-            } else {
-                $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
-                $('.dialog-oke').css('display', 'flex');
+                // tampilkan pesan dialog
+                if (response.status === 200) {
+                    $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
+                    $('.dialog-oke').css('display', 'flex');
+                } else {
+                    $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
+                    $('.dialog-oke').css('display', 'flex');
+                }
             }
-        }
-    });
-
+        });
+    }
 }
 
 
-// hide dialog
-function hideDialog() {
-    $('.dialog-oke').css('display', 'none');
-    window.location.href = `${site_url}html/tokoSaya-page.html`;
+// confirm delete
+function confirmDelete(e) {
+    let id = $(e).attr('data-id');
+
+    $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan .btn-accept').attr('onclick', `hapusBuku(${id})`);
 }
 
 
@@ -728,7 +748,7 @@ function setBuku(response) {
                     <a href="detailProduct-page.html?${value.productId}"><p class="judul">${value.productName}</p></a>
                     <p class="deskripsi">${value.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
-                    <span class="hapus" onclick="hapusBuku(this)" data-id="${value.productId}">Hapus</span>
+                    <span class="hapus" onclick="confirmDelete(this)" data-id="${value.productId}">Hapus</span>
                     <span class="edit" onclick="directUpdateBuku(${value.productId})">Edit</span>
                 </div>
                 <!-- desk -->

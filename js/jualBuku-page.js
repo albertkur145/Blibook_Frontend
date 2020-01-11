@@ -2,6 +2,7 @@
 
 // variable global
 let kode;
+let success;
 
 
 // append tahun terbit
@@ -23,6 +24,9 @@ function borderTab() {
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/tokoSaya-page.html`;
 }
 
 
@@ -325,8 +329,6 @@ function requestAPI(params, url, type) {
     if (!checkSesi())
         window.location.href = `${site_url}html/login-page.html`;
     else {
-        let idPdf;
-
         $.ajax({
             url: url,
             type: type,
@@ -336,36 +338,17 @@ function requestAPI(params, url, type) {
 
             data: params,
 
-            success: function (response) {
-                idPdf = response.productId;
+            success: function () {
+                $('.loading').css('display', 'none'); // hilangkan loading
+                success = 200;
+
+                if (type === 'post')
+                    $('.dialog-oke .pesan span').html('Berhasil menjual buku di toko');
+                else
+                    $('.dialog-oke .pesan span').html('Berhasil perbarui data buku');
+
+                $('.dialog-oke').css('display', 'flex');
             }
-        }).then(() => {
-
-            // move file pdf ke server domainesia
-            let filePdf = new FormData();
-            filePdf.append('idPdf', idPdf);
-            filePdf.append('pdf', uploadPDF[0].files[0]);
-
-            $.ajax({
-                url: 'https://yafaifoods.tech/buku/upload.php',
-                type: 'post',
-                processData: false, // default kirim object/string, form mengandung file
-                contentType: false, // default x-www-form-urlencoded
-
-                data: filePdf,
-
-                success: function (response) {
-                    // hilangkan loading
-                    $('.loading').css('display', 'none');
-
-                    // redirect ke toko -> utk lihat buku yang baru di jual
-                    window.location.href = `${site_url}html/tokoSaya-page.html`;
-                },
-
-                error: function () {
-                    console.log('Error');
-                }
-            });
         });
     }
 }
@@ -373,7 +356,7 @@ function requestAPI(params, url, type) {
 
 // set form update
 function setFormUpdate(response) {
-    kategori.val(response.productCategory);
+    kategori.val(response.productCategoryName);
     judulBuku.val(response.productName);
     penulisBuku.val(response.productAuthor);
     isbn.val(response.productIsbn);

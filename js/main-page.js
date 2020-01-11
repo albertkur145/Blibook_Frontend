@@ -1136,7 +1136,7 @@ function getAllPromote() {
         },
 
         success: function(response) {
-            
+            console.log(response)
             // append mulai dari index 12 (karena index 0-11 sudah tertampil)
             for (let i = 12; i < response.length; i++) {
                 tambahBukuTertentu(response[i]);

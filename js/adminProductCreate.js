@@ -1,10 +1,21 @@
 
+// variable global
 let kode;
+let success;
 
 
 // mark side tab
 function borderTab() {
     $('#content .left .tab .products-tab').addClass('is-active');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/adminProduct-page.html`;
 }
 
 
@@ -67,10 +78,8 @@ function postProduct() {
 
 // function request api post/put
 function requestAPI(params, url, type) {
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
 
-    let idPdf;
+    $('.loading').css('display', 'flex');  // tampilkan loading
 
     $.ajax({
         url: url,
@@ -81,45 +90,26 @@ function requestAPI(params, url, type) {
 
         data: params,
 
-        success: function (response) {
-            idPdf = response.productId;
+        success: function () {
+            $('.loading').css('display', 'none');    // hilangkan loading
+            success = 200;
+
+            if (type === 'post')
+                $('.dialog-oke .pesan span').html('Berhasil menjual buku di toko');
+            else
+                $('.dialog-oke .pesan span').html('Berhasil perbarui data buku');
+
+            $('.dialog-oke').css('display', 'flex');
         }
-    }).then(() => {
-
-        // move file pdf ke server domainesia
-        let filePdf = new FormData();
-        filePdf.append('idPdf', idPdf);
-        filePdf.append('pdf', uploadPDF[0].files[0]);
-
-        $.ajax({
-            url: 'https://yafaifoods.tech/buku/upload.php',
-            type: 'post',
-            processData: false, // default kirim object/string, form mengandung file
-            contentType: false, // default x-www-form-urlencoded
-
-            data: filePdf,
-
-            success: function (response) {
-                // hilangkan loading
-                $('.loading').css('display', 'none');
-
-                // redirect ke toko -> utk lihat buku yang baru di jual
-                window.location.href = `${site_url}html/adminProduct-page.html`;
-            },
-
-            error: function () {
-                console.log('Error');
-            }
-        });
     });
 }
 
 
 // manipulasi judul
 function manipulateJudul() {
-    let judul = kode[0] === 'create' ? '<span>Products /</span> Create' :
-        kode[0] === 'update' ? '<span>Products /</span> Update' :
-        '<span>Products /</span> Default';
+    let judul = kode[0] === 'create' ? '<span>Buku /</span> Daftar' :
+        kode[0] === 'update' ? '<span>Buku /</span> Perbarui' :
+        '<span>Buku /</span> Default';
 
     $('#content .right .head h2.title').html(judul);
 }
@@ -128,7 +118,7 @@ function manipulateJudul() {
 // set form update
 function setFormUpdate(response) {
     toko.val(response.shopId);
-    kategori.val(response.productCategory);
+    kategori.val(response.productCategoryName);
     judulBuku.val(response.productName);
     penulisBuku.val(response.productAuthor);
     isbn.val(response.productIsbn);

@@ -6,6 +6,21 @@ function borderTab() {
 }
 
 
+// hide confirm
+function hideConfirm() {
+    $('.dialog-confirm').css('display', 'none');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/adminProduct-page.html`;
+}
+
+
 // generate format rupiah
 function generateRupiah(angka) {
     if (angka != 0 && angka != null) {
@@ -31,16 +46,9 @@ function sendID(e) {
 }
 
 
-// hide dialog
-function hideDialog() {
-    $('.dialog-oke').css('display', 'none');
-    window.location.href = `${site_url}html/adminProduct-page.html`;
-}
-
-
 // delete buku
-function deleteBuku(e) {
-    let id = $(e).attr('data-id');
+function deleteBuku(id) {
+    hideConfirm();
 
     let params = new FormData();
     params.append('id', id);
@@ -59,20 +67,29 @@ function deleteBuku(e) {
         data: params,
 
         success: function (response) {
+            success = response.status;
 
             // hilangkan loading
             $('.loading').css('display', 'none');
 
             // tampilkan pesan dialog
-            if (response.status === 200) {
+            if (response.status === 200) 
                 $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari toko');
-                $('.dialog-oke').css('display', 'flex');
-            } else {
+            else 
                 $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
-                $('.dialog-oke').css('display', 'flex');
-            }
+            
+            $('.dialog-oke').css('display', 'flex');
         }
     });
+}
+
+
+// confirm delete
+function confirmDelete(e) {
+    let id = $(e).attr('data-id');
+
+    $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan .btn-accept').attr('onclick', `deleteBuku(${id})`);
 }
 
 
@@ -84,15 +101,16 @@ function appendBuku(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
+            <td>${value.productId}</td>
             <td>${value.productName}</td>
             <td>${value.productAuthor}</td>
             <td>${value.productIsbn}</td>
-            <td>152</td>
-            <td>${value.productCategory}</td>
+            <td>${value.productLength}</td>
+            <td>${value.productCategoryName}</td>
             <td>${value.productReleaseYear}</td>
             <td>${value.productLanguage}</td>
             <td>Rp. ${harga}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id="${value.productId}"></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="deleteBuku(this)" data-id="${value.productId}"></i></h5></td>
+            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id="${value.productId}"></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="confirmDelete(this)" data-id="${value.productId}"></i></h5></td>
         </tr>
     `);
 }

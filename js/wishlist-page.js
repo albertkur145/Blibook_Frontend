@@ -6,6 +6,23 @@ let deskBuku;
 let textJudul = [];
 let textDeskripsi = [];
 
+let success;
+
+
+// hide confirm
+function hideConfirm() {
+    $('.dialog-confirm').css('display', 'none');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/wishlist-page.html`;
+}
+
 
 // mark side tab
 function borderTab() {
@@ -484,11 +501,11 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku(e) {
-
+function hapusBuku(id) {
+    hideConfirm();
     if (checkSesi()) {
         let params = new FormData();
-        params.append('cartId', $(e).attr('data-id'));
+        params.append('cartId', id);
 
         // tampilkan loading
         $('.loading').css('display', 'flex');
@@ -503,7 +520,8 @@ function hapusBuku(e) {
 
             data: params,
 
-            success: function () {
+            success: function (response) {
+                success = response.status;
 
                 // hilangkan loading
                 $('.loading').css('display', 'none');
@@ -511,7 +529,6 @@ function hapusBuku(e) {
                 // tampilkan pesan dialog
                 $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari wishlist');
                 $('.dialog-oke').css('display', 'flex');
-
             }
         });
     } else {
@@ -519,7 +536,15 @@ function hapusBuku(e) {
         $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
     }
+}
 
+
+// confirm delete
+function confirmDelete(e) {
+    let id = $(e).attr('data-id');
+
+    $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan .btn-accept').attr('onclick', `hapusBuku(${id})`);
 }
 
 
@@ -554,13 +579,6 @@ function addBag(e) {
         $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
     }
-}
-
-
-// hide dialog
-function hideDialog() {
-    $('.dialog-oke').css('display', 'none');
-    window.location.href = `${site_url}html/wishlist-page.html`;
 }
 
 
@@ -604,7 +622,7 @@ function setWishlist(response) {
                     <a href="detailProduct-page.html?${value.product.productId}"><p class="judul">${value.product.productName}</p></a>
                     <p class="deskripsi">${value.product.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
-                    <span class="hapus" onclick="hapusBuku(this)" data-id="${value.cartId}">Hapus</span>
+                    <span class="hapus" onclick="confirmDelete(this)" data-id="${value.cartId}">Hapus</span>
                 </div>
                 <!-- desk -->
 

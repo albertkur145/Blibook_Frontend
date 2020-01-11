@@ -81,7 +81,7 @@ function updateShop(shop) {
                     $('.loading').css('display', 'none'); // hilangkan loading
 
                     // tampilkan pesan dialog
-                    $('.dialog-oke .pesan span').html('Berhasil memperbaharui data toko');
+                    $('.dialog-oke .pesan span').html('Berhasil perbarui data toko');
                     $('.dialog-oke').css('display', 'flex');
 
                     toko = response.data[0];

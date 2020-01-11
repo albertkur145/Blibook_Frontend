@@ -1,6 +1,8 @@
 
 
+// variable global
 let kode;
+let success;
 
 
 // mark side tab
@@ -9,11 +11,20 @@ function borderTab() {
 }
 
 
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/adminUsers-page.html`;
+}
+
+
 // manipulasi judul
 function manipulateJudul() {
-    let judul = kode[0] === 'create' ? '<span>Users /</span> Create' :
-        kode[0] === 'update' ? '<span>Users /</span> Update' :
-        '<span>Users /</span> Default';
+    let judul = kode[0] === 'create' ? '<span>Pengguna /</span> Daftar' :
+        kode[0] === 'update' ? '<span>Pengguna /</span> Perbarui' :
+        '<span>Pengguna /</span> Default';
 
     $('#content .right .head h2.title').html(judul);
 }
@@ -82,10 +93,19 @@ function requestAPI(params, url, type) {
         data: params,
 
         success: function (response) {
+            success = response.status;
+
+            $('.loading').css('display', 'none');   // hilangkan loading
+
             if (response.status === 200) {
-                $('.loading').css('display', 'none'); // hilangkan loading
-                window.location.href = `${site_url}html/adminUsers-page.html`;
-            }
+                if (type === 'post')
+                    $('.dialog-oke .pesan span').html('Berhasil daftar user baru');
+                else
+                    $('.dialog-oke .pesan span').html('Berhasil perbarui data user');
+            } else 
+                $('.dialog-oke .pesan span').html('Gagal! Silahkan coba lagi');
+
+            $('.dialog-oke').css('display', 'flex');
         }
     });
 }
@@ -97,7 +117,7 @@ function setForm(response) {
     nama.val(response.userName);
     email.val(response.userEmail);
     ttl.val(response.userBirthdate)
-    nohp.val(response.userPhone);
+    nohp.val(response.userHandphone);
     gender.val(response.userGender);
     role.val(response.userRole);
     status.val(response.userStatus);

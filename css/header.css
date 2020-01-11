@@ -315,7 +315,8 @@
 
 
     /* dialog oke */
-    .dialog-oke {
+    .dialog-oke,
+    .dialog-confirm {
         display: none;
         justify-content: center;
         align-items: center;
@@ -329,7 +330,8 @@
     }
 
 
-    .dialog-oke .pesan {
+    .dialog-oke .pesan,
+    .dialog-confirm .pesan {
         background-color: #FFF;
         border-radius: 0.25rem;
         font-weight: 500;
@@ -340,7 +342,9 @@
     }
 
 
-    .dialog-oke .pesan .btn-accept {
+    .dialog-oke .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-ignore {
         border: 0;
         padding: 0.5rem 0.875rem;
         border-radius: 0.5rem;
@@ -348,13 +352,37 @@
         font-weight: 500;
         font-size: 0.6875rem;
         margin-top: 0.625rem;
-        background-color: #1B84FF;
         transition: background-color .2s ease-out;
+    }
+
+
+    .dialog-oke .pesan .btn-accept {
+        background-color: #1B84FF;
+    }
+
+
+    .dialog-confirm .pesan .btn-accept {
+        background-color: #EE225F;
+    }
+
+
+    .dialog-confirm .pesan .btn-ignore {
+        background-color: #777;
     }
 
 
     .dialog-oke .pesan .btn-accept:hover {
         background-color: #117EFF;
+    }
+
+
+    .dialog-confirm .pesan .btn-accept:hover {
+        background-color: #EA1A59;
+    }
+
+
+    .dialog-confirm .pesan .btn-ignore:hover {
+        background-color: #727272;
     }
 
 
@@ -438,13 +466,16 @@
 
 
     /* dialog oke */
-    .dialog-oke .pesan {
+    .dialog-oke .pesan,
+    .dialog-confirm .pesan {
         font-size: 0.875rem;
         padding: 1.0625rem 1.25rem;
     }
 
 
-    .dialog-oke .pesan .btn-accept {
+    .dialog-oke .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-ignore {
         padding: 0.5rem 1.25rem;
         font-size: 0.8125rem;
         margin-top: 0.875rem;
@@ -521,13 +552,16 @@
 
 
     /* dialog oke */
-    .dialog-oke .pesan {
+    .dialog-oke .pesan,
+    .dialog-confirm .pesan {
         font-size: 1.0625rem;
         padding: 1.5rem 1.6875rem;
     }
 
 
-    .dialog-oke .pesan .btn-accept {
+    .dialog-oke .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-ignore {
         padding: 0.5rem 1.5rem;
         font-size: 0.9375rem;
         margin-top: 0.8125rem;
@@ -594,13 +628,16 @@
 
 
     /* dialog oke */
-    .dialog-oke .pesan {
+    .dialog-oke .pesan,
+    .dialog-confirm .pesan {
         font-size: 1.125rem;
         padding: 1.5rem 1.75rem;
     }
 
 
-    .dialog-oke .pesan .btn-accept {
+    .dialog-oke .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-ignore {
         padding: 0.5rem 1.75rem;
         font-size: 1rem;
         margin-top: 0.875rem;
@@ -759,13 +796,16 @@
 
 
     /* dialog oke */
-    .dialog-oke .pesan {
+    .dialog-oke .pesan,
+    .dialog-confirm .pesan {
         font-size: 1.25rem;
         padding: 1.75rem 2rem;
     }
 
 
-    .dialog-oke .pesan .btn-accept {
+    .dialog-oke .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-accept,
+    .dialog-confirm .pesan .btn-ignore {
         padding: 0.75rem 2rem;
         font-size: 1.0625rem;
         margin-top: 1rem;

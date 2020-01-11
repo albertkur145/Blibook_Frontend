@@ -1,15 +1,28 @@
 
 
+// variable global
+let success;
+
+
+
 // mark side tab
 function borderTab() {
     $('#content .left .tab .users-tab').addClass('is-active');
 }
 
 
+// hide confirm
+function hideConfirm() {
+    $('.dialog-confirm').css('display', 'none');
+}
+
+
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
-    window.location.href = `${site_url}html/adminUsers-page.html`;
+
+    if (success === 200)
+        window.location.href = `${site_url}html/adminUsers-page.html`;
 }
 
 
@@ -21,14 +34,14 @@ function sendID(e) {
 
 
 // delete user by id
-function deleteUser(e) {
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
-
-    let id = $(e).attr('data-id');
+function deleteUser(id) {
+    hideConfirm();
 
     let params = new FormData();
     params.append('id', id);
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
 
     $.ajax({
         url: `${base_url}users/delete`,
@@ -40,19 +53,29 @@ function deleteUser(e) {
         data: params,
 
         success: function(response) {
+            success = response.status;
+
             // hilangkan loading
             $('.loading').css('display', 'none');
 
             // tampilkan pesan dialog
-            if (response.status === 200) {
+            if (response.status === 200)
                 $('.dialog-oke .pesan span').html('User berhasil dihapus dari penyimpanan');
-                $('.dialog-oke').css('display', 'flex');
-            } else {
+            else
                 $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
-                $('.dialog-oke').css('display', 'flex');
-            }
+            
+            $('.dialog-oke').css('display', 'flex');            
         }
     });
+}
+
+
+// confirm delete
+function confirmDelete(e) {
+    let id = $(e).attr('data-id');
+
+    $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan .btn-accept').attr('onclick', `deleteUser(${id})`);
 }
 
 
@@ -63,14 +86,15 @@ function appendUser(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
+            <td>${value.userId}</td>
             <td>${value.userName}</td>
             <td>${value.userEmail}</td>
-            <td>${value.userPhone}</td>
+            <td>${value.userHandphone}</td>
             <td>${value.userBirthdate}</td>
             <td>${value.userGender}</td>
             <td>${value.userRole}</td>
             <td>${value.userStatus}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id=${value.userId}></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="deleteUser(this)" data-id=${value.userId}></i></h5></td>
+            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id=${value.userId}></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="confirmDelete(this)" data-id=${value.userId}></i></h5></td>
         </tr>
     `);
 }

@@ -1,5 +1,17 @@
 
 
+let success;
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/profile-page.html`;
+}
+
+
 // append tanggal dan tahun lahir
 function appendTTL() {
     for (let i = 1950; i <= 2020; i++) {
@@ -103,6 +115,8 @@ function updateUser() {
         data: params,
 
         success: function(response) {
+            success = response.status;
+            
             // hilangkan loading
             $('.loading').css('display', 'none');
 
@@ -110,7 +124,9 @@ function updateUser() {
             localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
             User = JSON.parse(localStorage.getItem('dataUser'));
 
-            window.location.href = `${site_url}html/profile-page.html`;
+            // tampilkan pesan dialog
+            $('.dialog-oke .pesan span').html('Berhasil perbarui data profile');
+            $('.dialog-oke').css('display', 'flex');
         }
     });
 }
@@ -196,7 +212,7 @@ function getUserDetail(response) {
     tanggal.val(ttl[0]);
     bulan.val(ttl[1]);
     tahun.val(ttl[2]);
-    nomor.val(response.userPhone);
+    nomor.val(response.userHandphone);
     gender.val([response.userGender]);;
 }
 

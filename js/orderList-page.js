@@ -316,7 +316,7 @@ function setUser(response) {
     $('#content .left .biodata .values').html(`
         <p class="value">${response.userName}</p>
         <p class="value">${response.userEmail}</p>
-        <p class="value">${response.userPhone}</p>
+        <p class="value">${response.userHandphone}</p>
     `);
 }
 

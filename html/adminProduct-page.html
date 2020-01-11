@@ -37,23 +37,7 @@
                 <!-- left -->
                 <div class="col-3 left">
 
-                    <!-- head -->
-                    <div class="head">
-                        <h2 class="nama-user">admin</h2>
-                        <p class="as">Signature Member</p>
-                    </div>
-                    <!-- head -->
-
-                    <!-- tab -->
-                    <div class="tab">
-                        <a href="adminProduct-page.html"><p class="products-tab">Products</p></a>
-                        <a href="adminUsers-page.html"><p class="users-tab ">Users</p></a>
-                        <a href="adminShops-page.html"><p class="shops-tab">Shops</p></a>
-                        <a href="adminCategories-page.html"><p class="categories-tab">Categories</p></a>
-                        <a href="adminWishlist-page.html"><p class="wishlist-tab">Wishlist</p></a>
-                        <a href="main-page.html"><p class="keluar-tab">Keluar</p></a>
-                    </div>
-                    <!-- tab -->
+                    <!-- manipulate from js -->
 
                 </div>
                 <!-- left -->
@@ -64,8 +48,8 @@
 
                     <!-- head -->
                     <div class="head">
-                        <h2 class="title">Products</h2>
-                        <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary">Create</button></a>
+                        <h2 class="title">Buku</h2>
+                        <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary">Buat Baru</button></a>
                     </div>
                     <!-- head -->
 
@@ -77,6 +61,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>ID</th>
                                     <th>Judul</th>
                                     <th>Penulis</th>
                                     <th>ISBN</th>
@@ -126,8 +111,21 @@
     <!-- dialog oke -->
 
 
+    <!-- dialog confirm -->
+    <div class="dialog-confirm">
+        <div class="pesan">
+            <span>Kamu yakin ingin menghapus ini?</span>
+            <div class="text-right">
+                <button class="btn-ignore" onclick="hideConfirm()">Tidak</button>
+                <button class="btn-accept">Ya</button>
+            </div>
+        </div>
+    </div>
+    <!-- dialog confirm -->
+
+
     <!-- utk mobile -->
-    <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary fix">Create</button></a>
+    <a href="adminProductCreate-page.html?create=1"><button type="button" class="btn btn-primary fix">Buat Baru</button></a>
     <!-- utk mobile -->
 
 
@@ -145,6 +143,7 @@
     <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/templateAdmin.js"></script>
     <script src="../js/personal.js"></script>
     <script src="../js/adminProduct.js"></script>
 </body>

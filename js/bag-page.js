@@ -3,6 +3,22 @@
 // variabel global
 let jumlahBeli = [];
 let totalHarga = 0;    
+let success;
+
+
+// hide confirm
+function hideConfirm() {
+    $('.dialog-confirm').css('display', 'none');
+}
+
+
+// hide dialog
+function hideDialog() {
+    $('.dialog-oke').css('display', 'none');
+
+    if (success === 200)
+        window.location.href = `${site_url}html/bag-page.html`;
+}
 
 
 // button beli enable/disable
@@ -298,12 +314,13 @@ function responsiveSize() {
 
 
 // hapus buku
-function hapusBuku(e) {
+function hapusBuku(id) {
+    hideConfirm();
     if (checkSesi()) {
-        $('.loading').css('display', 'flex');   // tampilkan loading
+        $('.loading').css('display', 'flex'); // tampilkan loading
 
         let params = new FormData();
-        params.append('cartId', $(e).attr('data-id'));
+        params.append('cartId', id);
 
         // hapus buku dari bag
         $.ajax({
@@ -315,10 +332,15 @@ function hapusBuku(e) {
 
             data: params,
 
-            success: function () {
+            success: function (response) {
+                success = response.status;
+
                 // hilangkan loading
                 $('.loading').css('display', 'none');
-                window.location.href = `${site_url}html/bag-page.html`;
+
+                // tampilkan pesan dialog
+                $('.dialog-oke .pesan span').html('Buku berhasil dihapus dari bag');
+                $('.dialog-oke').css('display', 'flex');
             }
         });
     } else {
@@ -326,6 +348,15 @@ function hapusBuku(e) {
         $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
     }
+}
+
+
+// confirm delete
+function confirmDelete(e) {
+    let id = $(e).attr('data-id');
+
+    $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan .btn-accept').attr('onclick', `hapusBuku(${id})`);
 }
 
 
@@ -361,12 +392,6 @@ function addWishlist(e) {
         $('.dialog-oke .pesan span').html('Silahkan login terlebih dahulu');
         $('.dialog-oke').css('display', 'flex');
     }
-}
-
-
-// hide dialog
-function hideDialog() {
-    $('.dialog-oke').css('display', 'none');
 }
 
 
@@ -432,7 +457,7 @@ function setDataBag(response) {
 
                                 <div class="col-6 aksi text-right">
                                     <span onclick="addWishlist(this)" data-id="${value.product.productId}"><i class="fas fa-heart"></i></span>
-                                    <span onclick="hapusBuku(this)" data-id="${value.cartId}"><i class="fas fa-trash"></i></span>
+                                    <span onclick="confirmDelete(this)" data-id="${value.cartId}"><i class="fas fa-trash"></i></span>
                                 </div>
                             </div>
                         </div>

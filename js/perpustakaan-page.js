@@ -128,6 +128,7 @@ function getLibraryUser() {
         },
 
         success: function (response) {
+            console.log(response)
             if (response.length === 0)
                 $('#content .right .rbody .isEmpty').css('display', 'block');
             else
