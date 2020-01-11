@@ -39,7 +39,6 @@ function appendToko(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>${value.shopId}</td>
             <td>${value.shopOwner}</td>
             <td>${value.shopName}</td>
             <td>${value.shopAddress}</td>
@@ -71,7 +70,6 @@ function deleteShop(id) {
         // data: params,
 
         success: function (response) {
-            console.log(response);
             success = 200;
             $('.dialog-oke .pesan span').html('Toko berhasil dihapus dari penyimpanan');
             $('.dialog-oke').css('display', 'flex');

@@ -11,9 +11,7 @@ let adminSpace = `
         <a href="adminProduct-page.html"><p class="products-tab">Buku</p></a>
         <a href="adminUsers-page.html"><p class="users-tab ">Pengguna</p></a>
         <a href="adminShops-page.html"><p class="shops-tab">Toko</p></a>
-        <a href="adminCategories-page.html"><p class="categories-tab">Kategori</p></a>
-        </a>
-        <a href="main-page.html"><p class="keluar-tab">Keluar</p></a>
+        <a href="main-page.html" onclick="logout()"><p class="keluar-tab">Keluar</p></a>
     </div>
     <!-- tab -->
 `;

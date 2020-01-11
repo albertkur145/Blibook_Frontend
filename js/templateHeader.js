@@ -153,7 +153,7 @@ const header = `
                                         </div>
 
                                         <div class="col-10">
-                                            Products
+                                            Buku
                                         </div>
                                     </div>
                                 </a>
@@ -165,7 +165,7 @@ const header = `
                                         </div>
 
                                         <div class="col-10">
-                                            Users
+                                            Pengguna
                                         </div>
                                     </div>
                                 </a>
@@ -177,31 +177,7 @@ const header = `
                                         </div>
 
                                         <div class="col-10">
-                                            Shops
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="adminCategories-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-door-open"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Categories
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="adminWishlist-page.html">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <i class="fas fa-heart"></i>
-                                        </div>
-
-                                        <div class="col-10">
-                                            Wishlist
+                                            Toko
                                         </div>
                                     </div>
                                 </a>

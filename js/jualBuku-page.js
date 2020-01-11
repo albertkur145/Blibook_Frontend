@@ -48,11 +48,12 @@ const uploadPDF = $('#content .right .rbody #pdf');
 
 const extensionsImg = ["jpg", "jpeg", "png"];
 const regexNumber = /^[0-9]+$/;
+const regexISBN = /^978[0-9]{10}$/;
 
 
 // validation all input
 function validationAllInput() {
-    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexNumber.test(isbn.val()) && isbn.val().length === 13 && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
+    if ($('option:selected', kategori).val().length != 0 && judulBuku.val().length != 0 && penulisBuku.val().length != 0 && regexISBN.test(isbn.val()) && regexNumber.test(jumlahHalaman.val()) && $('option:selected', tahunTerbit).val().length != 0 && $('option:selected', negara).val().length != 0 && bahasa.val().length != 0 && regexNumber.test(hargaBuku.val()) && deskripsiBuku.val().length >= 36) 
         return 1;
 
     return 0;
@@ -188,7 +189,7 @@ function validationForm() {
     if (penulisBuku.val().length == 0)
         $('small#error-penulis').css('display', 'block');
 
-    if (isbn.val().length != 13)
+    if (!regexISBN.test(isbn.val()))
         $('small#error-isbn').css('display', 'block');
 
     if (!regexNumber.test(jumlahHalaman.val()))
@@ -241,7 +242,7 @@ function keyUpPenulisBuku () {
 }
 
 function keyUpISBN() {
-    if (!regexNumber.test(isbn.val()) || isbn.val().length != 13)
+    if (!regexISBN.test(isbn.val()))
         $('small#error-isbn').css('display', 'block');
     else
         $('small#error-isbn').css('display', 'none');

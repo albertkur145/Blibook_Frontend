@@ -101,7 +101,6 @@ function appendBuku(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>${value.productId}</td>
             <td>${value.productName}</td>
             <td>${value.productAuthor}</td>
             <td>${value.productIsbn}</td>

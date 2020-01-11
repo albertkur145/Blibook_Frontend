@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/profile-page.css">
     <link rel="stylesheet" href="../css/adminProductCreate.css">
     <link rel="stylesheet" href="../css/footer.css">
 
@@ -58,63 +59,9 @@
                         <!-- form jual buku -->
                         <div class="form">
 
-                            <!-- nama lengkap -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="nama">Nama Lengkap</label>
-                                    <input type="text" id="nama" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- nama lengkap -->
-
-                            <!-- email -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="email">Email</label>
-                                    <input type="text" id="email" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- email -->
-
-                            <!-- password -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="password">Password</label>
-                                    <input type="password" id="password" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- password -->
-
-                            <!-- ttl -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="ttl">TTL</label>
-                                    <input type="text" id="ttl" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- ttl -->
-
-                            <!-- no hp -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="nohp">No. Handphone</label>
-                                    <input type="number" id="nohp" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- no hp -->
-
-                            <!-- jenis-kelamin -->
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label for="jenis-kelamin">Jenis Kelamin</label>
-                                    <input type="text" id="jenis-kelamin" class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <!-- jenis-kelamin -->
-
                             <!-- role -->
                             <div class="form-row">
-                                <div class="form-group col-12">
+                                <div class="form-group col-md-7">
                                     <label for="role">Role</label>
                                     <select id="role" class="form-control">
                                         <option value="USER">USER</option>
@@ -126,7 +73,7 @@
 
                             <!-- status -->
                             <div class="form-row">
-                                <div class="form-group col-12">
+                                <div class="form-group col-md-7">
                                     <label for="status">Status</label>
                                     <select id="status" class="form-control">
                                         <option value="AVAILABLE">AVAILABLE</option>
@@ -136,7 +83,117 @@
                             </div>
                             <!-- status -->
 
-                            <button class="btn-simpan" onclick="postUser()">Simpan</button>
+                            <!-- nama lengkap -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nama">Nama Lengkap <span>*</span></label>
+                                    <input type="text" id="nama" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpNama()">
+                                    <small id="error-nama" class="form-text text-muted">Nama lengkap harus diisi.</small>
+                                </div>
+                            </div>
+                            <!-- nama lengkap -->
+
+                            <!-- email -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="email">Email <span>*</span></label>
+                                    <input type="text" class="form-control" id="email" autocomplete="off"
+                                    onkeyup="keyUpEmail()">
+                                    <small id="error-email" class="form-text text-muted">Email tidak valid.</small>
+                                    <small id="error-email-already" class="form-text text-muted">Email ini sudah terdaftar.</small>
+                                </div>
+                            </div>
+                            <!-- email -->
+
+                            <!-- password -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="password">Password <span>*</span></label>
+                                    <input type="password" class="form-control" id="password" autocomplete="off" onkeyup="keyUpPassword()">
+                                    <small id="error-password" class="form-text text-muted">Password harus diisi.</small>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="password">Konfirmasi Password <span>*</span></label>
+                                    <input type="password" class="form-control" id="konfirm-password" autocomplete="off" onkeyup="keyUpKonfirmPassword()">
+                                    <small id="error-konfirm-password" class="form-text text-muted">Password tidak sama.</small>
+                                </div>
+                            </div>
+                            <!-- password -->
+
+                            <!-- TTL -->
+                            <div class="form-row ttl">
+                                <div class="form-group col-12 txt-ttl">
+                                    <label>Tanggal Lahir <span>*</span></label>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="tanggal" class="form-control">
+                                        <!-- tanggal lahir append js -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="bulan" class="form-control">
+                                        <option value="01">Januari</option>
+                                        <option value="02">Februari</option>
+                                        <option value="03">Maret</option>
+                                        <option value="04">April</option>
+                                        <option value="05">Mei</option>
+                                        <option value="06">Juni</option>
+                                        <option value="07">Juli</option>
+                                        <option value="08">Agustus</option>
+                                        <option value="09">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-3 opt-ttl">
+                                    <select id="tahun" class="form-control">
+                                        <!-- tahun lahir append js -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <small id="error-ttl" class="form-text text-muted">Format tanggal lahir tidak valid.</small>
+                                </div>
+                            </div>
+                            <!-- TTL -->
+
+                            <!-- nomor handphone -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nomor">Nomor Handphone <span>*</span></label>
+                                    <input type="number" id="nomor" class="form-control" autocomplete="off"
+                                    onkeyup="keyUpNomor()">
+                                    <small id="error-nomor" class="form-text text-muted">Nomor handphone tidak valid.</small>
+                                </div>
+                            </div>
+                            <!-- nomor handphone -->
+
+                            <!-- jenis kelamin -->
+                            <label style="display: block;">Jenis Kelamin <span>*</span></label>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="pria" value="pria"
+                                    checked>
+                                <label class="form-check-label" for="pria">Pria</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="wanita" value="wanita">
+                                <label class="form-check-label" for="wanita">Wanita</label>
+                            </div>
+                            <!-- jenis kelamin -->
+
+                            <button class="btn-simpan" onclick="validationForm()">Simpan</button>
 
                         </div>
                         <!-- form jual buku -->

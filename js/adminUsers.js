@@ -86,7 +86,6 @@ function appendUser(value, index) {
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>${value.userId}</td>
             <td>${value.userName}</td>
             <td>${value.userEmail}</td>
             <td>${value.userHandphone}</td>

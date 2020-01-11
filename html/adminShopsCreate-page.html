@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/bukaToko-page.css">
     <link rel="stylesheet" href="../css/adminProductCreate.css">
     <link rel="stylesheet" href="../css/footer.css">
 
@@ -56,53 +57,103 @@
                     <div class="rbody">
 
                         <!-- form jual buku -->
+                        <div class="form">
 
-                        <!-- pemilik -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="pemilik">ID Pemilik</label>
-                                <input type="text" id="pemilik" class="form-control" autocomplete="off">
+                            <!-- pemilik -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="pemilik">Pemilik</label>
+                                    <select id="pemilik" class="form-control">
+                                        <option value="">-- PILIH PEMILIK TOKO --</option>
+                                        <!-- append from js -->
+                                    </select>
+                                    <small id="error-pemilik" class="form-text text-muted">Pemilik toko harus ada.</small>
+                                </div>
                             </div>
-                        </div>
-                        <!-- pemilik -->
+                            <!-- pemilik -->
 
-                        <!-- nama toko -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="nama">Nama Toko</label>
-                                <input type="text" id="nama" class="form-control" autocomplete="off">
+                            <!-- nama toko -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="nama">Nama Toko <span>*</span></label>
+                                    <input type="text" id="nama" class="form-control" autocomplete="off"
+                                        onkeyup="keyUpNamaToko()">
+                                    <small id="error-nama" class="form-text text-muted">Nama toko harus diisi.</small>
+                                </div>
                             </div>
-                        </div>
-                        <!-- nama toko -->
+                            <!-- nama toko -->
 
-                        <!-- alamat -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="alamat">Alamat</label>
-                                <input type="text" id="alamat" class="form-control" autocomplete="off">
+                            <!-- alamat toko -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="alamat">Alamat <span>*</span></label>
+                                    <input type="text" id="alamat" class="form-control" autocomplete="off"
+                                        onkeyup="keyUpAlamatToko()">
+                                    <small id="error-alamat" class="form-text text-muted">Alamat toko harus diisi.</small>
+                                </div>
                             </div>
-                        </div>
-                        <!-- alamat -->
+                            <!-- alamat toko -->
 
-                        <!-- provinsi -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="provinsi">Provinsi</label>
-                                <input type="text" id="provinsi" class="form-control" autocomplete="off">
+                            <!-- provinsi -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label>Provinsi <span>*</span></label>
+
+                                    <select id="provinsi" class="form-control" onchange="changeKota()">
+                                        <option value="">-- PILIH PROVINSI --</option>
+                                        <option value="Aceh">Aceh</option>
+                                        <option value="Bali">Bali</option>
+                                        <option value="Bangka Belitung">Bangka Belitung</option>
+                                        <option value="Banten">Banten</option>
+                                        <option value="Bengkulu">Bengkulu</option>
+                                        <option value="Gorontalo">Gorontalo</option>
+                                        <option value="Jakarta">Jakarta</option>
+                                        <option value="Jambi">Jambi</option>
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Kalimantan Barat">Kalimantan Barat</option>
+                                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                        <option value="Kalimantan Utara">Kalimantan Utara</option>
+                                        <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                        <option value="Lampung">Lampung</option>
+                                        <option value="Maluku">Maluku</option>
+                                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                                        <option value="Papua">Papua</option>
+                                        <option value="Riau">Riau</option>
+                                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                                        <option value="Sulawesi Utara">Sulawesi Utara</option>
+                                        <option value="Sumatra Barat">Sumatra Barat</option>
+                                        <option value="Sumatra Selatan">Sumatra Selatan</option>
+                                        <option value="Sumatra Utara">Sumatra Utara</option>
+                                        <option value="DIY">Daerah Istimewa Yogyakarta</option>
+                                    </select>
+                                    <small id="error-provinsi" class="form-text text-muted">Provinsi tidak boleh
+                                        kosong.</small>
+                                </div>
                             </div>
-                        </div>
-                        <!-- provinsi -->
+                            <!-- provinsi -->
 
-                        <!-- kota -->
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="kota">Kota</label>
-                                <input type="text" id="kota" class="form-control" autocomplete="off">
+                            <!-- kota -->
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label>Kota <span>*</span></label>
+
+                                    <select id="kota" class="form-control">
+                                        <!-- append js -->
+                                    </select>
+                                </div>
                             </div>
+                            <!-- kota -->
+                            
+                            <button class="btn-simpan" onclick="validationForm()">Simpan</button>
+                        
                         </div>
-                        <!-- kota -->
-
-                        <button class="btn-simpan" onclick="postShop()">Simpan</button>
                         <!-- form jual buku -->
 
                     </div>
