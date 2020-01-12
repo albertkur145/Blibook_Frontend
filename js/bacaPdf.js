@@ -12,7 +12,9 @@ $(document).ready(() => {
 
     $('#obj-pdf').css('height', $(window).height());
     $('#obj-pdf').css('width', $(window).width());
-    $('#obj-pdf').attr('src', `http://docs.google.com/gview?url=https://yafaifoods.tech/buku/pdf/${id}.pdf&embedded=true`);
+    $('#obj-pdf').attr('data', `http://192.168.43.138:8010/Project/blibook.backend/src/main/resources/uploads/productItem/89.pdf?#toolbar=0`);
+
+    $('#mobile-pdf').attr('href', `http://192.168.43.138:8010/Project/blibook.backend/src/main/resources/uploads/productItem/89.pdf`);
     
     borderTab();
 });

@@ -672,22 +672,23 @@ function tambahBukuTertentu(value) {
 }
 
 
-// document ready
-$(document).ready(() => {
-
-    // tampilkan loading
-    $('.loading').css('display', 'flex');
-
+// set url, params, judul
+function setData() {
     let url;
     let params;
 
     // ambil keyword sesuai klik (kategori/search)
     let keyword = window.location.search.substring(1).split('=');
+    keyword[1] = keyword[1].replace(/%20/g, ' ');
+
     let judulKeyword = "";
 
     // tetapkan judul keyword
-    keyword[1] === "All" ? judulKeyword = "Semua Buku" :
+    keyword[1] === "All" ? judulKeyword = "Semua Buku" : 
     keyword[1] === "Indonesia" ? judulKeyword = "Buku Indonesia" : judulKeyword = keyword[1];
+
+    if (keyword[0] === 'search')
+        judulKeyword = `Pencarian : ${keyword[1]}`;
 
     // ubah judul keyword
     $('#promo-murah .header h2').html(judulKeyword);
@@ -696,31 +697,34 @@ $(document).ready(() => {
     if (keyword[0] === "kategori") {
         if (keyword[1] === "All") {
             url = `${base_url}admin/products`;
-        }
-
-        else if (keyword[1] === "Indonesia") {
+        } else if (keyword[1] === "Indonesia") {
             url = `${base_url}products/country`;
             params = {
                 country: 'Indonesia'
             };
-        }
-
-        else {
+        } else {
             url = `${base_url}products/category`;
             params = {
                 name: keyword[1]
             };
         }
-        
+
     } else if (keyword[0] === "search") {
         url = `${base_url}products/search`;
         params = {
             key: keyword[1]
         };
     }
-        
 
-    // get data
+    requestAPI(url, params);
+}
+
+
+// get data buku yang dicari
+function requestAPI(url, params) {
+
+    $('.loading').css('display', 'flex');    // tampilkan loading
+
     $.ajax({
         url: url,
         type: "get",
@@ -728,11 +732,11 @@ $(document).ready(() => {
 
         data: params,
 
-        success: function(response) {
+        success: function (response) {
             if (response.length > 0) {
                 response.forEach(value => {
-                    tambahBukuTertentu(value); // append data
-                }); 
+                    tambahBukuTertentu(value);   // append data
+                });
             } else {
                 $('#promo-murah .items-buku-promo .row').html(`
                     <div class="col">
@@ -751,8 +755,13 @@ $(document).ready(() => {
         deskBuku = $('p.desk-buku', buku);
     }).then(() => {
         responsiveSize();
-    });;
-    
+    });
+}
+
+
+// document ready
+$(document).ready(() => {
+    setData();
 });
 
 $(window).resize(responsiveSize);

@@ -18,24 +18,66 @@
     <link rel="stylesheet" href="../css/footer.css">
 
     <title>Baca Buku | Blibuku.com</title>
-
-    <style>
-        .hidePopup {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 4.5rem;
-            height: 4.5rem;
-            background-color: white;
-            opacity: 0;
-        }
-    </style>
 </head>
 
 <body>
 
-    <iframe id="obj-pdf" src="http://docs.google.com/gview?url=http://www.africau.edu/images/default/sample.pdf&embedded=true"></iframe>
-    <div class="hidePopup"></div>
+    <!-- baca pdf -->
+    <object id="obj-pdf" type="application/pdf">
+
+        <!-- header from templating -->
+        <div id="header"></div>
+        <!-- header from templating -->
+
+
+        <!-- content -->
+        <div id="content" class="margin-content">
+            <div class="bg-hover"></div>
+            <div class="container">
+                <div class="row">
+
+                    <!-- left -->
+                    <div class="col-3 left">
+
+                        <!-- template personal -->
+
+                    </div>
+                    <!-- left -->
+
+
+                    <!-- right -->
+                    <div class="col-9 right">
+
+                        <!-- head -->
+                        <div class="head">
+                            <h2 class="title">Baca Buku</h2>
+                        </div>
+                        <!-- head -->
+
+                        <!-- rbody -->
+                        <div class="rbody">
+
+                            <p>Yah sayang sekali :( , untuk saat ini browser kamu belum mendukung membaca buku secara online.</p>
+                            <p>Daripada kamu sedih, yuk download aja bukunya <a href="" id="mobile-pdf">disini</a> dan nikmati membaca buku secara offline bersama <a href="main-page.html">Blibuku.com</a></p>
+
+                        </div>
+                        <!-- rbody -->
+
+                    </div>
+                    <!-- right -->
+
+                </div>
+            </div>
+        </div>
+        <!-- akhir content -->
+
+
+        <!-- footer from templating -->
+        <div id="footer"></div>
+        <!-- footer from templating -->
+    
+    </object>
+    <!-- baca pdf -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -48,6 +90,7 @@
     <script src="../js/templateFooter.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/templatePersonal.js"></script>
     <script src="../js/personal.js"></script>
     <script src="../js/bacaPdf.js"></script>
 </body>
