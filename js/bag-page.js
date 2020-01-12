@@ -505,6 +505,7 @@ function getDataBag() {
         }
 
     }).then(() => {
+        checkAll();
         responsiveSize();
     });
 }

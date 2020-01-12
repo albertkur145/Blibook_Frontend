@@ -77,6 +77,18 @@
     #content .right .form .btn-right:hover {
         background-color: #FF9416;
     }
+
+
+    #content .right .login-disini {
+        color: #444;
+        margin-top: 0.75rem;
+        font-size: 0.75rem;
+    }
+
+
+    #content .right .login-disini a {
+        text-decoration: underline;
+    }
     /* content */
 
 
@@ -206,6 +218,11 @@
     #content .right .form .btn-right {
         font-size: 0.9375rem;
     }
+
+
+    #content .right .login-disini {
+        font-size: 0.8125rem;
+    }
     /* content */
 
 
@@ -314,6 +331,11 @@
     #content .right .form .btn-right {
         font-size: 0.875rem;
     }
+
+
+    #content .right .login-disini {
+        font-size: 0.8125rem;
+    }
     /* content */
 
 
@@ -401,6 +423,11 @@
 
     #content .right .form .btn-right {
         font-size: 1rem;
+    }
+
+
+    #content .right .login-disini {
+        font-size: 0.875rem;
     }
     /* content */
 
@@ -494,6 +521,11 @@
 
     #content .right .form .btn-right {
         font-size: 1.125rem;
+    }
+
+
+    #content .right .login-disini {
+        font-size: 1rem;
     }
     /* content */
 
