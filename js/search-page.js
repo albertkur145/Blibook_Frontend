@@ -733,8 +733,9 @@ function requestAPI(url, params) {
         data: params,
 
         success: function (response) {
-            if (response.length > 0) {
-                response.forEach(value => {
+
+            if (response.data != null) {
+                response.data.forEach(value => {
                     tambahBukuTertentu(value);   // append data
                 });
             } else {

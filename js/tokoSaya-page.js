@@ -789,9 +789,6 @@ function getShop() {
                 $('#content .right .rbody .biodata-toko').css('display', 'none');
                 $('#content .right .rbody .penjualan').css('display', 'none');
             }
-
-            // hilangkan loading
-            $('.loading').css('display', 'none');
         }
     }).then(() => {
 
@@ -806,10 +803,10 @@ function getShop() {
             success: function (response) {
 
                 // cek apakah toko kosong atau tidak
-                if (response.length === 0)
-                    $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
+                if (response.status === 200)
+                    setBuku(response.data);
                 else
-                    setBuku(response);
+                    $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
 
                 // hilangkan loading
                 $('.loading').css('display', 'none');

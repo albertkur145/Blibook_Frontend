@@ -339,7 +339,7 @@ function requestAPI(params, url, type) {
 
             data: params,
 
-            success: function () {
+            success: function (response) {
                 $('.loading').css('display', 'none'); // hilangkan loading
                 success = 200;
 
@@ -382,7 +382,8 @@ function getDetailBuku() {
         },
 
         success: function(response) {
-            setFormUpdate(response);
+            if (response.status === 200)
+                setFormUpdate(response.data[0]);
         }
     });
 }

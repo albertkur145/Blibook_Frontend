@@ -636,7 +636,8 @@ function getDetailBuku() {
         },
 
         success: function (response) {
-            setBukuDetail(response);
+            if (response.status === 200)
+                setBukuDetail(response.data[0]);
 
             // hilangkan loading
             $('.loading').css('display', 'none');

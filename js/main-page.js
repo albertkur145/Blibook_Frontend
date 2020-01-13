@@ -1136,10 +1136,10 @@ function getAllPromote() {
         },
 
         success: function(response) {
-            console.log(response)
+            
             // append mulai dari index 12 (karena index 0-11 sudah tertampil)
-            for (let i = 12; i < response.length; i++) {
-                tambahBukuTertentu(response[i]);
+            for (let i = 12; i < response.data.length; i++) {
+                tambahBukuTertentu(response.data[i]);
             }
 
             // setelah berhasil, hapus loading
@@ -1175,12 +1175,14 @@ $(document).ready(() => {
         success: function (response) {
             let iPercintaan = 1;
 
-            response.forEach(value => {
-                if (iPercintaan <= 12) {
-                    $('.promote .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
-                    iPercintaan++;
-                }
-            });
+            if (response.status === 200) {
+                response.data.forEach(value => {
+                    if (iPercintaan <= 12) {
+                        $('.promote .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                        iPercintaan++;
+                    }
+                });
+            }
         }
     }).then(() => {
 
@@ -1197,16 +1199,14 @@ $(document).ready(() => {
             success: function (response) {
                 let iKartun = 1;
 
-                response.forEach(value => {
-                    if (iKartun <= 12) {
-                        $('.cartoon-novel .cartoon .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
-                        iKartun++;
-                    }   
-                });
-                
-
-                // hilangkan loading
-                $('.loading').css('display', 'none');
+                if (response.status === 200) {
+                    response.data.forEach(value => {
+                        if (iKartun <= 12) {
+                            $('.cartoon-novel .cartoon .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                            iKartun++;
+                        }
+                    });
+                }
             }
 
         }).then(() => {
@@ -1224,12 +1224,14 @@ $(document).ready(() => {
                 success: function (response) {
                     let iNovel = 1;
 
-                    response.forEach(value => {
-                        if (iNovel <= 12) {
-                            $('.cartoon-novel .novel .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
-                            iNovel++;
-                        }
-                    });
+                    if (response.status === 200) {
+                        response.data.forEach(value => {
+                            if (iNovel <= 12) {
+                                $('.cartoon-novel .novel .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                                iNovel++;
+                            }
+                        });
+                    }
                 }
             });
         }).then(() => {
@@ -1247,12 +1249,14 @@ $(document).ready(() => {
                 success: function (response) {
                     let iIndonesia = 1;
 
-                    response.forEach(value => {
-                        if (iIndonesia <= 12) {
-                            $('.indonesian .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
-                            iIndonesia++;
-                        }
-                    });
+                    if (response.status === 200) {
+                        response.data.forEach(value => {
+                            if (iIndonesia <= 12) {
+                                $('.indonesian .slider-container .slides-items').append(`<a href="detailProduct-page.html?${value.productId}"><img src="${value.productPhotoLink}" class="prod-hover"></a>`);
+                                iIndonesia++;
+                            }
+                        });
+                    }
                 }
 
             })
@@ -1271,12 +1275,18 @@ $(document).ready(() => {
 
                 success: function (response) {
                     let iPromoMurah = 1;
-                    response.forEach(value => {
-                        if (iPromoMurah <= 12) {
-                            tambahBukuTertentu(value);
-                            iPromoMurah++;
-                        }
-                    });
+
+                    if (response.status === 200) {
+                        response.data.forEach(value => {
+                            if (iPromoMurah <= 12) {
+                                tambahBukuTertentu(value);
+                                iPromoMurah++;
+                            }
+                        });
+
+                        // hilangkan loading
+                        $('.loading').css('display', 'none');
+                    }
                 }
             }).then(() => {
                 const buku = $('#promo-murah .items-buku-promo .buku .card-buku');

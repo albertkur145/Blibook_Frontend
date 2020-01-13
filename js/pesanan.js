@@ -61,14 +61,14 @@ function generateRupiah(angka) {
 // append request order user
 function appendOrder(value, index) {
     const isiTable = $('#content .right .rbody .pesanan table tbody');
-    let harga = generateRupiah(value.product.productPrice);
+    let harga = generateRupiah(value.productDetailDTO.productPrice);
 
     isiTable.append(`
         <tr>
             <td>${index + 1}</td>
-            <td>${value.user.userName}</td>
-            <td>${value.user.userHandphone}</td>
-            <td>${value.product.productName}</td>
+            <td>${value.userDTO.userName}</td>
+            <td>${value.userDTO.userHandphone}</td>
+            <td>${value.productDetailDTO.productName}</td>
             <td>Rp. ${harga}</td>
             <td onclick="konfirmasiPesanan(this)" data-orderid=${value.orderId}><h5><i class="fas fa-check-circle text-primary mr-3 cursor-accept"></i></h5></td>
         </tr>
@@ -113,9 +113,11 @@ function getOrderShop() {
                         $('#content .right .rbody .isEmpty').css('display', 'block');
                         $('#content .right .rbody .isEmpty p.message').html('Pesanan masih kosong :(');
                     } else {
-                        response.data.forEach((value, index) => {
-                            appendOrder(value, index);
-                        });
+                        if (response.status === 200) {
+                            response.data.forEach((value, index) => {
+                                appendOrder(value, index);
+                            });
+                        }
                     }
 
                     // hilangkan loading

@@ -279,11 +279,15 @@ function konfirmasiPesanan() {
                 },
 
                 success: function (response) {
-                    pay.push(response.data[0].orderId);
+                    if (response.status === 200) {
+                        pay.push(response.data[0].orderId);
+                        $('.dialog-oke .pesan span').html('Pesanan berhasil dikonfirmasi');
+                    } else
+                        $('.dialog-oke .pesan span').html('Pesanan telah diinisiasi sebelumnya');
+                        
                     $('.loading').css('display', 'none');   // hilangkan loading
 
                     // tampilkan pesan dialog
-                    $('.dialog-oke .pesan span').html('Pesanan berhasil dikonfirmasi');
                     $('.dialog-oke').css('display', 'flex');
                 }
             });
@@ -409,7 +413,8 @@ function getPayUser() {
                 },
 
                 success: function (response) {
-                    setPayUser(response);
+                    if (response.status === 200)
+                        setPayUser(response.data[0]);    
 
                     // hilangkan loading
                     $('.loading').css('display', 'none');

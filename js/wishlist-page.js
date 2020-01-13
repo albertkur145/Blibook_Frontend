@@ -605,22 +605,22 @@ function generateRupiah(angka) {
 function setWishlist(response) {
 
     response.forEach(value => {
-        let harga = generateRupiah(value.product.productPrice);
-        textJudul.push(value.product.productName);
-        textDeskripsi.push(value.product.productDescription);
+        let harga = generateRupiah(value.productDetailDTO.productPrice);
+        textJudul.push(value.productDetailDTO.productName);
+        textDeskripsi.push(value.productDetailDTO.productDescription);
             
         $('#content .right .rbody .wishlist').append(`
             <div class="row">
                 <!-- image -->
                 <div class="col-3 image-buku">
-                    <a href="detailProduct-page.html?${value.product.productId}"><img src="${value.product.productPhotoLink}"></a>
+                    <a href="detailProduct-page.html?${value.productDetailDTO.productId}"><img src="${value.productDetailDTO.productPhotoLink}"></a>
                 </div>
                 <!-- image -->
                 
                 <!-- desk -->
                 <div class="col-6 desk-buku">
-                    <a href="detailProduct-page.html?${value.product.productId}"><p class="judul">${value.product.productName}</p></a>
-                    <p class="deskripsi">${value.product.productDescription}</p>
+                    <a href="detailProduct-page.html?${value.productDetailDTO.productId}"><p class="judul">${value.productDetailDTO.productName}</p></a>
+                    <p class="deskripsi">${value.productDetailDTO.productDescription}</p>
                     <p class="harga">Rp. ${harga}</p>
                     <span class="hapus" onclick="confirmDelete(this)" data-id="${value.cartId}">Hapus</span>
                 </div>
@@ -628,7 +628,7 @@ function setWishlist(response) {
 
                 <!-- button beli -->
                 <div class="col-3 button-beli">
-                    <a href="javascript:void(0)" onclick="addBag(this)" data-id="${value.product.productId}">Beli</a>
+                    <a href="javascript:void(0)" onclick="addBag(this)" data-id="${value.productDetailDTO.productId}">Beli</a>
                 </div>
                 <!-- button beli -->
             </div>
@@ -656,11 +656,12 @@ function getWishlistUser() {
         },
 
         success: function (response) {
-            if (response.data.length === 0)
-                $('#content .right .rbody .isEmpty').css('display', 'block');
-            else
-                setWishlist(response.data);
-
+            if (response.status === 200)
+                if (response.data.length != 0)
+                    setWishlist(response.data);
+                else
+                    $('#content .right .rbody .isEmpty').css('display', 'block');
+            
             // hilangkan loading
             $('.loading').css('display', 'none');
         }

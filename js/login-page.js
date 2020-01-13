@@ -76,15 +76,24 @@ function validateLogin() {
         data: params,
 
         success: function(response) {
+            console.log(response.data[0]);
             if (response.status === 200) {
-                if (response.data[0].userEmail !== 'admin') {
-                    let time = new Date();
-                    localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
-                    localStorage.setItem('loginTime', time.getTime());
-                } else
-                    localStorage.setItem('dataAdmin', JSON.stringify(response.data[0]));
+                if (response.data[0].userStatus === 'BLOCKED') {
+                    // tampilkan dialog
+                    $('.dialog-oke .pesan span').html("Akun diblokir! Silahkan hubungi customer service");
+                    $('.dialog-oke').css('display', 'flex');
+                } else {
+                    if (response.data[0].userRole === 'USER') {
+                        if (response.data[0].userStatus === 'AVAILABLE') {
+                            let time = new Date();
+                            localStorage.setItem('dataUser', JSON.stringify(response.data[0]));
+                            localStorage.setItem('loginTime', time.getTime());
+                        }
+                    } else
+                        localStorage.setItem('dataAdmin', JSON.stringify(response.data[0]));
 
-                window.location.href = `${site_url}html/main-page.html`;
+                    window.location.href = `${site_url}html/main-page.html`;
+                }
             } else {
                 // tampilkan dialog
                 $('.dialog-oke .pesan span').html("Email / password kamu salah!");

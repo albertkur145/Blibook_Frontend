@@ -417,17 +417,17 @@ function generateRupiah(angka) {
 // set data bag
 function setDataBag(response) {
     const bag = $('#produk .left .buku');
-    
+
     response.forEach((value) => {
 
-        let harga = generateRupiah(value.product.productPrice);
+        let harga = generateRupiah(value.productDetailDTO.productPrice);
         
         bag.append(`
             <div class="row">
 
                 <!-- checkbox -->
                 <div class="col-1 checkbox-pilih">
-                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.product.productId}" data-harga="${value.product.productPrice}">
+                    <input type="checkbox" id="check-pilih" onclick="checkOne(this)" data-id="${value.productDetailDTO.productId}" data-harga="${value.productDetailDTO.productPrice}">
                     <span class="checkbox"></span>
                 </div>
                 <!-- checkbox -->
@@ -438,15 +438,15 @@ function setDataBag(response) {
 
                         <!-- image -->
                         <div class="col-3 img-buku">
-                            <img src="${value.product.productPhotoLink}">
+                            <img src="${value.productDetailDTO.productPhotoLink}">
                         </div>
                         <!-- image -->
                         
                         <!-- desk buku -->
                         <div class="col-9 desk-buku">
-                            <p class="judul">${value.product.productName}</p>
-                            <p class="author">Penulis : ${value.product.productAuthor}</p>
-                            <p class="bahasa">Bahasa ${value.product.productLanguage}</p>
+                            <p class="judul">${value.productDetailDTO.productName}</p>
+                            <p class="author">Penulis : ${value.productDetailDTO.productAuthor}</p>
+                            <p class="bahasa">Bahasa ${value.productDetailDTO.productLanguage}</p>
                             <p class="harga">Rp. ${harga}</p>
 
                             <div class="row">
@@ -456,7 +456,7 @@ function setDataBag(response) {
                                 </div>
 
                                 <div class="col-6 aksi text-right">
-                                    <span onclick="addWishlist(this)" data-id="${value.product.productId}"><i class="fas fa-heart"></i></span>
+                                    <span onclick="addWishlist(this)" data-id="${value.productDetailDTO.productId}"><i class="fas fa-heart"></i></span>
                                     <span onclick="confirmDelete(this)" data-id="${value.cartId}"><i class="fas fa-trash"></i></span>
                                 </div>
                             </div>
@@ -491,13 +491,15 @@ function getDataBag() {
         },
 
         success: function (response) {
-            if (response.data.length === 0) {
-                $('#produk .isEmpty').css('display', 'block');
-                $('#produk .notEmpty').css('display', 'none');
-            } else {
-                $('#produk .isEmpty').css('display', 'none');
-                $('#produk .notEmpty').css('display', 'flex');
-                setDataBag(response.data);
+            if (response.status === 200) {
+                if (response.data.length != 0) {
+                    $('#produk .isEmpty').css('display', 'none');
+                    $('#produk .notEmpty').css('display', 'flex');
+                    setDataBag(response.data);
+                } else {
+                    $('#produk .isEmpty').css('display', 'block');
+                    $('#produk .notEmpty').css('display', 'none');
+                }
             }
 
             // hilangkan loading
