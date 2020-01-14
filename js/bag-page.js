@@ -516,6 +516,9 @@ function getDataBag() {
 // document ready
 $(document).ready(() => {
 
+    if (localStorage.getItem('bag') !== null);
+        localStorage.removeItem('bag');
+
     if (checkSesi())
         getDataBag();
     else

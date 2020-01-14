@@ -6,6 +6,8 @@ const loginTime = localStorage.getItem('loginTime');
 let session = null;
 
 let pay;
+let subTotal = 0;
+let jumlahBeli;
 
 // responsive - resize window
 function responsiveSize() {
@@ -169,20 +171,20 @@ function confirmPay() {
             }
         });
     });
+
+    localStorage.removeItem('pay');
 }
 
 
 // set rincian pembayaran
 function setRincianBayar() {
-    let dataBayar = JSON.parse(localStorage.getItem("data-bayar"));
-
-    let tempSubtotal = generateRupiah(dataBayar.subTotal);
-    let tempPajak = generateRupiah(dataBayar.pajak);
-    let tempTotalPembayaran = generateRupiah(dataBayar.totalPembayaran);
+    let tempSubtotal = generateRupiah(subTotal);
+    let tempPajak = generateRupiah(subTotal * 0.1);
+    let tempTotalPembayaran = generateRupiah(subTotal * 0.1 + subTotal);
 
     $('#content .right .ringkasan-pemesanan .rincian .values').html(`
         <p class="txt-bayar">Rp. ${tempSubtotal}</p>
-        <p class="txt-bayar">${dataBayar.jumlahBeli}</p>
+        <p class="txt-bayar">${jumlahBeli}</p>
         <p class="txt-bayar">Rp. ${tempPajak}</p>
         <hr>
         <p class="value-pembayaran">Rp. ${tempTotalPembayaran}</p>
@@ -231,15 +233,41 @@ function checkSesi() {
 }
 
 
+// get order id
+function getOrderUser() {
+    pay.forEach(orderId => {
+        $.ajax({
+            url: `${base_url}orders/products`,
+            type: 'get',
+            dataType: 'json',
+
+            data: {
+                id: orderId
+            },
+
+            success: function (response) {
+                if (response.status === 200) 
+                    subTotal += response.data[0].productPrice;
+            }
+        }).then(() => {
+            setRincianBayar();
+        });
+    });
+}
+
+
 // document ready
 $(document).ready(() => {
+    
     pay = JSON.parse(localStorage.getItem('pay'));
 
     if (checkSesi()) {
         if (pay === null)
             window.location.href = `${site_url}html/orderList-page.html`;
-        else 
-            setRincianBayar();
+        else {
+            getOrderUser();
+            jumlahBeli = pay.length;
+        }
     } else
         window.location.href = `${site_url}html/login-page.html`;
 

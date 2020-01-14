@@ -363,7 +363,7 @@ function setToko(value) {
 // get all shops
 function getAllShops() {
     $.ajax({
-        url: `${base_url}admin/shops`,
+        url: `${base_url}shops/all`,
         type: 'get',
         dataType: 'json',
 
@@ -374,6 +374,9 @@ function getAllShops() {
                 });
             }
         }
+    }).then(() => {
+        if (kode[0] === 'update')
+            getDetailBuku();
     });
 }
 
@@ -382,6 +385,7 @@ function getAllShops() {
 function setFormUpdate(response) {
     toko.attr('disabled', 'disabled');
 
+    toko.val(response.shopId);
     kategori.val(response.productCategoryName);
     judulBuku.val(response.productName);
     penulisBuku.val(response.productAuthor);
@@ -407,7 +411,8 @@ function getDetailBuku() {
         },
 
         success: function (response) {
-            setFormUpdate(response);
+            if (response.status === 200)
+                setFormUpdate(response.data[0]);
         }
     });
 }
@@ -421,9 +426,6 @@ $(document).ready(() => {
         kode = window.location.search.substring(1).split("=");
 
     getAllShops();
-    if (kode[0] === 'update')
-        getDetailBuku();
-
     appendTahunTerbit();
     manipulateJudul();
     borderTab();

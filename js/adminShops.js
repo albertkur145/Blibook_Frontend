@@ -2,6 +2,8 @@
 
 // variable global
 let success;
+let nomorTable = 0;
+let jumlahData;
 
 
 // mark side tab
@@ -29,24 +31,6 @@ function hideDialog() {
 function sendID(e) {
     let id = $(e).attr('data-id');
     window.location.href = `${site_url}html/adminShopsCreate-page.html?update=${id}`;
-}
-
-
-// append toko
-function appendToko(value, index) {
-    const isiTable = $('#content .right .rbody table tbody');
-
-    isiTable.append(`
-        <tr>
-            <td>${index + 1}</td>
-            <td>${value.shopOwner}</td>
-            <td>${value.shopName}</td>
-            <td>${value.shopAddress}</td>
-            <td>${value.shopCity}</td>
-            <td>${value.shopProvince}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id=${value.shopId}></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="confirmDelete(this)" data-id=${value.shopId}></i></h5></td>
-        </tr>
-    `);
 }
 
 
@@ -100,18 +84,71 @@ function confirmDelete(e) {
 }
 
 
+// add paging
+function addPaging(pagingActive) {
+    let urlPaging = $('#content .right .rbody .paging');
+    let jumlahPaging = jumlahData / 10;
+
+    for (let i = 0; i < jumlahPaging; i++) {
+        urlPaging.append(`
+            <a href="javascript:void(0)" class="paging${i}" onclick="getAllShops(${i})">${i+1}</a>
+        `);
+    }
+
+    $(`.paging${pagingActive}`).addClass('isActive-paging');
+}
+
+
+// append toko
+function appendToko(value, index) {
+    const isiTable = $('#content .right .rbody table tbody');
+    nomorTable += 1;
+    
+    isiTable.append(`
+        <tr>
+            <td>${nomorTable}</td>
+            <td>${value.shopName}</td>
+            <td>${value.userName}</td>
+            <td>${value.shopAddress}</td>
+            <td>${value.shopCity}</td>
+            <td>${value.shopProvince}</td>
+            <td><h5><i class="fas fa-pen text-info cursor-edit" onclick="sendID(this)" data-id=${value.shopId}></i> <i class="fas fa-ban text-danger mt-2 cursor-cross" onclick="confirmDelete(this)" data-id=${value.shopId}></i></h5></td>
+        </tr>
+    `);
+}
+
+
 // get all shops
-function getAllShops() {
+function getAllShops(paging = 0) {
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // reset dulu htmlnya
+    $('#content .right .rbody table tbody').html('');
+    $('#content .right .rbody .paging').html('');
+
+    nomorTable = parseInt(paging + '0');
+
     $.ajax({
         url: `${base_url}admin/shops`,
         type: 'get',
         dataType: 'json',
 
+        data: {
+            page: paging
+        },
+
         success: function (response) {
             if (response.status === 200) {
-                response.data.forEach((value, index) => {
+                jumlahData = response.data[0];
+                response.data[1].forEach((value, index) => {
                     appendToko(value, index);
                 });
+
+                addPaging(paging);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
             }
         }
     });

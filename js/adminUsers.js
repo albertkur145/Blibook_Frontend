@@ -2,7 +2,8 @@
 
 // variable global
 let success;
-
+let nomorTable = 0;
+let jumlahData;
 
 
 // mark side tab
@@ -79,13 +80,29 @@ function confirmDelete(e) {
 }
 
 
+// add paging
+function addPaging(pagingActive) {
+    let urlPaging = $('#content .right .rbody .paging');
+    let jumlahPaging = jumlahData / 10;
+
+    for (let i = 0; i < jumlahPaging; i++) {
+        urlPaging.append(`
+            <a href="javascript:void(0)" class="paging${i}" onclick="getAllUsers(${i})">${i+1}</a>
+        `);
+    }
+
+    $(`.paging${pagingActive}`).addClass('isActive-paging');
+}
+
+
 // append user
 function appendUser(value, index) {
     const isiTable = $('#content .right .rbody table tbody');
+    nomorTable += 1;
 
     isiTable.append(`
         <tr>
-            <td>${index + 1}</td>
+            <td>${nomorTable}</td>
             <td>${value.userName}</td>
             <td>${value.userEmail}</td>
             <td>${value.userHandphone}</td>
@@ -93,24 +110,44 @@ function appendUser(value, index) {
             <td>${value.userGender}</td>
             <td>${value.userRole}</td>
             <td>${value.userStatus}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id=${value.userId}></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="confirmDelete(this)" data-id=${value.userId}></i></h5></td>
+            <td><h5><i class="fas fa-pen text-info cursor-edit" onclick="sendID(this)" data-id=${value.userId}></i> <i class="fas fa-ban text-danger mt-2 cursor-cross" onclick="confirmDelete(this)" data-id=${value.userId}></i></h5></td>
         </tr>
     `);
 }
 
 
 // get all users
-function getAllUsers() {
+function getAllUsers(paging = 0) {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // reset dulu htmlnya
+    $('#content .right .rbody table tbody').html('');
+    $('#content .right .rbody .paging').html('');
+
+    nomorTable = parseInt(paging + '0'); 
+    
     $.ajax({
         url: `${base_url}admin/users`,
         type: 'get',
         dataType: 'json',
 
+        data: {
+            page: paging
+        },
+
         success: function(response) {
             if (response.status === 200) {
-                response.data.forEach((value, index) => {
+                jumlahData = response.data[0];
+                response.data[1].forEach((value, index) => {
                     appendUser(value, index);
                 });
+
+                addPaging(paging);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
             }
         }
     });

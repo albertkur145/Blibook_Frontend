@@ -696,7 +696,7 @@ function setData() {
     // tetapkan base url dan params (kategori/search/all/indonesian)
     if (keyword[0] === "kategori") {
         if (keyword[1] === "All") {
-            url = `${base_url}admin/products`;
+            url = `${base_url}/products/all`;
         } else if (keyword[1] === "Indonesia") {
             url = `${base_url}products/country`;
             params = {

@@ -790,35 +790,34 @@ function getShop() {
                 $('#content .right .rbody .penjualan').css('display', 'none');
             }
         }
-    }).then(() => {
+    }).then((res) => {
+        if (res.status === 200) {
+            $.ajax({
+                url: `${base_url}products/shop`,
+                type: "get",
+                dataType: "json",
+                data: {
+                    shopId: toko.shopId
+                },
 
-        $.ajax({
-            url: `${base_url}products/shop`,
-            type: "get",
-            dataType: "json",
-            data: {
-                shopId: toko.shopId
-            },
+                success: function (response) {
+                    // cek apakah toko kosong atau tidak
+                    if (response.status === 200)
+                        setBuku(response.data);
+                    else
+                        $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
+                }
 
-            success: function (response) {
-
-                // cek apakah toko kosong atau tidak
-                if (response.status === 200)
-                    setBuku(response.data);
-                else
-                    $('#content .right .rbody .penjualan .buku .emptyBook').css('display', 'block');
-
-                // hilangkan loading
-                $('.loading').css('display', 'none');
-            }
-
-        }).then(() => {
-            const buku = $('#content .right .rbody .penjualan .buku');
-            judulBuku = $('.desk-buku p.judul', buku);
-            deskBuku = $('.desk-buku p.deskripsi', buku);
-        }).then(() => {
-            responsiveSize();
-        });
+            }).then(() => {
+                const buku = $('#content .right .rbody .penjualan .buku');
+                judulBuku = $('.desk-buku p.judul', buku);
+                deskBuku = $('.desk-buku p.deskripsi', buku);
+            }).then(() => {
+                responsiveSize();
+            });
+        }
+        
+        $('.loading').css('display', 'none');
     });
 }
 

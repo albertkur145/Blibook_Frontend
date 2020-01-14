@@ -1,5 +1,11 @@
 
 
+// variable global
+let jumlahData;
+let success;
+let nomorTable = 0;
+
+
 // mark side tab
 function borderTab() {
     $('#content .left .tab .products-tab').addClass('is-active');
@@ -93,14 +99,30 @@ function confirmDelete(e) {
 }
 
 
+// add paging
+function addPaging(pagingActive) {
+    let urlPaging = $('#content .right .rbody .paging');
+    let jumlahPaging = jumlahData / 10;
+
+    for (let i = 0; i < jumlahPaging; i++) {
+        urlPaging.append(`
+            <a href="javascript:void(0)" class="paging${i}" onclick="getAllBuku(${i})">${i+1}</a>
+        `);
+    }
+
+    $(`.paging${pagingActive}`).addClass('isActive-paging');
+}
+
+
 // append buku ke table
 function appendBuku(value, index) {
     const isiTable = $('#content .right .rbody table tbody');
     let harga = generateRupiah(value.productPrice);
-
+    nomorTable += 1;
+    
     isiTable.append(`
         <tr>
-            <td>${index + 1}</td>
+            <td>${nomorTable}</td>
             <td>${value.productName}</td>
             <td>${value.productAuthor}</td>
             <td>${value.productIsbn}</td>
@@ -109,23 +131,45 @@ function appendBuku(value, index) {
             <td>${value.productReleaseYear}</td>
             <td>${value.productLanguage}</td>
             <td>Rp. ${harga}</td>
-            <td><h5><i class="fas fa-pen text-success cursor-edit" onclick="sendID(this)" data-id="${value.productId}"></i> <i class="fas fa-times text-danger mr-3 cursor-cross" onclick="confirmDelete(this)" data-id="${value.productId}"></i></h5></td>
+            <td><h5><i class="fas fa-pen cursor-edit text-info" onclick="sendID(this)" data-id="${value.productId}"></i> <i class="fas fa-ban mt-2 cursor-cross text-danger" onclick="confirmDelete(this)" data-id="${value.productId}"></i></h5></td>
         </tr>
     `);
 }
 
 
 // get all buku
-function getAllBuku() {
+function getAllBuku(paging = 0) {
+
+    // tampilkan loading
+    $('.loading').css('display', 'flex');
+
+    // reset dulu htmlnya
+    $('#content .right .rbody table tbody').html('');
+    $('#content .right .rbody .paging').html('');
+
+    nomorTable = parseInt(paging + '0');
+
     $.ajax({
         url: `${base_url}admin/products`,
         type: 'get',
         dataType: 'json',
 
+        data: {
+            page: paging
+        },
+
         success: function(response) {
-            response.forEach((value, index) => {
-                appendBuku(value, index);
-            });
+            if (response.status === 200) {
+                jumlahData = response.data[0];
+                response.data[1].forEach((value, index) => {
+                    appendBuku(value, index);
+                });
+
+                addPaging(paging);
+
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+            }
         }
     });
 }

@@ -371,7 +371,7 @@ function appendOwner(value) {
 // get all users
 function getAllUsers() {
     $.ajax({
-        url: `${base_url}admin/users`,
+        url: `${base_url}users/all`,
         type: 'get',
         dataType: 'json',
 
@@ -382,6 +382,9 @@ function getAllUsers() {
                 });
             }
         }
+    }).then(() => {
+        if (kode[0] === 'update')
+            getDetailShop();
     });
 }
 
@@ -452,7 +455,8 @@ function requestAPI(params, url, type) {
 // set form update
 function setForm(response) {
     pemilik.attr('disabled', 'disabled');
-
+    
+    pemilik.val(response.userId);
     namaToko.val(response.shopName);
     alamatToko.val(response.shopAddress);
     selectProvinsi.val(response.shopProvince);
@@ -473,7 +477,8 @@ function getDetailShop() {
         },
 
         success: function(response) {
-            setForm(response);
+            if (response.status === 200)
+                setForm(response.data[0]);
         }
     });
 }
@@ -486,11 +491,8 @@ $(document).ready(() => {
     else
         kode = window.location.search.substring(1).split("=");
 
-    if (kode[0] === 'update')
-        getDetailShop();
-    else 
-        getAllUsers();
-
+        
+    getAllUsers();
     manipulateJudul();
     borderTab();
 });

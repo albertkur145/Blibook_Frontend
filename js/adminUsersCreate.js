@@ -281,10 +281,13 @@ function requestAPI(params, url, type) {
                     $('.dialog-oke .pesan span').html('Berhasil daftar user baru');
                 else
                     $('.dialog-oke .pesan span').html('Berhasil perbarui data user');
-            } else 
+            } else if (response.status === 500)
+                $('small#error-email-already').css('display', 'block');
+            else 
                 $('.dialog-oke .pesan span').html('Gagal! Silahkan coba lagi');
 
-            $('.dialog-oke').css('display', 'flex');
+            if (response.status != 500)
+                $('.dialog-oke').css('display', 'flex');
         }
     });
 }
@@ -295,6 +298,7 @@ function setForm(response) {
     let ttl = response.userBirthdate.split('-');
     password.attr('disabled', 'disabled');
     konfirmPassword.attr('disabled', 'disabled');
+    email.attr('disabled', 'disabled');
     
     nama.val(response.userName);
     email.val(response.userEmail);

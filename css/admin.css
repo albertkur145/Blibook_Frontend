@@ -21,6 +21,23 @@ button.fix {
 }
 
 
+#content .right .rbody table h5 {
+    font-size: 1.125rem;
+}
+
+
+/* kasih warna di paging active */
+.isActive-paging {
+    color: #000;
+}
+
+
+.isActive-paging:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+
 /* berlaku untuk width window >= 960px */
 
 @media (min-width: 960px) {

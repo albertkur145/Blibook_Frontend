@@ -252,8 +252,6 @@ function hideDialog() {
     };
 
     localStorage.setItem("pay", JSON.stringify(pay));
-    localStorage.setItem("data-bayar", JSON.stringify(data));
-
     window.location.href = `${site_url}html/pay-page.html`;
 }
 
@@ -283,7 +281,7 @@ function konfirmasiPesanan() {
                         pay.push(response.data[0].orderId);
                         $('.dialog-oke .pesan span').html('Pesanan berhasil dikonfirmasi');
                     } else
-                        $('.dialog-oke .pesan span').html('Pesanan telah diinisiasi sebelumnya');
+                        $('.dialog-oke .pesan span').html('Gagal! Silahkan coba lagi');
                         
                     $('.loading').css('display', 'none');   // hilangkan loading
 
@@ -292,6 +290,8 @@ function konfirmasiPesanan() {
                 }
             });
         });
+
+        localStorage.removeItem('bag');
     }
 }
 
@@ -448,6 +448,9 @@ function checkSesi() {
 $(document).ready(() => {
 
     bag = JSON.parse(localStorage.getItem('bag'));
+
+    if(localStorage.getItem('pay') !== null);
+        localStorage.removeItem('pay');
 
     if (checkSesi()) {  
         if (bag === null) 
