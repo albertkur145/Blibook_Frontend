@@ -112,7 +112,7 @@ function appendToko(value, index) {
             <td>${value.shopAddress}</td>
             <td>${value.shopCity}</td>
             <td>${value.shopProvince}</td>
-            <td><h5><i class="fas fa-pen text-info cursor-edit" onclick="sendID(this)" data-id=${value.shopId}></i> <i class="fas fa-ban text-danger mt-2 cursor-cross" onclick="confirmDelete(this)" data-id=${value.shopId}></i></h5></td>
+            <td><h5><i class="fas fa-pen text-info cursor-edit" onclick="sendID(this)" data-id=${value.shopId}></i></h5></td>
         </tr>
     `);
 }

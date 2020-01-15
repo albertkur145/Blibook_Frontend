@@ -45,8 +45,8 @@ function deleteUser(id) {
     $('.loading').css('display', 'flex');
 
     $.ajax({
-        url: `${base_url}users/delete`,
-        type: 'delete',
+        url: `${base_url}users/block`,
+        type: 'put',
         dataType: 'json',
         processData: false, // default kirim object, form mengandung string
         contentType: false, // default x-www-form-urlencoded
@@ -61,7 +61,7 @@ function deleteUser(id) {
 
             // tampilkan pesan dialog
             if (response.status === 200)
-                $('.dialog-oke .pesan span').html('User berhasil dihapus dari penyimpanan');
+                $('.dialog-oke .pesan span').html('User berhasil diblock dari sistem');
             else
                 $('.dialog-oke .pesan span').html('Gagal! Silahkan coba kembali');
             
@@ -76,6 +76,7 @@ function confirmDelete(e) {
     let id = $(e).attr('data-id');
 
     $('.dialog-confirm').css('display', 'flex');
+    $('.dialog-confirm .pesan span').html('Kamu yakin ingin block user ini?');
     $('.dialog-confirm .pesan .btn-accept').attr('onclick', `deleteUser(${id})`);
 }
 
