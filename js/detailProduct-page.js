@@ -512,8 +512,17 @@ function addBag() {
                 productId: id
             },
 
-            success: function () {
-                window.location.href = `${site_url}html/bag-page.html`;
+            success: function (response) {
+                // hilangkan loading
+                $('.loading').css('display', 'none');
+
+                if (response.status === 200)
+                    window.location.href = `${site_url}html/bag-page.html`;
+                else if (response.status === 400) {
+                    // tampilkan pesan dialog
+                    $('.dialog-oke .pesan span').html('Buku ini dapat dilihat di Toko Saya');
+                    $('.dialog-oke').css('display', 'flex');
+                }
             }
         });
     } else {
@@ -544,12 +553,16 @@ function addWishlist() {
                 productId: id
             },
 
-            success: function() {
+            success: function(response) {
                 // hilangkan loading
                 $('.loading').css('display', 'none');
 
+                if (response.status === 200)
+                    $('.dialog-oke .pesan span').html('Buku berhasil ditambahkan ke wishlist');
+                else if (response.status === 400)
+                    $('.dialog-oke .pesan span').html('Buku ini dapat dilihat di Toko Saya');
+
                 // tampilkan pesan dialog
-                $('.dialog-oke .pesan span').html('Buku berhasil ditambahkan ke wishlist');
                 $('.dialog-oke').css('display', 'flex');
             }
         });

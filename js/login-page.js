@@ -1,8 +1,14 @@
 
 
+let logout = false;
+
+
 // hide dialog
 function hideDialog() {
     $('.dialog-oke').css('display', 'none');
+
+    if (logout) 
+        window.location.href = `${site_url}html/main-page.html`;
 }
 
 
@@ -115,6 +121,15 @@ function validateLogin() {
 
 // document ready
 $(document).ready(() => {
+    let User = JSON.parse(localStorage.getItem('dataUser'));
+    let Admin = JSON.parse(localStorage.getItem('dataAdmin'));
+
+    if (User != null || Admin != null) {
+        logout = true;
+        $('.dialog-oke .pesan span').html("Silahkan logout terlebih dahulu");
+        $('.dialog-oke').css('display', 'flex');
+    }
+
     responsiveSize();
 });
 
